@@ -1,6 +1,7 @@
-#!/usr/bin/python3
+﻿#!/usr/bin/python3
 #-*-coding:UTF-8-*-
 # author: hezudao
+# time :2019-02-21
 #SMTP电子邮件发送
 import smtplib
 from email.mime.text import MIMEText
