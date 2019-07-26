@@ -8,7 +8,7 @@ from scrapy_redis.spiders import RedisCrawlSpider
 
 class HongniangspiderSpider(RedisCrawlSpider):
     name = 'hongniangSpiderRedis'
-    # allowed_domains = ['hongniang.com']
+    allowed_domains = ['hongniang.com']
     # start_urls = ['http://www.hongniang.com/index/search?sort=0&wh=0&sex=2&starage=0&province=0&city=0&marriage=0&edu=0&income=0&height=0&pro=0&house=0&child=0&xz=0&sx=0&mz=0&hometownprovince=0']
     # 增加redis_keys
     redis_key = 'hongniang:start_urls'
