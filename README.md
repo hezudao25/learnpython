@@ -1,2 +1,2 @@
-# learnpython2
+# learnpython
 public learn python
