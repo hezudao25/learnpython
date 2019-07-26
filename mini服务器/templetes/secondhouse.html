@@ -1,0 +1,243 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>外国二手房_海外二手房_$Global.WebName</title>
+<meta name="keywords" content="外国二手房,海外二手房,美国二手房，泰国二手房，英国二手房，澳大利亚二手房" />
+<meta name="description" content="外国买房网为您带来真实实时的美国二手房，泰国二手房，英国二手房，澳大利亚二手房等地区的二手房信息" />
+		<link rel="stylesheet" href="/css/head.v2.css" />
+		<link rel="stylesheet" href="/css/style.v2.css" />
+         <link rel="stylesheet" href="/css/compare.v2.css" type="text/css" />
+        #parse("head.html")
+        <script>
+			var menu = 4;
+		</script>
+</head>
+
+<body>
+#parse("Top.html")
+
+<!--banner-->
+		<div class="news_house_bg nybanner">
+			<div class="nytitle">
+				<b>海外二手房</b>
+				<i></i>
+				<p>提供海量、优质、真实的海外二手房信息，为您创造最佳二手房购房体验</p>
+			</div>
+		</div>
+		<!--banner-->
+		<!--miaobao-->
+		<div class="mianbao">
+			<p class="clearfix">
+				<i class="iconfont">&#xe602;</i>
+				<a href="/" title="外国买房网">外国买房网首页</a>&gt;
+				<a href="/secondhouse.html" title="海外二手房">海外二手房</a>
+			</p>
+		</div>
+		<!--miaonbao-->
+		<div class="bgf2f2f2 w100p">
+			<div class="new_house_select">
+				<div class="hotcountry country_a clearfix">
+					<span class="tit2">热门国家：</span>
+					<a class="all">全部</a>
+                    #foreach($item in $PdtDiqu05 $QaXNzaG93MT0ndHJ1ZSc- $P0 $OOrderNumber-asc)
+					<li><a href="/secondhouselist_t${item.Id}_a0_m0_j0_o1.html">${item.DiquName}</a>
+						<div class="erji">
+							#foreach($items in $item.Child)
+							<a href="/secondhouselist_t${items.Id}_a0_m0_j0_o1.html" title="${items.DiquName}">${items.DiquName}<i class="iconfont">&#xe6da;</i></a>
+							#end
+						</div>
+					</li>
+					#end
+				</div>
+					<div class="second_type tran3"></div>
+				<div class="hotcountry">
+					<span class="tit2">房屋总价：</span>
+					<a href="javascript:;" class="all">全部</a>
+					<a href="/secondhouselist_t0_a0_m0_j1_o1.html" title="">100万以下<i class="iconfont">&#xe6da;</i></a>	
+					<a href="/secondhouselist_t0_a0_m0_j2_o1.html" title="">100万-300万<i class="iconfont">&#xe6da;</i></a>
+					<a href="/secondhouselist_t0_a0_m0_j3_o1.html" title="">300万-500万<i class="iconfont">&#xe6da;</i></a>
+					<a href="/secondhouselist_t0_a0_m0_j4_o1.html" title="">500万-700万<i class="iconfont">&#xe6da;</i></a>					
+					<a href="/secondhouselist_t0_a0_m0_j5_o1.html" title="">700万-900万<i class="iconfont">&#xe6da;</i></a>
+					<a href="/secondhouselist_t0_a0_m0_j6_o1.html" title="">900万以上<i class="iconfont">&#xe6da;</i></a>
+				</div>
+				<div class="hotcountry">
+					<span class="tit2">房产面积：</span>
+					<a href="javascript:;" class="all">全部</a>
+					<a href="/secondhouselist_t0_a0_m1_j0_o1.html" title="">100m<sup>2</sup>以下<i class="iconfont">&#xe6da;</i></a>
+					<a href="/secondhouselist_t0_a0_m2_j0_o1.html" title="">100-200m<sup>2</sup><i class="iconfont">&#xe6da;</i></a>
+					<a href="/secondhouselist_t0_a0_m3_j0_o1.html" title="">200-300m<sup>2</sup><i class="iconfont">&#xe6da;</i></a>
+					<a href="/secondhouselist_t0_a0_m4_j0_o1.html" title="">300m<sup>2</sup>以上<i class="iconfont">&#xe6da;</i></a>                   
+
+				</div>
+				<div class="hotcountry">
+					<span class="tit2">物业类型：</span>
+					<a href="javascript:;" class="all">全部</a>
+					<a href="/secondhouselist_t0_a1_m0_j0_o1.html" title="独栋别墅">独栋别墅</a>
+					 					<a href="/secondhouselist_t0_a2_m0_j0_o1.html" title="联排别墅">联排别墅</a>
+					 					<a href="/secondhouselist_t0_a3_m0_j0_o1.html" title="公寓">公寓</a>
+					 					<a href="/secondhouselist_t0_a4_m0_j0_o1.html" title="酒店">酒店</a>
+                    <a href="/newhouselist_t0_a6_m0_j0_o1.html" title="民宿">民宿</a>
+					 					<a href="/secondhouselist_t0_a5_m0_j0_o1.html" title="其他">其他</a>
+				</div>
+
+				<a href="/secondhouse.html" class="house_reset"><i class="iconfont">&#xe60b;</i>重置选项</a>
+
+			
+			</div>
+
+		</div>
+
+		<!--house_list-->
+		<div class="w1200 clearfix mt40">
+			<div class="w880">
+				<div id="home" class="px_tools clearfix">
+					<span class="active">默认排序</span><span>价格</span><span>面积</span><span>更新时间</span>
+				</div>
+				<!--list-->                
+				<div class="house_list mt20">
+                 #foreach($item in $sechouseview $T10 $OOrderNumber-DESC_levelid-desc_id-desc)
+					<div class="h_l_tab tran3 clearfix">
+						<div class="img_tab">
+							<a target="_blank" href="/secondhouse/${item.Id}.html"><img alt="${item.PdtTitle}" src="/images/loading.gif" class="selector" data-url=#if(${item.PdtPicture1}!="")"/upload/secondhouse/${item.PdtPicture1}"#else"/img/proshow.jpg"#end /></a>
+							<p>
+								<a href="javascript:zixun(3,'${item.PdtTitle}',${item.Id})" title="">咨询</a>|
+								
+								<a href="javascript:addnewcollect(${item.Id});" title="">添加收藏</a>|
+								<a target="_blank" href="/secondhouse/${item.Id}.html" title="${item.PdtTitle}">查看详情</a>
+							</p>
+						</div>
+						<div class="house_info">
+							<a target="_blank" href="/secondhouse/${item.Id}.html">${item.PdtTitle}</a>
+							<p class="hnumber">房屋面积：${item.PdtCode} m<sup>2</sup> &nbsp;房型：${item.Fx}</p>
+							<p class="haddress">
+								<i class="iconfont">&#xe61f;</i>${item.Address}</p>
+							<div class="hprice clearfix">
+								<i class="icon">CNY</i><span>${item.TouristPrice.ToString().Replace(".00","")}<b>万元</b></span>
+								<p>定金：￥${item.MemberPrice.ToString().Replace(".00","")}元</p>
+							</div>
+						  <p class="item clearfix">
+							<span>$!{item.PdtTags.Replace(",","</span><span>")}</span>
+						  </p>
+                             <i class="pk iconfont agent_ntx">
+						<a href="/agent/${item.UserId}.html" title="${item.TrueName} ${item.EnName}" target="_blank"><img src="/images/loading.gif" class="selector" data-url="#if($!{item.Picture}=="")img/tx.png#else/upload/users/${item.Picture}#end"><span>${item.TrueName} ${item.EnName}</span></a>
+					</i>
+						</div>
+					</div>
+					#end
+					
+
+					<div id="pagefy" class="clearfix">						
+				$sechouseview-Info
+					</div>
+
+				</div>
+				<!--list-->
+			</div>
+
+			<div class="h_right">
+				<div class="hot_comment">
+					<div class="ny_title bgf00"><span></span><b>热门评论</b>
+						
+					</div>
+					<div class="swiper-container" id="hot_comment">
+						<div class="swiper-wrapper">
+							#foreach($item in $vwnewscomment01 $L5 $QaXNyb209J3RydWUn)<div class="swiper-slide">
+								<a href="/news/${item.ParentID}.html" target="_blank" title="${item.newstitle}">${item.newstitle}</a>
+								<p><b>${item.Commentator}：</b>${item.CommentContext}</p>
+								<time>评论时间：${item.CreateDate.ToString("yyyy-MM-dd")}</time>
+							</div>
+							 #end
+						</div>
+
+						<!-- Add Arrows -->
+						<div class="commet_left commet_arrow"><img src="/img.v2/commet_left.png"></div>
+						<div class="commet_right commet_arrow"><img src="/img.v2/commet_right.png"></div>
+					</div>
+					<script>
+						var swiper = new Swiper('#hot_comment', {
+							loop: true,
+							autoplay: 3000,
+							nextButton: '.commet_right',
+							prevButton: '.commet_left',
+
+						});
+					</script>
+				</div>
+
+				<!--相关新闻-->
+				<div class="Related_news">
+					<div class="ny_title bg425"><span></span><b>相关新闻</b>
+						<a href="hotnews.html" target="_blank"><i class="iconfont">&#xe608;</i></a>
+					</div>
+					<div id="Related_news">
+						<ul>
+                        #foreach($item in $newsmodel01 $L10 $QTmV3c1JvbT0ndHJ1ZSc-)
+							<li#if($velocityCount==1) class="active"#end>
+								<i>$velocityCount</i>
+								<a target="_blank" href="/news/${item.Id}.html" class="r_news_img tran0"><img src=#if($item.NewsPicture1="")"/img.v2/ex.jpg"#else"/upload/news/$item.NewsPicture1"#end/></a>
+								<a target="_blank" href="/news/${item.Id}.html" title="${item.NewsTitle}" class="r_news_title tran0">${item.NewsTitle}</a>
+								<time>${item.CreateDate.ToString("yyyy-MM-dd")}</time>
+							</li>
+							#end
+						</ul>
+					</div>
+				</div>
+				<!--相关新闻-->
+				<!--搜索-->
+				#foreach($item in $Advertise04 $D1006)
+            <a href="$item.LinkUrl" target="_blank" title="$item.Description" class="find_house"><img alt="$item.Description" data-url="/upload/ad/$item.AdPicture" src="/images/loading.gif" class="selector"></a>
+            #end
+				<!--搜索-->
+
+				<!--推荐房源-->
+				<div class="in_rom_house">
+					<div class="ny_title bgf29"><span></span><b>推荐房源</b>
+						<a href="hotnewhouse.html" target="_blank"><i class="iconfont">&#xe608;</i></a>
+					</div>
+					<div id="in_rom_house">
+                       #foreach($item in $Products $L8 $QSXNIb21lPSd0cnVlJw-- $OOrdernumber-desc)
+						<div class="in_rom_house_tab clearfix">
+							<a  target="_blank" href="/newhouse/${item.Id}.html" class="imgs"><img alt="$item.PdtTitle" src="/images/loading.gif" class="selector" data-url=#if($item.PdtPicture1="")"/img.v2/hh.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end/></a>
+							<p>
+								<a  target="_blank" href="/newhouse/${item.Id}.html" title="$item.PdtTitle">$item.PdtTitle</a>
+								<span class="price">房价：${item.TouristPrice.ToString().Replace(".00","")}万元起</span>
+							</p>
+						</div>	
+                        #end					
+					</div>
+					
+				</div>
+				<!--推荐房源-->
+				
+			<div class="tit28">
+                <span>常见问题</span>
+                <a href="baseinfo.html" target="_blank">+More</a>
+            </div>
+            <div id="hotnews">
+                <ul>
+                    #foreach($item in $baseinfo $L8 $QSXNIb21lPSd0cnVlJw--)
+                    <li>
+                        <a href="/baseinfo/${item.Id}.html" target="_blank" title="${item.NewsTitle}">${item.NewsTitle}</a>
+                    </li>
+                    #end
+                </ul>
+            </div>
+			</div>
+
+		</div>
+		<!--house_list-->
+    #parse("Foot.html")  
+    <script>
+        $(document).ready(function (e) {
+            $(".selector").scrollLoading();
+            $("#parentid").val("0");
+            $("#lei").val("3");
+            $("#parentname").val("海外二手房");
+        });
+	var aid="0";var mid="0";var jid="0";var oid="0";var tid="0";var pid="0";	
+</script>        
+         <script type="text/javascript" src="/js/secondhouse.v2.js?v=20170903"></script>
+    <!-- 对比 end --></body>
+</html>

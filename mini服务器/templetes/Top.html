@@ -1,0 +1,144 @@
+﻿<img src="/img/wgf_logo.png" style="display: none;" data-pinit="registered" alt="$Global.WebTitle">
+<!--搜索-->
+<div id="search_zz">
+    <div id="search2">
+        <i class="iconfont" id="closedd">&#xe620;</i>
+        <form method="get" name="frmsearch" action="/search" target="_blank" onsubmit="return checksearch()">
+            <div class="raido_list clearfix">
+                <span><input type="radio" name="t" value="news">资讯</span>
+                <span><input type="radio" name="t" value="newhouse" checked>新房</span>
+                <span><input type="radio" name="t" value="sechouse">二手房</span>
+                <span><input type="radio" name="t" value="exhibtion">展会</span>
+                <span><input type="radio" name="t" value="liuxue">留学</span>
+                <span><input type="radio" name="t" value="yiming">移民</span>
+                <span><input type="radio" name="t" value="touzi">投资</span>
+            </div>
+            <div class="input_list clearfix">
+                <input type="text" id="p" name="p" placeholder="海外房产、移民、留学请搜索" class="input_k">
+                <input type="submit" value="搜 索" class="input_btn" />
+            </div>
+        </form>
+        <div class="hot_search">
+            <a href="/search/?t=newhouse&p=%E6%B3%B0%E5%9B%BD" target="_blank">泰国房产</a>
+            <a href="/search/?t=newhouse&p=%E6%99%AE%E5%90%89%E5%B2%9B" target="_blank">普吉岛</a>
+            <a href="/search/?t=newhouse&p=%E5%86%A0%E5%86%9B%E4%B9%8B%E9%97%A8" target="_blank">冠军之门</a>
+            <a href="/search/?t=newhouse&p=%E6%B0%B4%E6%98%9F%E4%B9%8B%E5%9F%8E" target="_blank">水星之城</a>
+            <a href="/search/?t=newhouse&p=utl" target="_blank">utl公寓</a>
+        </div>
+    </div>
+</div>
+<!--搜索-->
+<!--底部工具留言-->
+
+<div id="small-nav">
+    <span class="ss"><i class="iconfont">&#xe609;</i><div class="lgs">搜索房源</div></span>
+    #if($Username=="")<a href="/common/qqlogin.aspx" rel="nofollow"><span class="keyqq"><i class="iconfont">&#xe6fe;</i><div class="lg">QQ一键登录</div></span></a>
+    <span class="keywx" onclick="weixinlogin()"><i class="iconfont">&#xe673;</i><div class="lg">微信一键登录</div></span>#end
+    <span id="talkc" class="on" title="在线留言"><i class="iconfont talk">&#xe658;</i></span>
+    <span><i class="iconfont tel">&#xe6c6;</i><div class="number">服务热线<b>400-082-8015</b></div></span>
+    <span><i class="iconfont">&#xe63a;</i><img src="/img/footcode.png" class="hcode" alt="海外房产网"></span>
+    <span id="dcgotop"><i class="iconfont gotop">&#xe66e;</i></span>
+</div>
+<!--底部工具留言-->
+<!--top_start-->
+<div id="top_menu" class="clearfix">
+    <div class="country_website clearfix">
+
+        <a href="/usa/" title="" target="_blank"><i class="iconfont">&#xe600;</i>美国</a>
+        <a href="/thai/" title="" target="_blank"><i class="iconfont">&#xe622;</i>泰国</a>
+        <a href="/shop/default_15867.html" title="" target="_blank"><i class="iconfont">●</i>日本</a>
+        <a href="/greece.html" title="" target="_blank"><img src="/images/xlicon.png" />希腊</a>
+        <a href="//m.waigf.com/" title="" target="_blank" rel="nofollow"><i class="iconfont">&#xe611;</i>手机版</a>
+        <a href="tel:400-082-8015" style="width: 185px;"><span><i class="iconfont">&#xe64d;</i>400-082-8015</span></a>
+        <p class="contact_code2">
+            <span><i class="iconfont" style="font-size: 24px; margin-right: 4px;"></i>希腊买房<em><img src="/img/cai_weicat.png"></em></span>
+            <span><i class="iconfont" style="font-size: 24px; margin-right: 4px;"></i>泰国房产<em class="jk"><img src="/img/jack_weicat.png"></em></span>
+        </p>
+        <style>
+
+            #top_menu .country_website p.contact_code2 {
+                width: 200px;
+                display: block;
+                color: #4093c6;
+                font-size: 14px;
+                float: left;
+                position: relative;
+            }
+
+                #top_menu .country_website p.contact_code2 span {
+                    position: relative;
+                    font-size: 14px;
+                    color: #fff;
+                    cursor: pointer;
+                    width: 50%;
+                    float: left;
+                    text-align: center;
+                    line-height: 44px;
+                }
+
+                    #top_menu .country_website p.contact_code2 span em {
+                        display: none;
+                        position: absolute;
+                        z-index: 999999;
+                        top: 40px;
+                        left: -110px;
+                    }
+
+                    #top_menu .country_website p.contact_code2 span:hover em {
+                        display: block;
+                    }
+
+                    #top_menu .country_website p.contact_code2 span em.jk {
+                        left: -140px;
+                    }
+        </style>
+    </div>
+    <div class="tools_right clearfix">
+        <a href="/v1/" style="line-height: 44px; height: 44px;" target="_blank" rel="nofollow"><i class="iconfont">&#xe6ca;</i>历史版本</a>
+        <a href="#" class="version"><i class="iconfont">&#xe601;</i>多语言版本<div id='MicrosoftTranslatorWidget' class='Dark'></div></a>
+        <span class="user">#if($Username=="")<a href="javascript:;" rel="nofollow" onclick="openregedit()"><i class="iconfont">&#xe63b;</i>注册</a><a href="javascript:;" rel="nofollow" onclick="openlogin()"><i class="iconfont">&#xe6cb;</i>登录</a>#else<a href="/Member/" id="userdown"><i class="iconfont">&#xe68c;</i>你好！$Username</a> #end</span>
+        <a href="#" class="WeChat"><i class="iconfont">&#xe626;</i>微信<b><img src="/img.v2/code.png"></b></a>
+
+        <a href="/aqrelease.html" class="quick_r" target="_blank" rel="nofollow">Gent Quick Release </a>
+    </div>
+</div>
+<script type='text/javascript'>setTimeout(function(){{var s=document.createElement('script');s.type='text/javascript';s.charset='UTF-8';s.src=((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=ueOIGRSKkd965FeEGM5JtQ**&ctf=False&ui=true&settings=Manual&from=zh-CHS';var p=document.getElementsByTagName('head')[0]||document.documentElement;p.insertBefore(s,p.firstChild); }},0);</script>
+<!--top_end-->
+<!--logo-->
+<div class="wp100 clearfix">
+    <a href="#" class="logo"><img src="/img.v2/logo.png" alt="" /></a>
+    <div id="search_btn">
+        <i class="iconfont">&#xe782;</i>全站搜索
+    </div>
+    <div id="nav">
+        <ul class="clearfix">
+            <li><a href="/" target="_blank">首 页 </a></li>
+            <li><a href="/news.html" target="_blank">外房资讯</a></li>
+            <li><a href="/newhouse.html" target="_blank">海外房产</a></li>
+            <li><a href="/secondhouse.html" target="_blank">海外二手房</a></li>
+            <li><a href="/immigrant.html" target="_blank">海外移民</a></li>
+            <li><a href="/overseas.html" target="_blank">留学/投资</a></li>
+            <li><a href="/exhibtion.html" target="_blank">展会</a></li>
+            <li><a href="/agent.html" target="_blank">经纪人</a></li>
+            <li><a href="/fund.html" target="_blank">理财</a></li>
+        </ul>
+        <span class="line"></span>
+    </div>
+
+</div>
+<!--logo-->
+<script type="text/javascript" src="/js/top.js?v=20181228"></script>
+<div id="talk">
+    <input type="hidden" id="lei" name="lei" value="1" /><input type="hidden" id="parentid" name="parentid" value="0" /><input type="hidden" id="parentname" name="parentname" value="" />
+    <div class="talktitle"><i class="iconfont" style="font-size: 22px; margin-right: 5px;">&#xe658;</i>正在跟客服小薇沟通中<!--<i class="iconfont t-icon3" id="openw">&#xe676;</i>--><i id="closew" class="iconfont" style="float: right;">&#xe638;</i></div>
+    <div class="talkcontnet clearfix">
+        <textarea class="talk-cont" id="onlinecontent" maxlength="200" placeholder="请告诉我们您的需求，平台尽快与您联系。"></textarea>
+        <input type="text" id="onlinemobile" class="talk-mobile" placeholder="请留下您的联系方式">
+        <i class="iconfont mobile_icon">&#xe628;</i>
+        <input type="submit" id="onlinetj" class="talk-send" value="发 送">
+    </div>
+</div>
+<div id="register"><input type="hidden" id="ticket" value="" /><input type="hidden" id="randstr" value="" />
+    <div class="regedit-input"><i class="iconfont icon-shouji"></i><input type="text" id="regusername" placeholder="手机号码/账号"></div><div class="regedit-input"><i class="iconfont icon-mima"></i><input type="password" id="regpassword" placeholder="密码"></div><div class="imgyanzheng"><button id="TencentCaptcha" data-appid="2018549612" data-cbfn="callback">验  证</button></div>
+    <button disabled="disabled" class="regedit-tj" title="请验证后再注册" onclick="reg()">立即注册</button><div class="lead clearfix"><span class="lead-left">我已接受外房网的<a href="/privacy.html" target="blank">使用条款</a></span><span class="lead-right">已有外房网账号? <a href="#" onclick="layer.closeAll(); openlogin()">立即登录</a></span><div class="wecat"><span style=" color:#000; padding-top:20px"> QQ 微信无需注册一键登录</span><a href="/common/qqlogin.aspx"><img src="/img/qq.png"></a><a href="javascript:;" onclick="weixinlogin()"><img src="/img/wecat.png"></a></div></div>
+</div>

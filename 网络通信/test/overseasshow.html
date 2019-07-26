@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+#foreach($item in $vwoverseasmodel $Detail)
+#set($info=$item)
+#end
+<head>
+    <meta charset="utf-8" />
+    <title>${info.OverseasTitle}_$Global.WebName</title>
+    <meta name="keywords" content="$info.Keywords" />
+    <meta name="description" content="$info.Description" />
+    <!--必填-->
+    <meta property="og:type" content="news" />
+    <meta property="og:title" content="${info.OverseasTitle}" />
+    <meta property="og:description" content="${info.Jianjie}" />
+    <meta property="og:image" content="http://www.waigf.com/upload/overseas/$!{info.NewsPicture1}" />
+    <!--选填-->
+    <meta property="og:url" content="http://www.waigf.com/overseas/${info.Id}.html" />
+    <meta property="og:release_date" content="${info.CreateDate}" />
+    <link rel="stylesheet" href="/css/style.v2.css" />
+    <link rel="stylesheet" href="/css/head.v2.css" />
+    <script type="text/javascript" src="/js/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="/js/swiper.min.js"></script>
+    <script type="text/javascript" src="/layer/layer.js"></script>
+    <link rel="stylesheet" href="/css/swiper.min.css" />
+    <link rel="stylesheet" href="/css/news_page.css" />
+    <script type="text/javascript" src="/js/scrollLoad.js"></script>
+    <script>
+		var menu = 6;
+    </script>
+</head>
+<body>
+    #parse("Top.html")
+    <!--banner-->
+    <div class="news_lx_bg nybanner">
+        <div class="nytitle">
+            <b>海外留学/投资资讯</b>
+            <i></i>
+            <p>提供有关留学/投资的相关资讯，包括留学/投资政策、留学/投资条件、留学/投资费用等问题的解答</p>
+        </div>
+    </div>
+    <!--banner-->
+    <!--miaobao-->
+    <div class="mianbao">
+        <p class="clearfix">
+            <i class="iconfont">&#xe602;</i>
+            <a href="/">外国买房网</a> &gt;
+            <a href="/overseas.html">留学/投资</a> #set($typename.Id=$info.ParentId) #set($typename.table="overseasModel")
+            &gt; $typename.ParentName()
+        </p>
+    </div>
+    <!--miaonbao-->
+    <!--house_list-->
+    <div class="w1200 clearfix mt40">
+        <div class="w880_news">
+            <div class="newsname">${info.OverseasTitle}</div>
+            <div class="newstime">
+                发布时间: <span>${info.CreateDate.ToString("yyyy-MM-dd")}</span>&nbsp;&nbsp;&nbsp;&nbsp; 点击次数: <span>${info.AccessNumber}</span> 次 <div class="bdsharebuttonbox" style="width: 100px; display: inline-block;float: right; margin-top: -15px; margin-right: 470px;">
+						<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"><!--<i class="iconfont">&#xe613;</i>--></a>
+						<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"><!--<i class="iconfont">&#xe619;</i>--></a>
+					</div>
+					<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"32"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+            </div>
+            <div class="news-tags">
+                <i class="iconfont">&#xe663;</i>标签：  <span id="tag">${info.Tag}</span>
+            </div>
+            <div class="ny_news_content">
+                ${info.OverseasDetail}
+
+            </div>
+            <div class="shenming">
+                声明: 本文由<span>($Global.WebName)</span>原创编译，转载请保留链接:
+                <a href="http://${Global.Url}/overseas/${info.Id}.html">${info.OverseasTitle}</a>
+            </div>
+            <div class="next_pre clearfix">
+                #foreach($item in $noimmodel $F) #if($velocityCount==1)
+                <a class="prev_news" href="/overseas/${item.Id}.html">
+                    <span>上一篇</span>
+                    <p>$item.OverseasTitle</p>
+                </a>#else
+                <a class="next_news" href="/overseas/${item.Id}.html">
+                    <p>$item.OverseasTitle</p><span>下一篇</span>
+                </a>
+                #end #end
+            </div>
+        </div>
+
+        <div class="h_right">
+            <div class="hot_comment">
+                <div class="ny_title bgf00">
+                    <span></span><b>热门评论</b>
+
+                </div>
+                <div class="swiper-container" id="hot_comment">
+                    <div class="swiper-wrapper">
+                        #foreach($item in $vwnewscomment01 $L5 $QaXNyb209J3RydWUn)
+                        <div class="swiper-slide">
+                            <a href="/news/${item.ParentID}.html" target="_blank" title="${item.newstitle}">${item.newstitle}</a>
+                            <p><b>${item.Commentator}：</b>${item.CommentContext}</p>
+                            <time>评论时间：${item.CreateDate.ToString("yyyy-MM-dd")}</time>
+                        </div>
+                        #end
+                    </div>
+
+                    <!-- Add Arrows -->
+                    <div class="commet_left commet_arrow"><img src="/img.v2/commet_left.png"></div>
+                    <div class="commet_right commet_arrow"><img src="/img.v2/commet_right.png"></div>
+                </div>
+                <script>
+						var swiper = new Swiper('#hot_comment', {
+							loop: true,
+							autoplay: 3000,
+							nextButton: '.commet_right',
+							prevButton: '.commet_left',
+
+						});
+                </script>
+            </div>
+
+            <!--相关新闻-->
+            <div class="Related_news">
+                <div class="ny_title bg425">
+                    <span></span><b>相关新闻</b>
+                    <a href="/hotnews.html" target="_blank"><i class="iconfont">&#xe608;</i></a>
+                </div>
+                <div id="Related_news">
+                    <ul>
+                        #foreach($item in $newsmodel01 $L10 $QTmV3c1JvbT0ndHJ1ZSc- $A)
+                        <li#if($velocityCount ==1) class="active"#end>
+                            <i>$velocityCount</i>
+                            <a target="_blank" href="/news/${item.Id}.html" class="r_news_img tran0"><img src=#if($item.NewsPicture1 ="")"/img.v2/ex.jpg"#else "/upload/news/$item.NewsPicture1"#end/></a>
+                            <a target="_blank" href="/news/${item.Id}.html" title="${item.NewsTitle}" class="r_news_title tran0">${item.NewsTitle}</a>
+                            <time>${item.CreateDate.ToString("yyyy-MM-dd")}</time>
+                            </li>
+                            #end
+                    </ul>
+                </div>
+            </div>
+            <!--相关新闻-->
+            <!--搜索-->
+            #foreach($item in $Advertise04 $D1006)
+            <a href="$item.LinkUrl" target="_blank" title="$item.Description" class="find_house"><img alt="$item.Description" data-url="/upload/ad/$item.AdPicture" src="/images/loading.gif" class="selector"></a>
+            #end
+            <!--搜索-->
+            <!--推荐房源-->
+            <div class="in_rom_house">
+                <div class="ny_title bgf29">
+                    <span></span><b>推荐房源</b>
+                    <a href="/hotnewhouse.html" target="_blank"><i class="iconfont">&#xe608;</i></a>
+                </div>
+                <div id="in_rom_house">
+                    #foreach($item in $Products $L8 $QSXNIb21lPSd0cnVlJw-- $A $OOrdernumber-desc)
+                    <div class="in_rom_house_tab clearfix">
+                        <a target="_blank" href="/newhouse/${item.Id}.html" title="$item.PdtTitle" class="imgs"><img alt="$item.PdtTitle" src="/images/loading.gif" class="selector" data-url=#if($item.PdtPicture1 ="" ) "/img.v2/hh.jpg" #else "/upload/newhouse/$item.PdtPicture1" #end /></a>
+                        <p>
+                            <a target="_blank" href="/newhouse/${item.Id}.html" title="$item.PdtTitle">$item.PdtTitle</a>
+                            <span class="price">房价：：${item.TouristPrice.ToString().Replace(".00","")}万元起</span>
+                        </p>
+                    </div>
+                    #end
+                </div>
+
+            </div>
+            <!--推荐房源-->
+
+        </div>
+    </div>
+    <!--house_list-->
+    #parse("Foot.html")
+    <script>
+//首页搜索js
+
+        $(function () {
+            $(".selector").scrollLoading();
+            $("#parentid").val("$info.Id");
+            $("#lei").val("4");
+            $("#parentname").val("$info.OverseasTitle");
+            var tag = "$!{info.Tag}";
+            if (tag.length > 0) {
+                var tags = decodeURIComponent(tag).split('|');
+                var tagHtml = "";
+                for (var i = 0; i < tags.length; i++) {
+                    tagHtml += '<a href="/search/?t=liuxue&p=' + escape(tags[i]) + '" target="blank">' + tags[i] + '</a> / ';
+                }
+                $("#tag").html(tagHtml.substring(0, tagHtml.length - 3));
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自管理案例</title>
+</head>
+<body>
+<h1>当前地区：{{ area.atitle }}</h1>
+<h2>所属省：</h2>
+<h3>{{ parent.atitle }}</h3>
+<h2>下属地区：</h2>
+{% for name in children %}
+<h3>{{ name.atitle }}</h3>
+{% endfor %}
+</body>
+</html>

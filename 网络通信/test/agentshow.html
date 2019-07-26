@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" /> #foreach($item in $users01 $Detail) #set($info=$item) #end
+		<title>${info.TrueName}_$Global.WebName</title>
+		<meta name="keywords" content="${info.TrueName} $info.EnName海外经纪人" />
+		<meta name="description" content="${info.TrueName} $info.EnName海外经纪人详细资料。" />
+		<link rel="stylesheet" href="/css/swiper.min.css" />
+		<link rel="stylesheet" href="/css/head.v2.css" />
+		<link rel="stylesheet" href="/css/style.v2.css" />
+		<script type="text/javascript" src="/js/jquery-1.8.0.min.js"></script>
+		<script type="text/javascript" src="/js/swiper.min.js"></script>
+		<script type="text/javascript" src="/layer/layer.js"></script>
+        <script type="text/javascript" src="/js/scrollLoad.js?v=20170903"></script>
+		<link rel="stylesheet" href="//at.alicdn.com/t/font_365661_wm9rfotu0xxn7b9.css" />
+	</head>
+ <script>
+			var menu = 8;
+		</script>
+<script type="text/javascript" src="/js/agentshow.js?v=201784"></script> 	
+	<body>
+		#parse("Top.html")
+		<div class="news_ag_bg nybanner">
+			<div class="nytitle">
+				<b>海外房产经纪人</b>
+				<i></i>
+				<p>集合了权威的海外房产专家、海外房产经纪人、房产中介信息，帮助买家找到最佳的经纪人合作伙伴</p>
+			</div>
+		</div>
+		
+		<div class="w1200 clearfix mt40">
+			<div class="w880">
+				<div class="agents-detail clearfix">
+					<div class="base-info">
+						<span class="tx"><a href="/shop/default_${info.Id}.html" target="_blank" title="进入$info.TrueName $info.EnName 网站">
+    <img src=#if(${info.Picture}!="")"/upload/users/${info.Picture}"#else"/img/jjr.jpg"#end>#if(${info.LevelId}>15)<img src="/img/vip-${info.LevelId}.png" class="vip-icon">#end</a>
+    <p class="shop">
+        <a href="/shop/default_${info.Id}.html" target="_blank">进入$info.TrueName $info.EnName 网站</a>
+    </p>
+</span>
+						<div class="intro">
+							<b>$info.TrueName $info.EnName</b>
+							<p>$info.Diqu</p>
+							<p>从业经验 <span>$info.Jinyan</span> | 近期成交 <span>$!info.Chengjiao</span> | 近期访客 <span>$info.AccessNumber</span></p>
+							<p><i class="iconfont icon-pingjia${info.Xingji}"></i><span>(${info.CommentNumber}条评论)</span></p>
+							
+							<p><i class="iconfont">&#xe60c;</i> QQ :$info.QQ</p>
+						<p #if($Username=="" )title="登录后可见" #end><i class="iconfont">&#xe63e;</i> 电话 : #if($Username=="" && $!{info.LevelId}<16)#if($!{info.Mobile}!="")$info.Mobile.Insert(3, "****").Remove(7, 4)<img src="/img/wenhao.png" style="margin-left: 5px; width: 14px; cursor: pointer;">#end#else$info.Mobile#end</p>
+						<p><i class="iconfont">&#xe619;</i> 微信 : <span class="getcode">#if($Username=="" && $!{info.Weixin}!="")登录后可见#else$info.Weixin#end</span></p>
+						<p><i class="iconfont">&#xe61f;</i> 地址 : $info.Address</p>
+						</div>
+					</div>
+					
+					<div class="clear"></div>
+					<div class="agents-des">
+						$info.Jianjie
+					</div>
+					<!--推荐房源-->
+					<div class="titlefy">推荐房源
+						<a href="/shop/house_${info.Id}.html">更多>></a>
+					</div>
+					<div class="rom-ev">
+						<ul>#foreach($item in $UserSechouse $L6 $C)
+							<li>
+								<div class="imgs">
+									<a href="/secondhouse/${item.Id}.html" title="${item.PdtTitle}" target="_blank"><img src=#if(${item.PdtPicture1}!="" ) "/upload/secondhouse/${item.PdtPicture1}"#else "/img/p.png"#end></a>
+								</div>
+								<div class="wiew-info">
+									<a href="/secondhouse/${item.Id}.html" title="${item.PdtTitle}" target="_blank">${item.PdtTitle}</a>
+									<p> ${item.TouristPrice.ToString().Replace(".00","")}万元</p>
+
+								</div>
+							</li>#end
+						</ul>
+					</div>
+					<!--推荐房源-->
+					#if($info.IsNewHouse)
+					<!--推荐房源-->
+					<div class="titlefy">推荐新房
+						<a href="/shop/house1_${info.Id}.html">更多>></a>
+					</div>
+					<div class="rom-ev">
+						<ul>
+							#foreach($item in $usernewhouse $L6 $C)
+							<li>
+								<div class="imgs">
+									<a href="/newhouse/${item.Id}.html" title="${item.PdtTitle}" target="_blank"><img src=#if(${item.PdtPicture1}!="" )"/upload/newhouse/${item.PdtPicture1}"#else "/img/p.png"#end></a>
+								</div>
+								<div class="wiew-info">
+									<a href="/newhouse/${item.Id}.html" title="${item.PdtTitle}" target="_blank">${item.PdtTitle}</a>
+									<p> ${item.TouristPrice.ToString().Replace(".00","")}万元</p>
+
+								</div>
+							</li>#end
+						</ul>
+					</div>
+					<!--推荐房源-->#end
+					<!--评论-->
+					<div class="evaluate-total">
+						<span>共$info.CommentNumber条评价</span>
+						<a href="javascript:void(0)" id="orderev"><i class="iconfont icon-zhuce"></i>填写评论</a>
+					</div>
+					<!--评论-->
+					<!--提交评论-->
+					<form method="post" id="form1" name="form1" onsubmit="return CheckForm(this);">
+						<div class="evaluate-order"><input type="hidden" id="ParentId" name="ParentId" value="$info.Id" />
+							<p class="score-title">评论打分</p>
+							<div id="zh" class="totalscore" dir="0">综合评分：<i class="iconfont icon-pingjia1"></i><i class="iconfont icon-pingjia1"></i><i class="iconfont icon-pingjia1"></i><i class="iconfont icon-pingjia1"></i><i class="iconfont icon-pingjia1"></i></div>
+							<div id="dd" class="totalscore" dir="0">当地经验：<i class="iconfont icon-pingjia1"></i><i class="iconfont icon-pingjia1"></i><i class="iconfont icon-pingjia1"></i><i class="iconfont icon-pingjia1"></i><i class="iconfont icon-pingjia1"></i></div>
+							<div id="zy" class="totalscore" dir="0">专业技能：<i class="iconfont icon-pingjia1"></i><i class="iconfont icon-pingjia1"></i><i class="iconfont icon-pingjia1"></i><i class="iconfont icon-pingjia1"></i><i class="iconfont icon-pingjia1"></i></div>
+							<div id="fy" class="totalscore" dir="0">反应速度：<i class="iconfont icon-pingjia1"></i><i class="iconfont icon-pingjia1"></i><i class="iconfont icon-pingjia1"></i><i class="iconfont icon-pingjia1"></i><i class="iconfont icon-pingjia1"></i></div>
+							<div id="tp" class="totalscore" dir="0">谈判技巧：<i class="iconfont icon-pingjia1"></i><i class="iconfont icon-pingjia1"></i><i class="iconfont icon-pingjia1"></i><i class="iconfont icon-pingjia1"></i><i class="iconfont icon-pingjia1"></i></div>
+							<!--描述内容-->
+							<div class="evalute-content">
+								<textarea class="evaluate-c" id="beizhu" placeholder="请输入300字的描述简单合作细节"></textarea>
+								<p class="wordcontrol">您还可以输入<span class="wordCheck">300</span>个文字</p>
+								<div class="order-ev">
+									<div class="order-ev-input"><i class="iconfont icon-denglu"></i><input type="text" id="username" value="$!Truename" placeholder="请输入您的姓名"></div>
+									<div class="order-ev-input"><i class="iconfont icon-dianhua"></i><input type="text" id="tell" value="$!Mobile" placeholder="电话号码"></div>
+									<div class="order-ev-input"><i class="iconfont icon-xin"></i><input type="text" id="fw" placeholder="提供服务类型"></div>
+									<div class="order-ev-input"><i class="iconfont icon-dizhi"></i><input type="text" id="address" placeholder="您的详细地址" class="addressw"></div>
+									<p class="note">您的真实姓名，电话等信息仅用于验证评论的真实性，外国买房网不会将这些隐私信息作为评论内容展示，请务必填写真实有效的信息。</p>
+									<div class="submit-tj"><input type="submit" name="btnEdit" value="提交评论" /></div>
+								</div>
+							</div>
+							<!--描述内容-->
+						</div>
+					</form>
+					<!--提交评论-->
+					<!--评论列表-->
+					#foreach($item in $UsersComment $T5 $C)
+					<div class="evaluate-tab">
+						<p class="OverallScore" data-score="5">综合评分：<i class="iconfont icon-pingjia${item.Zh}"></i> </p>
+						<div class="Publisher">${item.CreateDate} | 此评论由 <span>$!{item.Username}</span>评论</div>
+						<div class="score">
+							<p>当地经验：<i class="iconfont icon-pingjia${item.Dd}"></i></p>
+							<p>专业技能：<i class="iconfont icon-pingjia${item.Zy}"></i></p>
+							<p>反应速度：<i class="iconfont icon-pingjia${item.Fy}"></i></p>
+							<p>谈判技巧：<i class="iconfont icon-pingjia${item.Tp}"></i></p>
+						</div>
+						<div class="evcontent">
+							${item.Beizhu}
+						</div>
+						<div class="clear"></div>
+					</div>
+					#end
+					<div align="center" class="more"> $UsersComment-Info</div>
+					<!--评论列表-->
+				</div>
+			</div>
+			<div class="h_right">
+				<div class="hot_comment">
+					<div class="ny_title bgf00"><span></span><b>热门评论</b>
+					</div>
+					<div class="swiper-container" id="hot_comment">
+						<div class="swiper-wrapper">
+							#foreach($item in $vwnewscomment01 $L5 $QaXNyb209J3RydWUn)
+							<div class="swiper-slide">
+								<a href="/news/${item.ParentID}.html" target="_blank" title="${item.newstitle}">${item.newstitle}</a>
+								<p><b>${item.Commentator}：</b>${item.CommentContext}</p>
+								<time>评论时间：${item.CreateDate.ToString("yyyy-MM-dd")}</time>
+							</div>
+							#end
+						</div>
+
+						<!-- Add Arrows -->
+						<div class="commet_left commet_arrow"><img src="/img.v2/commet_left.png"></div>
+						<div class="commet_right commet_arrow"><img src="/img.v2/commet_right.png"></div>
+					</div>
+					<script>
+						var swiper = new Swiper('#hot_comment', {
+							loop: true,
+							autoplay: 3000,
+							nextButton: '.commet_right',
+							prevButton: '.commet_left',
+
+						});
+					</script>
+				</div>
+
+				<!--相关新闻-->
+				<div class="Related_news">
+					<div class="ny_title bg425"><span></span><b>相关新闻</b>
+						<a href="hotnews.html" target="_blank"><i class="iconfont">&#xe608;</i></a>
+					</div>
+					<div id="Related_news">
+						<ul>
+							#foreach($item in $newsmodel01 $L10 $QTmV3c1JvbT0ndHJ1ZSc-)
+							<li#if($velocityCount==1) class="active" #end>
+								<i>$velocityCount</i>
+								<a target="_blank" href="/news/${item.Id}.html" class="r_news_img tran0"><img src=#if($item.NewsPicture1="")"/img.v2/ex.jpg"#else"/upload/news/$item.NewsPicture1"#end/></a>
+								<a target="_blank" href="/news/${item.Id}.html" title="${item.NewsTitle}" class="r_news_title tran0">${item.NewsTitle}</a>
+								<time>${item.CreateDate.ToString("yyyy-MM-dd")}</time>
+								</li>
+								#end
+						</ul>
+					</div>
+				</div>
+				<!--相关新闻-->
+				<!--搜索-->
+				<a href="#" class="find_house"><img src="/img.v2/find.jpg" /></a>
+				<!--搜索-->
+
+				<!--推荐房源-->
+				<div class="in_rom_house">
+					<div class="ny_title bgf29"><span></span><b>推荐房源</b>
+						<a href="hotnewhouse.html" target="_blank"><i class="iconfont">&#xe608;</i></a>
+					</div>
+					<div id="in_rom_house">
+						#foreach($item in $Products $L8 $QSXNIb21lPSd0cnVlJw-- $OOrdernumber-desc)
+						<div class="in_rom_house_tab clearfix">
+							<a target="_blank" href="/newhouse/${item.Id}.html" title="$item.PdtTitle" class="imgs"><img alt="$item.PdtTitle" src="/images/loading.gif" class="selector" data-url=#if($item.PdtPicture1="" ) "/img.v2/hh.jpg"#else "/upload/newhouse/$item.PdtPicture1"#end/></a>
+							<p>
+								<a target="_blank" href="/newhouse/${item.Id}.html" title="$item.PdtTitle">$item.PdtTitle</a>
+								<span class="price">房价：：${item.TouristPrice.ToString().Replace(".00","")}万元起</span>
+							</p>
+						</div>
+						#end
+					</div>
+
+				</div>
+				<!--推荐房源-->			
+			</div>
+		</div>
+		<!--main-->
+	
+		#parse("Foot.html")				
+			<!--图标数据-->
+        <script>
+            $(function () {
+                $(".selector").scrollLoading();
+                $("#parentid").val("${info.Id}");
+                $("#lei").val("14");
+                $("#parentname").val("${info.TrueName}");
+            });           
+        </script>	
+	</body>
+</html>

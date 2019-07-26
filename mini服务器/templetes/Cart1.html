@@ -1,0 +1,131 @@
+﻿#if($Username=="")
+<script type="text/javascript">    alert("请先登录！再购买"); top.location.href = "/login.html?/Cart1.html";</script>#end<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>确认订单_$Global.WebName</title>
+<link href="/Css/base.css" rel="stylesheet" type="text/css" />
+<link href="/Css/inside.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/Js/common.js"></script>
+<script type="text/javascript" src="/Js/car.js"></script>
+<LINK rel="stylesheet" type="text/css" href="/Css/cartstesp1.css">
+</head>
+<body onLoad="setChoseNav(3)">
+#parse("Top.html")
+<div class="main">
+	<DIV class="cart2_top">
+		<DIV class=cart2_top_left><IMG alt="" src="/images/cartstep2_03.jpg" width=140 height=30></DIV>
+		<DIV class=cart2_top_left><IMG alt="" src="/images/cartstep2_04.jpg" width=140 height=30></DIV>
+		<DIV class=cart2_top_left><IMG alt="" src="/images/cart0_05.jpg" width=241 height=30></DIV>
+		<DIV class=cart2_top_left><IMG alt="" src="/images/cart0_06.jpg" width=143 height=30></DIV>
+		<DIV class=cart2_top_right><IMG alt="" src="/images/cartstep2_08.jpg"></DIV>
+	</DIV>
+	<DIV style="TEXT-ALIGN: right" class=cart1_gouwujg>
+		<DIV style="FLOAT: right">
+			<DIV style="FLOAT: left; MARGIN-RIGHT: 110px; PADDING-TOP: 10px"> <BR>
+				<BR>
+			</DIV>
+			<DIV 
+style="TEXT-ALIGN: right; MARGIN-RIGHT: 20px"><SPAN>当前购物车总金额:￥
+				<input type="text" id="TotalMoney" style="width:50px;border:0px;" value="0" class="underline" readonly="readonly"/>
+				<input type="hidden" id="PriceTemp" />
+				</SPAN><BR>
+				<SPAN>当前购物车积分:
+				<input type="text" id="TotalJifen" style="width:50px;border:0px;" value="0" class="underline" readonly="readonly"/>
+				</SPAN><SPAN><A 
+style="COLOR: red;display:none;" 
+href="http://www.omey.com.cn/scoreindex.aspx">现在就兑换积分&nbsp;&nbsp;</A></SPAN><BR>
+				<SPAN>订单完成后账户可用积分:
+				<input type="hidden" id="userji" value="$UserJifen" />
+				<span id="zongji">$UserJifen</span>分</SPAN>
+				<DIV style="DISPLAY: none" id=uid>hezudao</DIV>
+			</DIV>
+		</DIV>
+		<BR>
+		<BR>
+	</DIV>
+	<DIV class=cart2_kuan5_1>
+		<DIV class=cart1_biati>
+			<DIV style="WIDTH: 108px;text-align:center;" class=cart1_biaoti1>商品图片</DIV>
+			<DIV style="WIDTH: 112px;text-align:center;" class=cart1_biaoti1>商品货号</DIV>
+			<DIV style="WIDTH: 196px;text-align:center;" class=cart1_biaoti1>商品名称</DIV>
+			<DIV style="WIDTH: 66px;text-align:center;" class=cart1_biaoti2>品牌</DIV>
+			<DIV style="WIDTH: 50px;text-align:center;" class=cart1_biaoti2>积分</DIV>
+			<DIV style="WIDTH: 80px;text-align:center;" class=cart1_biaoti2>价格</DIV>
+			<DIV style="WIDTH: 100px;text-align:center;" class=cart1_biaoti2>数量</DIV>
+			<DIV style="WIDTH: 100px;text-align:center;" class=cart1_biaoti2>小计</DIV>
+			<DIV style="WIDTH: 80px;text-align:center;" class=cart1_biaoti3></DIV>
+		</DIV>
+	</DIV>
+	<DIV class=cart2_kuan5_2>
+		<DIV style="WIDTH: 100%; CLEAR: both"></DIV>
+		<table width="100%" border="0" cellspacing="2" cellpadding="1" id="MyTb">
+			<tbody>
+				<script type="text/javascript">document.write(CarObj.Read1());</script>
+			</tbody>
+			<tfoot>
+				<tr class="tdDelete">
+					<td colspan="3" align="left" valign="middle" height="40px" style="padding-left:10px;">本次积分<script type="text/javascript">document.write(TotalJifen.value);</script>分</td>
+					<td height="40px" align="right" valign="middle"><a 
+href="javascript:void(0);" onClick="CarObj.RefreshCar();location.href='/Cart.html'"><img style="MARGIN-RIGHT: 20px" 
+border="0" alt="" 
+src="/images/cartstep2_66.jpg" /></a></td>
+					<td width="46%" colspan="5" align="left" valign="middle"><a 
+href='javascript:void(0);' onClick="CarObj.OrderStep(this,'Cart2.html')"><img style="MARGIN-RIGHT: 20px" border="0" alt="" 
+src="/Images/sure1.jpg" /></a></td>
+				</tr>
+			</tfoot>
+		</table>
+		<DIV style="TEXT-ALIGN: right" class=cart1_gouwujg>
+			<DIV style="FLOAT: right">
+				<DIV style="FLOAT: left; MARGIN-RIGHT: 110px; PADDING-TOP: 10px"> <BR>
+					<BR>
+				</DIV>
+			</DIV>
+			<BR>
+			<BR>
+		</DIV>
+		<DIV class=xiaoyang_div>
+			<DIV style="WIDTH: 880px; FLOAT: left"> 
+				<SCRIPT type=text/javascript 
+src="/images/JS_ManS.aspx"></SCRIPT>
+				<INPUT id=hidActivity type=hidden name=hidActivity>
+				<INPUT id=hidActivityType 
+type=hidden name=hidActivityType>
+				<INPUT id=hidproductid type=hidden 
+name=hidproductid>
+				<INPUT id=hidbindingid type=hidden name=hidbindingid>
+				<INPUT 
+id=hidacTypeid type=hidden name=hidacTypeid>
+				<DIV class=xiaoyang_left>
+					<DIV class=xiaoyang_left1>购买了该产品的用户还购买了</DIV>
+					<DIV class=xiaoyang_left2_1>
+						<UL>
+							#foreach($item in $ProductsDetail03 $L8)
+							<li>
+								<div class='zw_right2_2'><a href='/product/${item.Id}.html'><img border='0' alt='' src='/FileUPLoad/ProductFile/$item.PdtPicture1' style=' width:150px; height:150px;' /></a></div>
+								<div class='zw_right1_sp1' style='height:42px;'><b><a href='/product/${item.Id}.html'>$item.PdtTitle</a></b><br />
+									<span>商城价:￥${item.MemberPrice}元</span><br />
+									<img style="cursor:hand;" alt='' border='0' src='/images/product_17.jpg' onClick="CarObj.Add('${item.Id}','${item.PdtTitle}','${item.MemberPrice}','1','${item.BrandName}','${item.PdtPicture1}','${item.PdtId}','${item.PdtIntegral}','1');return false;" /></a>&nbsp;</div>
+							</li>
+							#end
+						</UL>
+						<DIV class=clear></DIV>
+					</DIV>
+				</DIV>
+				<DIV><IMG alt="" 
+src="/images/cartstep2_50.jpg"></DIV>
+			</DIV>
+			<DIV class=clear></DIV>
+		</DIV>
+		<DIV class=cart1_goumaitext></DIV>
+		<DIV><IMG alt="" 
+src="/images/cartstep2_24.jpg" width="922px" height=12></DIV>
+		<DIV class=clear></DIV>
+	</DIV>
+	<br class="clear" />
+</div>
+#parse("Foot.html")
+</body>
+</html>

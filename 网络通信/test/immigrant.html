@@ -1,0 +1,380 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+        <title>海外移民_美国移民_泰国移民_$Global.WebName</title>
+        <meta name="keywords" content="海外移民,美国移民,泰国移民,希腊移民,荷兰移民,澳洲移民,英国移民,全球移民" />
+        <meta name="description" content="外国买房网为您提供最新海外移民资讯以及海量热点信息。" />
+		<link rel="stylesheet" href="/im/css/jquery.fullPage.css">
+		<link rel="stylesheet" href="/im/css/swiper.min.css" />
+		<link rel="stylesheet" href="/im/layer/skin/layer.css" />
+		
+		<link rel="stylesheet" href="/im/css/style.css">
+	
+		<script type="text/javascript" src="/im/js/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="/im/layer/layer.js"></script>
+		<script type="text/javascript" src="/im/js/jquery.fullPage.min2.js"></script>
+		<script type="text/javascript" src="/im/js/swiper.min.js"></script>
+		<style>
+			/*foot*/
+			.w1200{ width: 1200px; margin: 0px auto;}
+.footbg{background: #2d3b60;width: 100%;padding: 40px 0px 0px 0px;}
+.foot_intro{width:420px;padding: 0px 14px;float: left;color: #c7b286;font-size: 12px;background: url(../img.v2/foot_x.gif) right 25px no-repeat;}
+.foot_intro p{ font-size: 13px; line-height: 180%; margin-bottom: 40px;}
+.foot_tel{ width: 330px; padding: 0px 15px;background: url(../img.v2/foot_x.gif) right 25px no-repeat; display: block; float: left; height: 160px;}
+.foot_tel p{text-align: center;font-size: 14px;color: #c7b286;padding-bottom: 2px;}
+.foot_tel p.t1{margin-top: 30px;color: #7c8ab0;}
+.foot_tel p.t2{ font-size: 30px;}
+.foot_tel p.t2 i.iconfont{ font-size: 24px; margin-right: 5px;}
+.foot_tel p.t3{ font-size: 16px;}
+.foot_tel p.t3 i.iconfont{ font-size: 24px; margin-right: 5px;}
+
+.foot_code{ width: 360px; float: left;  padding-left: 30px;}
+.foot_code .code3{ width: 97px; height: 97px; padding: 20px; float: left;}
+.foot_code .foot_c_txt{width: 200px;float: left;color: #c7b286;padding-top: 20px;font-size: 14px;}
+.foot_code .foot_c_txt  p{font-size: 14px; line-height: 170%; padding-bottom: 5px; display: block;}
+.foot_code .foot_c_txt  p a{color: #c7b286;font-size: 14px;}
+.flink{padding: 0px 30px 30px 30px;width: 1200px;margin: 0px auto;color: #667bb8;line-height: 170%;}
+.flink a{padding: 0px 5px;color: #6a7cb0;}
+.flink a:hover{ color: #a3b1d9;}
+.nfooter{width: 100%;height: 46px;background: #2b3348;color: #c7aa6e;}
+.nfooter p.left{ line-height: 46px; height: 46px; font-size: 14px; width: 700px; float:left; opacity: 0.4;}
+.nfooter p.right{ line-height: 46px; height: 46px; font-size: 14px; width: 300px; float:right; text-align: right;}
+.nfooter p.right a{color: #c7aa6e; opacity: 0.8}
+.nfooter p.right i.iconfont{ font-size: 30px; color: #8f733a; float: right; margin-left: 15px;cursor: pointer;}
+.nfooter p.right i.iconfont:hover,.nfooter p.right a:hover{ color: #c7aa6e;}
+		</style>
+		<script>
+			$(function() {
+
+				$('#fullpage').fullpage({
+					'navigation': true,
+					'navigationPosition': 'right',
+					anchors: ['section-1', 'section-2', 'section-3', 'footer']
+				});
+
+			});
+		</script>
+	</head>
+
+	<body>
+
+		<div id="fullpage">
+			<!--f1-->
+			<div class="section" id="section1">
+                #parse("ImTop.html")
+				<div class="w clearfix">
+					<div class="nav_c">
+						<a class="active" href="#">美 国</a>
+						<a href="#">英 国</a>
+						<a href="#">泰 国</a>
+						<a href="#">希腊</a>
+					</div>
+					<div class="order_tel">
+						<div class="order_kuang clearfix">
+							<div class="down_btn">
+								<span id="down_c">国家</span><i class="iconfont" id="down_btn">&#xe64a;</i>
+								<ul>
+									<Li>美国</Li>
+									<Li>英国</Li>
+									<Li>泰国</Li>
+									<Li>希腊</Li>
+								</ul>
+							</div>
+							<input type="text" id="mobile2" name="mobile2" class="tel" placeholder="您的联系方式">
+							<input type="submit" id="tj2" value="留言" class="submit_btn">
+						</div>
+						<p class="note">告诉我们您期望的移民国家？我们将第一时间联系您！</p>
+					</div>
+				</div>
+				<Div id="project_list">
+					<ul class="clearfix">
+                        #foreach($item in $yiminview $L3 $P8 $QSXNIb21lPSd0cnVlJw-- $Oordernumber-desc)
+						<li>
+							<div class="project_tab">
+								<p>
+									<a href="/yimin/${item.Id}.html" target="_blank"><img alt="${item.Title}" src=#if(${item.Picture}!="")"/upload/yimin/$!{item.Picture}"#else"img/p.jpg"#end/></a>
+								</p>
+								<div class="project_txt">
+									<b>${item.Title}</b>
+									<P class="desc">面向人群：有移民${item.ParentName}意向的高净值客户</P>
+									<p class="price">
+										cny<span>${item.TouristPrice}</span>万元
+									</p>
+									<a class="project_link" href="/yimin/${item.Id}.html" target="_blank" title="${item.Title}">立即咨询</a>
+								</div>
+							</div>
+						</li>
+                        #end
+					</ul>
+                    <ul class="clearfix" style="display:none">
+                        #foreach($item in $yiminview01 $L3 $P9 $QSXNIb21lPSd0cnVlJw-- $Oordernumber-desc)
+                        <li>
+                            <div class="project_tab">
+                                <p>
+                                    <a href="/yimin/${item.Id}.html" target="_blank"><img alt="${item.Title}" src=#if(${item.Picture}!="")"/upload/yimin/$!{item.Picture}"#else"img/p.jpg"#end/></a>
+                                </p>
+                                <div class="project_txt">
+                                    <b>${item.Title}</b>
+                                    <P class="desc">面向人群：有移民${item.ParentName}意向的高净值客户</P>
+                                    <p class="price">
+                                        cny<span>${item.TouristPrice}</span>万元
+                                    </p>
+                                    <a class="project_link" href="/yimin/${item.Id}.html" target="_blank" title="${item.Title}">立即咨询</a>
+                                </div>
+                            </div>
+                        </li>
+                        #end
+                    </ul>
+                    <ul class="clearfix" style="display:none">
+                        #foreach($item in $yiminview02 $L3 $P11 $QSXNIb21lPSd0cnVlJw-- $Oordernumber-desc)
+                        <li>
+                            <div class="project_tab">
+                                <p>
+                                    <a href="/yimin/${item.Id}.html" target="_blank"><img alt="${item.Title}" src=#if(${item.Picture}!="")"/upload/yimin/$!{item.Picture}"#else"img/p.jpg"#end/></a>
+                                </p>
+                                <div class="project_txt">
+                                    <b>${item.Title}</b>
+                                     <P class="desc">面向人群：有移民${item.ParentName}意向的高净值客户</P>
+                                    <p class="price">
+                                        cny<span>${item.TouristPrice}</span>万元
+                                    </p>
+                                    <a class="project_link" href="/yimin/${item.Id}.html" target="_blank" title="${item.Title}">立即咨询</a>
+                                </div>
+                            </div>
+                        </li>
+                        #end
+                    </ul>
+                    <ul class="clearfix" style="display:none">
+                        #foreach($item in $yiminview03 $L3 $P2032 $QSXNIb21lPSd0cnVlJw-- $Oordernumber-desc)
+                        <li>
+                            <div class="project_tab">
+                                <p>
+                                    <a href="/yimin/${item.Id}.html" target="_blank"><img alt="${item.Title}" src=#if(${item.Picture}!="")"/upload/yimin/$!{item.Picture}"#else"img/p.jpg"#end/></a>
+                                </p>
+                                <div class="project_txt">
+                                    <b>${item.Title}</b>
+                                    <P class="desc">面向人群：有移民${item.ParentName}意向的高净值客户</P>
+                                    <p class="price">
+                                        cny<span>${item.TouristPrice}</span>万元
+                                    </p>
+                                    <a class="project_link" href="/yimin/${item.Id}.html" target="_blank" title="${item.Title}">立即咨询</a>
+                                </div>
+                            </div>
+                        </li>
+                        #end
+                    </ul>
+				</Div>
+<a href="/yimin.html" target="_blank" class="moreprj">更多项目</a>
+			</div>
+			<!--f2-->
+			<div class="section" id="section2">
+				<div class="w clearfix">
+					<div class="hotnews">
+						<div class="title">移民头条<span>移民政策紧密追踪，海外生活真实体验</span></div>
+						<div class="news_tab">
+                            #foreach($item in $overseaslist07 $L1 $P1017-8-9-10-11-2018-2032)<a href="/immigrant/${item.Id}.html" target="_blank"><img src=#if($!{item.OverseasPicture1}!="")"/upload/overseas/$!{item.OverseasPicture1}"#else"/im/img/newsimg.jpg"#end /></a>
+							<a href="/immigrant/${item.Id}.html" target="_blank" title="$item.OverseasTitle" class="news_title">$item.OverseasTitle</a>
+							<p class="note"><span>${item.ParentName}</span><span>移民</span><time>发布日期：${item.CreateDate.ToString("yyyy-MM-dd")}</time></p>
+							<p class="des">${item.Jianjie}</p>
+                            #end
+						</div>
+					</div>
+
+					<!--news-->
+					<div id="country_news">
+						<div id="country_c" class="clearfix">
+                            <a href="/immigrantlist/list_t8.html" target="_blank"><span class="active">美国</span></a><a href="/immigrantlist/list_t11.html" target="_blank"><span>泰国</span></a><a href="/immigrantlist/list_t9.html" target="_blank"><span>英国</span></a><a href="/immigrantlist/list_t2032.html" target="_blank"><span>希腊</span></a><a href="/immigrantlist/list_t1019.html" target="_blank"><span>加拿大</span></a> <p class="cmore"><a href="/immigrantlist/list_t2.html" target="_blank">更多</a></p>
+</div>
+						<!--content-->
+						<div class="c_news_list clearfix">
+							<div class="news_list">
+                                #foreach($item in $overseasmodel01 $L2 $P8 $QaXNob21lPSd0cnVlJw--)
+								<div class="news_img clearfix">
+									<a href="/immigrant/${item.Id}.html" class="nimgs" target="_blank"><img src=#if($!{item.OverseasPicture1}!="")"/upload/overseas/$!{item.OverseasPicture1}"#else"/im/img/news1.jpg"#end /></a>
+									<div class="news_t">
+										<a href="/immigrant/${item.Id}.html" target="_blank" title="$item.OverseasTitle">$item.OverseasTitle</a>
+										<P>${item.Jianjie}</P>
+										<time>发布日期：${item.CreateDate.ToString("yyyy-MM-dd")}</time>
+									</div>
+								</div>
+							   #end
+								<div class="news_left_list">
+									<ul>
+                                        #foreach($item in $overseasmodel02 $L6 $P8)<li>
+											<a href="/immigrant/${item.Id}.html" target="_blank" title="$item.OverseasTitle">$item.OverseasTitle</a>
+										</li>
+                                        #end
+									</ul>
+								</div>
+
+							</div>
+                            <div class="news_list" style="display:none">
+                                #foreach($item in $overseasmodel03 $L2 $P11 $QaXNob21lPSd0cnVlJw--)
+                                <div class="news_img clearfix">
+                                    <a href="/immigrant/${item.Id}.html" class="nimgs" target="_blank"><img src=#if($!{item.OverseasPicture1}!="")"/upload/overseas/$!{item.OverseasPicture1}"#else"/im/img/news1.jpg"#end /></a>
+                                    <div class="news_t">
+                                        <a href="/immigrant/${item.Id}.html" target="_blank" title="$item.OverseasTitle">$item.OverseasTitle</a>
+                                        <P>${item.Jianjie}</P>
+                                        <time>发布日期：${item.CreateDate.ToString("yyyy-MM-dd")}</time>
+                                    </div>
+                                </div>
+                                #end
+                                <div class="news_left_list">
+                                    <ul>
+                                        #foreach($item in $overseasmodel04 $L6 $P11)
+                                        <li>
+                                            <a href="/immigrant/${item.Id}.html" target="_blank" title="$item.OverseasTitle">$item.OverseasTitle</a>
+                                        </li>
+                                        #end
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <div class="news_list" style="display:none">
+                                #foreach($item in $overseasmodel05 $L2 $P9 $QaXNob21lPSd0cnVlJw--)
+                                <div class="news_img clearfix">
+                                    <a href="/immigrant/${item.Id}.html" class="nimgs" target="_blank"><img src=#if($!{item.OverseasPicture1}!="")"/upload/overseas/$!{item.OverseasPicture1}"#else"/im/img/news1.jpg"#end /></a>
+                                    <div class="news_t">
+                                        <a href="/immigrant/${item.Id}.html" target="_blank" title="$item.OverseasTitle">$item.OverseasTitle</a>
+                                        <P>${item.Jianjie}</P>
+                                        <time>发布日期：${item.CreateDate.ToString("yyyy-MM-dd")}</time>
+                                    </div>
+                                </div>
+                                #end
+                                <div class="news_left_list">
+                                    <ul>
+                                        #foreach($item in $overseasmodel06 $L6 $P9)
+                                        <li>
+                                            <a href="/immigrant/${item.Id}.html" target="_blank" title="$item.OverseasTitle">$item.OverseasTitle</a>
+                                        </li>
+                                        #end
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <div class="news_list" style="display:none">
+                                #foreach($item in $overseasmodel07 $L2 $P2032 $QaXNob21lPSd0cnVlJw--)
+                                <div class="news_img clearfix">
+                                    <a href="/immigrant/${item.Id}.html" class="nimgs" target="_blank"><img src=#if($!{item.OverseasPicture1}!="")"/upload/overseas/$!{item.OverseasPicture1}"#else"/im/img/news1.jpg"#end /></a>
+                                    <div class="news_t">
+                                        <a href="/immigrant/${item.Id}.html" target="_blank" title="$item.OverseasTitle">$item.OverseasTitle</a>
+                                        <P>${item.Jianjie}</P>
+                                        <time>发布日期：${item.CreateDate.ToString("yyyy-MM-dd")}</time>
+                                    </div>
+                                </div>
+                                #end
+                                <div class="news_left_list">
+                                    <ul>
+                                        #foreach($item in $overseasmodel08 $L6 $P2032)
+                                        <li>
+                                            <a href="/immigrant/${item.Id}.html" target="_blank" title="$item.OverseasTitle">$item.OverseasTitle</a>
+                                        </li>
+                                        #end
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <div class="news_list" style="display:none">
+                                #foreach($item in $overseasmodel09 $L2 $P2019 $QaXNob21lPSd0cnVlJw--)
+                                <div class="news_img clearfix">
+                                    <a href="/immigrant/${item.Id}.html" target="_blank" class="nimgs"><img src=#if($!{item.OverseasPicture1}!="")"/upload/overseas/$!{item.OverseasPicture1}"#else"/im/img/news1.jpg"#end /></a>
+                                    <div class="news_t">
+                                        <a href="/immigrant/${item.Id}.html" target="_blank" title="$item.OverseasTitle">$item.OverseasTitle</a>
+                                        <P>${item.Jianjie}</P>
+                                        <time>发布日期：${item.CreateDate.ToString("yyyy-MM-dd")}</time>
+                                    </div>
+                                </div>
+                                #end
+                                <div class="news_left_list">
+                                    <ul>
+                                        #foreach($item in $overseasmodel10 $L6 $P2019)
+                                        <li>
+                                            <a href="/immigrant/${item.Id}.html" target="_blank" title="$item.OverseasTitle">$item.OverseasTitle</a>
+                                        </li>
+                                        #end
+                                    </ul>
+                                </div>
+
+                            </div>
+							<!--faq-->
+							<div id="faq">
+								<div class="faq_title clearfix"><i class="iconfont">&#xe694;</i>
+									<div class="faq_txt">
+										<p>移民问答</p><span>专家一对一在线解答</span></div>
+								</div>
+								<div id="faq_list">
+									<ul>
+                                        #foreach($item in $BaseInfo $L5 $P2 $QaXNob21lPSd0cnVlJw--)
+										<li>
+											<a href="/baseinfo/${item.Id}.html" target="_blank" title="${item.NewsTitle}">
+												<p class="que"><i>Q</i>${item.NewsTitle}</p>
+												<p class="ans"><i>A</i>${item.Jianjie}</p>
+											</a>
+										</li>
+									#end
+									</ul>
+								</div>
+							</div>
+							<!--faq-->
+						</div>
+						<!--content-->
+
+					</div>
+					<!--news-->
+				</div>
+
+				<div id="agent">
+					<div class="swiper-container" id="agentlist">
+						<div class="swiper-wrapper">
+                            #foreach($item in $users $L6 $QSXN5bT0ndHJ1ZScgYW5kIElzUm9tPSd0cnVlJw--)
+							<div class="swiper-slide">
+								<div class="agent_tab clearfix">
+									<span class="agent_img"><img src=#if(${item.Picture}!="")"/upload/users/${item.Picture}"#else"/im/img/c.jpg"#end/></span>
+									<div class="agent_txt">
+										<b>$item.TrueName</b><div style="display:none">${item.Jianjie}</div>
+										<p> $StringHelper.GetOmitString(${item.Jianjie},100,"1")</p>
+										<a href="/agent/${item.Id}.html" target="_blank" class="clearfix"><i class="iconfont">&#xe696;</i>立即咨询</a>
+									</div>
+								</div>
+							</div>
+                            #end
+						</div>
+						<!-- Add Pagination -->
+						<div class="swiper-pagination"></div>
+					</div>
+				</div>
+			</div>
+			<div class="section" id="section3">
+				<div class="hotpro_title">
+					<b>热门房产</b>
+					<p>Popular overseas property</p>
+					<p>海外房产 海外房产网 国外房产 海外买房 美国房产 美国买房 泰国买房 外国买房网</p>
+				</div>
+
+				<div class="house_list">
+                    #foreach($item in $newhouse $L6 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+					<div class="house_tab">
+						<a href="/newhouse/${item.Id}.html" target="_blank" class="house_img"><img src=#if($item.PdtPicture1="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle" /></a>
+						<div class="house_txt">
+							<a href="/newhouse/${item.Id}.html" title="$item.PdtTitle" target="_blank">$item.PdtTitle</a>
+							<p class="price_h">价格：CNY
+								<B>${item.TouristPrice.ToString("N").Replace(".00","")}</B>万元</p>
+						</div>
+					</div>
+					#end
+				</div>
+
+			</div>
+
+			<div class="section fp-auto-height" id="section-footer">
+                #parse("Foot.html")
+			</div>
+		</div>
+
+		
+	</body>
+	<script type="text/javascript" src="/im/js/public.js"></script>
+
+
+</html>

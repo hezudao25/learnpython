@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+#foreach($item in $Job $Detail)
+    #set($info=$item)
+#end
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>$!{info.JobTitle}_$Global.WebName</title>
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/images/favicon.ico"/>
+<link href="/Css/base.css" rel="stylesheet" type="text/css" />
+<link href="/Css/inside.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/Js/common.js"></script>
+</head>
+<body onload="setChoseNav(2)">
+#parse("Top.html")
+<div class="main">
+	<div class="mainleft">
+		<div class="abouttitle">人才招聘</div>
+		<ul class="aboutlist">
+         <li><a href="/Job.html">招聘列表</a></li>
+			#foreach($item in $News01 $P38 $OId-asc)           
+      <li><a href="/Job/W${item.Id}.html">${item.NewsTitle}</a></li>
+      #end
+		</ul>
+		<div class="commodbot"></div>
+	</div>
+	<div class="mainright">
+		#parse("Search.html")
+        	<div class="newsflash">
+			<div class="slider">
+				<ul class="pic" id="homePushShow">
+					#foreach($item in $Advertise $P12)
+					<li style="display:#if($velocityCount==1) #else none;#end" id="homePushShow$velocityCount"> <a href="$item.LinkUrl" target="_blank"> <img alt="$item.Description" src="/FileUPLoad/Advertise/$item.AdPicture"  height="$item.hHeight" width="$item.hWidth"></a>
+						<p></p>
+						<strong>$item.name</strong> </li>
+					#end
+				</ul>
+				<ul class="num bg" id="homePushName">
+					#foreach($item in $Advertise14 $P12)<li id="homeAd$velocityCount">$velocityCount</li>#end
+				</ul>
+			</div>
+			<script type="text/javascript" src="/js/flashimg.js"></script> 
+		</div>
+		<div class="newstitle">
+			<p>$info.JobTitle</p>
+			<b><a href="/">首页</a>><a href="/Job.html">吸纳英才</a>>$info.JobTitle</b></div>
+		<div class="newsbox" > <br class="clear" />
+			<br />
+			<table width="98%" height="441" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td height="20" colspan="6" bgcolor="#efefef"><strong> 　岗位名称——$info.JobTitle</strong></td>
+				</tr>
+				<tr >
+					<td height="20" colspan="6" align="center"></td>
+				</tr>
+				<tr>
+					<td width="174" height="30" align="center"><strong>发布日期：</strong></td>
+					<td width="202">${info.CreateDate}</td>
+					<td width="154" align="center"><strong>截止日期：</strong></td>
+					<td width="248">${info.EndDate}</td>
+					<td width="137" align="center"><strong>招聘人数：</strong></td>
+					<td width="217"> ${info.Number} </td>
+				</tr>
+				<tr align="center">
+					<td height="1" colspan="6" bgcolor="#efefef"></td>
+				</tr>
+				<tr>
+					<td height="40" align="center" ><strong>工作地点：</strong></td>
+					<td>${info.WorkArea}</td>
+					<td align="center"><strong>外　　语：</strong></td>
+					<td>${info.Language}</td>
+					<td align="center"><strong>薪水待遇：</strong></td>
+					<td>${info.Salary}</td>
+				</tr>
+				<tr align="center">
+					<td height="1" colspan="6" bgcolor="#efefef"></td>
+				</tr>
+				<tr>
+				<tr>
+					<td height="40" align="center"><strong>年龄要求：</strong></td>
+					<td>${info.Age}</td>
+					<td align="center"><strong>工作年限：</strong></td>
+					<td>${info.Experience}</td>
+					<td align="center"><strong>专　　业：</strong></td>
+					<td>${info.Professional}</td>
+				</tr>
+				<tr>
+					<td height="1" colspan="6" bgcolor="#efefef"></td>
+				</tr>
+				<tr>
+					<td height="25" colspan="6"></td>
+				</tr>
+				<tr>
+					<td height="20" colspan="6" bgcolor="#EFEFEF"><strong>　岗位职能</strong></td>
+				</tr>
+				<tr>
+					<td height="68" colspan="6" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td height="7"></td>
+							</tr>
+						</table>
+						<table width="98%" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td width="24" height="60">&nbsp;</td>
+								<td width="932" valign="top" style="line-height: 26px;">${info.Functions}</td>
+								<td width="24">&nbsp;</td>
+							</tr>
+						</table></td>
+				</tr>
+				<tr>
+					<td height="20" colspan="6" bgcolor="#EFEFEF"><strong>　职位描述</strong></td>
+				</tr>
+				<tr>
+					<td height="68" colspan="6" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td height="7"></td>
+							</tr>
+						</table>
+						<table width="98%" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td width="24" height="60">&nbsp;</td>
+								<td width="932" valign="top" style="line-height: 26px;">${info.Description}</td>
+								<td width="24">&nbsp;</td>
+							</tr>
+						</table></td>
+				</tr>
+				<tr>
+					<td height="20" colspan="6" bgcolor="#EFEFEF"><strong>　岗位要求</strong></td>
+				</tr>
+				<tr>
+					<td height="68" colspan="6" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td height="7"></td>
+							</tr>
+						</table>
+						<table width="98%" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td width="24" height="60">&nbsp;</td>
+								<td width="932" valign="top" style="line-height: 26px;">${info.Requirements}</td>
+								<td width="24">&nbsp;</td>
+							</tr>
+						</table></td>
+				</tr>
+				<tr>
+					<td height="20" colspan="6" bgcolor="#EFEFEF"><strong>　联系方式</strong></td>
+				</tr>
+				<tr>
+					<td height="68" colspan="6" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td height="7"></td>
+							</tr>
+						</table>
+						<table width="98%" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td width="23" height="60">&nbsp;</td>
+								<td width="81" style="line-height: 26px;"><strong>联系人：</strong></td>
+								<td width="239"><span style="line-height: 26px;">${Global.LianXiRen}</span></td>
+								<td width="69"><strong>电话：</strong></td>
+								<td width="199"><span style="line-height: 26px;">${Global.Tel}</span></td>
+								<td width="68"><strong>Email:</strong></td>
+								<td width="430"><span style="line-height: 26px;">${Global.Email}</span></td>
+							</tr>
+						</table></td>
+				</tr>
+			</table>
+		</div>
+		<div class="newsbot"></div>
+	</div>
+	<br class="clear" />
+</div>
+#parse("Foot.html")
+/body>
+</html>

@@ -1,0 +1,1738 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>$Global.WebTitle</title>
+    <meta name="keywords" content="$Global.WebKeywords" />
+    <meta name="description" content="$Global.WebDescription" />
+<meta name="baidu-site-verification" content="DqEUgCUOQV" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
+<meta name="chinaz-site-verification" content="8DA08E42-C75E-4F5B-0C4D-B8D3F9052134" />
+    <meta property="qc:admins" content="27502663266711766375" /> 
+    <link rel="stylesheet" href="font/iconfont.css?version=201701181" />   
+ <!--[if lt IE 9]> 
+
+<link rel="stylesheet" href="css/styleie7.css" />
+<![endif]--> 
+    <script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery.jslides.js"></script>
+    <script type="text/javascript" src="js/jquery.SuperSlide.js"></script>
+    <script type="text/javascript" src="js/lanrenzhijia.js"></script>
+<script type="text/javascript" src="/js/highcharts.js" ></script>
+    <script type="text/javascript" src="//s.union.360.cn/67636.js"></script>
+    <link rel="stylesheet" href="css/style.css?v=20170119" />
+</head>
+<body>  
+    #parse("Top.html")
+    <!--banner-->
+    <div id="banner">
+        <div id="full-screen-slider">
+          
+            
+           <ul id="slides" class="clearfix">
+           	<li style="background: url(img/banner3.jpg) no-repeat center top">
+						<a href="#" target="_blank">全球华人房产交易平台</a>
+					</li>
+           	 <li style="background: url(img/banner1.jpg) no-repeat center top"><a href="News.html" target="_blank">环球资讯</a></li>
+					<li style="background: url(img/banner.jpg) no-repeat center top">
+						<a href="http://usa.waigf.com/" target="_blank">环球新房</a>
+					</li>
+					<li style="background: url(img/banner51.jpg) no-repeat center top">
+						<a href="http://m.571hs.com" target="_blank" rel="nofollow">微信站上线</a>
+					</li>
+					<li style="background: url(img/banner2.jpg) no-repeat center top">
+						<a href="news/list_6.html" target="_blank">冯仑风马牛</a>
+					</li>
+					
+				</ul> 
+            
+            
+        </div>
+        <!--mulu-->
+        <div id="Catalog">
+            <ul>
+                <li>
+                    <p class="ca-area">
+                        <a href="newhouse_t1_a0_m0_j0_o1.html" target="_blank" class="c">美国</a>
+                        #foreach($item in $PdtDiqu51 $P1 $L4 $Oordernumber-asc)<a href="newhouse_t${item.id}_a0_m0_j0_o1.html" target="_blank">${item.DiquName}</a>#end <i class="iconfont arrow">&#xe693;</i>
+                    </p>
+                    <ul class="ca-list">
+                        <div class="ca-list-name clearfix">                            
+                            #foreach($item in $PdtDiqu52 $P1 $L15 $Oordernumber-asc)<a href="newhouse_t${item.id}_a0_m0_j0_o1.html" target="_blank">${item.DiquName}</a>#end 
+                        </div>
+                        <div class="ca-list-pic clearfix">
+                            #foreach($item in $Products51 $L3 $P1-2-4-5-6-7-8-9-10 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC) <div class="ca-list-tab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle" target="_blank"><img src=#if($item.PdtPicture1="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"></a><span><a href="/newhouse/${item.Id}.html" title="$item.PdtTitle" target="_blank">$item.PdtTitle</a></span>
+                            </div>
+                            #end
+                        </div>
+                        <div class="ca-list-news">
+                            #foreach($item in $NewsModel51 $L5  $QQXJlYUlkIElOICgoU0VMRUNUIGlkIEZST00gcGR0dHlwZSBXSEVSRSBQYXJlbnRJZD0xKSwxKQ--)
+                            <a href="news/${item.Id}.html" title="${item.NewsTitle}" target="_blank">${item.NewsTitle}</a>
+                            #end
+                        </div>
+                    </ul>
+                </li>
+                <li>
+                    <p class="ca-area">
+                        <a href="newhouse_t3_a0_m0_j0_o1.html" target="_blank" class="c">泰国</a>
+                        #foreach($item in $PdtDiqu53 $P3 $L4 $Oordernumber-asc)<a href="newhouse_t${item.id}_a0_m0_j0_o1.html" target="_blank">${item.DiquName}</a>#end <i class="iconfont arrow">&#xe693;</i>
+                    </p>
+                    <ul class="ca-list">
+                        <div class="ca-list-name clearfix">                            
+                            #foreach($item in $PdtDiqu54 $P3 $L15 $Oordernumber-asc)<a href="newhouse_t${item.id}_a0_m0_j0_o1.html" target="_blank">${item.DiquName}</a>#end 
+                        </div>
+                        <div class="ca-list-pic clearfix">
+                            #foreach($item in $Products52 $L3 $P3-1016-1017-1018-1019 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC) <div class="ca-list-tab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle" target="_blank"><img src=#if($item.PdtPicture1="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"></a><span><a href="/newhouse/${item.Id}.html" title="$item.PdtTitle" target="_blank">$item.PdtTitle</a></span>
+                            </div>
+                            #end
+                        </div>
+                        <div class="ca-list-news">
+                            #foreach($item in $NewsModel52 $L5  $QQXJlYUlkIElOICgoU0VMRUNUIGlkIEZST00gcGR0dHlwZSBXSEVSRSBQYXJlbnRJZD0zKSwzKQ--)
+                            <a href="news/${item.Id}.html" title="${item.NewsTitle}" target="_blank">${item.NewsTitle}</a>
+                            #end
+                        </div>
+                    </ul>
+                </li>
+                <li>
+                    <p class="ca-area">
+                        <a href="newhouse_t12_a0_m0_j0_o1.html" target="_blank" class="c">英国</a>
+                        #foreach($item in $PdtDiqu55 $P12 $L4 $Oordernumber-asc)<a href="newhouse_t${item.id}_a0_m0_j0_o1.html" target="_blank">${item.DiquName}</a>#end <i class="iconfont arrow">&#xe693;</i>
+                    </p>
+                    <ul class="ca-list">
+                        <div class="ca-list-name clearfix">                            
+                            #foreach($item in $PdtDiqu56 $P12 $L15 $Oordernumber-asc)<a href="newhouse_t${item.id}_a0_m0_j0_o1.html" target="_blank">${item.DiquName}</a>#end 
+                        </div>
+                        <div class="ca-list-pic clearfix">
+                            #foreach($item in $Products53 $L3 $P12-2039-2040-2041-2042 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC) <div class="ca-list-tab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle" target="_blank"><img src=#if($item.PdtPicture1="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"></a><span><a href="/newhouse/${item.Id}.html" title="$item.PdtTitle" target="_blank">$item.PdtTitle</a></span>
+                            </div>
+                            #end
+                        </div>
+                        <div class="ca-list-news">
+                            #foreach($item in $NewsModel53 $L5  $QQXJlYUlkIElOICgoU0VMRUNUIGlkIEZST00gcGR0dHlwZSBXSEVSRSBQYXJlbnRJZD0xMiksMTIp)
+                            <a href="news/${item.Id}.html" title="${item.NewsTitle}" target="_blank">${item.NewsTitle}</a>
+                            #end
+                        </div>
+                    </ul>
+                </li>
+                <li>
+                  <p class="ca-area"> <a href="newhouse_t11_a0_m0_j0_o1.html" target="_blank" class="c">澳大利亚</a> #foreach($item in $PdtDiqu57 $P11 $L4 $Oordernumber-asc)<a href="newhouse_t${item.id}_a0_m0_j0_o1.html" target="_blank">${item.DiquName}</a>#end <i class="iconfont arrow">&#xe693;</i> </p>
+                  <ul class="ca-list">
+                    <div class="ca-list-name clearfix"> #foreach($item in $PdtDiqu58 $P11 $L15 $Oordernumber-asc)<a href="newhouse_t${item.id}_a0_m0_j0_o1.html" target="_blank">${item.DiquName}</a>#end </div>
+                    <div class="ca-list-pic clearfix"> #foreach($item in $Products54 $L3 $P11-1011-1012-3046-3027-3049 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                      <div class="ca-list-tab"> <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle" target="_blank"><img src=#if($item.PdtPicture1="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"></a><span><a href="/newhouse/${item.Id}.html" title="$item.PdtTitle" target="_blank">$item.PdtTitle</a></span> </div>
+                      #end </div>
+                    <div class="ca-list-news"> #foreach($item in $NewsModel54 $L5  $QQXJlYUlkIElOICgoU0VMRUNUIGlkIEZST00gcGR0dHlwZSBXSEVSRSBQYXJlbnRJZD0xMSksMTEp) <a href="news/${item.Id}.html" title="${item.NewsTitle}" target="_blank">${item.NewsTitle}</a> #end </div>
+                  </ul>
+                </li>
+                <li>
+                  <p class="ca-area"> <a href="newhouse_t2025_a0_m0_j0_o1.html" target="_blank" class="c">日本</a> #foreach($item in $PdtDiqu59 $P2025 $L4 $Oordernumber-asc)<a href="newhouse_t${item.id}_a0_m0_j0_o1.html" target="_blank">${item.DiquName}</a>#end <i class="iconfont arrow">&#xe693;</i> </p>
+                  <ul class="ca-list">
+                    <div class="ca-list-name clearfix"> #foreach($item in $PdtDiqu60 $P2025 $L15 $Oordernumber-asc)<a href="newhouse_t${item.id}_a0_m0_j0_o1.html" target="_blank">${item.DiquName}</a>#end </div>
+                    <div class="ca-list-pic clearfix"> #foreach($item in $Products55 $L3 $P2025-2032-2033-2034-2035 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                      <div class="ca-list-tab"> <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle" target="_blank"><img src=#if($item.PdtPicture1="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"></a><span><a href="/newhouse/${item.Id}.html" title="$item.PdtTitle" target="_blank">$item.PdtTitle</a></span> </div>
+                      #end </div>
+                    <div class="ca-list-news"> #foreach($item in $NewsModel55 $L5  $QQXJlYUlkIElOICgoU0VMRUNUIGlkIEZST00gcGR0dHlwZSBXSEVSRSBQYXJlbnRJZD0yMDI1KSwyMDI1KQ--) <a href="news/${item.Id}.html" title="${item.NewsTitle}" target="_blank">${item.NewsTitle}</a> #end </div>
+                  </ul>
+                </li>
+                <li>
+                  <p class="ca-area"> <a href="newhouse_t4051_a0_m0_j0_o1.html" target="_blank" class="c">希腊</a> #foreach($item in $PdtDiqu61 $P4051 $L4 $Oordernumber-asc)<a href="newhouse_t${item.id}_a0_m0_j0_o1.html" target="_blank">${item.DiquName}</a>#end <i class="iconfont arrow">&#xe693;</i></p>
+                  <ul class="ca-list">
+                    <div class="ca-list-name clearfix"> #foreach($item in $PdtDiqu62 $P4051 $L15 $Oordernumber-asc)<a href="newhouse_t${item.id}_a0_m0_j0_o1.html" target="_blank">${item.DiquName}</a>#end </div>
+                    <div class="ca-list-pic clearfix"> #foreach($item in $Products56 $L3 $P4051-4053 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                      <div class="ca-list-tab"> <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle" target="_blank"><img src=#if($item.PdtPicture1="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"></a><span><a href="/newhouse/${item.Id}.html" title="$item.PdtTitle" target="_blank">$item.PdtTitle</a></span></div>
+                      #end </div>
+                    <div class="ca-list-news"> #foreach($item in $NewsModel56 $L5  $QQXJlYUlkIElOICgoU0VMRUNUIGlkIEZST00gcGR0dHlwZSBXSEVSRSBQYXJlbnRJZD00MDUxKSw0MDUxKQ--) <a href="news/${item.Id}.html" title="${item.NewsTitle}" target="_blank">${item.NewsTitle}</a> #end </div>
+                  </ul>
+                </li>              
+               
+            </ul>
+        </div>
+        <!--mulu-->
+    </div>
+    <!--banner-->
+    <!--main-->
+    <div id="main" class="clearfix">
+        <!--w425-->
+        <div class="w425">
+            <div class="title"><span><p>R</p>海外房产推荐
+<b>ecommended</b></span></div>
+            <div class="effect">
+                <div id="slideBox" class="slideBox">
+                    <div class="hd">
+                        <ul>
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                             <li>4</li>
+                        </ul>
+                    </div>
+                    <div class="bd">
+                        <ul>
+                            <li><a href="video/videoshow1.html" target="_blank"><img src="/img/sp2.jpg" /></a></li>
+                            <li><a href="video/videoshow2.html" target="_blank"><img src="/img/sp1.jpg" /></a></li>
+                             <li><a href="video/videoshow3.html" target="_blank"><img src="/img/sp3.jpg" /></a></li>
+                             <li><a href="http://www.waigf.com/img/cgi.pdf" target="_blank"><img src="/img/sp4.jpg" /></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <script type="text/javascript">
+						jQuery(".slideBox").slide({
+							mainCell: ".bd ul",
+							effect: "leftLoop",
+							autoPlay: true
+						});
+                </script>
+            </div>
+        </div>
+        <!--w425-->
+        <!--index-news-->
+        <div class="w775">
+            <div class="news-index-tab">
+                <span class="on" data-href="/news/list_1.html">外房资讯</span><span data-href="/news/list_2.html">开发商资讯</span><span data-href="/news/list_5.html">海外投资资讯</span><span data-href="/news/list_6.html">冯仑风马牛</span>
+                <a href="/news/list_1.html" class="newsmore">+More</a>
+            </div>
+            <div id="index-news">
+              <!--新房资讯-->
+              <div class="newslist">
+                <div class="hotnews">
+                  #foreach($item in $NewsModel01 $L1 $P1 $QSXNIb21lPSdUcnVlJw--)
+                  <a href="news/${item.Id}.html" title="${item.NewsTitle}" class="title2">${item.NewsTitle}</a>
+                  <p>${item.Jianjie}</p>
+                  <span>
+                    <i class="iconfont icon-riqi2"></i>${item.CreateDate.ToString("yyyy-MM-dd")} <a href="javascript:;" onclick="dianzan('${item.Id}','1')"><i class="iconfont icon-xinshixin1"></i><e id="zan${item.Id}">${item.Zan}</e></a><a href="javascript:;" onclick="cai('${item.Id}','1')"><i class="iconfont icon-xinsui"></i><e id="cai${item.Id}">${item.Cai}</e></a>
+</span>#end
+                </div>
+                <ul class="list">
+                  #foreach($item in $NewsModel04 $L6 $P1 $QTmV3c1JvbT0ndHJ1ZSc- $OCreateDate-Desc)
+                  <li>
+                    <a href="news/${item.Id}.html" title="${item.NewsTitle}">${item.NewsTitle}</a>
+                    <span>${item.CreateDate.ToString("yyyy-MM-dd")}</span>
+                  </li>
+                  #end
+                </ul>
+              </div>
+              <!--新房资讯-->
+              <!--开发商资讯-->
+              <div class="newslist">
+                <div class="hotnews">
+                  #foreach($item in $NewsModel02 $L1 $P2 $QSXNIb21lPSdUcnVlJw--)
+                  <a href="news/${item.Id}.html" class="title2" title="${item.NewsTitle}">${item.NewsTitle}</a>
+                  <p>${item.Jianjie}</p>
+                  <span>
+                    <i class="iconfont icon-riqi2"></i>${item.CreateDate.ToString("yyyy-MM-dd")} <a href="javascript:;" onclick="dianzan('${item.Id}','1')"><i class="iconfont icon-xinshixin1"></i><e id="zan${item.Id}">${item.Zan}</e></a><a href="javascript:;" onclick="cai('${item.Id}','1')"><i class="iconfont icon-xinsui"></i><e id="cai${item.Id}">${item.Cai}</e></a>
+                  </span>#end
+                </div>
+                <ul class="list">
+                  #foreach($item in $NewsModel05 $L6 $P2 $QTmV3c1JvbT0ndHJ1ZSc- $OCreateDate-Desc)
+                  <li>
+                    <a href="news/${item.Id}.html" title="${item.NewsTitle}">${item.NewsTitle}</a>
+                    <span>${item.CreateDate.ToString("yyyy-MM-dd")}</span>
+                  </li>
+                  #end
+                </ul>
+              </div>
+              <!--开发商资讯-->
+              <!--海外投资资讯-->
+              <div class="newslist">
+                <div class="hotnews">
+                  #foreach($item in $NewsModel03 $L1 $P5 $QSXNIb21lPSdUcnVlJw--)
+                  <a href="news/${item.Id}.html" class="title2" title="${item.NewsTitle}">${item.NewsTitle}</a>
+                  <p>${item.Jianjie}</p>
+                  <span>
+                    <i class="iconfont icon-riqi2"></i>${item.CreateDate.ToString("yyyy-MM-dd")} <a href="javascript:;" onclick="dianzan('${item.Id}','1')"><i class="iconfont icon-xinshixin1"></i><e id="zan${item.Id}">${item.Zan}</e></a><a href="javascript:;" onclick="cai('${item.Id}','1')"><i class="iconfont icon-xinsui"></i><e id="cai${item.Id}">${item.Cai}</e></a>
+                  </span>#end
+                </div>
+                <ul class="list">
+                  #foreach($item in $NewsModel06 $L6 $P5 $QTmV3c1JvbT0ndHJ1ZSc- $OCreateDate-Desc)
+                  <li>
+                    <a href="news/${item.Id}.html" title="${item.NewsTitle}">${item.NewsTitle}</a>
+                    <span>${item.CreateDate.ToString("yyyy-MM-dd")}</span>
+                  </li>
+                  #end
+                </ul>
+              </div>
+              <!--海外投资资讯-->
+                <!--冯仑风马牛-->
+                <div class="newslist">
+                    <div class="hotnews">
+                        #foreach($item in $NewsModel07 $L1 $P6 $QSXNIb21lPSdUcnVlJw--)
+                        <a href="news/${item.Id}.html" class="title2" title="${item.NewsTitle}">${item.NewsTitle}</a>
+                        <p>${item.Jianjie}</p>
+                        <span>
+                            <i class="iconfont icon-riqi2"></i>${item.CreateDate.ToString("yyyy-MM-dd")} <a href="javascript:;" onclick="dianzan('${item.Id}','1')"><i class="iconfont icon-xinshixin1"></i><e id="zan${item.Id}">${item.Zan}</e></a><a href="javascript:;" onclick="cai('${item.Id}','1')"><i class="iconfont icon-xinsui"></i><e id="cai${item.Id}">${item.Cai}</e></a>
+                        </span>#end
+                    </div>
+                    <ul class="list">
+                        #foreach($item in $NewsModel08 $L6 $P6 $QTmV3c1JvbT0ndHJ1ZSc- $OCreateDate-Desc)
+                        <li>
+                            <a href="news/${item.Id}.html" title="${item.NewsTitle}">${item.NewsTitle}</a>
+                            <span>${item.CreateDate.ToString("yyyy-MM-dd")}</span>
+                        </li>
+                        #end
+                    </ul>
+                </div>
+                <!--冯仑风马牛-->
+            </div>
+        </div>
+        <!--index-news-->
+        <!--最新房源-->
+        <div id="newhouse" style="height:520px;">
+            <div id="title2" class="clearfix">
+                <div class="tit"><b>最新房源</b></div>
+                <div id="country">
+                    <span class="on" data-href="newhouse_t1_a0_m0_j0_o1.html">美国</span><span  data-href="newhouse_t11_a0_m0_j0_o1.html">澳大利亚</span><span data-href="newhouse_t12_a0_m0_j0_o1.html">英国</span><span data-href="newhouse_t3_a0_m0_j0_o1.html">泰国</span><span data-href="newhouse_t2025_a0_m0_j0_o1.html">日本</span><span data-href="newhouse_t4051_a0_m0_j0_o1.html">希腊</span><a href="newhouse_t1_a0_m0_j0_o1.html" class="newhousemore">+More</a>
+                </div>
+                <div class="citylist">
+                    <div class="city" id="hang1">
+                     #foreach($item in $PdtDiqu01 $P1 $L14 $OId-asc)<a href="javascript:;" onclick="showdiv(1,${item.Id})" id="link${item.Id}" >${item.DiquName}</a>#end 
+                    </div>
+                    <div class="city" id="hang11">
+                        #foreach($item in $PdtDiqu02 $P11 $L14 $OId-asc)<a href="javascript:;" onclick="showdiv(11,${item.Id})" id="link${item.Id}" >${item.DiquName}</a>#end  
+                    </div>
+                    <div class="city" id="hang12">
+                        #foreach($item in $PdtDiqu03 $P12 $L14 $OId-asc)<a href="javascript:;" onclick="showdiv(12,${item.Id})" id="link${item.Id}" >${item.DiquName}</a>#end 
+                    </div>
+                    <div class="city" id="hang3">
+                        #foreach($item in $PdtDiqu04 $P3 $L14 $OId-asc)<a href="javascript:;" onclick="showdiv(3,${item.Id})" id="link${item.Id}">${item.DiquName}</a>#end
+                    </div>
+                    <div class="city" id="hang2025">
+                        #foreach($item in $PdtDiqu005 $P2025 $L14 $OId-asc)<a href="javascript:;" onclick="showdiv(2025,${item.Id})" id="link${item.Id}">${item.DiquName}</a>#end
+                    </div>
+                    <div class="city" id="hang4051"></div>
+                    </div>
+                <div class="pro_show">
+                    <ul id="proshow1">
+                      #foreach($item in $Products $L6 $P1-2-4-5-6-7-8-9-10 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                      <li class="show1">
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>
+                                        <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+                                        </div>
+<div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                      #end
+                        #foreach($item in $Products011 $L6 $P2 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                        <li class="show2" style="display:none;#if($velocityCount%3==0)padding-right: 0px;#end">
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1 ="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>
+                                        <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        #end
+                        #foreach($item in $Products012 $L6 $P4 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                        <li class="show4" style="display:none;#if($velocityCount%3==0)padding-right: 0px;#end">
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>
+                                        <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        #end
+                        #foreach($item in $Products013 $L6 $P5 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                        <li class="show5" style="display:none;#if($velocityCount%3==0)padding-right: 0px;#end">
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1 ="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>
+                                        <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        #end
+                        #foreach($item in $Products014 $L6 $P6 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                        <li class="show6" style="display:none;#if($velocityCount%3==0)padding-right: 0px;#end">
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1 ="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>
+                                        <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        #end
+                       
+                        #foreach($item in $Products016 $L6 $P7 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                        <li class="show7" style="display:none;#if($velocityCount%3==0)padding-right: 0px;#end">
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1 ="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>
+                                        <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        #end
+                        #foreach($item in $Products017 $L6 $P8 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                        <li class="show8" style="display:none;#if($velocityCount%3==0)padding-right: 0px;#end">
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1 ="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>
+                                        <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        #end
+                        #foreach($item in $Products018 $L6 $P9 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                        <li class="show9" style="display:none;#if($velocityCount%3==0)padding-right: 0px;#end">
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1 ="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>
+                                        <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        #end
+                        #foreach($item in $Products019 $L6 $P10 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                        <li class="show10" style="display:none;#if($velocityCount%3==0)padding-right: 0px;#end">
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1 ="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>
+                                        <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        #end
+                        #foreach($item in $Products020 $L6 $P1013 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                        <li class="show1013" style="display:none;#if($velocityCount%3==0)padding-right: 0px;#end">
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1 ="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>
+                                        <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        #end
+                        #foreach($item in $Products021 $L6 $P1014 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                        <li class="show1014" style="display:none;#if($velocityCount%3==0)padding-right: 0px;#end">
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1 ="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>
+                                        <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        #end
+                        #foreach($item in $Products022 $L6 $P1015 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                        <li class="show1015" style="display:none;#if($velocityCount%3==0)padding-right: 0px;#end">
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1 ="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>
+                                        <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        #end
+                        #foreach($item in $Products023 $L6 $P1020 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                        <li class="show1020" style="display:none;#if($velocityCount%3==0)padding-right: 0px;#end">
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1 ="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>
+                                        <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        #end
+                        #foreach($item in $Products024 $L6 $P1021 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                        <li class="show1021" style="display:none;#if($velocityCount%3==0)padding-right: 0px;#end">
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1 ="" )"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>
+                                        <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        #end
+                        #foreach($item in $Products025 $L6 $P1022 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                        <li class="show1022" style="display:none;#if($velocityCount%3==0)padding-right: 0px;#end">
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1 ="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>
+                                        <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        #end
+                    </ul>
+                   
+                    <ul id="proshow11" style="display:none;">
+                        #foreach($item in $Products02 $L6 $P11-1011-1012 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                        <li class="show11">
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1="" )"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>
+                                        <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+                                        </div><div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        #end
+                        #foreach($item in $Products026 $L6 $P1011 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                        <li class="show1011" style="display:none;#if($velocityCount%3==0)padding-right: 0px;#end">
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1 ="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>
+                                        <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        #end
+                        #foreach($item in $Products027 $L6 $P1012 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                        <li class="show1012" style="display:none;#if($velocityCount%3==0)padding-right: 0px;#end">
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1 ="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>
+                                        <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        #end
+                        #foreach($item in $Products028 $L6 $P3046 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                        <li class="show3046" style="display:none;#if($velocityCount%3==0)padding-right: 0px;#end">
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1 ="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>
+                                        <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        #end
+                        #foreach($item in $Products029 $L6 $P3047 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                        <li class="show3047" style="display:none;#if($velocityCount%3==0)padding-right: 0px;#end">
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1 ="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>
+                                        <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        #end
+                        #foreach($item in $Products030 $L6 $P3049 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                        <li class="show3049" style="display:none;#if($velocityCount%3==0)padding-right: 0px;#end">
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1 ="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>
+                                        <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        #end
+                    </ul>
+                    <ul id="proshow12" style="display:none">
+                        #foreach($item in $Products03 $L6 $P12-2039-2040-2041-2042 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                        <li class="show12">
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end  alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>
+                                        <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+                                        </div><div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        #end
+                        #foreach($item in $Products031 $L6 $P2039 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                        <li class="show2039" style="display:none;#if($velocityCount%3==0)padding-right: 0px;#end">
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1 ="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>
+                                        <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        #end
+                        #foreach($item in $Products032 $L6 $P2040 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                        <li class="show2040" style="display:none;#if($velocityCount%3==0)padding-right: 0px;#end">
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1 ="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>
+                                        <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        #end
+                        #foreach($item in $Products033 $L6 $P2041 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                        <li class="show2041" style="display:none;#if($velocityCount%3==0)padding-right: 0px;#end">
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1 ="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>
+                                        <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        #end
+                        #foreach($item in $Products034 $L6 $P2042 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                        <li class="show2042" style="display:none;#if($velocityCount%3==0)padding-right: 0px;#end">
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1 ="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>
+                                        <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        #end
+                    </ul>
+                    <ul id="proshow3" style="display:none">
+                        #foreach($item in $Products04 $L6 $P3-1016-1017-1018-1019 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                        <li class="show3">
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end  alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>
+                                        <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+                                        </div> <div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        #end
+                        #foreach($item in $Products035 $L6 $P1016 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                        <li class="show1016" style="display:none;#if($velocityCount%3==0)padding-right: 0px;#end">
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1 ="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>
+                                        <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        #end
+                        #foreach($item in $Products036 $L6 $P1017 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                        <li class="show1017" style="display:none;#if($velocityCount%3==0)padding-right: 0px;#end">
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1 ="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>
+                                        <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        #end
+                        #foreach($item in $Products037 $L6 $P1018 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                        <li class="show1018" style="display:none;#if($velocityCount%3==0)padding-right: 0px;#end">
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1 ="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>
+                                        <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        #end
+                        #foreach($item in $Products038 $L6 $P1019 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                        <li class="show1019" style="display:none;#if($velocityCount%3==0)padding-right: 0px;#end">
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1 ="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>
+                                        <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        #end
+                    </ul>
+                    <ul id="proshow2025" style="display:none">
+                        #foreach($item in $Products05 $L6 $P2025-2032-2033-2034-2035 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                        <li class="show2025">
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1="" )"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end  alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>
+                                        <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+                                        </div> <div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        #end
+                        #foreach($item in $Products039 $L6 $P2032 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                        <li class="show2032" style="display:none;#if($velocityCount%3==0)padding-right: 0px;#end">
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1 ="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>
+                                        <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        #end
+                        #foreach($item in $Products040 $L6 $P2033 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                        <li class="show2033" style="display:none;#if($velocityCount%3==0)padding-right: 0px;#end">
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1 ="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>
+                                        <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        #end
+                        #foreach($item in $Products041 $L6 $P2034 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                        <li class="show2034" style="display:none;#if($velocityCount%3==0)padding-right: 0px;#end">
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1 ="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>
+                                        <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        #end
+                        #foreach($item in $Products042 $L6 $P2035 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                        <li class="show2035" style="display:none;#if($velocityCount%3==0)padding-right: 0px;#end">
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1 ="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>
+                                        <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        #end
+                    </ul>
+                    <ul id="proshow4051" style="display:none">
+                        #foreach($item in $Products051 $L6 $P4051 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                        <li class="show4051">
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end  alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>
+                                        <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4" title="车位">$item.PdtChewei</span>#end
+                                        </div> <div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        #end
+                    </ul>
+</div>
+            </div>
+        </div>
+        <!--最新房源-->
+        <div class="clear"></div>
+        <div class="ad3">
+			<a href="http://www.waigf.com/newhouse/10516.html" target="_blank" title="2016年度美国房产投资回报率冠军项目，可贷款，预计回报率12%！
+总价仅需17万美金。"><img src="img/1200140.jpg" alt="2016年度美国房产投资回报率冠军项目，可贷款，预计回报率12%！
+总价仅需17万美金。"></a>
+		</div>
+        <!--泰国房源-->
+        <div id="newhouse" style="height:410px;">
+            <div id="title3" class="clearfix">
+                <div class="tit"><b>泰国房源</b></div>
+                <div class="taiguo">
+                    #foreach($item in $Products001 $L3 $P3-1016-1017-1018-1019 $QUGR0Um9tPSd0cnVlJw-- $OOrderNumber-DESC)
+                    <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">$item.PdtTitle</a> |
+                   #end
+                </div>
+
+                <div class="citylist" id="hang1">
+                    <div class="city">
+                        #foreach($item in $PdtDiqu05 $P3 $L10)<a href="javascript:;" onclick="showdiv1(${item.Id})" id="link${item.Id}" #if($velocityCount==1)class ="on" #end>${item.DiquName}</a>#end
+                    </div>
+                    
+                </div>
+                <div class="pro_show pro_show1">
+                    <ul>
+                        #foreach($item in $Products01 $L3 $P3-1016-1017-1018-1019 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                        <li>
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1="" )"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>  <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+                                        </div> 
+											<div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        #end
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--最新房源-->
+        <div class="clear"></div>
+        <div id="newhouse" style="height:410px;">
+            <div id="title3" class="clearfix">
+                <div class="tit"><b>日本房源</b></div>
+                <div class="taiguo">
+                    #foreach($item in $Products002 $L3 $P2025-2032-2033-2034-2035 $QUGR0Um9tPSd0cnVlJw-- $OOrderNumber-DESC)
+                    <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">$item.PdtTitle</a> |
+                    #end
+                </div>
+
+                <div class="citylist" id="hang1">
+                    <div class="city">
+                       
+                    </div>
+
+                </div>
+                <div class="pro_show pro_show1">
+                    <ul>
+                        #foreach($item in $Products003 $L3 $P2025-2032-2033-2034-2035 $QSXNIb21lPSd0cnVlJw-- $OOrderNumber-DESC)
+                        <li>
+                            <div class="protab">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="imgs"><img src=#if($item.PdtPicture1 ="" )"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end alt="$item.PdtTitle"/></div>
+                                </a>
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">
+                                    <div class="proname">
+                                        <b>$item.PdtTitle</b>
+                                        <p>$item.PdtModel</p>
+                                        <div class="price"><i>价格</i><span>${item.TouristPrice.ToString("N").Replace(".00","")}</span>万元</div><div class="hbl">#if($item.PdtHbl!="")<span>${item.PdtHbl}<i>%</i></span>预计回报率#end</div>  <div class="index-p-info">
+                                            #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.PdtId!="")<span class="icon2">$item.PdtId </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        #end
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--最新房源-->
+        <div class="clear"></div>
+        <!--ad-->
+       </div>      
+     
+           
+        <!--ad3-->
+		<div class="ad3">
+			<a href="http://www.waigf.com/newhouse/9.html" title="湖景别墅，可贷款，租金高预计回报率10%，优质学区，房源稀缺赶紧拨打400-082-8015预定省2万！
+" target="_blank"><img src="img/12001402.jpg" alt="湖景别墅，可贷款，租金高预计回报率10%，优质学区，房源稀缺赶紧拨打400-082-8015预定省2万！
+"></a>
+		</div>
+		<!--ad3-->
+		<!--newmian-->
+		<div id="main2">
+			<!--二手房-->
+			<div class="w730">
+				<div class="scdhouse"><b>热门二手房</b>
+					<a href="secondhouse.html">+More</a>
+				</div>
+                #foreach($item in $vwsechouse $L6 $QaXNob21lPSd0cnVlJw--)
+				<div class="shousetab">
+					<a href="/secondhouse/${item.Id}.html" title="${item.PdtTitle}"><img alt="${item.PdtTitle}" src=#if($item.PdtPicture1="" )"/img/pic.jpg"#else"/upload/secondhouse/$item.PdtPicture1"#end></a>
+					<span>
+                        <a href="/secondhouse/${item.Id}.html" title="${item.PdtTitle}">${item.PdtTitle}</a>
+                       
+                        <b>价格:${item.TouristPrice.ToString().Replace(".00","")}万元</b>
+        				</span>
+				</div>
+				#end
+			</div>
+			<!--二手房-->
+			<!--w160-->
+			<div class="w180">
+				<div id="rom_pro">
+					<div class="topLoop" style="width:148px">
+						<div class="hd">
+							<a class="next"></a>
+							<ul>
+								<li class="">1</li>
+								<li class="on">2</li>
+								<li class="">3</li>
+							</ul>
+							<a class="prev"></a>
+						</div>
+						<div class="bd">
+							<div class="tempWrap">
+								<ul class="picList">
+                                    #foreach($item in $vwsechouse01 $L10 $QaXNob21lPSd0cnVlJw--)
+                                    <li style="height: 110px;">
+                                        <div class="pic">
+                                            <a href="/secondhouse/${item.Id}.html" title="${item.PdtTitle}"><img alt="${item.PdtTitle}" style="width:139px;height:80px" src=#if($item.PdtPicture1 ="" )"/img/pic.jpg"#else"/upload/secondhouse/$item.PdtPicture1"#end /></a>
+                                        </div>
+                                        <div class="title"><a href="/secondhouse/${item.Id}.html">${item.PdtTitle}</a></div>
+                                    </li>
+                                    #end        
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script type="text/javascript">
+				jQuery(".topLoop").slide({
+					mainCell: ".bd ul",
+					effect: "topLoop",
+					vis: 2,
+					scroll: 2,
+					trigger: "click"
+				});
+			</script>
+			<!--w160-->
+
+			<!--hotshop-->
+			<div id="hotshop">
+				<b>海外房产网-热门商铺</b>
+				<a href="agent.html" class="shopomre">+More</a>
+				<ul>
+                    #foreach($item in $users01 $L8 $QSXNBZ2VudD0ndHJ1ZScgYW5kIElzUm9tPSd0cnVlJw-- $OAccessNumber-Desc)
+					<Li>
+						<a href="/shop/default_${item.Id}.html" target="_blank">${item.TrueName} ${item.EnName}的商铺</a>
+					</Li>
+                    #end
+				</ul>
+			</div>
+			<!--hotsop-->
+			<div class="clear"></div>
+		</div>
+		<!--newmain-->
+<div id="main">
+	<!--移民-->
+	<div class="w279">
+		<img src="img/icon-ym.png">
+		<b>海外移民资讯<a href="/OverseasList/list_t2.html">+More</a></b>
+		<ul>#foreach($item in $overseasmodel01 $L8 $P1017-8-9-10-11-2018 $QaXNob21lPSd0cnVlJw-- $OId-Desc)
+           <li><a href="/overseas/${item.Id}.html" title="$item.OverseasTitle">$item.OverseasTitle</a></li>
+            #end
+           </ul>
+	</div>
+	<!--移民-->
+	<!--投资-->
+	<div class="w279">
+		<img src="img/icon-tz.png">
+		<b>海外房产投资资讯<a href="/OverseasList/list_t3.html">+More</a></b>
+		<ul>         
+            #foreach($item in $overseasmodel02 $L8 $P12-3-14-15-1018 $QaXNob21lPSd0cnVlJw-- $OId-Desc)
+            <li><a href="/overseas/${item.Id}.html" title="$item.OverseasTitle">$item.OverseasTitle</a></li>
+            #end
+           </ul>
+	</div>
+	<!--投资-->
+	<!--留学-->
+	<div class="w279">
+		<img src="img/icon-lx.png">
+		<b>海外留学资讯<a href="/OverseasList/list_t1.html">+More</a></b>
+		<ul>
+            #foreach($item in $overseasmodel03 $L8 $P4-5-6-7-17-2017 $QaXNob21lPSd0cnVlJw-- $OId-Desc)
+            <li><a href="/overseas/${item.Id}.html" title="$item.OverseasTitle">$item.OverseasTitle</a></li>
+            #end
+           </ul>
+	</div>
+	<!--留学-->
+	<div class="w279 mr0">
+		<img src="img/icon-bx.png">
+		<div class="index-bx">
+			根据香港法例第 41 章保险公司条例，任何在香港获授权之保险公司，在香港推介人寿保险均属合法，不论销售对象是香港本地人士、外国人士、中国内地人士，还是居外华人。"（摘自保险业监理处复函档桉号 INS/ADM/7/1)。香港保险签署地在香港为合法保单，签署地在香港境外为非法保单。
+			<a href="insurance.html" class="bx-more">了解更多</a>
+		</div>
+	</div>
+	<!--留学-->
+</div>
+		<!--移民项目-->
+<div class="index-ympro">
+	<b>推荐移民项目</b><a href="yimin.html">+More</a>
+</div>
+
+<div id="index-ympro-tab">
+			<ul> #foreach($item in $yiminview $L6 $QSXNIb21lPSd0cnVlJw-- $Oordernumber-desc)
+                				<li>
+					<div class="ym-tab">
+						<a href="/yimin/${item.Id}.html" title="${item.Title}"><img alt="${item.Title}" src=#if(${item.Picture}!="")"/upload/yimin/$!{item.Picture}"#else"img/p.jpg"#end></a>
+						<p><a href="/yimin/${item.Id}.html" title="${item.Title}">${item.Title}</a></p>
+						<p><i class="iconfont icon-dizhi"></i>${item.ParentName}</p>
+						<p>#if($item.TouristPrice>0)投资额：<b>￥${item.TouristPrice}</b>万元#end</p>
+					</div>
+				</li>
+                #end
+							</ul>			
+		</div>
+<!--移民项目-->
+         <!--ad2-->
+        <div id="ad3">
+            <a href="#"></a>
+        </div>
+        <!--ad2--> 
+         <div id="main" class="clearfix">
+      
+        <div class="footnews">
+            <!--n-->
+            <div class="w430">
+                <div class="left"><img src="img/p1.jpg" /><img src="img/p1.png" /></div>
+                <div class="right">
+                    <div class="title4"><span>海外房产展会</span><a href="exhibtion_1.html">更多>></a></div>
+                    <div class="fnews">
+                        <ul>
+                            #foreach($item in $Exhibtion01 $L6 $P1 $QaXNyb209J3RydWUn)
+                            <li><a href="exhibtion/${item.Id}.html" title="${item.Title}">${item.Title}</a></li>
+                            #end
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--n-->
+            <!--n-->
+            <div class="w430">
+                <div class="left"><img src="img/p2.jpg" /><img src="img/p2.png" /></div>
+                <div class="right">
+                    <div class="title4"><span>海外房产会议</span><a href="exhibtion_2.html">更多>></a></div>
+                    <div class="fnews">
+                        <ul>
+                            #foreach($item in $Exhibtion02 $L6 $P2 $QaXNyb209J3RydWUn)
+                            <li><a href="exhibtion/${item.Id}.html" title="${item.Title}">${item.Title}</a></li>
+                            #end
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--n-->
+            <!--明星-->
+            <div id="people">
+                <span class="tit2">海外房产明星经纪人</span>
+                <div id="wrap_slide">
+                    <div id="slide">
+                        #foreach($item in $users $L6 $QbGV2ZWxpZD0xNyBhbmQgSXNSb209J3RydWUn $OOrderNumber-desc)
+                        <div id="p$velocityCount">
+                            <a target="_blank" href="/agent/${item.Id}.html"><img src=#if(${item.Picture}!="")"/upload/users/${item.Picture}"#else"img/tx.png"#end  alt="${item.TrueName}"/></a>
+                            <p>
+                                <b>${item.TrueName}</b>
+                            </p>
+                        </div>
+                        #end
+                       
+                    </div>
+                    <div id="previous"><i class="iconfont">&#xe614;</i></div>
+                    <div id="next"><i class="iconfont">&#xe615;</i></div>
+                </div>
+            </div>
+            <!--明显-->
+        </div>
+    </div>
+    <!--main-->
+    		<!--fqa-数据统计-->
+		<div class="w1200 clearfix" style="margin-top: 50px;">
+			<div class="faq-zt">
+                <div class="faq-title">
+                    <img src="img/icon-f.svg">海外房产网-疑问解答<span>FQA</span><a href="BaseInfo.html" target="_blank">+MORE</a>
+                </div>
+                
+                <div class="list_lh">
+                    <ul>
+
+                        #foreach($item in $BaseInfo $L9 $QaXNob21lPSd0cnVlJw--)
+                        <li>
+                            <a href="http://www.waigf.com/baseinfo/${item.Id}.html" title="${item.NewsTitle}" target="_blank">${item.NewsTitle}</a>                          
+                        </li>
+                        #end
+                                            </ul>
+                </div>
+            </div>
+          
+          <div class="index-data">
+          	<div class="index-data-title"><b>海外房产热门城市房价走势图</b><p>本数据由外国买房网提供</p></div>
+          	<div class="index-data-c"><span class="active" dir="#datausa">美国</span><span dir="#datathai">泰国</span><span dir="#datajap">日本</span></div>
+          	<!--美国--><div id="datausa" class="datamap" style="display: block;"></div><!--美国-->
+          	<!--泰国--><div id="datathai" class="datamap"></div><!--泰国-->
+          	<!--日本--><div id="datajap" class="datamap"></div><!--日本-->
+          </div>
+             
+<script>
+// JavaScript Document
+$(".index-data-c span").click(function(e) {
+	$(".index-data-c span").removeClass("active")
+	$(".datamap").hide()
+    $(this).addClass("active")
+	var name=$(this).attr("dir")
+	$(name).show()
+});
+$(function () {
+
+    $('#datausa').highcharts({
+    	chart: {
+            type: 'line'
+        },
+        title: {
+            text: ''
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: {
+            categories: [$usacategories]
+        },
+        yAxis: {
+            title: {
+                text: '成交单价（单位$）'
+            }
+        },
+//      legend: {
+//
+//          verticalAlign: 'top',
+//          borderWidth: 0,
+//          margint
+//      },
+        series: [$usaseries]
+    });
+    
+    
+    $('#datathai').highcharts({
+    	chart: {
+            type: 'line'
+        },
+        title: {
+            text: ''
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: {
+            categories: ['2015-09','2015-10','2015-11','2015-12','2016-01','2016-02','2016-03','2016-04','2016-05','2016-06','2016-07','2016-08']
+        },
+        yAxis: {
+            title: {
+                text: '成交单价（单位$）'
+            }
+        },
+//      legend: {
+//
+//          verticalAlign: 'top',
+//          borderWidth: 0,
+//          margint
+//      },
+        series: [
+        {name:'曼谷',data:[175000,179000,179000,180000,181000,182000,183000,185000,186000,187000,188000,189000]},
+        {name:'芭提雅',data:[175000,178000,179000,181000,182000,183000,185000,187000,188000,190000,192000,194000]}
+       
+        ]
+    });
+
+$('#datajap').highcharts({
+    	chart: {
+            type: 'line'
+        },
+        title: {
+            text: ''
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: {
+            categories: ['2015-09','2015-10','2015-11','2015-12','2016-01','2016-02','2016-03','2016-04','2016-05','2016-06','2016-07','2016-08']
+        },
+        yAxis: {
+            title: {
+                text: '成交单价（单位$）'
+            }
+        },
+//      legend: {
+//
+//          verticalAlign: 'top',
+//          borderWidth: 0,
+//          margint
+//      },
+        series: [
+        {name:'东京',data:[222000,226000,226000,227000,228000,229000,230000,232000,234000,236000,238000,239300]},
+        {name:'北海道',data:[378000,380000,381000,382000,382000,383000,384000,386000,387000,388000,388000,389000]},
+        {name:'大阪',data:[360000,363000,365000,367000,370000,374000,378000,382000,387000,390000,394000,397800]}
+   
+       
+        ]
+    });
+
+    
+    
+});
+
+
+        </script>
+
+            
+		</div>
+		
+		<!--fqa-数据统计-->
+    
+    <!--合作伙伴-->
+		<div class="partnerw">
+		<script language="javascript" type="text/javascript" src="js/hzhb.js"></script>
+	<div id="partner">
+		<div class="partner-name">合作伙伴</div>
+<div class="mr_frbox">
+  <img class="mr_frBtnL prev2" src="img/mfrL.png"   style="display:block;"/>
+  <div class="mr_frUl">
+  <ul>
+      #foreach($item in $Links01 $P2 $L48)
+   <LI> <a href="$item.WebUrl" title="$item.WebName" target="_blank"> <img src="/upload/links/${item.WebLogo}"/></a></LI>
+      #end
+ 
+   
+  </ul>
+  </div>
+  <img class="mr_frBtnR next2" src="img/mfrR.png"  style="display:block;"/>
+</div>
+<script language="javascript">
+//$(".mr_frUl ul li img").hover(function(){$(this).css("border-color","#A0C0EB");},function(){$(this).css("border-color","#d8d8d8")});
+jQuery(".mr_frbox").slide({titCell:"",mainCell:".mr_frUl ul",autoPage:true,effect:"leftLoop",autoPlay:false,vis:5});
+$(".mr_frBtnR").css("display","block")
+</script>
+    
+	</div>
+</div>
+		<!--合作伙伴-->
+ 
+<div id="foot" style="margin-top:5px">
+    <div class="footnav">
+        <ul>
+            <li>
+                <a href="/aboutus.html">关于我们</a>  | 
+                <a href="/news.html">外国买房资讯</a> | 
+                <a href="/newhouse.html">环球新房</a> | 
+                <a href="/secondhouse.html">外国二手房</a> | 
+                <a href="/exhibtion.html">海外房产展会</a> | 
+                <a href="/agent.html">房产房管家/经纪人</a> | 
+                <a href="/overseas.html">移民/留学/投资</a>
+            </li>
+        </ul>
+    </div>
+           <div class="p100"></div>
+    <div class="new-foot clearfix">
+    	<!--foot-n-->
+    	<div class="foot-info">
+    		<p>外国买房网-全球华人海外房产交易平台,海外房产资讯,海外房产展会,海外房产投资</p>
+    		<p>杭州外房网络科技有限公司 别名:外房网 外国房 海外房产网</p>
+    		<p>©2016 $Global.WebName 版权所有 $Global.Icp</p>
+    		<p><a href="http://t.knet.cn/index_new.jsp" target="_blank" rel="nofollow"><img src="/img/f-icon1.png"></a><a href="http://www.mps.gov.cn/" target="_blank" rel="nofollow"><img src="/img/f-icon2.png"></a><a href="http://www.miitbeian.gov.cn/publish/query/indexFirst.action" target="_blank" rel="nofollow"><img src="/img/f-icon3.png"></a></p>
+    	</div>
+    	<div class="foot-code"><img src="img/footcode.png" width="143"></div>
+    	<div class="foot-tel">
+    		<div class="ftel"><b>400-082-8015</b>海外房产投资-24小时客服热线</div>
+    		<p>友情链接联系QQ：504797229</p>
+    		<p>邮箱：admin&waigf.com(&改成@)</p>
+    		<P> <script language="javascript" type="text/javascript" src="http://js.users.51.la/18896151.js"></script><a href="/system/index.aspx" target="_blank">CRM入口</a> </P>
+    	</div>
+    	<!--foot-n-->
+    </div>
+
+    <div class="flink">
+    <div class="w1200">
+    <span>友情链接: </span> #foreach($item in $Links02 $P1 $L48)<a href="$item.WebUrl" title="$item.WebName" target="_blank">$item.WebName</a> | #end
+    </div>
+    </div>
+</div>
+
+    <script type="text/javascript" src="/js/public.js?v=20161109"></script>  <script type="text/javascript" src="/js/dianzan.js?v=20160728"></script>
+<!--留言-->
+		<div id="talk">
+			<div class="talktitle"><i class="iconfont t-icon1">&#xe678;</i>正在跟客服小薇沟通中<!--<i class="iconfont t-icon3" id="openw">&#xe676;</i>--><i id="closew" class="iconfont t-icon2">&#xe679;</i></div>
+			<div class="talkcontnet clearfix">
+                <textarea class="talk-cont" id="onlinecontent" maxlength="200" placeholder="请告诉我们您的需求，平台尽快与您联系。"></textarea>
+                <input type="text" id="onlinemobile" class="talk-mobile" placeholder="请留下您的联系方式" />
+                <i class="iconfont mobile-icon">&#xe65d;</i>
+                <input type="submit" id="onlinetj" class="talk-send" value="发 送" />
+			</div>
+		</div>
+		<!--留言-->
+		<!--float-->
+		<div id="small-nav">
+            #if($Username=="") <a href="/common/qqlogin.aspx">
+                <span class="keyqq"><i class="iconfont">&#xe66f;</i><div class="lg">QQ一键登录</div></span></a>
+                <span class="keywx" onclick="weixinlogin()"><i class="iconfont">&#xe600;</i><div class="lg">微信一键登录</div></span>#end
+                <span id="talkc"><i class="iconfont talk">&#xe678;</i></span>
+                <span><i class="iconfont tel">&#xe642;</i><div class="number">服务热线<b>400-082-8015</b></div></span>
+                <span><i class="iconfont">&#xe67e;</i><img src="/img/footcode.png" class="hcode"></span>
+                <span id="dcgotop"><i class="iconfont gotop">&#xe67f;</i></span>
+</div>
+		<script>
+		$("#dcgotop").on("click",function(){
+			$('html,body').stop().animate({ scrollTop: 0 }, 300);
+		})
+			$("#closew").on('click',function(){
+				$("#talk").removeClass("moving")
+				$("#talkc").removeClass("on")
+			})
+			
+			$("#talkc").on('click',function(){
+				if($(this).hasClass("on"))
+				{$(this).removeClass("on")
+					$("#talk").removeClass("moving")
+		
+				}
+				else{
+					$(this).addClass("on")
+				$("#talk").addClass("moving")
+				}
+			})
+		$(document).ready(function(e) {
+            $("#nav .menu li").eq(0).addClass("active")
+        });
+		</script>
+
+</body>
+</html>

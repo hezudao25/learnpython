@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+#foreach($item in $overseasmodel $Detail)
+#set($info=$item)
+#end
+<head>
+    <meta charset="utf-8" />
+    <title>${info.OverseasTitle}_$Global.WebName</title>
+    <meta name="keywords" content="$info.Keywords" />
+    <meta name="description" content="$info.Description" />
+    <link rel="stylesheet" href="/font/iconfont.css" />
+    <link rel="stylesheet" href="/css/style.css?v=20160901" />
+    <script type="text/javascript" src="/js/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.jslides.js"></script>
+    <script type="text/javascript" src="/js/jquery.SuperSlide.js"></script>
+    <script type="text/javascript" src="/js/"></script>
+    <script type="text/javascript" src="/layer/"></script>
+    <script type="text/javascript" src="/js/public.js?v=20170323"></script>
+    <style>
+        .company2 ul li img {
+            width: 120px;
+            height: 120px;
+        }
+    </style>
+
+</head>
+<body>
+    #parse("Top.html")
+    <div id="main">
+        <div id="mbx">
+            #set($typename.Id=$info.ParentId) #set($typename.table="overseasModel")
+            <i class="iconfont icon-home"></i><a href="/">外国买房网</a> &gt; <a href="/overseas.html">留学/投资</a>  &gt; $typename.ParentName()
+        </div>
+        <div id="left2">
+            <div class="newsname">${info.OverseasTitle}</div>
+            <div class="newstime">
+                发布时间: <span>${info.CreateDate.ToString("yyyy-MM-dd")}</span>&nbsp;&nbsp;&nbsp;	点击次数: <span>${info.AccessNumber}</span> 次
+            </div>
+           
+            <div class="newscontent">
+                ${info.OverseasDetail}
+
+            </div>
+<!--order-->
+            <div class="order-all">
+                <div class="forname">我对<span>${info.OverseasTitle}</span> 感兴趣</div>
+                <input type="text" class="yname" id="fbusername" maxlength="20" placeholder="您的称呼" /><input type="text" class="ytel" id="fbmobile" placeholder="您的联系方式（手机号）" />
+                <textarea class="ycontent" id="fbcontent" maxlength="200" placeholder="告诉我们您的需求，我们会第一时间给你答复"></textarea>
+                <input type="submit" value="提交留言" class="yconttj" id="fbtj">
+            </div>
+<!--order-->
+            <div class="shenming">
+                声明: 本文由<span>($Global.WebName)</span>原创编译，转载请保留链接: <a href="http://${Global.Url}/overseas/${info.Id}.html">${info.OverseasTitle}</a>
+            </div>
+
+
+            <div id="prev-next">
+                <ul>
+                    #foreach($item in $noimmodel $F)
+                    #if($velocityCount==1)
+                    <li>
+                        上一篇：<a href="/overseas/${item.Id}.html">$item.OverseasTitle</a>
+
+                    </li>#else
+                    <li>
+                        下一篇：
+                        <a href="/overseas/${item.Id}.html">$item.OverseasTitle</a>
+                    </li>#end
+                    #end
+
+                </ul>
+            </div>
+
+
+        </div>
+        <div id="right">
+            <div class="tit28 mt25"><span>热点知识</span></div>
+            <div id="hotnews">
+                <ul>
+                    #foreach($item in $newsmodel01 $L8 $QTmV3c1JvbT0ndHJ1ZSc-)
+                    <li>
+                        <a href="/news/${item.Id}.html">${item.NewsTitle}</a>
+                    </li>
+                    #end
+                </ul>
+            </div>
+            <div class="clear"></div>
+            <div class="company2">
+                <span class="titlec">投资专家</span>
+                <ul class="clearfix">
+                    #foreach($item in $users $L6 $QSXN0ej0ndHJ1ZScgYW5kIElzUm9tPSd0cnVlJw--)
+                    <li>
+                        <a href="/agent/${item.Id}.html">
+                            <img src=#if(${item.Picture}!="" )"/upload/users/${item.Picture}"#else"img/c.jpg"#end>
+                            <p>$item.TrueName</p>
+                        </a>
+                    </li>
+                    #end
+                </ul>
+            </div>
+            <div class="clear"></div>
+            <div class="tit28 mt25"><span>推荐专题</span></div>
+            <div class="overwiew">
+                <ul>
+                    #foreach($item in $zhuanti01 $L4 $QaXNyb209J3RydWUn $OOrderNumber-Desc)
+                    <li>
+                        <div class="ztnew_pro_tab">
+                            <a href="${item.Url}" title="${item.Title}" target="_blank" class="pro-img"><img src="${item.Img}"></a>
+                            <span>
+                                <a href="${item.Url}" title="$item.Title" target="_blank">$item.Title</a>
+                                <p>${item.Jianjie}</p>
+                            </span>
+                        </div>
+                    </li>
+                    #end
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <!--main-->
+    #parse("Foot.html")  <script>//首页搜索js
+        $(".select-ky .other li").click(function (e) {
+            $(".kar span").html($(this).html());
+            $("#t").val($(this).attr("dir"));
+        });
+        //首页搜索js
+
+        function checksearch() {
+            if ($("#p").val() == "") {
+                layer.alert("请输入关键词!"); return false;
+            }
+
+            return true;
+        }
+        $(function () {
+            $("#nav .menu li").eq(5).addClass("active");
+            $("#fbtj").click(function () {
+                var fb = true;
+                var fbmobile = $("#fbmobile").val();
+                if (fbmobile == "") {
+                    fb = false;
+                    layer.alert("请输入手机号码");
+                } else if (!/^(13[0-9]|14[0-9]|15[0-9]|18[0-9]|17[0-9])\d{8}$/i.test(fbmobile)) {
+                    layer.alert('手机格式不对'); fb = false;
+                }
+                var fbusername = $("#fbusername").val();
+                var fbuserid = 0;
+                var fbcontent = $("#fbcontent").val();
+                if (fb) {
+                    var args = {};
+                    args["mobile"] = escape(fbmobile);
+                    args["username"] = escape(fbusername);
+                    args["content"] = escape(fbcontent);
+                    args["lei"] = 4;
+                    args["parentid"] = $info.Id;
+                    jQuery.post("/Common/Member.Feedback.aspx?r=" + Math.random(), args, function (data) {
+                        var d = eval(data);
+                        layer.msg(d[0].message);
+                        $("#fbmobile").val(""); $("#fbusername").val(""); $("#fbcontent").val("");
+                    }, "text");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html> 
+<head>
+    <meta charset="utf-8" />
+    <title>移民项目_$Global.WebName</title>
+    <meta name="keywords" content="移民项目" />
+    <meta name="description" content="移民项目" />
+    <link rel="stylesheet" href="/font/iconfont.css" />
+    <link rel="stylesheet" href="/css/style.css?version=20160728" />
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="/js/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.jslides.js"></script>
+    <script type="text/javascript" src="/js/jquery.SuperSlide.js"></script>
+    <script type="text/javascript" src="/js/lanrenzhijia.js"></script>
+    <script type="text/javascript" src="/layer/layer.js"></script>
+    <script type="text/javascript" src="/js/public.js?v=20170323"></script>
+    <style>
+    	.news-type{width:300px;border-bottom:0;margin-bottom:20px; margin-top: 20px;}
+.news-type ul li{font-size:14px;color:#3b5997;border-bottom:2px solid #fff; border-bottom: 1px solid #f2f2f2;}
+.news-type ul li a{font-size:14px;color:#3b5997;padding:10px 0 10px 20px;display:block;width:280px;}
+.news-type ul li a:hover{background:url(../font/right.svg) 280px center no-repeat #3b5997;color:#fff}
+.news-type ul li ul{display:block;width:300px;border-top:1px solid #fff;display:none;background:#eef0f3}
+.news-type ul li ul li{width:75px;float:left}
+.news-type ul li ul li a{font-size:14px;padding-left:0;text-align:center;width:70px}
+.news-type ul li ul li a:hover{background:f2f2f2;width:75px}
+.news-type ul li.active{background:url(../font/right.svg) 280px 12px no-repeat #3b5997;background-size:14px;color:#fff}
+.news-type ul li.active a{color:#fff}
+.news-type ul li.active ul li a{color:#666}
+.news-type ul li.active ul li a:hover{color:#fff}
+.left-title{background:#3b5997;padding:20px 10px;width:280px;color:#fff;font-size:26px;margin-top:5px;margin-bottom:1px}
+.left-title p{color:#fff;font-size:10px;line-height:25px;height:25px;text-transform:uppercase}
+
+    	</style>
+</head>
+<body>
+    #parse("Top.html")
+    <!--nav-->
+    <div class="invest-flash"></div>
+    <div id="main">
+        <!-- 投资-->
+      
+        <!--left-->
+        <div id="left2">
+            <div id="list-select"><span class="on">默认</span><span>投资额</span></div>
+            <!--touzilist-->
+            #foreach($item in $yiminview $T10 $Oordernumber-desc)
+            <div class="ymtz-tab clearfix">
+                <div class="ymtz-img">
+                    <a href="/yimin/${item.Id}.html"></a><img src=#if(${item.Picture}!="")"/upload/yimin/$!{item.Picture}"#else"img/p.jpg"#end></a>
+                </div>
+                <div class="ymtz-name">
+                    <a href="/yimin/${item.Id}.html" class="yname">${item.Title}</a>
+                    <p class="address"><i class="iconfont icon-dizhi1"></i> ${item.ParentName}<span>#if($item.TouristPrice>0)投资额：<b>￥${item.TouristPrice}</b>万元#end</span></p>
+                    <p class="dess"></p>
+                    <div class="adv">
+                        ${item.WebDescription}
+                    </div>
+                </div>
+            </div>          
+            #end
+
+            <!--touzilist-->
+            <div class="more">
+                $yiminview-Info
+            </div>
+        </div>
+
+        <div id="right">
+            <div class="tit28"><span>国家筛选</span></div>
+            <div class="news-type">
+                <ul class="clearfix">
+
+
+                    #foreach($item in $yimintype $P2 $OId-asc)
+                    <li style="width:50%;float: left;">
+                        <a style="width: 140px; padding: 10px 0px 10px 10px;" href="/yiminlist/list_t${item.Id}.html">${item.Name}</a>
+                    </li>
+                    #end
+                    <div class="clear"></div>
+                </ul>
+
+            </div>
+            <div class="tit28"><span>移民信息</span><i class="iconfont">&#xe606;</i></div>
+            <div id="hotnews">
+                <ul>
+                    #foreach($item in $immodel $L8)
+                    <li>
+                        <a href="/immigrant/${item.Id}.html" target="_blank">${item.OverseasTitle}</a>
+                    </li>
+                    #end
+                </ul>
+            </div>
+  
+            <div class="tit28"><span>热点资讯</span><i class="iconfont">&#xe606;</i></div>
+            <div id="hotnews">
+                <ul>
+                    #foreach($item in $newsmodel01 $L8 $QTmV3c1JvbT0ndHJ1ZSc-)
+                    <li>
+                        <a href="/news/${item.Id}.html" target="_blank">${item.NewsTitle}</a>
+                    </li>
+                    #end
+                </ul>
+            </div>
+        </div>       
+    </div>
+    <!--main-->
+    #parse("Foot.html")
+    <script>
+        $("#nav .menu li").eq(4).addClass("active");
+	//首页搜索js
+	$(".select-ky .other li").click(function (e) {
+	    $(".kar span").html($(this).html());
+	    $("#t").val($(this).attr("dir"));
+	});
+	//首页搜索js
+
+	function checksearch() {
+	    if ($("#p").val() == "") {
+	        layer.alert("请输入关键词!"); return false;
+	    }
+	    return true;
+	}
+	$(function () {
+	    if (fGetQuery1("o") != null && fGetQuery1("o") != undefined) {
+	        $("#list-select span").removeClass("on");
+	        if (fGetQuery1("o") == "0") {
+	            $("#list-select span").eq(0).addClass("on");
+	        } else {
+	            $("#list-select span").eq(parseInt(fGetQuery1("o")) - 1).addClass("on");
+	        }
+	    }
+	    $("#list-select span").click(function () {
+	        var oid = $(this).index();
+	        var url = "/yimin";
+	       
+	        oid = parseInt(oid) + 1;
+	        url += "_o" + oid;
+	        url += ".html";
+	        location.href = url;
+	    });
+	});
+	function fGetQuery1(name) { //获取参数值
+	    var sUrl = window.location.pathname;
+	    sUrl = sUrl.replace(".html", "");
+	    var o;
+
+
+	    if (sUrl.indexOf("_") > 0) {
+	        var q = sUrl.split("_");
+
+	        if (name == "o" && q[1].substring(0, 1) == "o") {
+	            o = q[1].substring(1);
+	        
+	        } else {
+	            o = 0;
+	        }
+	        return (o == null ? null : unescape(o));
+	    }
+	}
+	</script>
+</body>
+</html>

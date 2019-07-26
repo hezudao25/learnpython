@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    #foreach($item in $Exhibtion $Detail)
+    #set($info=$item)
+    #end
+    <meta charset="utf-8" />
+    <title>${info.Title}_$Global.WebName</title>
+    <meta name="keywords" content="${info.Title}" />
+    <meta name="description" content="${info.Title}展会时间，地点，内容等介绍！欢迎来电400-082-8015" />
+    <link rel="stylesheet" href="/css/style.v2.css" />
+		<link rel="stylesheet" href="/css/head.v2.css" />
+      <script type="text/javascript" src="/js/jquery-1.8.0.min.js"></script>
+      <script type="text/javascript" src="/js/jquery.jslides.js"></script>
+      <script type="text/javascript" src="/js/jquery.SuperSlide.js"></script>
+      <script type="text/javascript" src="/js/lanrenzhijia.js"></script>
+      <script type="text/javascript" src="/layer/layer.js"></script>
+      <script src="/Resource/jquery-easyui-1.3.6/jquery.easyui.min.js"></script>
+</head>
+<script>
+		var menu = 7
+	</script>
+<body>
+#parse("Top.html")
+
+ <!--banner-->
+		<div class="news_ex_bg nybanner">
+			<div class="nytitle">
+				<b>海外房产展会</b>
+				<i></i>
+				<p>最及时最全面的海外房产推介会等展会预告及报道</p>
+			</div>
+		</div>
+		<!--banner-->
+    <!--公告-->
+    <div class="w1200">
+        <div class="exhbion-detal">
+            <div class="name">${info.Title}</div>
+            <div class="ex-info clearfix">
+                <div class="picimg">
+                    <img src=#if(${info.Pictrue1}!="")"/upload/exhibtion/${info.Pictrue1}"#else"/img/zhimg.jpg"#end>
+                </div>
+                <div class="rightinfo">
+                    <p>参展时间：<b>${info.Czsj.ToString("yyyy/MM/dd")} -- ${info.Czsj1.ToString("yyyy/MM/dd")}</b></p>
+                    <p>展会地点：<b>${info.Address}</b> </p>
+                    <p>主办单位：<b>${info.Zbdw}</b></p>
+                    <p>展出范围：<b>${info.Zcfw}</b></p>
+                    <div class="longtime">距离展会开幕还有<b id="day">180</b>天</div>
+                </div>
+            </div>
+
+
+            <div class="exbtion-tab">
+                <span class="on">展会详细内容</span><span>展馆图</span><span>参展登记</span>
+            </div>
+            <div class="exhibtion-content">
+                <div class="content">
+                    ${info.Detail}
+                </div>
+                <div class="content">
+                    ${info.Imgs}
+                </div><form method="post" id="form1" name="form1" onsubmit="return CheckForm(this)">
+    <div class="content">
+        <div class="order">
+            <input type="hidden" id="ParentId" name="ParentId" value="${info.Id}" /><input type="hidden" id="Id" name="Id" /><input type="hidden" id="Leixing" name="Leixing" value="${info.ParentId}" />
+            <ul>
+                <li class="title9">展会申请</li>
+                <li><span>公司名称</span><input type="text" name="Company" id="Company" class="easyui-validatebox"  data-options="required:true" placeholder="如：杭州外房网络有限公司"></li>
+                <li><span>联系人</span><input type="text" name="Username" id="Username" class="easyui-validatebox" value="$!Truename" data-options="required:true" placeholder="如：外房网"></li>
+                <li><span>联系电话</span><input type="text" name="Mobile" id="Mobile" value="$!Mobile" placeholder="如：0571-88889999"></li>
+                <li><span>联系邮箱</span><input type="text" name="Email" id="Email" value="$!Email" placeholder="如：waigf@qq.com"></li>
+                <li style="height: 100px;"><span>留言内容</span><textarea name="Beizhu" id="Beizhu" placeholder="我要参加展会，请与我联系"></textarea></li>
+                <li><button class="tj" name="btnEdit">提交申请</button>
+                <li>
+            </ul>
+
+        </div>
+
+    </div>
+</form>
+            </div>
+
+<div class="wiew-show-title clearfix">
+	<p class="show-img">
+		<img src="/img/wfsj-p.png">
+	</p>
+	<p id="view-content">
+		${info.SjDetail}
+	</p>
+</div>
+
+        </div>
+        <!--相关-->
+        <div class="relevant">最新展会</div>
+        <div class="hot-exhibtion" style="margin-bottom: 50px;">
+            <ul class="clearfix">
+                #foreach($item in $Exhibtion03 $L3) <li>
+                    <div class="exh-tab">
+                        <a href="/exhibtion/${item.Id}.html">
+                            <img src=#if(${item.Pictrue1}!="")"/upload/exhibtion/${item.Pictrue1}"#else"/img/zhimg.jpg"#end>
+                            <span>
+                                <b>${item.Title}</b><p>举办时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")}</p>
+                                <p>举办地点：${item.Address}</p>
+                            </span>
+                        </a>
+                    </div>
+                </li>
+                #end
+            </ul>
+        </div>
+        <!--eexhibtion-->
+        <!--相关-->
+
+
+    </div>
+    <!--公告-->
+    <!--main-->
+
+#parse("Foot.html")<script type="text/javascript" src="/js/public.v2.js?v=20171009"></script><script type="text/javascript" src="/js/jquery-1.8.0.min.js"></script><script>var s1 = '${info.Czsj.ToString("yyyy-MM-dd")}';</script>
+    <script src="/js/exhibtionshow.js?v=20160728"></script>
+ 
+</body>
+</html>

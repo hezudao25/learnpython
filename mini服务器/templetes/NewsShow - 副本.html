@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    #foreach($item in $NewsModel $Detail)
+    #set($info=$item)
+    #end
+    <meta charset="utf-8" />
+    <title>${info.NewsTitle}_$Global.WebName</title>
+    <meta name="keywords" content="$!{info.Keywords}" />
+    <meta name="description" content="$!{info.Description}" />
+      <!--必填-->
+      <meta property="og:type" content="news" />
+      <meta property="og:title" content="${info.NewsTitle}" />
+      <meta property="og:description" content="${info.Jianjie}" />
+      <meta property="og:image" content="http://www.waigf.com/upload/news/$!{info.NewsPicture1}" />
+      <!--选填-->
+      <meta property="og:url" content="http://www.waigf.com/news/${info.Id}.html" />
+      <meta property="og:release_date" content="${info.CreateDate}" />
+    <link rel="stylesheet" href="/font/iconfont.css" />
+    <link rel="stylesheet" href="/css/style.css?version=20160728" />
+    <script type="text/javascript" src="/js/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.jslides.js"></script>
+    <script type="text/javascript" src="/js/jquery.SuperSlide.js"></script>
+    <script type="text/javascript" src="/js/lanrenzhijia.js"></script>
+    <script src="/js/jquery.royalslider.min.js"></script>
+    <link href="/css/lanrenzhijia.css" type="text/css" rel="stylesheet" />
+      <script type="text/javascript" src="/js/public.js?v=20161012"></script>
+</head>
+<body>
+#parse("Top.html")
+<div id="main">
+  <div id="mbx">#set($typename.Id=$info.ParentId) #set($typename.table="NewsModel")
+    <i class="iconfont icon-home"></i><a href="/">外国买房网</a> &gt; <a href="/news.html">新闻中心</a>  &gt; <a href="/News/list_${info.ParentId}.html">$typename.ParentName()</a>
+  </div>
+  <div id="nleft">
+    <div class="newsname">${info.NewsTitle}</div>
+    <div class="newstime">
+      发布时间: <span>${info.CreateDate.ToString("yyyy-MM-dd")}</span>&nbsp;&nbsp;&nbsp;所属栏目: 	$typename.ParentName()&nbsp;&nbsp;&nbsp;	点击次数: <span>${info.AccessNumber}</span> 次
+    </div>
+    <div class="tags">
+        $!{info.Keywords}
+    </div>
+    <div class="newscontent">
+      ${info.NewsDetail}
+
+    </div>
+<div class="detail-share">
+	<span style="float: left; line-height: 40px; height: 40px;"> 分享到：</span>
+	<div class="bdsharebuttonbox">
+    
+    <a href="#" class="bds_weixin" id="wx" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tsina" id="sina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_qzone" id="qqz" data-cmd="qzone" title="分享到QQ空间"></a>
+    </div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{},"image":{"viewList":["weixin","tsina","tqq","renren","qzone"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["weixin","tsina","tqq","renren","qzone"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+</div>
+    <div class="shenming">
+      声明: 本文由<span>($Global.WebName)</span>原创编译，转载请保留链接: <a href="http://${Global.Url}/news/${info.Id}.html">${info.NewsTitle}</a>
+    </div>
+
+
+    <div id="prev-next">
+      <ul>
+        #foreach($item in $NewsModel12 $F)
+        #if($velocityCount==1)
+        <li>
+          上一篇：<a href="/News/${item.Id}.html">$item.NewsTitle</a>
+        
+        </li>#else
+        <li>
+          下一篇：
+          <a href="/News/${item.Id}.html">$item.NewsTitle</a>
+        </li>#end
+        #end
+       
+      </ul>
+    </div>
+<!--新闻评论-->
+<div class="news-pl"><b>评论</b><span>$NewsComment-Counts条评论</span></div>
+<div class="news-order">
+	<div class="news-order-tx"><img src="/img/tx.png"></div><input type="hidden" id="Id" name="Id" value="$info.Id" />
+	<textarea class="news-order-content" id="content" maxlength="200" name="content" placeholder="您的评论..."></textarea>
+	<input type="submit" class="news-order-tj" id="tj" value="提交评论">
+	<div class="clear"></div>
+</div>
+	
+<div class="news-order-list">
+	<ul>#foreach($item in $NewsComment $T5 $C)
+		<li>
+			<div class="list-tx"><img src="#if($!item.Img=="")/img/tx.png#else/upload/users/$!{item.Img}#end"></div>
+			<div class="order-list-c">
+				<b>${item.Commentator}</b>
+				<p>${item.CommentContext}</p>
+				<p><span>${item.CreateDate}</span><i class="iconfont" id="comment${item.Id}" onclick="commentzan('${item.Id}')">&#xe622;${item.Zan}</i></p>
+			</div>
+			<div class="clear"></div>
+			#if(${item.ReRen}!="")<div class="news-ans">
+				<span>管理员${item.ReRen}</span> 回复 <span>${item.Commentator}</span>
+				<p>${item.ReContent}</p>
+			</div>#end
+		</li>
+        #end
+	</ul>
+</div>	
+#if(${NewsComment-Counts}>0)<div class="more"> $NewsComment-Info</div>#end
+<!--新闻评论-->
+
+  </div>
+  <div id="nright">
+    <div class="tit28">
+      <span>热点评论</span>
+    </div>
+    <div class="order-list">
+      <ul>#foreach($item in $vwnewscomment01 $L5 $QaXNyb209J3RydWUn)
+        <li><a href="/news/${item.ParentID}.html" target="_blank" title="${item.newstitle}">
+    <b>${item.Commentator}：</b>${item.CreateDate.ToString("yyyy-MM-dd")} 说
+    <p>${item.CommentContext}</p>
+</a>
+        </li>
+   #end
+      </ul>
+    </div>
+    <div class="right-ad">#foreach($item in $Advertise $D1)
+        <a href="$item.LinkUrl" target="_blank"> <img alt="$item.Description" src="/upload/ad/$item.AdPicture" height="$item.hHeight" width="$item.hWidth"></a>
+		#end		</div>
+    <div class="tit28">
+      <span>热点资讯</span>
+      <i class="iconfont"></i>
+    </div>
+    <div id="hotnews">
+      <ul>
+        #foreach($item in $newsmodel01 $L8 $QTmV3c1JvbT0ndHJ1ZSc-)
+        <li>
+          <a href="/news/${item.Id}.html">${item.NewsTitle}</a>
+        </li>
+        #end
+      </ul>
+    </div>
+      <script type="text/javascript" src="/js/newsshow.js?v=20160805"></script>
+    <div class="tit28 mt25">
+      <span>最近浏览</span>
+    </div>
+
+    <div class="overwiew">
+      <ul>
+          <script>gethistory();</script>
+      </ul>
+    </div>
+
+  </div>
+</div>
+<!--main-->
+#parse("Foot.html")
+</body>
+</html>

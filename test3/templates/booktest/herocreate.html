@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">{% csrf_token %}
+<ul>
+    <li>英雄：<input name="hname"></li>
+
+    <li>备注：<input name="hcomment"></li>
+    <li><input type="hidden" name="action" value="add"> <input type="submit" value="提交"></li>
+</ul>
+</form>
+</body>
+</html>

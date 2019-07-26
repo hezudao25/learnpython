@@ -1,0 +1,80 @@
+﻿
+<div id="foot">
+    <div class="footnav">
+        <ul>
+            <li>
+                <a href="/aboutus.html">关于我们</a>  |
+                <a href="/news.html">外房资讯</a> |
+                <a href="/newhouse.html">环球新房</a> |
+                <a href="/secondhouse.html">海外二手房</a> |
+                <a href="/immigrant.html">海外移民</a> |
+                <a href="/overseas.html">留学/投资</a> |
+                <a href="/exhibtion.html">展会</a> |
+                <a href="/agent.html">经纪人</a> |
+                <a href="/Dalas3/">理财</a> |
+                <a href="/insurance.html">海外保险</a>
+            </li>
+        </ul>
+    </div>
+    
+       <div class="p100"></div>
+    <div class="new-foot clearfix">
+    	<!--foot-n-->
+    	<div class="foot-info">
+    		<p>外国买房网-全球华人海外房产交易平台,海外房产网</p>
+    		<p>外房网络别名:外房 外房网 外国房 海外房产网 外国找房网</p>
+    		<p>©2017 $Global.WebName 版权所有 $Global.Icp</p>
+    		<p><a href="http://t.knet.cn/index_new.jsp" target="_blank" rel="nofollow"><img src="/img/f-icon1.png"></a><a href="http://www.mps.gov.cn/" target="_blank" rel="nofollow"><img src="/img/f-icon2.png"></a><a href="http://www.miitbeian.gov.cn/publish/query/indexFirst.action" target="_blank" rel="nofollow"><img src="/img/f-icon3.png"></a></p>
+    	</div>
+    	<div class="foot-code"><img src="/img/footcode.png" width="143"></div>
+    	<div class="foot-tel">
+    		<div class="ftel"><b>400-082-8015</b>海外房产投资-24小时客服热线</div>
+    		<p>友情链接QQ：<a  href="tencent://message/?uin=504797229&Site=&Menu=yes" target="_blank"  style="display: inline-block; background:url(/img/qq17.png) left center no-repeat; padding-left: 33px; height: 35px; line-height: 35px;background-size: 26px;">504797229</a></p>
+    		<p>邮箱：admin&waigf.com（&改为@）</p>
+    		<P> <script language="javascript" async type="text/javascript" src="http://js.users.51.la/18896151.js"></script><a href="/system/index.aspx" target="_blank">CRM入口</a> </P>
+    	</div>
+    	<!--foot-n-->
+    </div>
+   
+</div>
+<!--留言-->
+		<div id="talk">
+			<div class="talktitle"><i class="iconfont t-icon1">&#xe678;</i>正在跟客服小薇沟通中<!--<i class="iconfont t-icon3" id="openw">&#xe676;</i>--><i id="closew" class="iconfont t-icon2">&#xe679;</i></div>
+			<div class="talkcontnet clearfix">
+				<textarea class="talk-cont" id="onlinecontent" maxlength="200" placeholder="请告诉我们您的需求，平台尽快与您联系。"></textarea>
+				<input type="text" id="onlinemobile" class="talk-mobile" placeholder="请留下您的联系方式" />
+				<i class="iconfont mobile-icon">&#xe65d;</i>
+				<input type="submit" id="onlinetj" class="talk-send" value="发 送" />
+			</div>
+		</div>
+		<!--留言-->
+		<!--float-->
+		<div id="small-nav">
+            #if($Username=="") <a href="/common/qqlogin.aspx"> <span class="keyqq"><i class="iconfont">&#xe66f;</i><div class="lg">QQ一键登录</div></span></a>
+        <span class="keywx" onclick="weixinlogin()"><i class="iconfont">&#xe600;</i><div class="lg">微信一键登录</div></span>#end
+			<span id="talkc"><i class="iconfont talk">&#xe678;</i></span>
+			<span><i class="iconfont tel">&#xe642;</i><div class="number">服务热线<b>400-082-8015</b></div></span>
+			<span><i class="iconfont">&#xe67e;</i><img src="/img/footcode.png" class="hcode"></span>
+			<span id="dcgotop"><i class="iconfont gotop">&#xe67f;</i></span>
+		</div><script>
+		$("#dcgotop").on("click",function(){
+			$('html,body').stop().animate({ scrollTop: 0 }, 300);
+		})
+			$("#closew").on('click',function(){
+				$("#talk").removeClass("moving")
+				$("#talkc").removeClass("on")
+			})
+
+			$("#talkc").on('click',function(){
+				if($(this).hasClass("on"))
+				{$(this).removeClass("on")
+					$("#talk").removeClass("moving")
+
+				}
+				else{
+					$(this).addClass("on")
+				$("#talk").addClass("moving")
+				}
+			})		
+</script>
+<script async type="text/javascript" src="//s.union.360.cn/67636.js"></script>

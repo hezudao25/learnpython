@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>商品列表_$Global.WebName</title>
+<meta name="keywords" content="$Global.Keywords}" />
+<meta name="description" content="$Global.Description}" />
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/images/favicon.ico"/>
+<link href="/Css/base.css" rel="stylesheet" type="text/css" />
+<link href="/Css/inside.css" rel="stylesheet" type="text/css" />
+<link href="/Css/home.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/common.js"></script>
+</head>
+<body>
+#parse("Top.html")<script type="text/javascript">setChoseNav(3);</script>
+<div class="main">
+	<div class="mainleft">
+		<div class="commod"></div>
+		<ul class="productlist">
+		#foreach($item in $vwPdtType $P0 $OOrderNumber-asc)
+			<li onmouseover="Showdiv(this);" id="$item.Id" onmouseout="Hiddendiv(this);"><a class="type" href="/ProList/T${item.Id}/list.html">${item.Name}</a></li>
+			<div id="m_c_$item.Id" class="item">
+				<div class="first-box">
+					<h4><strong>选择分类</strong></h4>
+					#foreach($item2 in $item.Child) <strong><a target="_blank" href="/ProList/T${item2.Id}/list.html" target="_blank">$item2.Name</a></strong>
+					<div class="a-list" id="m_m_$item2.Id"> #foreach($item3 in $item2.Child) <a target="_blank" href="/ProList/T${item3.Id}/list.html">$item3.Name</a>&nbsp;&nbsp;|&nbsp;&nbsp;#end </div>
+					#end </div><div class="last-box">
+					<h4>热门品牌</h4>
+					#set($Brand.Id=$item.Id)
+					$Brand.GetBrand() </div>
+			</div>
+			#end
+            <li onmouseover="Showdiv(this);" id="266" onmouseout="Hiddendiv(this);"><a class="type" href="/ProductRedeem.html">积分兑换物品</a></li>
+			<div id="m_c_266" class="item">
+				<div class="first-box">
+					<h4><strong>选择分类</strong></h4>
+					#foreach($item2 in $PdtType001 $P266 $OOrderNumber-asc) <strong><a target="_blank" href="/ProductRedeem/T${item2.Id}/list.html" target="_blank">$item2.Name</a></strong>
+					<div class="a-list" id="m_m_$item2.Id"> #foreach($item3 in $item2.Child) <a target="_blank" href="/ProductRedeem/T${item3.Id}/list.html">$item3.Name</a>&nbsp;&nbsp;|&nbsp;&nbsp;#end </div>
+					#end </div><div class="last-box">
+					<h4>热门品牌</h4>
+					#set($Brand.Id=266)
+					$Brand.GetBrand() </div>
+			</div>
+		</ul> <div class="commodbot"></div>
+		<div class="lefttitle"><b class="lefttitlesub">新品上市</b></div>
+		<div class="brandleftbox">
+			<ul class="brandtop">
+				#foreach($item in $vwProductsNew $L4)
+				<li><a href="/Product/${item.Id}.html"><img src=#if($item.PdtPicture1=="")"/images/bglogo.jpg"#else"/FileUPLoad/ProductFile/$item.PdtPicture1"#end alt="$item.PdtTitle" /></a><span><a href="/Product/${item.Id}.html">$item.PdtTitle</a></span>
+					<p>品牌：${item.BrandName}</p>
+					<p>商城价：&yen; <em class="shop">$item.MemberPrice</em></p>
+				</li>
+				#end
+			</ul>
+		</div>
+         <div class="commodbot"></div>
+		<div class="lefttitle"><b class="lefttitlesub">特价促销</b></div>
+		<div class="brandleftbox">
+			<ul class="brandtop">
+				#foreach($item in $vwProductsSpe #L4)
+				<li><a href="/Product/${item.Id}.html"><img src=#if($item.PdtPicture1=="")"/images/bglogo.jpg"#else"/FileUPLoad/ProductFile/$item.PdtPicture1"#end alt="$item.PdtTitle" /></a><span><a href="/Product/${item.Id}.html">$item.PdtTitle</a></span>
+					<p>品牌：${item.BrandName}</p>
+					<p>商城价：&yen; <em class="shop">$item.MemberPrice</em></p>
+				</li>
+				#end
+			</ul>
+		</div>
+		<div class="commodbot"></div>
+		<div class="lefttitle"><b class="lefttitlesub">销量排行</b></div>
+		<div class="brandleftbox">
+			<ul class="brandtop">
+				#foreach($item in $vwSales $L4)
+				<li><a href="/Product/${item.Id}.html"><img src=#if($item.PdtPicture1=="")"/images/bglogo.jpg"#else"/FileUPLoad/ProductFile/$item.PdtPicture1"#end alt="$item.PdtTitle" /></a><span><a href="/Product/${item.Id}.html">$item.PdtTitle</a></span>
+					<p>品牌：${item.BrandName}</p>
+					<p>已销售：<em>${item.PdtSales}</em> </p>
+				</li>
+				#end
+			</ul>
+		</div>
+		<div class="leftbot"></div>
+		<div class="lefttitle"><b class="lefttitlesub">精彩活动</b></div>
+		<div class="wonderful"> #foreach($item in $News10 $L1 $P27 $QTmV3c1BpY3R1cmUxPD4nJw-- $OAccessNumber-desc) <a href="/News/${item.id}.html"><img src="/FileUpload/NewsFile/${item.NewsPicture1}" /></a><b><a href="/News/${item.id}.html">${item.newstitle}</a></b>
+			<p>${item.Description}</p>
+			#end
+			<ul>
+				#foreach($item in $vwActivities $L6)
+				<li><a href="/News/${item.id}.html" title="${item.newstitle}">${item.newstitle}</a></li>
+				#end
+			</ul>
+		</div>
+		<div class="leftbot"></div>
+		<div class="lefttitle"><b class="lefttitlesub">浏览历史</b></div>
+		<div class="brandleftbox">
+			<ul class="history">
+				<script>gethistory();</script>
+			</ul>
+		</div>
+		<div class="leftbot"></div>
+	</div>
+	<div class="mainright"> #parse("Search.html")
+		<div class="newsflash">
+			<div class="slider">
+				<ul class="pic" id="homePushShow">
+					#foreach($item in $Advertise $P3)
+					<li style="display:#if($velocityCount==1) #else none;#end" id="homePushShow$velocityCount"> <a href="$item.LinkUrl" target="_blank"> <img alt="$item.Description" src="/FileUPLoad/Advertise/$item.AdPicture"  height="$item.hHeight" width="$item.hWidth"></a>
+						<p></p>
+						<strong>$item.name</strong> </li>
+					#end
+				</ul>
+				<ul class="num bg" id="homePushName">
+					#foreach($item in $Advertise14 $P3)
+					<li id="homeAd$velocityCount">$velocityCount</li>
+					#end
+				</ul>
+			</div>
+			<script type="text/javascript" src="/js/flashimg.js"></script> 
+		</div>
+		<div class="location"><a href="/">首页</a>> 商品列表</div>
+		<dl class="choose">
+			<dt>产品类别：</dt>
+			<dd>
+				<p><a href="Products.html" class="all">全部</a>#foreach($item in $vwPdtType04 $P0 $OOrderNumber-asc)<a href="/ProList/T${item.Id}/list.html">${item.Name}</a>#end</p>
+			</dd>
+		</dl>
+	<!--	#foreach($item in $vwPdtKeyType $P0)
+		<dl class="choose">
+			<dt>${item.Name}：</dt>
+			<dd>
+				<p id="k${item.Id}"><a href="#" class="all">全部</a>#foreach($item2 in $item.Child)<a href="/Products_K${item2.Id}.html">${item2.Name}</a>#end</p>
+			</dd>
+		</dl>
+		#end-->
+		<dl class="choose">
+        <script>
+function shoppingcat(){
+    var id = document.getElementById("content");
+	var key = document.getElementById("key").innerText;
+	if(key==="关闭"){
+		id.style.height=70+"px";
+		document.getElementById("key").innerText="展开";
+	}else{
+	    id.style.height=170+"px";
+		document.getElementById("key").innerText="关闭";
+	}
+}
+</script>
+			<dt>品牌：</dt>
+			<dd><div id="content">
+				<p><a href="/Brand.html" class="all">全部</a>#foreach($item in $PdtBrand $QUGFyZW50SWQgbm90IGluKDI2NiwyODYsMjk3LDI5OCwyOTkp)<a href="/Pbrandlist/B${item.Id}/list.html">$item.BrandName</a>#end</p>
+                </div><div id="intro"><span id="key" onclick="shoppingcat();">更多</span></div>
+			</dd>
+		</dl>
+		<div class="plisttitle"><b>产品列表</b></div>
+		<div class="plisttitle" style="border:0;">
+			<div class="productcom1"><a href="javascript:void(0);" onclick="doCompare();"></a></div>
+			<p>订购服务热线：<strong>400-0038-400、0731-88881164</strong></p>
+			<span><a href="/Products.html"></a></span><span class="window"><a ></a></span></div>
+		<ul class="plistmain">
+			<form action="/Cart.html" method="post" name="myform" id ="myform" target="_blank">
+				#foreach($item in $ProductsDetail02 $T20 $OOrderNumber-DESC) #set($UserPrice.Id=$item.Id)
+				<li><a href="/Product/${item.Id}.html" title="$item.PdtTitle"><img src=#if($item.PdtPicture1=="")"/images/bglogo.jpg"#else"/FileUPLoad/ProductFile/$item.PdtPicture1"#end alt="$item.PdtTitle" onload="DrawImage(this,146,132)" /></a>
+					<p><a href="/Product/${item.Id}.html">$item.PdtTitle</a></p>					
+					#if($item.TouristPrice!="0.00")<p>市场价：&yen; <em class="market">${item.TouristPrice}</em></p>				
+					<p>商城价：&yen; <em class="shop" >${item.MemberPrice}</em></p>$UserPrice.GetPriceName("T") #else <p><a href="http://wpa.qq.com/msgrd?V=1&Menu=yes&Uin=$Global.QQ" target="_blank"><font color=red>询价</a></font></p> #end 	<b>
+					<input type="checkbox"  name="onCheckBoxall" id="onCheckBoxall" value="${item.Id}">
+					<a href="javascript:void(0)" onclick="CarObj.Add('${item.Id}','${item.PdtTitle}','$UserPrice.GetPrice()','1','${item.BrandName}','${item.PdtPicture1}','${item.PdtId}','${item.PdtIntegral}','1');return false;" class="add"></a><a href="/AddCollect.aspx?id=${item.Id}" class="collect"></a><a href="#" class="compare"></a></b></li>
+				#end
+			</form>
+		</ul>
+		<div class="marginBottom productsTitle" align="center">$ProductsDetail02-Info</div>
+	</div>
+	<br class="clear" />
+</div>
+#parse("Foot.html")
+</body>
+</html>

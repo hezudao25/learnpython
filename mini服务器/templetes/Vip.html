@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>会员服务</title>
+    <meta name="keywords" content="会员服务" />
+    <meta name="description" content="会员服务" />
+    <meta itemprop="name" content="会员服务" />
+    <script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
+    <link rel="stylesheet" href="/css/style.vip.css" />
+</head>
+
+<body>
+    <!--top 图片在在背景里面 浏览器大于1920 计算等比例 达到全屏-->
+    <div id="nav">
+        <ul class="clearfix">
+            <li class="active"><a href="/" target="_blank">首 页 </a></li>
+            <li><a href="/news.html" target="_blank">外房资讯</a></li>
+            <li><a href="/newhouse.html" target="_blank">环球新房</a></li>
+            <li><a href="/secondhouse.html" target="_blank">海外二手房</a></li>
+            <li><a href="/immigrant.html" target="_blank">海外移民</a></li>
+            <li><a href="/overseas.html" target="_blank">留学/投资</a></li>
+            <li><a href="/exhibtion.html" target="_blank">展会</a></li>
+            <li><a href="/agent.html" target="_blank">经纪人</a></li>
+            <li><a href="/fund.html" target="_blank">理财</a></li>
+        </ul>
+        <span class="line"></span>
+    </div>
+
+    <div id="top">
+        <div class="top top1"></div>
+        <div class="top top2"></div>
+        <div class="top top3"></div>
+        <div class="top top4"></div>
+    </div>
+
+
+    <div id="intro">
+    </div>
+
+    <!--项目介绍-->
+    <!--户型图-->
+    <div id="Apartment" class="clearfix">
+
+        <img src="img/huxingtu_02.jpg" />
+        <br />
+        <div style="font-size:24px;text-align:center;color:red;margin-top:20px;font-weight:bold;">热线电话：400-082-8015</div>
+    </div>
+    <!--流程-->
+
+    <!--foot-->
+    <div id="foot">
+        <p>
+            <a href="/" target="_blank">首    页 </a>
+            <a href="/news.html" target="_blank">外国买房资讯</a>
+            <a href="/newhouse.html" target="_blank">环球新房</a>
+            <a href="/secondhouse.html" target="_blank">海外二手房</a>
+            <a href="/immigrant.html" target="_blank">海外移民</a>
+            <a href="/overseas.html" target="_blank">投资/就业</a>
+            <a href="/exhibtion.html" target="_blank">展会</a>
+            <a href="/agent.html" target="_blank">经纪人</a>
+            <a href="/fund.html" target="_blank">理财</a>
+        </p>
+        <p class="t">杭州外房网络科技有限公司 别名:外房 外国房 海外房产网    咨询电话：400-082-8015</p>
+    </div>
+    <!--foot-->
+    <div id="gototop">
+        <i class="iconfont">&#xe644;</i>
+    </div>
+</body>
+<script>
+	$(window, document).scroll(function () {
+        if ($(window, document).scrollTop() > 100) {
+            $("#gototop").animate({
+					opacity: 1
+				}, 100);
+        }
+        else
+           {
+           	 $("#gototop").animate({
+					opacity: 0
+				}, 100);
+           }
+    })
+	$("#gototop").on("click", function() {
+				$('html,body').stop().animate({
+					scrollTop: 0
+				}, 300);
+			})
+</script>
+</html>

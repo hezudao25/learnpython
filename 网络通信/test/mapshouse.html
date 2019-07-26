@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html>
+<html> #foreach($item in $PdtDiqu $Detail)
+  #set($info=$item)
+  #end
+<head>
+    <meta charset="utf-8" />
+    <title>${info.DiquName}地图找房_$Global.WebName</title>
+    <meta name="keywords" content="外国买房网"/>
+    <meta name="description" content="关于外国买房网"/>
+    <link rel="stylesheet" href="css/style.v2.css" />
+    <link rel="stylesheet" href="css/head.v2.css" />   
+    
+    #parse("head.html")
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial;
+            font-size: 14px;
+        }
+
+        #panel {
+            float: left;
+            width: 300px;
+            height: 550px;
+        }
+
+        #map-container {
+            margin-left: 300px;
+        }
+
+        #map {
+            width: 100%;
+            height: 650px;
+        }
+
+        #markerlist {
+            height: 400px;
+            margin: 10px 5px 0 10px;
+            overflow: auto;
+        }
+
+        .title {
+            border-bottom: 1px solid #e0ecff;
+            overflow: hidden;
+            width: 256px;
+            cursor: pointer;
+            padding: 2px 0;
+            display: block;
+            color: #000;
+            text-decoration: none;
+        }
+
+            .title:visited {
+                color: #000;
+            }
+
+            .title:hover {
+                background: #e0ecff;
+            }
+
+        #timetaken {
+            color: #f00;
+        }
+
+        .info {
+            width: 200px;
+        }
+
+            .info img {
+                border: 0;
+            }
+
+        .info-body {
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            margin: 2px 0;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .info-img {
+            height: 220px;
+            width: 200px;
+        }
+        #map_top{
+         width: 100%; background: #fff; height: 115px; overflow: hidden; border-bottom: 1px solid #eee;;
+        }
+        #map_top:after{
+        	 clear: both;; content: "";width: 100%;height: 0px; display: block;
+        }
+        #map_top .logo{ width: 400px;  float: left; height: 112px;}
+        #map_top .map_select{ width: calc(100% - 450px);width: -webkit-calc(100% - 450px); float: left;}
+        #panel h3{
+        	line-height: 40px;;height: 40px; padding-left: 20px;
+        }
+        #panel strong{line-height: 30px;;height: 30px;font-weight: normal;padding-left: 20px;}
+        #panel div{  text-indent: 20px;}
+        #nummarkers{ padding: 5px 20px;font-size: 14px;}
+        #markerlist,#markerlist div{ padding: 0px;text-indent: 0px;}
+        #markerlist div a{ padding: 10px 0px; border-bottom:1px solid #eee; padding-left: 10px;font-size: 12px; border-bottom:1px solid #eee;;}
+        .map_select{float: left; padding-top:45px;; padding-left: 50px;}
+        .map_select select{float: left; padding: 8px 10px; margin-right: 10px;border:2px solid #eee;}
+        .map_select .map_inputs{ border: 2px solid #eee; padding: 0px 8px; float: left;font-size: 14px;height: 32px;;}
+        .map_select .map_submit{ background: #374f91; border: none; color: #fff;font-size: 14px;height: 35px;; padding: 0px 15px;-webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 2px;}
+    </style>
+
+    <script src="//maps.google.cn/maps/api/js?v=3&language=zh-cn&key=AIzaSyBKbKftmYnLNPDugt2Y8bF6F6KGVP9W0SY"></script>
+  
+    <script>
+        var data = null;
+        jQuery.ajax({
+            url: '/common/mapsdata.ashx?tid=${info.Id}&r=' + Math.random(),
+            async: false,
+            success: function (res) {
+                var da = eval("[" + res + "]"); 
+                if (da[0].photos.length > 0) {
+                    data = da[0];
+                }               
+            }
+        });
+        var dname = "${info.DiquName}";
+    </script>
+    <script type="text/javascript" src="/js/markerclusterer.js"></script>
+
+    <script type="text/javascript" src="/js/speed_test.js"></script>
+
+    <script type="text/javascript">
+
+        google.maps.event.addDomListener(window, 'load', speedTest.init);
+
+    </script>
+</head>
+
+<body>
+    <!--top-->
+   <div id="map_top">
+   <div class="logo"><img src="/img.v2/logo.png"/></div>
+   <div class="map_select">
+   		<select id="diqu">
+   			<option value="">地区 </option>
+   			#foreach($item in $mapsdiqu)
+   			<option value="${item.Id}|${info.DiquName}${item.DiquName}">${item.DiquName}</option>
+   			#end
+   		</select>
+   		<select id="price">
+   			<option value="">房屋总价 </option>
+   			<option value="1">100万以下 </option>
+   			<option value="2">100万-300万  </option>
+   			<option value="3">300万-500万 </option>
+   			<option value="4">500万-700万 </option>
+   			<option value="5">700万-900万 </option>
+   			<option value="6">900万以上</option>
+   		</select>
+   		<select id="mianji">
+   			<option value="">房产面积 </option>
+   			<option value="1">100m<sup>2</sup>以下 </option>
+   			<option value="2">100-200m<sup>2</sup></option>
+   			<option value="3">200-300m<sup>2</sup></option>
+   			<option value="4">300m<sup>2</sup>以上</option>
+   			
+   		</select>
+   		<select id="wuye">
+   			<option value="">物业类型 </option>
+   			<option value="1">独栋别墅</option>
+   			<option value="2">联排别墅</option>
+   			<option value="3">公寓</option>
+   			<option value="4">酒店</option>
+   			<option value="5">其他</option>
+   		</select>
+   		<input type="text" id="keyword" placeholder="输入关键字"  class="map_inputs"/><input type="submit"  class="map_submit" id="tj" value="搜索" />
+   </div>
+   </div>
+    <div id="panel">
+        <h3>${info.DiquName}地图找房</h3>
+        <div style="display:none">
+            <input type="checkbox" checked="checked" id="usegmm" />
+            <span>Use MarkerClusterer</span>
+        </div>
+        <div style="display:none">
+            数量:
+            <select id="nummarkers">
+                <option value="10">10</option>
+                <option value="50">50</option>
+                <option value="100" selected="selected">100</option>
+                <option value="500">500</option>
+                <option value="1000">1000</option>
+            </select>
+
+            <span>Time used: <span id="timetaken"></span> ms</span>
+        </div>
+
+       
+        <div id="markerlist">
+
+        </div>
+    </div>
+    <div id="map-container">
+        <div id="map"></div>
+    </div>
+
+    
+    <script>
+    $(document).ready(function(e){
+    	var wh=$(window).height()
+    	
+    	var maph=wh-116
+    	var mapch=maph-150
+    		$("#map").attr("style","height:"+maph+"px")
+    		$("#panel").attr("style","height:"+maph+"px")
+    		$("#markerlist").attr("style","height:"+mapch+"px")
+    })
+    </script>
+
+</body>
+
+</html>

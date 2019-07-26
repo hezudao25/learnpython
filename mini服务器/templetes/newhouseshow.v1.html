@@ -1,0 +1,621 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+#foreach($item in $newhouse01 $Detail)
+    #set($info=$item)
+#end
+<title>${info.PdtTitle}_$Global.WebName</title>
+<meta name="keywords" content="$info.WebKeywords" />
+<meta name="description" content="$info.WebDescription" />
+    <link rel="stylesheet" href="/font/iconfont.css" />
+    <link rel="stylesheet" href="/css/style.css?v=20160801" />
+    <script type="text/javascript" src="/js/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.jslides.js"></script>
+    <script type="text/javascript" src="/js/jquery.SuperSlide.js"></script>
+    <script type="text/javascript" src="/js/lanrenzhijia.js"></script>
+    <script src="/js/jquery.royalslider.min.js"></script>
+    <link href="/css/lanrenzhijia.css" type="text/css" rel="stylesheet" />
+      <script>
+          var sqshow=true;
+          var Sqsr1,Sqsr2,Sqsr3,Sqjy1,Sqjy2,Sqjy3,Sqsy1,Sqsy2,Sqsy3,Sqll,Sqbl,Sqbr,Sqxy,Sqhr,Sqyy,Sqqt,Sqfw,Sqjy,Sqyl,Sqys,Sqyiliao,Sqzf,Sqzt,Sqjt,Sqgg;
+          var sqrk="${info.Sqrk}";var sqaq="${info.Sqaq}";          
+          if(sqrk!="" && sqrk!=null && sqaq!="" && sqaq!=null)
+          {
+             #if($!{info.Sqsr1}!="")Sqsr1=${info.Sqsr1};#end  #if($!{info.Sqsr2}!="")Sqsr2=${info.Sqsr2};#end #if($!{info.Sqsr3}!="")Sqsr3=${info.Sqsr3};#end #if($!{info.Sqjy1}!="")Sqjy1=${info.Sqjy1};#end #if($!{info.Sqjy2}!="")Sqjy2=${info.Sqjy2};#end #if($!{info.Sqjy3}!="")Sqjy3=${info.Sqjy3};#end
+              #if($!{info.Sqsr1}!="")Sqsy1=${info.Sqsy1};#end #if($!{info.Sqsr1}!="")Sqsy2=${info.Sqsy2};#end #if($!{info.Sqsr1}!="")Sqsy3=${info.Sqsy3};#end #if($!{info.Sqsr1}!="")Sqll=${info.Sqll};#end #if($!{info.Sqsr1}!="")Sqbl=${info.Sqbl};#end
+              #if($!{info.Sqbr}!="")Sqbr=${info.Sqbr};#end #if($!{info.Sqxy}!="")Sqxy=${info.Sqxy};#end #if($!{info.Sqhr}!="")Sqhr=${info.Sqhr};#end #if($!{info.Sqyy}!="")Sqyy=${info.Sqyy};#end #if($!{info.Sqqt}!="")Sqqt=${info.Sqqt};#end 
+              #if($!{info.Sqfw}!="")Sqfw=${info.Sqfw};#end #if($!{info.Sqjy}!="")Sqjy=${info.Sqjy};#end #if($!{info.Sqyl}!="")Sqyl=${info.Sqyl};#end #if($!{info.Sqys}!="")Sqys=${info.Sqys};#end #if($!{info.Sqyiliao}!="")Sqyiliao=${info.Sqyiliao};#end #if($!{info.Sqzf}!="")Sqzf=${info.Sqzf};#end #if($!{info.Sqzt}!="")Sqzt=${info.Sqzt};#end #if($!{info.Sqjt}!="")Sqjt=${info.Sqjt};#end #if($!{info.Sqgg}!="")Sqgg=${info.Sqgg};#end
+          }else{
+              sqshow=false;
+          }       
+       </script>
+      <link href="/css/ma5gallery.css" rel="stylesheet" type="text/css">
+      <script src="/js/ma5gallery.js"></script>
+      <script src="/js/functions.js"></script>
+</head>
+<body>
+#parse("Top.html")
+
+<div id="main">
+  <div id="mbx">
+    <i class="iconfont icon-home"></i><a href="/">外国买房网</a> &gt; <a href="/newhouse.html">环球新房</a> &gt;#set($load.Id=$info.Id)	$load.LoadDetail("newhouse")
+  </div>
+  <div class="w1200" id="pro-share-s">
+    <div class="info-pro">
+      <b>$info.PdtTitle</b>
+    
+      <p class="address">
+        <i class="iconfont icon-dizhi1"></i>$info.Address
+      </p>
+    </div>
+    <div class="pro-price">价格：<span>${info.TouristPrice.ToString().Replace(".00","")}</span>万元</div>
+    <div class="pro-date">
+      <p>房屋编号：$info.Bianhao</p>
+      <a class="btns" href="javascript:;" onclick="addnewcollect($info.Id)">
+        <i class="iconfont">&#xe62b;</i>收藏
+      </a>
+      <a class="proshare btns">
+        <i class="iconfont">&#xe626;</i>分享
+        <div class="bdsharebuttonbox" id="pro-share">
+    
+    <a href="#" class="bds_weixin" id="wx" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tsina" id="sina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_qzone" id="qqz" data-cmd="qzone" title="分享到QQ空间"></a>
+    </div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{},"image":{"viewList":["weixin","tsina","tqq","renren","qzone"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["weixin","tsina","tqq","renren","qzone"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+      </a>
+    </div>
+  </div>
+  <script type="text/javascript" src="/js/public.js?v=20161012"></script>
+    <script type="text/javascript" src="/js/publicdetail.js?v=20160728"></script>
+  <div id="probanner">
+    <div id="video-gallery" class="royalSlider videoGallery rsDefault">
+        #if(${info.PdtPicture2}!="")
+      <a class="rsImg" data-rsw="843" data-rsh="473" href="/upload/newhouse/${info.PdtPicture2}">
+        <div class="rsTmb">
+          <h5>实景图一</h5>
+          <span></span>
+        </div>
+      </a>#end  
+         #if(${info.PdtPicture3}!="")
+      <a class="rsImg" data-rsw="843" data-rsh="473" href="/upload/newhouse/${info.PdtPicture3}">
+        <div class="rsTmb">
+          <h5>实景图二</h5>
+          <span></span>
+        </div>
+      </a>#end   
+        #if(${info.PdtPicture4}!="")
+      <a class="rsImg" data-rsw="843" data-rsh="473" href="/upload/newhouse/${info.PdtPicture4}">
+        <div class="rsTmb">
+          <h5>实景图三</h5>
+          <span></span>
+        </div>
+      </a>#end   
+        #if(${info.PdtPicture5}!="")
+      <a class="rsImg" data-rsw="843" data-rsh="473" href="/upload/newhouse/${info.PdtPicture5}">
+        <div class="rsTmb">
+          <h5>实景图四</h5>
+          <span></span>
+        </div>
+      </a>#end   
+        #if(${info.PdtPicture6}!="")
+      <a class="rsImg" data-rsw="843" data-rsh="473" href="/upload/newhouse/${info.PdtPicture6}">
+            <div class="rsTmb">
+                <h5>实景图五</h5>
+                <span></span>
+            </div>
+        </a>#end   
+        #if(${info.PdtPicture7}!="")
+        <a class="rsImg" data-rsw="843" data-rsh="473" href="/upload/newhouse/${info.PdtPicture7}">
+            <div class="rsTmb">
+                <h5>实景图六</h5>
+                <span></span>
+            </div>
+        </a>#end
+        #if(${info.PdtPicture8}!="")
+        <a class="rsImg" data-rsw="843" data-rsh="473" href="/upload/newhouse/${info.PdtPicture8}">
+            <div class="rsTmb">
+                <h5>实景图七</h5>
+                <span></span>
+            </div>
+        </a>#end
+    </div>
+    <script>
+      jQuery(document).ready(function($) {
+      $('#video-gallery').royalSlider({
+      arrowsNav: false,
+      fadeinLoadedSlide: true,
+      controlNavigationSpacing: 0,
+      controlNavigation: 'thumbnails',
+      thumbs: {
+      autoCenter: false,
+      fitInViewport: true,
+      orientation: 'vertical',
+      spacing: 0,
+      paddingBottom: 0
+      },
+      keyboardNavEnabled: true,
+      imageScaleMode: 'fill',
+      imageAlignCenter: true,
+      slidesSpacing: 0,
+      loop: false,
+      loopRewind: true,
+      numImagesToPreload: 3,
+      video: {
+      autoHideArrows: true,
+      autoHideControlNav: false,
+      autoHideBlocks: true
+      },
+      autoScaleSlider: true,
+      autoScaleSliderWidth: 960,
+      autoScaleSliderHeight: 450,
+      imgWidth: 640,
+      imgHeight: 360
+      });
+      });
+    </script>
+  </div>
+
+</div>
+<!--导航-->
+<div id="main">
+<div class="menu-pro">
+  <div id="pro-nav">
+      #set($school=0)
+      #foreach($item in $proschool08 $C)
+     #set($school=$velocityCount)
+      #end
+    <span class="on" data-name = "pro0">楼盘信息</span>
+      #if($!{info.PdtDetail}!="")<span data-name = "pro1">项目优势</span>#end
+    #if($!{info.Sqrk}!="") <span data-name = "pro2">社区信息</span>#end
+     #if($school>0)<span data-name = "pro3">学校信息</span>#end
+      #if($!{info.PdtDocs}!="")<span data-name = "pro4">周边环境</span>#end
+      #if($!{info.PdtSjt}!="")<span data-name = "pro5">实景图</span>#end
+      #if($!{info.PdtFxt}!="")<span data-name = "pro6">房型图</span>#end
+      #if($!{info.PdtLuxian1}!="")<span data-name = "pro7">交通路线</span>#end
+  </div>
+  <div id="pro-tel">
+      <input type="text" class="ymobile" id="mobile" placeholder="留下手机号码让经纪人联系您" /><input type="submit" id="tj" class="mobile-tj" value="预约看房">
+  </div></div>
+</div>
+<!--导航-->
+<div id="main2">
+  <div id="nleft">  
+  
+    <div class="title6" id="pro0" style="margin-top:30px">
+      <i class="iconfont">&#xe631;</i>楼盘信息
+    </div>
+    <div class="pinfo">
+      <ul>
+        <li>物业类型：$info.typename</li>
+        <li>楼盘面积：${info.PdtCode}㎡ </li>
+        <li>车位信息：$info.PdtChewei</li>
+        <li>装修状况：$info.PdtZhuangxiu</li>
+        <li>产权说明：$info.PdtChanquan</li>
+        <li>预计年回报率：${info.PdtHbl}%</li>
+        <li>预计租金收入：${info.PdtRelated}美金/月</li>
+          <li>房型：${info.Fx}</li>
+      </ul>
+    </div>
+      #if($!{info.PdtDetail}!="")
+    <div class="title6" id="pro1">
+      <i class="iconfont">&#xe635;</i>项目优势
+    </div>
+    <div class="pcont">
+      $info.PdtDetail
+    </div>#end
+      #if($!{info.Sqrk}!="")
+  <div class="title6" id="pro2"><i class="iconfont">&#xe631;</i>社区信息</div>
+				<!--社区信息-->
+				<div id="Data-graph">
+					<div class="w430s mr30">
+						<div class="datetab"><span>社区人口</span></div>
+						<div class="data-content clearfix">
+							<i class="iconfont icon-tuandui"></i>
+							<div class="Totalnum"><span>${info.Sqrk}</span>人</div>
+						</div>
+					</div>
+					<div class="w430s">
+						<div class="datetab"><span>社区安全指数</span><i class="iconfont icon-cnbangzhu"></i></div>
+						<div class="data-content clearfix">
+							<div class="safe safe${info.Sqaq}"><span>#if(${info.Sqaq}==1)非常#else #end安全</span></div>
+						</div>
+					</div>
+					
+					
+					<div class="w430s mr30">
+						<div class="datetab"><span>平均家庭收入</span><b>$${info.Sqsr1}</b></div>
+						<div class="data-content2 clearfix" id="containersr">
+							 
+						</div>
+					</div>
+					
+						<div class="w430s">
+						<div class="datetab"><span>大学及以上教育比例</span></div>
+						<div class="data-content2 clearfix" id="container2">
+							 
+						</div>
+					</div>
+					<div class="w430s mr30">
+						<div class="datetab"><span>失业率</span></div>
+						<div class="data-content2 clearfix" id="container3">
+							 
+						</div>
+					</div>
+					
+					<div class="w430s">
+						<div class="datetab"><span>蓝领/白领比例</span></div>
+						<div class="data-content2 clearfix" id="container4">
+							 
+						</div>
+					</div>
+					<div class="clear"></div>
+					<div class="w890">
+						<div class="datetab"><span>族裔比例</span></div>
+						<div class="data-content3 clearfix" id="container5">
+							 
+						</div>
+					</div>
+					
+					<div class="w890">
+						<div class="datetab"><span>生活成本指数</span></div>
+						<div class="data-content4 clearfix" id="container6">
+							 
+						</div>
+					</div>
+					
+					
+					<div class="clear"></div>
+				</div>
+
+     
+				<!--社区信息--> #end
+      #if($school>0)<div class="title6" id="pro3"><i class="iconfont">&#xe672;</i>学校信息</div>
+
+<div class="school">
+					<div class="school-tab">
+						<span class="on">学校</span><span>私立学校</span><span>附近小学</span><span>附近中学</span><span>附近高中</span>
+					</div>
+					<div class="school-info">
+						<!--学校数据-->
+
+						<!--学校-->
+						<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ddd" class="schooltable">
+							<tr>
+								<td class="t">分配学校</td>
+								<td class="t">学校名及评分</td>
+								<td class="t">类型</td>
+								<td class="t">年级</td>
+								<td class="t">家长评分</td>
+								<td class="t">距离</td>
+							</tr>
+                            #foreach($item in $proschool $C $QaXNob21lPSd0cnVlJw-- $OZl-Asc)
+							<tr>
+								<td><i class="iconfont"> #if(${item.Fenpei}!="False")&#xe675;#end</i></td>
+								<td><span class="num" date-leve="${item.Pf}">${item.Pf}</span> ${item.Title}</td>
+								<td>#if(${item.Lx}=="1")<div style="display:none">${item.Lx}</div>公立#else私立#end</td>
+								<td>${item.Nj}</td>
+								<td><i class="iconfont icon-pingjia${item.Jcpf}"></i></td>
+								<td>${item.Jl}</td>
+							</tr>
+                            #end
+						
+						</table>
+						<!--学校-->
+						<!--私立学习-->
+						<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ddd" class="schooltable">
+							<tr>
+								<td class="t">分配学校</td>
+								<td class="t">学校名及评分</td>
+								<td class="t">类型</td>
+								<td class="t">年级</td>
+								<td class="t">家长评分</td>
+								<td class="t">距离</td>
+							</tr>
+                            #foreach($item in $proschool01 $C $QbHg9JzIn $OZl-Asc)
+                            <tr>
+                                <td><i class="iconfont"> #if($!{item.Fenpei}!="False")&#xe675;#end</i></td>
+                                <td><span class="num" date-leve="${item.Pf}">${item.Pf}</span> ${item.Title}</td>
+                                <td>#if(${item.Lx}=="1")<div style="display:none">${item.Lx}</div>公立#else私立#end</td>
+                                <td>${item.Nj}</td>
+                                <td><i class="iconfont icon-pingjia${item.Jcpf}"></i></td>
+                                <td>${item.Jl}</td>
+                            </tr>
+                            #end
+						</table>
+						<!--私立学校-->
+						<!--中学-->
+						<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ddd" class="schooltable">
+							<tr>
+								<td class="t">分配学校</td>
+								<td class="t">学校名及评分</td>
+								<td class="t">类型</td>
+								<td class="t">年级</td>
+								<td class="t">家长评分</td>
+								<td class="t">距离</td>
+							</tr>
+                            #foreach($item in $proschool02 $C $Qemw9JzEn $OZl-Asc)
+                            <tr>
+                                <td><i class="iconfont"> #if(${item.Fenpei}!="False")&#xe675;#end</i></td>
+                                <td><span class="num" date-leve="${item.Pf}">${item.Pf}</span> ${item.Title}</td>
+                                <td>#if(${item.Lx}=="1")<div style="display:none">${item.Lx}</div>公立#else私立#end</td>
+                                <td>${item.Nj}</td>
+                                <td><i class="iconfont icon-pingjia${item.Jcpf}"></i></td>
+                                <td>${item.Jl}</td>
+                            </tr>
+                            #end
+						</table>
+<!--小学-->
+
+	<!--小学-->
+						<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ddd" class="schooltable">
+							<tr>
+								<td class="t">分配学校</td>
+								<td class="t">学校名及评分</td>
+								<td class="t">类型</td>
+								<td class="t">年级</td>
+								<td class="t">家长评分</td>
+								<td class="t">距离</td>
+							</tr>
+                            #foreach($item in $proschool03 $C $Qemw9JzIn $OZl-Asc)
+                            <tr>
+                                <td><i class="iconfont"> #if(${item.Fenpei}!="False")&#xe675;#end</i></td>
+                                <td><span class="num" date-leve="${item.Pf}">${item.Pf}</span> ${item.Title}</td>
+                                <td>#if(${item.Lx}=="1")<div style="display:none">${item.Lx}</div>公立#else私立#end</td>
+                                <td>${item.Nj}</td>
+                                <td><i class="iconfont icon-pingjia${item.Jcpf}"></i></td>
+                                <td>${item.Jl}</td>
+                            </tr>
+                            #end
+						</table>
+<!--中学-->
+
+	<!--高中-->
+						<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ddd" class="schooltable">
+							<tr>
+								<td class="t">分配学校</td>
+								<td class="t">学校名及评分</td>
+								<td class="t">类型</td>
+								<td class="t">年级</td>
+								<td class="t">家长评分</td>
+								<td class="t">距离</td>
+							</tr>
+                            #foreach($item in $proschool04 $C $Qemw9JzMn $OZl-Asc)
+                            <tr>
+                                <td><i class="iconfont"> #if(${item.Fenpei}!="False")&#xe675;#end</i></td>
+                                <td><span class="num" date-leve="${item.Pf}">${item.Pf}</span> ${item.Title}</td>
+                                <td>#if(${item.Lx}=="1")<div style="display:none">${item.Lx}</div>公立#else私立#end</td>
+                                <td>${item.Nj}</td>
+                                <td><i class="iconfont icon-pingjia${item.Jcpf}"></i></td>
+                                <td>${item.Jl}</td>
+                            </tr>
+                            #end
+						</table>
+<!--高中-->
+						<!--学校数据-->
+					</div>
+				</div>#end
+
+
+      #if($!{info.PdtDocs}!="")
+    <div class="title6" id="pro4">
+      <i class="iconfont">&#xe632;</i>周边环境
+    </div>
+    <div class="pcont">
+      ${info.PdtDocs}
+    </div>#end
+
+      #if($!{info.PdtSjt}!="")<div class="title6" id="pro5">
+      <i class="iconfont">&#xe637;</i>实景图
+    </div>
+    <div class="pcont">
+      $info.PdtSjt
+    </div>#end
+      #if($!{info.PdtFxt}!="")<div class="title6" id="pro6">
+      <i class="iconfont">&#xe638;</i>房型图
+    </div>
+    <div class="pcont">
+      $info.PdtFxt
+    </div>#end
+      #if($!{info.PdtLuxian1}!="")
+    <div class="title6" id="pro7">
+      <i class="iconfont">&#xe62e;</i>交通路线
+    </div>
+    <div class="pcont" style="padding:20px 0px">
+      <div id="googleMap" style="width:890px;height:500px;"></div>
+    </div>#end
+    
+    <div class="pro-tel2">
+      <i class="iconfont">&#xe642;</i>
+      <span>免费咨询热线</span>
+      <b>$Global.Tel</b>
+    </div>
+<!--order-->
+<div class="order-all">
+	<div class="forname">我对<span>${info.PdtTitle}</span> 感兴趣</div>
+	<input type="text" class="yname" id="fbusername" maxlength="20"  placeholder="您的称呼"/><input type="text" class="ytel" id="fbmobile" placeholder="您的联系方式（手机号）"/>
+	<textarea class="ycontent" id="fbcontent" maxlength="200" placeholder="告诉我们您的需求，我们会第一时间给你答复"></textarea>
+	<input type="submit" value="提交留言" class="yconttj" id="fbtj">
+</div>
+<!--order-->
+  </div>
+  <div id="nright">
+
+
+    <div class="tit28">
+      <span>热点资讯</span><a href="/hotnews.html" target="_blank">+More</a>
+      <i class="iconfont"></i>
+    </div>
+    <div id="hotnews">
+      <ul>
+        #foreach($item in $newsmodel01 $L8 $QTmV3c1JvbT0ndHJ1ZSc- $A)
+        <li>
+          <a href="/news/${item.Id}.html" target="_blank" title="${item.NewsTitle}">${item.NewsTitle}</a>
+        </li>
+        #end
+      </ul>
+    </div>
+
+    <div class="right-ad">
+        #foreach($item in $Advertise $D1)
+        <a href="$item.LinkUrl" target="_blank"> <img alt="$item.Description" src="/upload/ad/$item.AdPicture" height="$item.hHeight" width="$item.hWidth"></a>
+        #end
+				</div>
+    <div class="tit28 mt25">
+      <span>明星经纪</span><a href="/hotagent.html" target="_blank">+More</a>
+    </div>
+    <div class="people">
+      <ul>
+          #foreach($item in $usersview $L5 $QbGV2ZWxpZD0xNyBhbmQgSXNSb209J3RydWUn)
+          <li>
+              <a href="/agent/${item.Id}.html" target="_blank" title="${item.TrueName}" class="imgs">
+                  <img src=#if(${item.Picture}!="")"/upload/users/${item.Picture}"#else"/img/tx.png"#end>
+              </a>
+              <div class="people-info">
+                  <a href="/agent/${item.Id}.html" class="name" target="_blank" title="${item.TrueName}">${item.TrueName} ${item.EnName}</a>
+                  <p>性 质： 经纪人</p>
+                  <p>房 源： ${item.shu}套</p>
+              </div>
+          </li>
+          #end
+      </ul>
+    </div>
+
+      <div class="tit28">
+          <span>常见问题</span>
+          <a href="/BaseInfo.html" target="_blank">+More</a>
+      </div>
+      <div id="hotnews">
+          <ul>
+              #foreach($item in $baseinfo $L8 $QSXNIb21lPSd0cnVlJw-- $A)
+              <li>
+                  <a href="/baseinfo/${item.Id}.html" target="_blank" title="${item.NewsTitle}">${item.NewsTitle}</a>
+              </li>
+              #end
+          </ul>
+      </div>
+
+    <div class="tit28 mt25">
+      <span>最近浏览</span>
+    </div>
+
+    <div class="overwiew">
+      <ul>      
+        <script>gethistory();</script>
+        
+      </ul>
+    </div>
+
+
+  </div>
+</div>
+
+
+  #parse("Foot.html")
+
+	<script type="text/javascript" src="http://cdn.hcharts.cn/highcharts/highcharts.js" ></script>
+</body>
+<!--地图-->
+
+<script src="http://maps.google.cn/maps/api/js?v=3&language=zh-cn&key=AIzaSyCxhLykjdDrd8frnsipVSfz1-wQFjTcNKM&sensor=false"></script>
+<script>
+    sethistory("$info.Id", "$info.PdtPicture1", "$info.PdtTitle","$info.TouristPrice","newhouse");
+
+    var myCenter=new google.maps.LatLng(${info.PdtLuxian1},${info.PdtLuxian2});
+
+function initialize()
+{
+    var mapProp = {
+        center:myCenter,
+        zoom:16,
+        mapTypeId:google.maps.MapTypeId.ROADMAP
+    };
+
+    var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+    var marker=new google.maps.Marker({
+        position:myCenter,
+    });
+
+    marker.setMap(map);
+
+    var infowindow = new google.maps.InfoWindow({
+        content:"${info.PdtTitle}"
+    });
+
+    infowindow.open(map,marker);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+$(function () {
+    $("#tj").click(function(){
+        var f=true;
+        var mobile=$("#mobile").val();
+        if(mobile=="")
+        {
+            f=false;
+            layer. alert("请输入手机号码");
+        } else if (!/^(13[0-9]|14[0-9]|15[0-9]|18[0-9]|17[0-9])\d{8}$/i.test(mobile)) {
+            layer.alert('手机格式不对'); f = false;
+        }
+        var username = mobile;
+        var userid=0;
+        var content = "$info.PdtTitle";
+        if (f) {
+            var args = {};
+            args["mobile"] = escape(mobile);
+            args["username"] = escape(username);
+            args["content"] = escape(content);
+            args["userid"] = userid;
+            args["lei"] = 5;
+            args["parentid"] =  $info.Id;
+            jQuery.post("/Common/Member.Kanfangform.ashx?r=" + Math.random(), args, function (data) {
+                var d = eval(data);
+                layer.msg(d[0].message);
+                $("#mobile").val("");               
+            }, "text");
+        }
+    });
+    $("#fbtj").click(function(){
+        var fb=true;
+        var fbmobile=$("#fbmobile").val();
+        if(fbmobile=="")
+        {
+            fb=false;
+            layer. alert("请输入手机号码");
+        } else if (!/^(13[0-9]|14[0-9]|15[0-9]|18[0-9]|17[0-9])\d{8}$/i.test(fbmobile)) {
+            layer.alert('手机格式不对'); fb = false;
+        }
+        var fbusername = $("#fbusername").val();
+        var fbuserid=0;
+        var fbcontent = $("#fbcontent").val();
+        if (fb) {
+            var args = {};
+            args["mobile"] = escape(fbmobile);
+            args["username"] = escape(fbusername);
+            args["content"] = escape(fbcontent);
+            args["lei"] = 2;
+            args["parentid"] = $info.Id;
+            args["parentname"] = "${info.PdtTitle}";
+            jQuery.post("/Common/Member.Feedback.aspx?r=" + Math.random(), args, function (data) {
+                var d = eval(data);
+                layer.msg(d[0].message);
+                $("#fbmobile").val(""); $("#fbusername").val(""); $("#fbcontent").val("");                     
+            }, "text");
+        }
+    });
+});
+</script>
+
+<!--地图-->
+
+<!--数据统计-->
+
+<!--数据统计-->
+<script>
+$(document).ready(function(e) {
+            $("#nav .menu li").eq(2).addClass("active")
+        });
+</script>
+</html>

@@ -1,0 +1,631 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+        <title>海外房产展会_海外置业展会_留学移民展_$Global.WebName</title>
+		<meta name="keywords" content="海外房产展会,海外投资展会,海外置业展会,留学展会,移民展会,留学移民展,海外置业投资移民展" />
+		<meta name="description" content="外国买房网为您带来丰富的海外投资展会,海外置业展会,海外房产展会,留学展会,移民展会,留学移民展,海外置业投资移民展等各类展会的最新资讯" />
+		 <link rel="stylesheet" href="/css/style.v2.css" />
+		<link rel="stylesheet" href="/css/head.v2.css" />
+		<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+		<script type="text/javascript" src="js/jquery.jslides.js"></script>
+		<script type="text/javascript" src="js/jquery.SuperSlide.js"></script>
+		<script type="text/javascript" src="js/lanrenzhijia.js"></script>
+		<script type="text/javascript" src="layer/layer.js"></script>
+
+        <script>
+        var menu = 7;
+        </script>
+
+	</head>
+
+	<body>
+        #parse("Top.html")
+
+		<!--banner-->
+		<div class="news_ex_bg nybanner">
+			<div class="nytitle">
+				<b>海外房产展会</b>
+				<i></i>
+				<p>最及时最全面的海外房产推介会等展会预告及报道</p>
+			</div>
+		</div>
+		<!--banner-->
+
+		<!--公告-->
+		<div class="exhibtion-news">
+			<i class="iconfont">&#xe62d;</i>#foreach($item in $vwExhibtiontwosan01 $L1 $QZGF5czw9MCBhbmQgSXN0b3A9J3RydWUn $ODays-desc) ${item.Title} 时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地点：${item.Address} <a href="/exhibtion/${item.Id}.html">点击查看详情>></a>#end
+		</div>
+		<!--exhibtion-list-->
+		<div class="hot-exhibtion">
+			<ul class="clearfix">
+                #foreach($item in $vwExhibtiontwosan02 $L3 $QcGljdHJ1ZTE8PicnIGFuZCBkYXlzPD0w $ODays-desc)<li>
+					<div class="exh-tab">
+						<a href="/exhibtion/${item.Id}.html"><img src="/upload/exhibtion/${item.Pictrue1}">
+							<span><b>${item.Title}</b><p>举办时间：${item.Czsj.ToString("yyyy/MM/dd")}-${item.Czsj1.ToString("yyyy/MM/dd")}</p>
+<p>举办地址：${item.Address}</p></span>
+						</a>
+					</div>
+				</li>
+				#end
+			</ul>
+		</div>
+		<!--eexhibtion-->
+
+		<div class="exhbition-list clearfix">
+
+			<div class="hot-one">
+                #foreach($item in $vwExhibtiontwosan03 $L1 $QZGF5czw9MCBhbmQgSXNyb209J3RydWUn $ODays-desc)<a class="title7" title="${item.Title}" class="name" href="/exhibtion/${item.Id}.html">${item.Title}</a>
+				<p>地址：${item.Address} 时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 主办单位：${item.Zbdw}.
+					<a href="/exhibtion/${item.Id}.html">[详情]</a></p>#end
+			</div>
+
+			<div class="ehx-list">
+				<div class="title8 clearfix"><span>最新展会</span><a href="#more">更多</a>
+					<div class="x"></div>
+				</div>
+				<div class="list">
+					<ul class="clearfix">
+                        #foreach($item in $vwExhibtiontwosan04 $L6 $QZGF5czw9MA-- $ODays-desc)<li><span>[${item.Czsj.ToString("yyyy-MM-dd")}]</span><a href="/exhibtion/${item.Id}.html">${item.Title}</a>
+						</li>
+                        #end
+					</ul>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+
+<div class="ehx-ad">    #foreach($item in $Advertise01 $D1007)
+<a href="$item.LinkUrl" target="_blank" title="$item.Description"><img alt="$item.Description" src="/upload/ad/$item.AdPicture"></a>
+                #end</div>
+
+<div class="exhibtion-year clearfix">
+	<span data-year="#2016">2016</span>
+    <span data-year="#2017">2017</span>
+    <span data-year="#2018">2018</span>
+    <span data-year="#2019" class="active">2019</span>
+</div>
+        <div id="2019" class="ex-year" style="display:block">
+            <div class="twmonth">
+                <a name="more"></a>
+                <ul>
+                    <li><span><b>1</b>月</span></li>
+                    <li><span><b>2</b>月</span></li>
+                    <li><span><b>3</b>月</span></li>
+                    <li><span><b>4</b>月</span></li>
+                    <li><span><b>5</b>月</span></li>
+                    <li><span><b>6</b>月</span></li>
+                    <li><span><b>7</b>月</span></li>
+                    <li><span><b>8</b>月</span></li>
+                    <li><span><b>9</b>月</span></li>
+                    <li><span><b>10</b>月</span></li>
+                    <li><span><b>11</b>月</span></li>
+                    <li><span><b>12</b>月</span></li>
+                </ul>
+
+            </div>
+            <div class="twnewslist">
+                <ul>
+                    #foreach($item in $vwexhibtionsi22 $QbW9udGgoQ3pzaik9MQ-- $ODays-desc)
+                    <li dir="${item.Days}">
+                        <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+                        <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+                    </li>
+                    #end
+                </ul>
+                <ul>
+                    #foreach($item in $vwexhibtionsi23 $QbW9udGgoQ3pzaik9Mg-- $ODays-desc)
+                    <li dir="${item.Days}">
+                        <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+                        <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")}地址：${item.Address}</p>
+                    </li>
+                    #end
+                </ul>
+                <ul>
+                    #foreach($item in $vwexhibtionsi24 $QbW9udGgoQ3pzaik9Mw-- $ODays-desc)
+                    <li dir="${item.Days}">
+                        <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+                        <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+                    </li>
+                    #end
+                </ul>
+                <ul>
+                    #foreach($item in $vwexhibtionsi25 $QbW9udGgoQ3pzaik9NA-- $ODays-desc)
+                    <li dir="${item.Days}">
+                        <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+                        <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+                    </li>
+                    #end
+                </ul>
+                <ul>
+                    #foreach($item in $vwexhibtionsi26 $QbW9udGgoQ3pzaik9NQ-- $ODays-desc)
+                    <li dir="${item.Days}">
+                        <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+                        <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+                    </li>
+                    #end
+                </ul>
+                <ul>
+                    #foreach($item in $vwexhibtionsi27 $QbW9udGgoQ3pzaik9Ng-- $ODays-desc)
+                    <li dir="${item.Days}">
+                        <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+                        <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+                    </li>
+                    #end
+                </ul>
+                <ul>
+                    #foreach($item in $vwexhibtionsi28 $QbW9udGgoQ3pzaik9Nw-- $ODays-desc)
+                    <li dir="${item.Days}">
+                        <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+                        <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+                    </li>
+                    #end
+                </ul>
+                <ul>
+                    #foreach($item in $vwexhibtionsi29 $QbW9udGgoQ3pzaik9OA-- $ODays-desc)
+                    <li dir="${item.Days}">
+                        <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+                        <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+                    </li>
+                    #end
+                </ul>
+                <ul>
+                    #foreach($item in $vwexhibtionsi30 $QbW9udGgoQ3pzaik9OQ-- $ODays-desc)
+                    <li dir="${item.Days}">
+                        <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+                        <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+                    </li>
+                    #end
+                </ul>
+                <ul>
+                    #foreach($item in $vwexhibtionsi31 $QbW9udGgoQ3pzaik9MTA- $ODays-desc)
+                    <li dir="${item.Days}">
+                        <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+                        <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+                    </li>
+                    #end
+                </ul>
+                <ul>
+                    #foreach($item in $vwexhibtionsi32 $QbW9udGgoQ3pzaik9MTE- $ODays-desc)
+                    <li dir="${item.Days}">
+                        <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+                        <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+                    </li>
+                    #end
+                </ul>
+                <ul>
+                    #foreach($item in $vwexhibtionsi33 $QbW9udGgoQ3pzaik9MTI- $ODays-desc)
+                    <li dir="${item.Days}">
+                        <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+                        <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+                    </li>
+                    #end
+                </ul>
+            </div>
+        </div>
+        <div id="2018" class="ex-year">
+            <div class="twmonth">
+                <a name="more"></a>
+                <ul>
+                    <li><span><b>1</b>月</span></li>
+                    <li><span><b>2</b>月</span></li>
+                    <li><span><b>3</b>月</span></li>
+                    <li><span><b>4</b>月</span></li>
+                    <li><span><b>5</b>月</span></li>
+                    <li><span><b>6</b>月</span></li>
+                    <li><span><b>7</b>月</span></li>
+                    <li><span><b>8</b>月</span></li>
+                    <li><span><b>9</b>月</span></li>
+                    <li><span><b>10</b>月</span></li>
+                    <li><span><b>11</b>月</span></li>
+                    <li><span><b>12</b>月</span></li>
+                </ul>
+
+            </div>
+            <div class="twnewslist">
+                <ul>
+                    #foreach($item in $vwexhibtionsan22 $QbW9udGgoQ3pzaik9MQ-- $ODays-desc)
+                    <li dir="${item.Days}">
+                        <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+                        <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+                    </li>
+                    #end
+                </ul>
+                <ul>
+                    #foreach($item in $vwexhibtionsan23 $QbW9udGgoQ3pzaik9Mg-- $ODays-desc)
+                    <li dir="${item.Days}">
+                        <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+                        <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")}地址：${item.Address}</p>
+                    </li>
+                    #end
+                </ul>
+                <ul>
+                    #foreach($item in $vwexhibtionsan24 $QbW9udGgoQ3pzaik9Mw-- $ODays-desc)
+                    <li dir="${item.Days}">
+                        <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+                        <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+                    </li>
+                    #end
+                </ul>
+                <ul>
+                    #foreach($item in $vwexhibtionsan25 $QbW9udGgoQ3pzaik9NA-- $ODays-desc)
+                    <li dir="${item.Days}">
+                        <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+                        <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+                    </li>
+                    #end
+                </ul>
+                <ul>
+                    #foreach($item in $vwexhibtionsan26 $QbW9udGgoQ3pzaik9NQ-- $ODays-desc)
+                    <li dir="${item.Days}">
+                        <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+                        <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+                    </li>
+                    #end
+                </ul>
+                <ul>
+                    #foreach($item in $vwexhibtionsan27 $QbW9udGgoQ3pzaik9Ng-- $ODays-desc)
+                    <li dir="${item.Days}">
+                        <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+                        <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+                    </li>
+                    #end
+                </ul>
+                <ul>
+                    #foreach($item in $vwexhibtionsan28 $QbW9udGgoQ3pzaik9Nw-- $ODays-desc)
+                    <li dir="${item.Days}">
+                        <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+                        <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+                    </li>
+                    #end
+                </ul>
+                <ul>
+                    #foreach($item in $vwexhibtionsan29 $QbW9udGgoQ3pzaik9OA-- $ODays-desc)
+                    <li dir="${item.Days}">
+                        <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+                        <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+                    </li>
+                    #end
+                </ul>
+                <ul>
+                    #foreach($item in $vwexhibtionsan30 $QbW9udGgoQ3pzaik9OQ-- $ODays-desc)
+                    <li dir="${item.Days}">
+                        <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+                        <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+                    </li>
+                    #end
+                </ul>
+                <ul>
+                    #foreach($item in $vwexhibtionsan31 $QbW9udGgoQ3pzaik9MTA- $ODays-desc)
+                    <li dir="${item.Days}">
+                        <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+                        <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+                    </li>
+                    #end
+                </ul>
+                <ul>
+                    #foreach($item in $vwexhibtionsan32 $QbW9udGgoQ3pzaik9MTE- $ODays-desc)
+                    <li dir="${item.Days}">
+                        <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+                        <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+                    </li>
+                    #end
+                </ul>
+                <ul>
+                    #foreach($item in $vwexhibtionsan33 $QbW9udGgoQ3pzaik9MTI- $ODays-desc)
+                    <li dir="${item.Days}">
+                        <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+                        <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+                    </li>
+                    #end
+                </ul>
+            </div>
+        </div>
+<div id="2017" class="ex-year"><div class="twmonth">
+    <a name="more"></a>
+    <ul>
+        <li><span><b>1</b>月</span></li>
+        <li><span><b>2</b>月</span></li>
+        <li><span><b>3</b>月</span></li>
+        <li><span><b>4</b>月</span></li>
+        <li><span><b>5</b>月</span></li>
+        <li><span><b>6</b>月</span></li>
+        <li><span><b>7</b>月</span></li>
+        <li><span><b>8</b>月</span></li>
+        <li><span><b>9</b>月</span></li>
+        <li><span><b>10</b>月</span></li>
+        <li><span><b>11</b>月</span></li>
+        <li><span><b>12</b>月</span></li>
+    </ul>
+
+</div>
+<div class="twnewslist">
+    <ul>
+        #foreach($item in $vwexhibtiontwo22 $QbW9udGgoQ3pzaik9MQ-- $ODays-desc)
+        <li dir="${item.Days}">
+            <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+            <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+        </li>
+        #end
+    </ul>
+    <ul>
+        #foreach($item in $vwexhibtiontwo23 $QbW9udGgoQ3pzaik9Mg-- $ODays-desc)
+        <li dir="${item.Days}">
+            <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+            <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")}地址：${item.Address}</p>
+        </li>
+        #end
+    </ul>
+    <ul>
+        #foreach($item in $vwexhibtiontwo24 $QbW9udGgoQ3pzaik9Mw-- $ODays-desc)
+        <li dir="${item.Days}">
+            <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+            <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+        </li>
+        #end
+    </ul>
+    <ul>
+        #foreach($item in $vwexhibtiontwo25 $QbW9udGgoQ3pzaik9NA-- $ODays-desc)
+        <li dir="${item.Days}">
+            <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+            <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+        </li>
+        #end
+    </ul>
+    <ul>
+        #foreach($item in $vwexhibtiontwo26 $QbW9udGgoQ3pzaik9NQ-- $ODays-desc)
+        <li dir="${item.Days}">
+            <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+            <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+        </li>
+        #end
+    </ul>
+    <ul>
+        #foreach($item in $vwexhibtiontwo27 $QbW9udGgoQ3pzaik9Ng-- $ODays-desc)
+        <li dir="${item.Days}">
+            <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+            <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+        </li>
+        #end
+    </ul>
+    <ul>
+        #foreach($item in $vwexhibtiontwo28 $QbW9udGgoQ3pzaik9Nw-- $ODays-desc)
+        <li dir="${item.Days}">
+            <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+            <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+        </li>
+        #end
+    </ul>
+    <ul>
+        #foreach($item in $vwexhibtiontwo29 $QbW9udGgoQ3pzaik9OA-- $ODays-desc)
+        <li dir="${item.Days}">
+            <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+            <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+        </li>
+        #end
+    </ul>
+    <ul>
+        #foreach($item in $vwexhibtiontwo30 $QbW9udGgoQ3pzaik9OQ-- $ODays-desc)
+        <li dir="${item.Days}">
+            <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+            <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+        </li>
+        #end
+    </ul>
+    <ul>
+        #foreach($item in $vwexhibtiontwo31 $QbW9udGgoQ3pzaik9MTA- $ODays-desc)
+        <li dir="${item.Days}">
+            <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+            <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+        </li>
+        #end
+    </ul>
+    <ul>
+        #foreach($item in $vwexhibtiontwo32 $QbW9udGgoQ3pzaik9MTE- $ODays-desc)
+        <li dir="${item.Days}">
+            <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+            <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+        </li>
+        #end
+    </ul>
+    <ul>
+        #foreach($item in $vwexhibtiontwo33 $QbW9udGgoQ3pzaik9MTI- $ODays-desc)
+        <li dir="${item.Days}">
+            <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+            <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+        </li>
+        #end
+    </ul>
+</div></div>
+<div id="2016" class="ex-year">
+<div class="twmonth"><a name="more"></a>
+	<ul>
+		<li><span><b>1</b>月</span></li>
+		<li><span><b>2</b>月</span></li>
+		<li><span><b>3</b>月</span></li>
+		<li><span><b>4</b>月</span></li>
+		<li><span><b>5</b>月</span></li>
+		<li><span><b>6</b>月</span></li>
+		<li><span><b>7</b>月</span></li>
+		<li><span><b>8</b>月</span></li>
+		<li><span><b>9</b>月</span></li>
+		<li><span><b>10</b>月</span></li>
+		<li><span><b>11</b>月</span></li>
+		<li><span><b>12</b>月</span></li>	
+	</ul>
+	
+</div>
+<div class="twnewslist">
+	<ul>
+        #foreach($item in $vwexhibtion10 $QbW9udGgoQ3pzaik9MQ-- $ODays-desc)
+		<li dir="${item.Days}"><a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+			<p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+		</li>
+        #end
+	</ul>
+	<ul>
+        #foreach($item in $vwexhibtion11 $QbW9udGgoQ3pzaik9Mg-- $ODays-desc)
+        <li dir="${item.Days}">
+            <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+            <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")}地址：${item.Address}</p>
+        </li>
+        #end
+	</ul>
+	<ul>
+        #foreach($item in $vwexhibtion12 $QbW9udGgoQ3pzaik9Mw-- $ODays-desc)
+        <li dir="${item.Days}">
+            <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+            <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+        </li>
+        #end
+	</ul>
+	<ul>
+        #foreach($item in $vwexhibtion13 $QbW9udGgoQ3pzaik9NA-- $ODays-desc)
+        <li dir="${item.Days}">
+            <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+            <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+        </li>
+        #end
+	</ul>
+	<ul>
+        #foreach($item in $vwexhibtion14 $QbW9udGgoQ3pzaik9NQ-- $ODays-desc)
+        <li dir="${item.Days}">
+            <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+            <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+        </li>
+        #end
+	</ul>
+	<ul>
+        #foreach($item in $vwexhibtion15 $QbW9udGgoQ3pzaik9Ng-- $ODays-desc)
+        <li dir="${item.Days}">
+            <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+            <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+        </li>
+        #end
+	</ul>
+	<ul>
+        #foreach($item in $vwexhibtion16 $QbW9udGgoQ3pzaik9Nw-- $ODays-desc)
+        <li dir="${item.Days}">
+            <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+            <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+        </li>
+        #end
+	</ul>
+	<ul>
+        #foreach($item in $vwexhibtion17 $QbW9udGgoQ3pzaik9OA-- $ODays-desc)
+        <li dir="${item.Days}">
+            <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+            <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+        </li>
+        #end
+	</ul>
+	<ul>
+        #foreach($item in $vwexhibtion18 $QbW9udGgoQ3pzaik9OQ-- $ODays-desc)
+        <li dir="${item.Days}">
+            <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+            <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+        </li>
+        #end
+	</ul>
+	<ul>
+        #foreach($item in $vwexhibtion19 $QbW9udGgoQ3pzaik9MTA- $ODays-desc)
+        <li dir="${item.Days}">
+            <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+            <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+        </li>
+        #end
+	</ul>
+	<ul>
+        #foreach($item in $vwexhibtion20 $QbW9udGgoQ3pzaik9MTE- $ODays-desc)
+        <li dir="${item.Days}">
+            <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+            <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+        </li>
+        #end
+	</ul>
+	<ul>
+        #foreach($item in $vwexhibtion21 $QbW9udGgoQ3pzaik9MTI- $ODays-desc)
+        <li dir="${item.Days}">
+            <a href="/exhibtion/${item.Id}.html" #if(${item.Days}>0)style="color:rgba(136, 136, 136, 1);"#end>${item.Title}</a>
+            <p>时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 地址：${item.Address}</p>
+        </li>
+        #end
+	</ul>
+</div>
+</div>
+<div class="waigf-view clearfix">
+	
+    #foreach($item in $vwExhibtiontwo35 $L3 $QSXNyb209J3RydWUnYW5kIGlzbnVsbChzamRlbW8sJycpPD4nJw-- $ODays-asc)
+	<div class="wiew-tab">
+		<a href="/exhibtion/${item.Id}.html" title="${item.Title}" target="_blank" class="wfsjimg"><img src="/img/wfsj.png"></a>
+		<p>
+			<a href="/exhibtion/${item.Id}.html" title="${item.Title}" target="_blank">${item.SjDemo}</a>
+			<span>${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")}</span>
+		</p>
+	</div>
+	#end
+	
+	<span class="wfsj"><img src="/img/wafsj.png"></span>
+</div>
+<!--公告-->
+	<script>
+        $(document).ready(function (e) {
+            $(".waigf-view .wiew-tab").each(function (index, Element) {
+                if ($(this).index() % 3 == 2) {
+                    $(this).attr("style", "margin-right: 0px;");
+                }
+            });
+
+
+            $(".exhibtion-year span").click(function (e) {
+                $(this).addClass("active");
+                $(this).siblings("span").removeClass("active");
+                var a = $(this).attr("data-year");
+                $(".ex-year").hide();
+                $(a).show();
+            });
+            var d = new Date();
+            var num = d.getMonth();
+            $("#2016.twmonth ul li").eq(num).addClass("on");
+            $("#2016 .twnewslist ul").eq(num).show();
+            $("#2017.twmonth ul li").eq(num).addClass("on");
+            $("#2017 .twnewslist ul").eq(num).show();
+            var endTime = new Date(Date.parse("2019-01-01"));
+            if (d < endTime) num = 0;
+            $("#2018.twmonth ul li").eq(num).addClass("on");
+            $("#2018 .twnewslist ul").eq(num).show();
+            $("#2016 .twmonth ul li").click(function (e) {
+                $("#2016 .twmonth ul li").removeClass("on");
+                $("#2016 .twmonth ul li").eq($(this).index()).addClass("on");
+                $("#2016 .twnewslist ul").slideUp(300);
+                $("#2016 .twnewslist ul").eq($(this).index()).slideDown(500);
+            });
+            $("#2017 .twmonth ul li").click(function (e) {
+                $("#2017 .twmonth ul li").removeClass("on");
+                $("#2017 .twmonth ul li").eq($(this).index()).addClass("on");
+                $("#2017 .twnewslist ul").slideUp(300);
+                $("#2017 .twnewslist ul").eq($(this).index()).slideDown(500);
+            });
+            $("#2018 .twmonth ul li").click(function (e) {
+                $("#2018 .twmonth ul li").removeClass("on");
+                $("#2018 .twmonth ul li").eq($(this).index()).addClass("on");
+                $("#2018 .twnewslist ul").slideUp(300);
+                $("#2018 .twnewslist ul").eq($(this).index()).slideDown(500);
+            });
+            $("#2019 .twmonth ul li").click(function (e) {
+                $("#2019 .twmonth ul li").removeClass("on");
+                $("#2019 .twmonth ul li").eq($(this).index()).addClass("on");
+                $("#2019 .twnewslist ul").slideUp(300);
+                $("#2019 .twnewslist ul").eq($(this).index()).slideDown(500);
+            });
+            $("#2019 .twmonth ul li").eq(num).addClass("on");
+            $("#2019 .twnewslist ul").eq(num).show();
+        });
+	</script>
+       
+		<!--main-->
+        #parse("Foot.html")
+	</body>
+
+</html>

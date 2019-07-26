@@ -1,0 +1,633 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+#foreach($item in $newhouse01 $Detail)
+    #set($info=$item)
+#end
+<title>${info.PdtTitle}_$Global.WebName</title>
+<meta name="keywords" content="$info.WebKeywords" />
+<meta name="description" content="$info.WebDescription" />   
+   #parse("head.html") 
+      <!--必填-->
+      <meta property="og:type" content="article" />
+      <meta property="og:image" content="//www.waigf.com/upload/newhouse/${info.PdtPicture1}" />
+      <meta property="og:release_date" content="${info.CreateDate}" />
+      <!--选填-->
+      <meta property="og:title" content="${info.PdtTitle}" />
+      <meta property="og:description" content="${info.WebDescription}" />
+   <link rel="stylesheet" href="/css/head.v2.css" />
+		<link rel="stylesheet" href="/css/style.v2.css" />
+        <script type="text/javascript" src="/js/highcharts.js"></script>
+		<script>
+			var menu = 3
+		</script>
+      <script>
+          var sqshow=true;
+          var Sqsr1,Sqsr2,Sqsr3,Sqjy1,Sqjy2,Sqjy3,Sqsy1,Sqsy2,Sqsy3,Sqll,Sqbl,Sqbr,Sqxy,Sqhr,Sqyy,Sqqt,Sqfw,Sqjy,Sqyl,Sqys,Sqyiliao,Sqzf,Sqzt,Sqjt,Sqgg;
+          var sqrk="${info.Sqrk}";var sqaq="${info.Sqaq}";          
+          if(sqrk!="" && sqrk!=null && sqaq!="" && sqaq!=null)
+          {
+             #if($!{info.Sqsr1}!="")Sqsr1=${info.Sqsr1};#end  #if($!{info.Sqsr2}!="")Sqsr2=${info.Sqsr2};#end #if($!{info.Sqsr3}!="")Sqsr3=${info.Sqsr3};#end #if($!{info.Sqjy1}!="")Sqjy1=${info.Sqjy1};#end #if($!{info.Sqjy2}!="")Sqjy2=${info.Sqjy2};#end #if($!{info.Sqjy3}!="")Sqjy3=${info.Sqjy3};#end
+              #if($!{info.Sqsr1}!="")Sqsy1=${info.Sqsy1};#end #if($!{info.Sqsr1}!="")Sqsy2=${info.Sqsy2};#end #if($!{info.Sqsr1}!="")Sqsy3=${info.Sqsy3};#end #if($!{info.Sqsr1}!="")Sqll=${info.Sqll};#end #if($!{info.Sqsr1}!="")Sqbl=${info.Sqbl};#end
+              #if($!{info.Sqbr}!="")Sqbr=${info.Sqbr};#end #if($!{info.Sqxy}!="")Sqxy=${info.Sqxy};#end #if($!{info.Sqhr}!="")Sqhr=${info.Sqhr};#end #if($!{info.Sqyy}!="")Sqyy=${info.Sqyy};#end #if($!{info.Sqqt}!="")Sqqt=${info.Sqqt};#end 
+              #if($!{info.Sqfw}!="")Sqfw=${info.Sqfw};#end #if($!{info.Sqjy}!="")Sqjy=${info.Sqjy};#end #if($!{info.Sqyl}!="")Sqyl=${info.Sqyl};#end #if($!{info.Sqys}!="")Sqys=${info.Sqys};#end #if($!{info.Sqyiliao}!="")Sqyiliao=${info.Sqyiliao};#end #if($!{info.Sqzf}!="")Sqzf=${info.Sqzf};#end #if($!{info.Sqzt}!="")Sqzt=${info.Sqzt};#end #if($!{info.Sqjt}!="")Sqjt=${info.Sqjt};#end #if($!{info.Sqgg}!="")Sqgg=${info.Sqgg};#end
+          }else{
+              sqshow=false;
+          }       
+       </script>
+</head>
+<body>
+#parse("Top.html")
+
+<!--显示左侧导航按钮-->
+		<div class="open_left_tools tran5">
+			<p>展</p>
+			<p>开</p>
+			<p>左</p>
+			<p>侧</p>
+			<p>栏</p>
+			<p>目</p><i class="iconfont">&#xe69e;</i></div>
+		<!--显示左侧导航按钮-->
+		<!--left-->
+		<div id="nyleft" class="tran5">
+			<div class="detail_closed"><i class="iconfont icon1 tran3">&#xe610;</i><i class="iconfont icon2 tran5">&#xe620;</i></div>
+			<div class="detail_title">${info.PdtTitle}</div>
+			<div class="detail_address">
+				<i class="iconfont">&#xe61f;</i>${info.Address}
+			</div>
+            <div class="news-tags" style="margin-left:10px;">
+                <i class="iconfont">&#xe663;</i>标签：  <span id="tag">${info.Tag}</span>
+            </div>
+				<div class="company_info" #if(${info.LevelId}<17)style="display: none;"#end>
+                    <a href="/shop/default_${info.UserId}.html" target="_blank"><img src="/upload/users/${info.Picture}">${info.shoptitle} $!{info.Mobile}</a>
+			</div>
+			<div class="detail_price">
+				￥${info.TouristPrice.ToString().Replace(".00","")}<span>万元起</span><p style="font-size: 12px; text-align: left;; font-weight: normal; line-height: 150%;opacity: 0.6; padding: 0px 15px;">本站承诺所有项目为开发商制定的统一价格，为行业最低价，如因开发商价格调整，未及时更新，请留言提醒我们，以即时开发商定价为准。</p>
+			</div>
+			<div class="detail_tag clearfix">
+                #if($!{info.typename}!="")<span>$info.typename</span>#end
+                #if($!{info.PdtCode}!="")<span>${info.PdtCode}㎡</span>#end
+                #if($!{info.PdtChewei}!="")<span>${info.PdtChewei.Replace("车位","")}车位</span>#end
+                #if($!{info.PdtZhuangxiu}!="")<span>$info.PdtZhuangxiu</span>#end
+                #if($!{info.PdtChanquan}!="")<span>$info.PdtChanquan产权</span>#end
+                #if($!{info.Fx}!="")<span>房型：${info.Fx}</span>#end
+			</div>
+			<!--tel-->
+			<div class="detail_tel clearfix">
+				<a href="#zixun" >预约看房</a>
+				<p class="number clearfix ">
+					<i class="iconfont">&#xe63e;</i>
+					<span>咨询热线<b>400-082-0815</b></span>
+				</p>
+				<div class="clearfix"></div>
+				<p class="contact_code"> 
+					<span><i class="iconfont" style="font-size: 24px; margin-right: 4px;">&#xe624;</i>欧美房产<em><img src="/img/cai_weicat.png"/></em></span>
+					<span><i class="iconfont" style="font-size: 24px; margin-right: 4px;">&#xe624;</i>泰国房产<em class="jk"><img src="/img/jack_weicat.png"/></em></span>
+						<div class="clearfix"></div>
+				</p>
+			</div>
+			<style>
+				.contact_code{
+					width: 100%; display: block; color: #4093c6;font-size: 14px; padding-top: 15px;
+				}
+				.contact_code span{position: relative; cursor: pointer; width: 50%; float: left; text-align: center;}
+				.contact_code span em{ display: none;position: absolute;z-index: 60; top: -310px;left: 20px;}
+				.contact_code span:hover em{ display: block;}
+				.contact_code span em.jk{left: -140px;}
+			</style>
+			<!--tel-->
+			<!--detail_tools-->
+			<div id="detail_tools" class="clearfix">	
+             #set($school=0)
+      #foreach($item in $proschool08 $C)
+     #set($school=$velocityCount)
+      #end			
+				<span id="dt2" data-tag="#page2">楼盘信息</span>
+				#if($!{info.PdtDetail}!="")<span id="dt3" data-tag="#page3">项目优势</span>#end
+                #if($!{info.Sqrk}!="")<span id="dt0" data-tag="#page0">社区信息</span>#end
+				#if($school>0)<span id="dt1" data-tag="#page1">学校信息</span>#end
+				#if($!{info.PdtDocs}!="")<span id="dt4" data-tag="#page4">周边环境</span>#end
+				#if($!{info.PdtSjt}!="")<span id="dt5" data-tag="#page5">实景图</span>#end
+				#if($!{info.PdtFxt}!="")<span id="dt6" data-tag="#page6">房型图</span>#end
+				#if($!{info.PdtLuxian1}!="")<span id="dt7" data-tag="#page7">交通路线</span>#end
+			</div>
+			<!--detail_tools-->
+			<!--相关-->
+			<div class="Relevant">
+				<b>相关新闻</b>				
+				 #foreach($item in $newsmodel01 $L8 $QTmV3c1JvbT0ndHJ1ZSc- $A)
+        <li>
+          <a href="/news/${item.Id}.html" target="_blank" title="${item.NewsTitle}">${item.NewsTitle}</a>
+        </li>
+        #end
+			</div>
+			<!--相关-->
+		</div>
+		<!--left-->
+		<div class="detail_right">
+			<div class="right_top">
+				<!--miaobao-->
+				<div class="mianbao2 clearfix">
+					<span style="float: left;"><i class="iconfont">&#xe602;</i>
+					<a href="/" title="">外国买房网首页</a>&gt;
+					<a href="/newhouse.html" title="">环球新房</a>&gt;#set($load.Id=$info.Id)	$load.LoadDetail("newhouse")</span>
+					<div class="bdsharebuttonbox" style="padding-top: 15px;">
+						<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"><!--<i class="iconfont">&#xe613;</i>--></a>
+						<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"><!--<i class="iconfont">&#xe619;</i>--></a>
+                        <a href="/newhouse_pdf${info.Id}.html" title="下载此房源资料" class="pdfdown" target="_blank">下载此房源资料</a>
+					</div>
+				</div>
+				<!--miaonbao-->
+              
+
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"32"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+				<!--nybanenr-->
+				<div class="swiper-container" id="nybanner">
+					<div class="swiper-wrapper">
+						 #if($!{info.PdtPicture2}!="")<div class="swiper-slide"><img src="/upload/newhouse/${info.PdtPicture2}"/></div>#end
+						#if($!{info.PdtPicture3}!="")<div class="swiper-slide"><img src="/upload/newhouse/${info.PdtPicture3}" /></div>#end
+						#if($!{info.PdtPicture4}!="")<div class="swiper-slide"><img src="/upload/newhouse/${info.PdtPicture4}" /></div>#end
+						#if($!{info.PdtPicture5}!="")<div class="swiper-slide"><img src="/upload/newhouse/${info.PdtPicture5}" /></div>#end
+						#if($!{info.PdtPicture6}!="")<div class="swiper-slide"><img src="/upload/newhouse/${info.PdtPicture6}" /></div>#end
+						#if($!{info.PdtPicture7}!="")<div class="swiper-slide"><img src="/upload/newhouse/${info.PdtPicture7}" /></div>#end
+						#if($!{info.PdtPicture8}!="")<div class="swiper-slide"><img src="/upload/newhouse/${info.PdtPicture8}" /></div>#end
+					</div>
+					<!-- Add Pagination -->
+					<div class="swiper-pagination"></div>
+				</div>
+				<script>
+					var swiper = new Swiper('#nybanner', {
+						autoplay: 3000,
+						loop: true,
+						pagination: '.swiper-pagination',
+						slidesPerView: 2,
+						paginationClickable: true,
+						spaceBetween: 20
+					});
+				</script>
+				<!--nybanner-->
+			</div>
+			<!--top-->
+			<!--content-->
+			<div id="detail_content">
+				
+				 <!--楼盘信息-->
+				<div class="detail_content" id="page2">
+					<span class="navtitle">楼盘信息</span> 
+                      <div class="pinfo">
+      <ul class="clearfix">
+          #if($!{info.typename}!="")<li>物业类型：$info.typename</li>#end
+          #if($!{info.PdtCode}!="")<li>楼盘面积：${info.PdtCode}㎡ </li>#end
+          #if($!{info.PdtChewei}!="")<li>车位信息：${info.PdtChewei.Replace("车位","")}车位</li>#end
+          #if($!{info.PdtZhuangxiu}!="")<li>装修状况： $info.PdtZhuangxiu</li>#end
+          #if($!{info.PdtChanquan}!="")<li>产权说明：$info.PdtChanquan</li>#end
+          #if($!{info.PdtHbl}!="")<li>预计年回报率：${info.PdtHbl.Replace("%","")}%</li>#end
+        #if($!{info.PdtRelated}!="")<li>预计租金收入(￥)：${info.PdtRelated}/月</li>#end
+          #if($!{info.Fx}!="")<li>房型：${info.Fx}</li>#end
+      </ul>
+    </div>
+				</div>
+				<!--楼盘信息-->
+				#if($!{info.PdtDetail}!="")<!--楼盘信息-->
+                <div class="detail_content" id="page3">
+                    <span class="navtitle">项目优势</span> $!{info.PdtDetail.Replace("http:","").Replace("https:","")}
+                </div>
+
+				<!--楼盘信息-->#end
+#if($!{info.Sqrk}!="")<!--社区信息-->
+				<div class="detail_content" id="page0">
+					<span class="navtitle">社区信息</span> 
+					<div id="Data-graph" class="clearfix">
+					<div class="w430s">
+						<div class="datetab"><span>社区人口</span></div>
+						<div class="data-content clearfix">
+							<i class="iconfont">&#xe656;</i>
+							<div class="Totalnum"><span>${info.Sqrk}</span>人</div>
+						</div>
+					</div>
+					<div class="w430s">
+						<div class="datetab"><span>社区安全指数</span><i class="iconfont icon-cnbangzhu"></i></div>
+						<div class="data-content clearfix">
+							<div class="safe safe3"><span>#if(${info.Sqaq}==1)非常#else #end安全</span></div>
+						</div>
+					</div>
+
+					<div class="w430s">
+						<div class="datetab"><span>平均家庭收入</span><b>$${info.Sqsr1}</b></div>
+						<div class="data-content2 clearfix" id="container">
+
+						</div>
+					</div>
+
+					<div class="w430s">
+						<div class="datetab"><span>大学及以上教育比例</span></div>
+						<div class="data-content2 clearfix" id="container2">
+
+						</div>
+					</div>
+					<div class="w430s">
+						<div class="datetab"><span>失业率</span></div>
+						<div class="data-content2 clearfix" id="container3">
+
+						</div>
+					</div>
+
+					<div class="w430s">
+						<div class="datetab"><span>蓝领/白领比例</span></div>
+						<div class="data-content2 clearfix" id="container4">
+
+						</div>
+					</div>
+					<div class="clear"></div>
+					<div class="w890">
+						<div class="datetab"><span>族裔比例</span></div>
+						<div class="data-content3 clearfix" id="container5">
+
+						</div>
+					</div>
+
+					<div class="w890">
+						<div class="datetab"><span>生活成本指数</span></div>
+						<div class="data-content4 clearfix" id="container6">
+
+						</div>
+					</div>
+
+				</div>
+				</div>
+				<!--社区信息-->#end
+				#if($school>0)<!--学校信息-->
+				<div class="detail_content" id="page1">
+					<span class="navtitle">学校信息</span> 
+					<div class="school">
+					<div class="school-tab">
+						<span class="on">学校</span><span>私立学校</span><span>附近小学</span><span>附近中学</span><span>附近高中</span>
+					</div>
+					<div class="school-info">
+						<!--学校数据-->
+
+						<!--学校-->
+						<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ddd" class="schooltable">
+							<tr>
+								<td class="t">分配学校</td>
+								<td class="t">学校名及评分</td>
+								<td class="t">类型</td>
+								<td class="t">年级</td>
+								<td class="t">家长评分</td>
+								<td class="t">距离</td>
+							</tr>
+							 #foreach($item in $proschool $C $QaXNob21lPSd0cnVlJw-- $OZl-Asc)
+							<tr>
+								<td><i class="iconfont"> #if(${item.Fenpei}!="False")&#xe675;#end</i></td>
+								<td><span class="num" date-leve="${item.Pf}">${item.Pf}</span> ${item.Title}</td>
+								<td>#if(${item.Lx}=="1")<div style="display:none">${item.Lx}</div>公立#else私立#end</td>
+								<td>${item.Nj}</td>
+								<td><i class="iconfont icon-pingjia${item.Jcpf}"></i></td>
+								<td>${item.Jl}</td>
+							</tr>
+                            #end
+						</table>
+						<!--学校-->
+						<!--私立学习-->
+						<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ddd" class="schooltable">
+							<tr>
+								<td class="t">分配学校</td>
+								<td class="t">学校名及评分</td>
+								<td class="t">类型</td>
+								<td class="t">年级</td>
+								<td class="t">家长评分</td>
+								<td class="t">距离</td>
+							</tr>
+							 #foreach($item in $proschool01 $C $QbHg9JzIn $OZl-Asc)
+                            <tr>
+                                <td><i class="iconfont"> #if($!{item.Fenpei}!="False")&#xe675;#end</i></td>
+                                <td><span class="num" date-leve="${item.Pf}">${item.Pf}</span> ${item.Title}</td>
+                                <td>#if(${item.Lx}=="1")<div style="display:none">${item.Lx}</div>公立#else私立#end</td>
+                                <td>${item.Nj}</td>
+                                <td><i class="iconfont icon-pingjia${item.Jcpf}"></i></td>
+                                <td>${item.Jl}</td>
+                            </tr>
+                            #end
+						</table>
+						<!--私立学校-->
+						<!--中学-->
+						<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ddd" class="schooltable">
+							<tr>
+								<td class="t">分配学校</td>
+								<td class="t">学校名及评分</td>
+								<td class="t">类型</td>
+								<td class="t">年级</td>
+								<td class="t">家长评分</td>
+								<td class="t">距离</td>
+							</tr>
+							 #foreach($item in $proschool02 $C $Qemw9JzEn $OZl-Asc)
+                            <tr>
+                                <td><i class="iconfont"> #if(${item.Fenpei}!="False")&#xe675;#end</i></td>
+                                <td><span class="num" date-leve="${item.Pf}">${item.Pf}</span> ${item.Title}</td>
+                                <td>#if(${item.Lx}=="1")<div style="display:none">${item.Lx}</div>公立#else私立#end</td>
+                                <td>${item.Nj}</td>
+                                <td><i class="iconfont icon-pingjia${item.Jcpf}"></i></td>
+                                <td>${item.Jl}</td>
+                            </tr>
+                            #end
+						</table>
+<!--小学-->
+
+	<!--小学-->
+						<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ddd" class="schooltable">
+							<tr>
+								<td class="t">分配学校</td>
+								<td class="t">学校名及评分</td>
+								<td class="t">类型</td>
+								<td class="t">年级</td>
+								<td class="t">家长评分</td>
+								<td class="t">距离</td>
+							</tr>
+							 #foreach($item in $proschool03 $C $Qemw9JzIn $OZl-Asc)
+                            <tr>
+                                <td><i class="iconfont"> #if(${item.Fenpei}!="False")&#xe675;#end</i></td>
+                                <td><span class="num" date-leve="${item.Pf}">${item.Pf}</span> ${item.Title}</td>
+                                <td>#if(${item.Lx}=="1")<div style="display:none">${item.Lx}</div>公立#else私立#end</td>
+                                <td>${item.Nj}</td>
+                                <td><i class="iconfont icon-pingjia${item.Jcpf}"></i></td>
+                                <td>${item.Jl}</td>
+                            </tr>
+                            #end
+						</table>
+<!--中学-->
+
+	<!--高中-->
+						<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ddd" class="schooltable">
+							<tr>
+								<td class="t">分配学校</td>
+								<td class="t">学校名及评分</td>
+								<td class="t">类型</td>
+								<td class="t">年级</td>
+								<td class="t">家长评分</td>
+								<td class="t">距离</td>
+							</tr>
+							#foreach($item in $proschool04 $C $Qemw9JzMn $OZl-Asc)
+                            <tr>
+                                <td><i class="iconfont"> #if(${item.Fenpei}!="False")&#xe675;#end</i></td>
+                                <td><span class="num" date-leve="${item.Pf}">${item.Pf}</span> ${item.Title}</td>
+                                <td>#if(${item.Lx}=="1")<div style="display:none">${item.Lx}</div>公立#else私立#end</td>
+                                <td>${item.Nj}</td>
+                                <td><i class="iconfont icon-pingjia${item.Jcpf}"></i></td>
+                                <td>${item.Jl}</td>
+                            </tr>
+                            #end
+						</table>
+<!--高中-->
+						<!--学校数据-->
+					</div>
+				</div>
+				<!--社区信息-->
+				</div>
+				<!--学校信息-->#end
+				#if($!{info.PdtDocs}!="")<!--周边环境-->
+                <div class="detail_content" id="page4">
+                    <span class="navtitle">周边环境</span> ${info.PdtDocs.Replace("http:","").Replace("https:","")}
+                </div>
+				<!--周边环境-->#end
+				#if($!{info.PdtSjt}!="")<!--实景图-->
+                <div class="detail_content" id="page5">
+                    <span class="navtitle">实景图</span>
+                    $info.PdtSjt.Replace("http:","").Replace("https:","")
+                </div>
+
+				<!--实景图-->#end
+				#if($!{info.PdtFxt}!="")<!--房型图-->
+                <div class="detail_content" id="page6">
+                    <span class="navtitle">房型图</span>
+                    $info.PdtFxt.Replace("http:","").Replace("https:","")
+                </div>#end
+
+				<!--房型图-->
+				#if($!{info.PdtLuxian1}!="")<!--交通路线-->
+				<div class="detail_content" id="page7">
+					<span class="navtitle">交通路线</span>
+					 <div id="googleMap" style="width:890px;height:500px;"></div>
+				</div>
+				<!--交通路线-->#end
+				<!--contnet-->
+				<!--order-->
+<div class="order-all"><a name="zixun"></a>
+	<div class="forname">我对<span>${info.PdtTitle}</span> 感兴趣</div>
+	<input type="text" class="yname" id="fbusername" maxlength="20"  placeholder="您的称呼"/><input type="text" class="ytel" id="fbmobile" placeholder="您的联系方式（手机号）"/>
+	<textarea class="ycontent" id="fbcontent" maxlength="200" placeholder="告诉我们您的需求，我们会第一时间给你答复"></textarea>
+	<input type="submit" value="提交留言" class="yconttj" id="fbtj">
+</div>
+<!--order-->
+			</div>
+
+			<!--foot-->
+			<div class="footbg mt50" style="padding: 0px;">
+
+				<div class="nfooter">
+					<div class="clearfix w1200">
+						<p class="left">外国买房网-全球华人海外房产交易平台,海外房产网 ©2017 外国买房网_外房 版权所有 浙ICP备13012890号-4</p>
+						<p class="right">
+							<a href="/aboutus.html" target="_blank" title="">关于我们</a> |
+							<a href="/honor.html" target="_blank" title="">公司荣誉</a> </p>
+					</div>
+				</div>
+			</div>
+			<script type="text/javascript" src="/js/public.v2.js"></script>
+			<!--图标数据-->
+			<!--滚动判断-->
+			<script>
+                $(document).ready(function(e) { 
+                    $(".selector").scrollLoading();                   
+                    $("#parentid").val("${info.Id}");
+                    $("#lei").val("2");
+                    $("#parentname").val("${info.PdtTitle}");
+                    var tag = "$!{info.Tag}";
+                    if (tag.length > 0) { 
+                        var tags = decodeURIComponent(tag).split('|');
+                        var tagHtml = "";
+                        for (var i = 0; i < tags.length; i++) {
+                            tagHtml += '<a href="/search/?t=newhouse&p=' + escape(tags[i]) + '" target="blank">' + tags[i] + '</a> / ';
+                        }
+                        $("#tag").html(tagHtml.substring(0,tagHtml.length-3));
+                    }
+                });
+                $("#detail_tools span").click(function(e) {
+                    var tg = $(this).attr("data-tag")
+                    $(this).addClass("active").siblings("span").removeClass("active")
+                    var atop = $(tg).offset().top
+                    $(".detail_content span.navtitle").removeClass("active")
+                    $(tg).children("span.navtitle").addClass("active")
+                    $('html, body').animate({
+                        scrollTop: atop
+                    }, 500);
+                });
+			</script>
+			<!--滚动判断-->
+			<!--左侧关闭-->
+			<script>
+                $(".detail_closed i").click(function(e) {
+                    $("#nyleft").addClass("active");
+                    $(".detail_right").attr("style", "padding-left: 0px; width: 100%;");
+                    $(".open_left_tools").addClass("active");
+                });
+                $(".open_left_tools").click(function(e) {
+                    $("#nyleft").removeClass("active");
+                    $(this).removeClass("active");
+                    $(".detail_right").removeAttr("style");
+                });
+                var content_n = $("#detail_content .detail_content").length;
+                var content_top = new Array();
+				for(i = 0; i < content_n; i++) {
+					var ac = $("#detail_content .detail_content").eq(i).offset().top - 60;
+					content_top[i] = ac
+					var acid = $("#detail_content .detail_content").eq(i).attr("id")
+					//						console.log(acid+"："+content_top[i])
+					
+				}
+
+				function add_remove_class() {
+					$("#detail_content .detail_content span.navtitle").removeClass("active")
+				}
+
+				//				function left_add(t) {
+				//					var t
+				//					$("#detail_tools span").removeClass("active")
+				//					$(t).addClass("active")
+				//					
+				//				}
+
+				$(window).scroll(function() {
+					var scroll_top = $(this).scrollTop()
+					if(scroll_top > content_top[0]) {
+						add_remove_class()
+
+						$("#page0 span.navtitle").addClass("active")
+					}
+					if(scroll_top > content_top[1]) {
+						add_remove_class()
+
+						$("#page1 span.navtitle").addClass("active")
+					}
+					if(scroll_top > content_top[2]) {
+						add_remove_class()
+
+						$("#page2 span.navtitle").addClass("active")
+					}
+					if(scroll_top > content_top[3]) {
+						add_remove_class()
+
+						$("#page3 span.navtitle").addClass("active")
+					}
+					if(scroll_top > content_top[4]) {
+						add_remove_class()
+
+						$("#page4 span.navtitle").addClass("active")
+					}
+					if(scroll_top > content_top[5]) {
+						add_remove_class()
+
+						$("#page5 span.navtitle").addClass("active")
+					}
+					if(scroll_top > content_top[6]) {
+						add_remove_class()
+
+						$("#page6 span.navtitle").addClass("active")
+					}
+					if(scroll_top > content_top[7]) {
+						add_remove_class()
+
+						$("#page7 span.navtitle").addClass("active")
+					}
+					if(scroll_top > content_top[8]) {
+						add_remove_class()
+
+						$("#page8 span.navtitle").addClass("active")
+					}
+					if(scroll_top > content_top[9]) {
+						add_remove_class()
+
+						$("#page9 span.navtitle").addClass("active")
+					}
+
+				})
+			</script>
+			<!--左侧关闭-->
+
+			<!--滚动右侧内容定位-->
+		<script type="text/javascript" src="/js/publicdetail.v2.js?v=20170902"></script>
+            <script>$(function () {   
+    $("#fbtj").click(function(){
+        var fb=true;
+        var fbmobile=$("#fbmobile").val();
+        if(fbmobile=="")
+        {
+            fb=false;
+            layer. alert("请输入手机号码");
+        } else if (!/^(13[0-9]|14[0-9]|15[0-9]|18[0-9]|17[0-9])\d{8}$/i.test(fbmobile)) {
+            layer.alert('手机格式不对'); fb = false;
+        }
+        var fbusername = $("#fbusername").val();
+        var fbuserid=0;
+        var fbcontent = document.getElementById("fbcontent").value
+        if (fb) {
+            var args = {};
+            args["mobile"] = escape(fbmobile);
+            args["username"] = escape(fbusername);
+            args["content"] = escape(fbcontent);
+            args["lei"] = 2;
+            args["parentid"] = "$info.Id";
+            args["parentname"] = "${info.PdtTitle}";
+            args["userid"] = "$info.UserId";
+            args["url"] = window.location.href;
+            jQuery.post("/Common/Member.Feedbackvip.aspx?r=" + Math.random(), args, function (data) {
+                var d = eval(data);
+                layer.msg(d[0].message);
+                $("#fbmobile").val(""); $("#fbusername").val(""); $("#fbcontent").val("");
+                $("#fbtj").attr("disabled","true");
+                setTimeout(function () {
+                    $("#fbtj").removeAttr("disabled");
+                }, 5000);
+            }, "text");
+        }
+    });
+});</script>
+            #if(${info.PdtLuxian1}!="" && ${info.PdtLuxian2}!="")
+        <script src="//maps.google.cn/maps/api/js?v=3.35&language=zh-cn&key=AIzaSyCZZVoxWKuduGhmJMUB2e3dzK2lCTaaLIo"></script>
+        <script>
+    //sethistory("$info.Id", "$info.PdtPicture1", "$info.PdtTitle","$info.TouristPrice","newhouse");
+
+    var myCenter=new google.maps.LatLng(${info.PdtLuxian1},${info.PdtLuxian2});
+
+function initialize()
+{
+    var mapProp = {
+        center:myCenter,
+        zoom:16,
+        mapTypeId:google.maps.MapTypeId.ROADMAP
+    };
+
+    var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+    var marker=new google.maps.Marker({
+        position:myCenter,
+    });
+
+    marker.setMap(map);
+
+    var infowindow = new google.maps.InfoWindow({
+        content:"${info.PdtTitle}"
+    });
+
+    infowindow.open(map,marker);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+</script>#end
+           
+
+</body>
+</html>

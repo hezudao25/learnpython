@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>网站地图_$Global.WebName</title>
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/images/favicon.ico"/>
+<link href="Css/base.css" rel="stylesheet" type="text/css" />
+<link href="Css/inside.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/Js/common.js"></script>
+</head>
+<body>
+#parse("Top.html")<script type="text/javascript">                      setChoseNav(2);</script>
+<div class="main">
+	<div class="mainleft">
+		<div class="abouttitle">外国房外国买房网</div>
+		<ul class="aboutlist">
+
+
+
+	
+
+<li><a href="http://www.waigf.com/newhouse.html">海外新房</a></li>
+			<li><a href="http://www.waigf.com/news.html">新闻</a></li>
+			<li><a href="http://www.waigf.com/secondhouse.html">海外二手房</a></li>
+			<li><a href="http://www.waigf.com/exhibtion.html">会展</a></li>
+			<li><a href="http://www.waigf.com/agent.html">经纪人</a></li>
+			<li><a href="http://www.waigf.com/overseas.html">投资</a></li>
+			<li><a href="http://www.waigf.com/insurance.html">保险</a></li>
+			
+		</ul>
+		<div class="commodbot"></div>
+	</div>
+	<div class="mainright">
+		#parse("Search.html")
+        <!-- <div class="newsflash">
+			<div class="slider">
+				#foreach($item in $Advertise $D58)<a href="$item.LinkUrl" target="_blank"> <img alt="$item.Description" src="/FileUPLoad/Advertise/$item.AdPicture"  height="$item.hHeight" width="$item.hWidth"></a>#end
+				
+			</div>
+			
+		</div>-->
+		<div class="newstitle">
+			<p>网站地图</p>
+			<b><a href="/">首页</a>><a href="/SiteMap.txt">网站地图</a></b></div>
+		<div class="newsbox">
+			<ul class="pdirectory">
+				<li>
+					<table cellspacing="0" cellpadding="0">
+						<tr>
+							<th><a href="/" target="_blank" class="ared">首页</a></th>
+							</tr>
+					</table>
+				</li>
+				<li>
+
+		
+		<div class="newsbot"></div>
+	</div>
+	<br class="clear" />
+</div>
+#parse("Foot.html")
+</body>
+</html>

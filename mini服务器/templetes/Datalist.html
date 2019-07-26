@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+#foreach($item in $CmyType $Detail)
+#set($info=$item)
+#end
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>${info.Name}_$Global.WebName</title>
+<meta name="keywords" content="$info.Keywords" />
+<meta name="description" content="$info.Description" />
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/images/favicon.ico"/>
+<link href="/Css/base.css" rel="stylesheet" type="text/css" />
+<link href="/Css/inside.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/Js/common.js"></script>
+</head>
+<body>
+#parse("Top.html")<script type="text/javascript">                      setChoseNav(6);</script>
+<div class="main">
+	<div class="mainleft">
+		<div class="lefttitle" style="margin:0;"><b class="lefttitlesub">精彩资讯</b></div>
+		<div class="wonderful"> #foreach($item in $Community05 $L1 $P13-14-15-17 $QMT0xIGFuZCBDbXlQaWN0dXJlPD4nJw-- $OAccessNumber-desc) <a href="/Data/${item.id}.html"><img src="/FileUPLoad/Community/${item.CmyPicture}" /></a><b><a href="/Data/${item.id}.html" title="${item.CmyTitle}">${item.CmyTitle}</a></b>
+			<p>${item.Jianjie}</p>
+			#end
+			<ul class="read1">
+				#foreach($item in $Community03 $L10 $P13-14-15-17 $OAccessNumber-desc)
+				<li><a href="/Data/${item.id}.html" title="${item.CmyTitle}">${item.CmyTitle}</a></li>
+				#end
+			</ul>
+		</div>
+		<div class="leftbot"></div>
+		<div class="lefttitle"><b class="lefttitlesub">下载榜</b></div>
+		<div class="wonderful"> #foreach($item in $Community09 $L1 $P18-19-20-21-22-23 $QMT0xIGFuZCBDbXlQaWN0dXJlPD4nJw-- $OAccessNumber-desc) <a href="/Data/${item.id}.html"><img src="/FileUPLoad/Community/${item.CmyPicture}" /></a><b><a href="/Data/${item.id}.html" title="${item.CmyTitle}">${item.CmyTitle}</a></b>
+			<p>${item.Jianjie}</p>
+			#end
+			<ul>
+				#foreach($item in $Community07 $L10 $P18-19-20-21-22-23 $OAccessNumber-desc)
+				<li><a href="/Data/${item.id}.html" title="${item.CmyTitle}">${item.CmyTitle}</a></li>
+				#end
+			</ul>
+		</div>
+		<div class="leftbot"></div>
+		<div class="lefttitle"><b class="lefttitlesub">方案查阅榜</b></div>
+		<div class="wonderful"> #foreach($item in $Community08 $L1 $P24-25-26-27-28-29 $QMT0xIGFuZCBDbXlQaWN0dXJlPD4nJw-- $OAccessNumber-desc) <a href="/Data/${item.id}.html"><img src="/FileUPLoad/Community/${item.CmyPicture}" /></a><b><a href="/Data/${item.id}.html" title="${item.CmyTitle}">${item.CmyTitle}</a></b>
+			<p>${item.Jianjie}</p>
+			#end
+			<ul class="read">
+				#foreach($item in $Community06 $L6 $P24-25-26-27-28-29 $OAccessNumber-desc)
+				<li><a href="/Data/${item.id}.html" title="${item.CmyTitle}">${item.CmyTitle}</a></li>
+				#end
+			</ul>
+		</div>
+		<div class="leftbot"></div>
+	</div>
+	<div class="mainright">
+		#parse("Search.html")
+		<div class="newsflash">
+			<div class="slider">
+				<ul class="pic" id="homePushShow">
+					#foreach($item in $Advertise $P2)
+					<li style="display:#if($velocityCount==1) #else none;#end" id="homePushShow$velocityCount"> <a href="$item.LinkUrl" target="_blank"> <img alt="$item.Description" src="/FileUPLoad/Advertise/$item.AdPicture"  height="$item.hHeight" width="$item.hWidth"></a>
+						<p></p>
+						<strong>$item.name</strong> </li>
+					#end
+				</ul>
+				<ul class="num bg" id="homePushName">
+					#foreach($item in $Advertise14 $P2)<li id="homeAd$velocityCount">$velocityCount</li>#end
+				</ul>
+			</div>
+			<script type="text/javascript" src="/js/flashimg.js"></script> 
+		</div>
+		<div class="datatitle"><b>${info.Name}</b>
+			<div class="datatitlebt"></div>
+		</div>
+		<div class="newsbox">
+			<ul class="newsboxlist">
+				#foreach($item in $Community04 $T10)
+				<li><span><a href="/Data/${item.Id}.html" title="$item.CmyTitle">$item.CmyTitle</a></span><b>$item.CreateDate</b>
+					<p><strong>提要：</strong>${item.Jianjie}... <a href="/Data/${item.Id}.html">阅读更多>></a></p>
+				</li>
+				#end <br class="clear" />
+			</ul>
+			<div style="text-align:center;" >$Community04-Info</div>
+		</div>
+		<div class="newsbot"></div>
+	</div>
+	<br class="clear" />
+</div>
+#parse("Foot.html")
+</body>
+</html>

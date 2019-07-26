@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html> 
+<head>
+    <meta charset="utf-8" />
+    <title>信息搜索_$Global.WebName</title> 
+    <link rel="stylesheet" href="/font/iconfont.css" />
+    <script type="text/javascript" src="/js/jquery-1.8.0.min.js"></script>
+    <link rel="stylesheet" href="/css/head.v2.css" />
+    <link rel="stylesheet" href="/css/style.v2.css" />
+    <link rel="stylesheet" href="/css/news_page.css?v=20161018" />
+    <script type="text/javascript" src="/js/scrollLoad.js"></script>
+    <script type="text/javascript" src="/layer/layer.js"></script>
+    <script>
+        var menu = 6;
+    </script>
+</head>
+<body>
+    #parse("Top.html")
+    <!--banner-->
+    <div class="news_lx_bg nybanner">
+        <div class="nytitle">
+            <b>留学/投资搜索</b>
+            <i></i>
+            <p>提供有关留学/投资的相关资讯，包括留学/投资政策、留学/投资条件、留学/投资费用等问题的解答</p>
+        </div>
+    </div>
+    <!--banner-->
+    <!--miaobao-->
+    <div class="mianbao">
+        <p class="clearfix">
+            <i class="iconfont">&#xe602;</i>
+            <a href="/">外国买房网</a> &gt; <a href="/overseas.html">留学/投资</a> &gt; 信息搜索
+
+        </p>
+    </div>
+    <div id="main" style="margin-top:0px">
+        <!-- 投资-->
+      
+        <div id="left">
+        <div class="left-title">移民/留学/投资<p>Immigration / study / investment</p></div>
+            <div class="news-type">
+                <ul>
+                    #foreach($item in $Overseasnotype $P0 $OId-asc)
+                    <li>
+                        <a href="/OverseasList/list_t${item.Id}.html" class="items">${item.Name}</a>
+                        <ul>
+                            #foreach($item2 in $item.Child)
+                            <li>
+                                <a href="/OverseasList/list_t${item2.Id}.html">${item2.Name}</a></li>
+                                #end
+<div class="clear"></div></ul>
+</li>
+                    #end
+                </ul>
+            </div>
+            <div class="effect">
+                #foreach($item in $Advertise $D1)
+                <a href="$item.LinkUrl" target="_blank"> <img alt="$item.Description" src="/upload/ad/$item.AdPicture" height="$item.hHeight" width="$item.hWidth"></a>
+                #end
+            </div>
+            <!--相关信息-->
+            <div class="tit28 mt25"><span>最新产品</span></div>
+            <div class="overwiew">
+                <ul>
+                    #foreach($item in $Products $L3 $QSXNIb21lPSd0cnVlJw--)
+                    <li>
+                        <div class="new_pro_tab">
+                            <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle" class="pro-img"><img src=#if($item.PdtPicture1 ="" )"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end></a>
+                            <span class="name">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">$item.PdtTitle</a>
+                                <p></p>
+                            </span>
+                        </div>
+                    </li>
+                    #end
+                </ul>
+            </div>
+            <!--相关信息-->
+        </div>
+        <div class="invest">
+            <div class="tz-title">搜索</div>
+            <div class="touz-list">
+                <ul>
+                    #foreach($item in $overseasModel $T10 $OCreateDate-Desc)
+                     <li #if($!{item.OverseasPicture1}=="")class="nopic2"#end>
+                        <a href="/overseas/${item.Id}.html" class="pic" target="_blank"><img src="/images/loading.gif" class="selector" data-url="/upload/overseas/$!{item.OverseasPicture1}"></a>
+                        <span>
+                            <a href="/overseas/${item.Id}.html" class="tits" target="_blank">${item.OverseasTitle}</a><p>${item.Jianjie}</p>
+                            <p class="time">发布日期：${item.CreateDate.ToString("yyyy-MM-dd")}</p>
+                        </span>
+                    </li>
+                   #end
+                </ul>
+            </div>
+            <div class="more">
+                $overseasModel-Info
+
+            </div>
+            <div class="clear"></div>
+        </div>
+        <!--投资-->
+    </div>
+    <!--main-->
+    #parse("Foot.html")
+    <script>
+      
+	function fGetQuery1(name) {
+	    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+	    var r = window.location.search.substr(1).match(reg);
+	    if (r != null) {
+	        if (name == "p") {
+	            return r[2];
+	        } else {
+	            return unescape(r[2]);
+	        }
+	    }
+	    return null;
+	}
+	function setsearch(p) {
+	    var t = fGetQuery1("t");
+	    $("input[name='t'][value='" + t + "']").attr("checked", true);
+
+	    $("#p").val(p);
+	}
+	</script><script>          setsearch('$SRHP')</script>    <script>
+$(document).ready(function(e) {
+    $(".selector").scrollLoading();
+        });
+</script>
+</body>
+</html>

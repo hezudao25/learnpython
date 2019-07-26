@@ -1,0 +1,435 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>新闻资讯_海外房产资讯_冯仑风马牛_$Global.WebName</title>
+		<meta name="keywords" content="海外房产新闻,海外房产资讯,冯仑风马牛,海外房产开发商,美国房产资讯,美国房产新闻">
+		<meta name="description" content="外国买房网为您提供最新的海外房地产行业新闻、房价走势、政策变动等海外房产资讯">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<link rel="stylesheet" href="/css/style.v2.css" />
+		<link rel="stylesheet" href="/css/head.v2.css" />
+		<script type="text/javascript" src="/js/jquery-1.8.0.min.js"></script>
+		<link rel="stylesheet" href="/css/news_page.css" />
+        <script type="text/javascript" src="/layer/layer.js"></script>
+        <script>
+            var menu = 2;
+        </script>
+	</head>
+	<body>
+		#parse("Top.html")
+		<!--banner-->
+		<div class="news_bg nybanner">
+			<div class="nytitle">
+				<b>海外房产资讯</b>
+				<i></i>
+				<p>最精准最及时的海外房产政策、海外房价走势、海外买房攻略等海外房产资讯</p>
+			</div>
+		</div>
+		<!--banner-->
+		<div id="main">
+			<!--860-->
+			<div class="nw860">
+				<div class="left-hot-news">
+					<div class="ntitle">
+						<i></i><b>今日推荐</b>
+					</div>
+					#foreach($item in $jrttnews01 $L1 $QaXN0dD0ndHJ1ZSc-)
+					<a href="news/${item.Id}.html" target="_blank" class="new-name">${item.NewsTitle}</a>
+					<a href="news/${item.Id}.html" target="_blank"><img src="#if($!{item.NewsPicture1}==" ")/img/p.jpg#else/upload/news/$!{item.NewsPicture1}#end" alt="${item.NewsTitle}"></a>
+					<p>$!{item.Jianjie}</p>#end
+				</div>
+				<!--newslist-->
+				<div class="left-list-news">
+					<ul class="clearfix">
+						#foreach($item in $NewsModel02 $L18 $QSXNIb21lPSdUcnVlJw--)
+
+						<li #if($velocityCount==1 || $velocityCount==10)class="hotrom" #end>
+							<a href="news/${item.Id}.html" title="${item.NewsTitle}" target="_blank">${item.NewsTitle}</a>
+						</li>
+
+						#end
+					</ul>
+				</div>
+				<!--newslist-->
+
+			</div>
+			<!--860-->
+			<!--300-->
+			<div class="nw300">
+				<div class="show">
+					<b class="pre"><img src="img/new-arr-left.png"></b> <b class="next"><img src="img/new-arr-right.png"></b>
+					<ul class="img-list">
+						#foreach($item in $jrttnews03 $L6 $QTmV3c1JvbT0ndHJ1ZSc-)
+						<li>
+							<a href="/news/${item.Id}.html" target="_blank"><img src="#if($!{item.NewsPicture1}==" ")/img/p.jpg#else/upload/news/$!{item.NewsPicture1}#end" alt="${item.NewsTitle}"><span>${item.NewsTitle}</span>
+								<p>${item.Jianjie}</p>
+							</a>
+						</li>
+						#end
+
+					</ul>
+					<ul class="list">
+						<li class="on"></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+				<script type="text/javascript" src="js/newslunbo.js?v=20161018"></script>
+			</div>
+			<!--300-->
+		</div>
+		<div id="main" style="margin-top:0px">
+
+			<!--外房资讯-->
+			<div class="nw860 bdnone">
+				<div class="biaoti"><span>外房资讯</span>
+					<a href="news/list_1.html" target="_blank">更多&gt</a>
+				</div>
+				<div class="news-pic-t" id='wfzx'>
+					<ul>
+						#foreach($item in $NewsModel13 $L5 $P1 $QTmV3c1JvbT0ndHJ1ZSc- $OCreateDate-Desc)
+						<li #if($velocityCount==1)class="hot" #end>
+							<a href="/news/${item.Id}.html" target="_blank"><img src="#if($!{item.NewsPicture1}==" ")/img/c.jpg#else/upload/news/$!{item.NewsPicture1}#end" alt="${item.NewsTitle}"></a>
+							<a href="/news/${item.Id}.html" title="${item.NewsTitle}" target="_blank">${item.NewsTitle}</a>
+						</li>
+						#end
+					</ul>
+				</div>
+				<!--list-->
+				<div class="news-list-f">
+					<Ul>
+						#foreach($item in $NewsModel14 $L12 $P1 $OCreateDate-Desc)
+						<li>
+							<a href="/news/${item.Id}.html" title="${item.NewsTitle}" target="_blank">${item.NewsTitle}</a><time>${item.CreateDate.ToString("yyyy-MM-dd")}</time></li>
+						#end
+					</Ul>
+				</div>
+				<!--list-->
+
+			</div>
+
+			<!--nw300-->
+			<div class="nw300">
+				<div class="biaoti"><span>热门外房资讯</span></div>
+				<div class="w300-news">
+					<ul>
+						#foreach($item in $NewsModel15 $L12 $P1 $OAccessNumber-Desc) #if($velocityCount==1 || $velocityCount==7)
+						<li class="hot">
+							<a href="/news/${item.Id}.html" title="${item.NewsTitle}" target="_blank" class="news-title">${item.NewsTitle}</a>
+							<a href="/news/${item.Id}.html" target="_blank"><img src="#if($!{item.NewsPicture1}==" ")/img/c.jpg#else/upload/news/$!{item.NewsPicture1}#end" alt="${item.NewsTitle}"></a>
+							<p>${item.Jianjie}</p>
+						</li>#else
+						<li>
+							<a href="/news/${item.Id}.html" title="${item.NewsTitle}" target="_blank">${item.NewsTitle}</a>
+						</li>#end #end
+					</ul>
+
+				</div>
+			</div>
+			<!--nw300-->
+			<!--外房资讯-->
+
+		</div>
+
+		<div id="main">
+
+			<!--海外投资资讯-->
+			<div class="nw860 bdnone">
+				<div class="biaoti"><span>海外投资资讯</span>
+					<a href="/news/list_5.html" target="_blank">更多&gt</a>
+				</div>
+				<div class="news-pic-t" id='hwtzzx'>
+					<ul>
+						#foreach($item in $NewsModel07 $L5 $P5 $QTmV3c1JvbT0ndHJ1ZSc- $OCreateDate-Desc)
+						<li #if($velocityCount==1)class="hot" #end>
+							<a href="/news/${item.Id}.html" target="_blank"><img src="#if($!{item.NewsPicture1}==" ")/img/c.jpg#else/upload/news/$!{item.NewsPicture1}#end" alt="${item.NewsTitle}"></a>
+							<a href="/news/${item.Id}.html" title="${item.NewsTitle}" target="_blank">${item.NewsTitle}</a>
+						</li>
+						#end
+					</ul>
+				</div>
+				<!--list-->
+				<div class="news-list-f">
+					<Ul>
+						#foreach($item in $NewsModel08 $L12 $P5 $OCreateDate-Desc)
+						<li>
+							<a href="/news/${item.Id}.html" title="${item.NewsTitle}" target="_blank">${item.NewsTitle}</a><time>${item.CreateDate.ToString("yyyy-MM-dd")}</time></li>
+						#end
+					</Ul>
+				</div>
+				<!--list-->
+
+			</div>
+
+			<!--nw300-->
+			<div class="nw300">
+				<div class="biaoti"><span>热门海外投资资讯</span></div>
+				<div class="w300-news">
+					<ul>
+						#foreach($item in $NewsModel09 $L12 $P5 $OAccessNumber-Desc) #if($velocityCount==1 || $velocityCount==7)
+						<li class="hot">
+							<a href="/news/${item.Id}.html" title="${item.NewsTitle}" target="_blank" class="news-title">${item.NewsTitle}</a>
+							<a href="/news/${item.Id}.html" target="_blank"><img src="#if($!{item.NewsPicture1}==" ")/img/c.jpg#else/upload/news/$!{item.NewsPicture1}#end" alt="${item.NewsTitle}"></a>
+							<p>${item.Jianjie}</p>
+						</li>#else
+						<li>
+							<a href="/news/${item.Id}.html" title="${item.NewsTitle}" target="_blank">${item.NewsTitle}</a>
+						</li>#end #end
+					</ul>
+
+				</div>
+			</div>
+			<!--nw300-->
+			<!--海外投资资讯-->
+
+		</div>
+
+		<div id="main">
+
+			<!--开发商资讯-->
+			<div class="nw860 bdnone">
+				<div class="biaoti"><span>开发商资讯</span>
+					<a href="news/list_2.html" target="_blank">更多&gt</a>
+				</div>
+				<div class="news-pic-t" id='kfszx'>
+					<ul>
+						#foreach($item in $NewsModel10 $L5 $P2 $QTmV3c1JvbT0ndHJ1ZSc- $OCreateDate-Desc)
+						<li #if($velocityCount==1)class="hot" #end>
+							<a href="/news/${item.Id}.html" target="_blank"><img src="#if($!{item.NewsPicture1}==" ")/img/c.jpg#else/upload/news/$!{item.NewsPicture1}#end" alt="${item.NewsTitle}"></a>
+							<a href="/news/${item.Id}.html" title="${item.NewsTitle}" target="_blank">${item.NewsTitle}</a>
+						</li>
+						#end
+					</ul>
+				</div>
+				<!--list-->
+				<div class="news-list-f">
+					<Ul>
+						#foreach($item in $NewsModel11 $L12 $P2 $OCreateDate-Desc)
+						<li>
+							<a href="/news/${item.Id}.html" title="${item.NewsTitle}" target="_blank">${item.NewsTitle}</a><time>${item.CreateDate.ToString("yyyy-MM-dd")}</time></li>
+						#end
+					</Ul>
+				</div>
+				<!--list-->
+
+			</div>
+
+			<!--nw300-->
+			<div class="nw300">
+				<div class="biaoti"><span>热门开发商资讯</span></div>
+				<div class="w300-news">
+					<ul>
+						#foreach($item in $NewsModel12 $L12 $P2 $OAccessNumber-Desc) #if($velocityCount==1 || $velocityCount==7)
+						<li class="hot">
+							<a href="/news/${item.Id}.html" title="${item.NewsTitle}" target="_blank" class="news-title">${item.NewsTitle}</a>
+							<a href="/news/${item.Id}.html" target="_blank"><img src="#if($!{item.NewsPicture1}==" ")/img/c.jpg#else/upload/news/$!{item.NewsPicture1}#end" alt="${item.NewsTitle}"></a>
+							<p>${item.Jianjie}</p>
+						</li>#else
+						<li>
+							<a href="/news/${item.Id}.html" title="${item.NewsTitle}" target="_blank">${item.NewsTitle}</a>
+						</li>#end #end
+					</ul>
+
+				</div>
+			</div>
+			<!--nw300-->
+			<!--开发商资讯-->
+
+		</div>
+
+		<div id="main">
+
+			<!--冯仑风马牛-->
+			<div class="nw860 bdnone">
+				<div class="biaoti"><span>冯仑风马牛</span>
+					<a href="news/list_6.html" target="_blank">更多&gt</a>
+				</div>
+				<div class="news-pic-t" id='fmn'>
+					<ul>
+						#foreach($item in $NewsModel04 $L5 $P6 $QTmV3c1JvbT0ndHJ1ZSc- $OCreateDate-Desc)
+						<li #if($velocityCount==1)class="hot" #end>
+							<a href="/news/${item.Id}.html" target="_blank"><img src="#if($!{item.NewsPicture1}==" ")/img/c.jpg#else/upload/news/$!{item.NewsPicture1}#end" alt="${item.NewsTitle}"></a>
+							<a href="/news/${item.Id}.html" title="${item.NewsTitle}" target="_blank">${item.NewsTitle}</a>
+						</li>
+						#end
+					</ul>
+				</div>
+				<!--list-->
+				<div class="news-list-f">
+					<Ul>
+						#foreach($item in $NewsModel05 $L12 $P6 $OCreateDate-Desc)
+						<li>
+							<a href="/news/${item.Id}.html" title="${item.NewsTitle}" target="_blank">${item.NewsTitle}</a><time>${item.CreateDate.ToString("yyyy-MM-dd")}</time></li>
+						#end
+					</Ul>
+				</div>
+				<!--list-->
+
+			</div>
+
+			<!--nw300-->
+			<div class="nw300">
+				<div class="biaoti"><span>热门话题</span></div>
+				<div class="w300-news">
+					<ul>
+
+						#foreach($item in $NewsModel06 $L12 $P6 $OAccessNumber-Desc) #if($velocityCount==1 || $velocityCount==7)
+						<li class="hot">
+							<a href="/news/${item.Id}.html" title="${item.NewsTitle}" target="_blank" class="news-title">${item.NewsTitle}</a>
+							<a href="/news/${item.Id}.html" target="_blank"><img src="#if($!{item.NewsPicture1}==" ")/img/c.jpg#else/upload/news/$!{item.NewsPicture1}#end" alt="${item.NewsTitle}"></a>
+							<p>${item.Jianjie}</p>
+						</li>#else
+						<li>
+							<a href="/news/${item.Id}.html" title="${item.NewsTitle}" target="_blank">${item.NewsTitle}</a>
+						</li>#end #end
+					</ul>
+
+				</div>
+			</div>
+			<!--nw300-->
+			<!--冯仑风马牛-->
+
+		</div>
+
+        <div id="main">
+
+            <!--外房精选-->
+            <div class="nw860 bdnone">
+                <div class="biaoti">
+                    <span>外房精选</span>
+                    <a href="news/originalnews.html" target="_blank">更多&gt</a>
+                </div>
+                <div class="news-pic-t">
+                    <ul>
+                        #foreach($item in $NewsModel012 $L5 $QTmV3c1JvbT0ndHJ1ZScgYW5kIElzV2Y9J1RydWUn $OCreateDate-Desc)
+                        <li #if($velocityCount==1)class="hot" #end #if($velocityCount==3 || $velocityCount==5)style="margin-right: 0px;" #end>
+                            <a href="/news/${item.Id}.html" target="_blank"><img src="#if($!{item.NewsPicture1}=="")/img/c.jpg#else/upload/news/$!{item.NewsPicture1}#end" alt="${item.NewsTitle}"></a>
+                            <a href="/news/${item.Id}.html" title="${item.NewsTitle}" target="_blank">${item.NewsTitle}</a>
+                        </li>
+                        #end
+                    </ul>
+                </div>
+                <!--list-->
+                <div class="news-list-f">
+                    <Ul>
+                        #foreach($item in $NewsModel013 $L12 $QSXNXZj0nVHJ1ZSc- $OCreateDate-Desc)
+                        <li>
+                            <a href="/news/${item.Id}.html" title="${item.NewsTitle}" target="_blank">${item.NewsTitle}</a><time>${item.CreateDate.ToString("yyyy-MM-dd")}</time>
+                        </li>
+                        #end
+                    </Ul>
+                </div>
+                <!--list-->
+
+            </div>
+
+            <!--nw300-->
+            <div class="nw300">
+                <div class="biaoti"><span>热门话题</span></div>
+                <div class="w300-news">
+                    <ul>
+
+                        #foreach($item in $NewsModel014 $L12 $QSXNXZj0nVHJ1ZSc- $OAccessNumber-Desc) #if($velocityCount==1 || $velocityCount==7)
+                        <li class="hot">
+                            <a href="/news/${item.Id}.html" title="${item.NewsTitle}" target="_blank" class="news-title">${item.NewsTitle}</a>
+                            <a href="/news/${item.Id}.html" target="_blank"><img src="#if($!{item.NewsPicture1}=="")/img/c.jpg#else/upload/news/$!{item.NewsPicture1}#end" alt="${item.NewsTitle}"></a>
+                            <p>${item.Jianjie}</p>
+                        </li>#else
+                        <li>
+                            <a href="/news/${item.Id}.html" title="${item.NewsTitle}" target="_blank">${item.NewsTitle}</a>
+                        </li>#end #end
+                    </ul>
+
+                </div>
+            </div>
+            <!--nw300-->
+            <!--外房精选-->
+
+        </div>
+
+		<div id="main">
+
+			<!--企业新闻-->
+			<div class="nw860 bdnone">
+				<div class="biaoti"><span>店铺新闻</span>
+					<a href="qynews.html" target="_blank">更多&gt</a>
+				</div>
+
+				<!--list-->
+				<div class="news-list-f" id="shop-news-list">
+					<Ul>
+						#foreach($item in $usernews05 $L14 $OCreateDate-Desc)
+						<li>
+							<a href="/shop/news/${item.Id}.html" title="${item.NewsTitle}" target="_blank">${item.NewsTitle}</a><time>${item.CreateDate.ToString("yyyy-MM-dd")}</time></li>
+						#end
+					</Ul>
+				</div>
+				<!--list-->
+
+			</div>
+
+			<!--nw300-->
+			<div class="nw300">
+				<div class="biaoti"><span>热门话题</span></div>
+				<div class="w300-news">
+					<ul>
+
+						#foreach($item in $usernews06 $L12 $OAccessNumber-Desc)
+
+						<li>
+							<a href="/shop/news/${item.Id}.html" title="${item.NewsTitle}" target="_blank">${item.NewsTitle}</a>
+						</li>#end
+
+					</ul>
+
+				</div>
+			</div>
+			<!--nw300-->
+			<!--冯仑风马牛-->
+
+		</div>
+
+		<script>
+			window._bd_share_config = {
+				common: {
+					bdText: '新闻资讯_海外房产资讯_海外房产资讯_外国买房网',
+					bdDesc: '最新新闻资讯_海外房产资讯_海外房产资讯',
+					bdUrl: 'http://www.waigf.com/news.html',
+					bdPic: 'http://www.waigf.com/img/logo.png'
+				},
+				share: [{
+					"bdSize": 16
+				}],
+				slide: [{
+					bdImg: 0,
+					bdPos: "right",
+					bdTop: 100
+				}],
+				image: [{
+					viewType: 'list',
+					viewPos: 'top',
+					viewColor: 'black',
+					viewSize: '16',
+					viewList: ['qzone', 'tsina', 'huaban', 'tqq', 'renren']
+				}],
+				selectShare: [{
+					"bdselectMiniList": ['qzone', 'tqq', 'kaixin001', 'bdxc', 'tqf']
+				}]
+			}
+			with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion=' + ~(-new Date() / 36e5)];
+
+			$(document).ready(function(e) {
+			    $("#parentid").val("0");
+			    $("#lei").val("13");
+			    $("#parentname").val("新闻资讯");
+			});
+		</script>
+		<!--main-->
+		#parse("Foot.html")	
+
+	</body>
+</html>

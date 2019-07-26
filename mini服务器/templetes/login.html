@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>会员登录</title>
+<script type="text/javascript" src="/js/common.js"></script>
+<link href="/Css/base.css" rel="stylesheet" type="text/css" />
+<link href="/Css/admin.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/Js/mootools.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript">
+    function checkForm(e) {
+        if (e["username"].value == "") {
+            alert("请输入用户名！");
+            return false;
+        }
+        if (e["password"].value == "") {
+            alert("请输入登录密码！");
+            return false;
+        }
+        if (e["verifCode"].value == "") {
+            alert("请输入验证码！");
+            return false;
+        }
+        if (e["cbxAutoLogin"].checked) {
+            e["username"].autocomplete = "on";
+        } else {
+            e["username"].autocomplete = "off";
+        }
+        e.action = "/Member/CheckLogin";
+        return true;
+    }
+</script>
+</head>
+
+<body onload="setChoseNav(10)">
+#parse("Top.html")
+<div class="div3">
+	<div class="div3l">
+		<div class="div1lbg">
+			<div><img height="34" alt="" width="144" border="0" src="/Images/memberlabel.gif" /></div>
+			<div><br />
+				<br />
+				以商城会员的身份在商城进行商品购买可以根据您的个人等级享受额外的优惠价格，现在注册还有100点积分赠送活动，这么称心的服务您还犹豫什么呢？
+				<ul>
+					<li><a href="/reg.html">会员注册</a></li>
+					<li><a href="/login.html">会员登录</a></li>
+					<li><a href="/forgetpwd.html">密码找回</a></li>
+				</ul>
+			</div>
+			<div></div>
+		</div>
+	</div>
+	<div class="div4r">
+		<div align="center">#foreach($item in $Advertise $D57)<a href="$item.LinkUrl" target="_blank"> <img alt="$item.Description" src="/FileUPLoad/Advertise/$item.AdPicture"  height="$item.hHeight" width="$item.hWidth" border="0"></a>#end</div>
+		<div class="prolabel2"><img src="/Images/loginlabel.gif" width="214" height="32" /></div>
+		<div class="helpbg">
+			<div class="helplist3">
+				<form name="loginform" onsubmit="return checkForm(this)" method="post">
+				<input type="hidden" name="url" value="$logurl" id="url" />
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="40%" height="35" align="left">　　<strong><font color="#3359BD">用户名称：</font></strong>
+								<input type="text" name="username" id="username" class="input" />
+								<font color="#999999">填写商城会员注册帐号------</font></td>
+						</tr>
+						<tr>
+							<td height="35" align="left">　　<strong><font color="#3359BD">会员密码：</font></strong>
+								<input type="password" name="password" id="password" class="input" />
+								<font color="#999999">请正确输入注册密码-------</font></td>
+						</tr>
+						<tr>
+							<td height="35" align="left">　　<strong><font color="#3359BD">验 证 码：</font></strong>
+								<input class="input" size="8" maxlength="6" name="verifCode" type="text" /><script type="text/javascript">
+								                                                                               if (!numkey) numkey = ath.round(Math.random() * 10000);
+								                                                                               document.write("<a href=\"javascript:NchangeImg();\" title='看不清,换一张'><img id=\"ImgVerify\" src=\"/CheckImage.aspx?k=" + numkey + "\" align=\"absmiddle\" hspace=\"5\" border='0' /></a>");
+                    </script></td>
+						</tr>
+						<tr>
+							<td height="35" align="left">　　<strong><font color="#3359BD">记住我的登录状态：</font></strong>
+								<input type="checkbox" name="cbxAutoLogin" id="ctrcbxAutoLogin" /><label for="ctrcbxAutoLogin">两周内自动登录</label>
+								<font color="#999999" style="padding-left:10px;">勾选后下次将自动登录------</font></td>
+						</tr>
+						<tr>
+							<td height="1" align="left" background="../public/images/dian.gif"><img src="../public/images/null.gif" width="1" height="1" /></td>
+						</tr>
+						<tr>
+							<td height="35" align="left" bgcolor="#f7f7f7"><span class="a2">　　尚未注册？→<a href="/reg.html"><font color="#FF6600">点击立即注册！！</font></a></span></td>
+						</tr>
+						<tr>
+							<td height="35" align="left" bgcolor="#f7f7f7">　　忘记密码？<span class="a2">→<a href="/forgetpwd.html"><font color="#007700">点击此处找回密码</font></a></span></td>
+						</tr>
+						<tr>
+							<td height="35" align="left" bgcolor="#f7f7f7">　　
+								<input type="image" src="/Images/loginkey.gif" />
+								<a href="/reg.html"><img src="/Images/regkey.gif" border="0" /></a></td>
+						</tr>
+					</table>
+				</form>
+			</div>
+			<br clear="all" />
+		</div>
+	</div>
+	<br clear="all" />
+</div>
+#parse("Foot.html")
+</body>
+</html>

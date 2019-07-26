@@ -1,0 +1,477 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>移民海外_留学咨询_海外房产投资_$Global.WebName</title>
+    <meta name="keywords" content="移民海外,移民咨询,留学咨询,海外房产投资,美国房产投资,澳洲房产投资,泰国房产投资" />
+    <meta name="description" content="外国买房网为您带来移民海外,移民咨询,留学咨询,海外房产投资,美国房产投资,澳洲房产投资,泰国房产投资等热点资讯以及最新信息。" />
+    <link rel="stylesheet" href="/font/iconfont.css" />
+    <link rel="stylesheet" href="/css/style.css?version=20160728" />
+    <script type="text/javascript" src="/js/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.jslides.js"></script>
+    <script type="text/javascript" src="/js/jquery.SuperSlide.js"></script>
+    <script type="text/javascript" src="/js/lanrenzhijia.js"></script>
+    <script type="text/javascript" src="/js/jquery.pack.js"></script>
+    <script type="text/javascript" src="/js/jQuery.blockUI.js"></script>
+    <script type="text/javascript" src="/js/jquery.SuperSlide.js"></script>
+    <style>
+	.company ul li img{ width: 120px; height:120px;}
+	</style>
+</head>
+<body>
+    #parse("Top.html")
+    <div class="invest-flash"></div>
+    <div id="main">
+    
+     <a href="OverseasList/list_t2.html"><div class="title10 mt40">移民</div></a>
+            <div class="immigrant-list">
+                <div class="immigrant-tab mr20">
+                    <span class="imgss">
+                        <a href="OverseasList/list_t1017.html" title="更多">
+                            <img src="img/ym3.jpg">
+                            <p>荷兰</p>
+                        </a>
+                    </span>
+                    <ul>
+                        #foreach($item in $overseasmodel07 $L4 $P1017)
+                        <li><a href="/overseas/${item.Id}.html" title="$item.OverseasTitle">$item.OverseasTitle</a></li>
+                        #end
+                    </ul>
+                </div>
+                <div class="immigrant-tab">
+                    <span class="imgss">
+                        <a href="OverseasList/list_t8.html" title="更多">
+                            <img src="img/ym1.jpg">
+                            <p>美国</p></a>
+</span>
+                    <ul>
+                        #foreach($item in $overseasmodel05 $L4 $P8)
+                    <li><a href="/overseas/${item.Id}.html" title="$item.OverseasTitle">$item.OverseasTitle</a></li>
+                  #end
+                    </ul>
+                </div>
+                <div class="immigrant-tab mr20">
+                    <span class="imgss">
+                        <a href="OverseasList/list_t9.html" title="更多">
+                            <img src="img/ym2.jpg">
+                            <p>英国</p></a>
+</span>
+                    <ul>
+                        #foreach($item in $overseasmodel06 $L4 $P9)
+                        <li><a href="/overseas/${item.Id}.html" title="$item.OverseasTitle">$item.OverseasTitle</a></li>
+                        #end
+                    </ul>
+                </div>
+                
+                <div class="immigrant-tab">
+                    
+                        <span class="imgss">
+                            <a href="OverseasList/list_t11.html" title="更多">
+                                <img src="img/ym4.jpg">
+                                <p>泰国</p>
+                            </a>
+                        </span>
+                        <ul>
+                            #foreach($item in $overseasmodel08 $L4 $P11)
+                            <li><a href="/overseas/${item.Id}.html" title="$item.OverseasTitle">$item.OverseasTitle</a></li>
+                            #end
+                        </ul>
+</div>
+
+<!--移民项目-->
+<div class="ym-rom">推荐移民项目
+<a href="/yimin.html">更多&gt;&gt;</a>
+</div>
+			<div id="ymproject">
+			<ul>
+                #foreach($item in $yiminview $L10 $QSXNIb21lPSdUcnVlJw--)
+				<li>
+					<div class="ym-tab">
+						<a href="/yimin/${item.Id}.html" title="${item.Title}"><img alt="${item.Title}" src=#if($item.Picture ="")"img/ym.jpg"#else"/upload/yimin/$item.Picture"#end/></a>
+						<p><a href="/yimin/${item.Id}.html" title="${item.Title}">${item.Title}</a></p>
+						<p><i class="iconfont icon-dizhi"></i>${item.ParentName}</p>
+						<p>#if($item.TouristPrice>0)投资额：<b>￥${item.TouristPrice}</b>万元#end</p>
+					</div>
+				</li>
+				#end
+			</ul>			
+		</div>
+		<script type="text/javascript">
+			window.onload=function(){
+				var odiv = document.getElementById('ymproject');
+				var oul = odiv.getElementsByTagName('ul')[0];
+				var ali = oul.getElementsByTagName('li');
+				var spa = -2;				
+				oul.innerHTML=oul.innerHTML+oul.innerHTML;
+				oul.style.width=ali[0].offsetWidth*ali.length+'px';
+				function move(){
+					if(oul.offsetLeft<-oul.offsetWidth/2){
+						oul.style.left='0';
+					}
+					if(oul.offsetLeft>0){
+						oul.style.left=-oul.offsetWidth/2+'px'
+					}
+					oul.style.left=oul.offsetLeft+spa+'px';
+				}
+				var timer = setInterval(move,40)
+				
+				odiv.onmousemove=function(){clearInterval(timer);}
+				odiv.onmouseout=function(){timer = setInterval(move,40)};
+				document.getElementsByTagName('a')[0].onclick = function(){
+					spa=-2;
+				}
+				document.getElementsByTagName('a')[1].onclick = function(){
+					spa=2;
+				}
+				
+		var odiv = document.getElementById('ymproject2');
+				var oul2 = odiv.getElementsByTagName('ul')[0];
+				var ali2 = oul2.getElementsByTagName('li');
+				var spa2 = -2;				
+				oul2.innerHTML=oul2.innerHTML+oul2.innerHTML;
+				oul2.style.width=ali2[0].offsetWidth*ali2.length+'px';
+				function move2(){
+					if(oul2.offsetLeft<-oul2.offsetWidth/2){
+						oul2.style.left='0';
+					}
+					if(oul2.offsetLeft>0){
+						oul2.style.left=-oul2.offsetWidth/2+'px'
+					}
+					oul2.style.left=oul2.offsetLeft+spa2+'px';
+				}
+				var timer2 = setInterval(move2,40)
+				
+				odiv2.onmousemove=function(){clearInterval(timer2);}
+				odiv2.onmouseout=function(){timer2 = setInterval(move2,40)};
+				document.getElementsByTagName('a')[0].onclick = function(){
+					spa2=-2;
+				}
+				document.getElementsByTagName('a')[1].onclick = function(){
+					spa2=2;
+				}		
+				
+				
+			}
+			
+			
+			
+		</script>
+			<!--移民项目-->
+                <!--留言-->
+                <div class="study-bg">
+                    <div class="study-k">
+                        <input type="text" id="mobile2" placeholder=" 您的手机号码" maxlength="13" class="mobile"><input type="text" id="username2" maxlength="20" placeholder=" 您的姓氏" class="xname">
+                        <textarea class="contents" id="content2" maxlength="200" placeholder="500万买学区房还是移民美国？"></textarea>
+                    </div>
+                    <div class="study-bt">
+                        <button id="tj2" class="study-tj">提交</button>
+                    </div>
+                </div>
+                <!--留言-->
+            </div>
+            <!--经纪公司-->
+          <div style="width:302px; float:right">
+            <div class="company">
+                <span class="titlec">移民专家</span>
+                <ul class="clearfix" style="padding-bottom:25px">
+                  #foreach($item in $users $L4 $QSXN5bT0ndHJ1ZScgYW5kIElzUm9tPSd0cnVlJw--)  <li style="margin-top:10px">
+                        <a href="/agent/${item.Id}.html" target="_blank" title="$item.TrueName">
+                            <img alt="$item.TrueName" src=#if(${item.Picture}!="")"/upload/users/${item.Picture}"#else"img/c.jpg"#end>
+                            <p>$item.TrueName</p>
+                        </a>
+                    </li>
+                  #end
+                </ul>
+            </div>
+             <div class="study-flash">
+
+            <div class="effect">
+                <div id="slideBox" class="slideBox2">
+                    <div class="hd">
+                        <ul><li></li><li></li><li></li></ul>
+                    </div>
+                    <div class="bd">
+                        <ul>
+                            #foreach($item in $Advertise01 $P4 $OId-asc)
+                            <a href="$item.LinkUrl" target="_blank" title="$item.Description"> <img alt="$item.Description" src="/upload/ad/$item.AdPicture" height="$item.hHeight" width="$item.hWidth"></a>
+                            #end    
+                        </ul>
+                    </div>
+                </div>
+                <script type="text/javascript">jQuery(".slideBox2").slide( { mainCell:".bd ul",autoPlay:true} );</script>
+            </div>
+        </div>
+            </div>
+            <!--经纪公司-->
+            <!-- 投资-->
+            <div class="clear"></div>
+    
+    
+        <a href="OverseasList/list_t1.html"><div class="title10 mt40">留学</div></a>
+        <div class="immigrant-list">
+            <div class="immigrant-tab mr20">
+                <span class="imgss">
+                    <a href="OverseasList/list_t17.html" title="更多">
+                        <img src="img/lx3.jpg">
+                        <p>荷兰</p>
+                    </a>
+                </span>
+                <ul>
+                    #foreach($item in $overseasmodel03 $L4 $P17)
+                    <li><a href="/overseas/${item.Id}.html" title="$item.OverseasTitle">$item.OverseasTitle</a></li>
+                    #end
+                </ul>
+            </div>
+            <div class="immigrant-tab">
+                <span class="imgss">
+                    <a href="OverseasList/list_t4.html" title="更多">
+                        <img src="img/lx1.jpg">
+                        <p>美国</p>
+                    </a>
+                </span>
+                <ul>#foreach($item in $overseasmodel01 $L4 $P4)
+                    <li><a href="/overseas/${item.Id}.html" title="$item.OverseasTitle">$item.OverseasTitle</a></li>
+                  #end
+                </ul>
+            </div>
+            <div class="immigrant-tab mr20">
+                <span class="imgss">
+                    <a href="OverseasList/list_t5.html" title="更多">
+                        <img src="img/lx2.jpg">
+                        <p>英国</p></a>
+</span>
+                <ul>
+                    #foreach($item in $overseasmodel02 $L4 $P5)
+                    <li><a href="/overseas/${item.Id}.html" title="$item.OverseasTitle">$item.OverseasTitle</a></li>
+                    #end
+                </ul>
+            </div>
+          
+            <div class="immigrant-tab">
+                <span class="imgss">
+                    <a href="OverseasList/list_t7.html" title="更多">
+                        <img src="img/lx4.jpg">
+                        <p>泰国</p></a>
+</span>
+                <ul>
+                    #foreach($item in $overseasmodel04 $L4 $P7)
+                    <li><a href="/overseas/${item.Id}.html" title="$item.OverseasTitle">$item.OverseasTitle</a></li>
+                    #end
+                </ul>
+            </div>
+        </div>
+
+        <!--flash-->
+ <div class="company" style="margin-top:-40px">
+                <span class="titlec">留学专家</span>
+                <ul class="clearfix" >
+                    #foreach($item in $users04 $L4 $QSXNseD0ndHJ1ZScgYW5kIElzUm9tPSd0cnVlJw--)
+                    <li style="margin-top:10px">
+                        <a href="/agent/${item.Id}.html" target="_blank" title="$item.TrueName">
+                            <img alt="$item.TrueName" src=#if(${item.Picture}!="")"/upload/users/${item.Picture}"#else"img/c.jpg"#end>
+                            <p>$item.TrueName</p>
+                        </a>
+                    </li>
+                    #end
+                                  </ul>
+            </div>
+        <!--flahs-->
+        <!--country-->
+        <div class="study-country" style=" margin-top:-10px">
+            <div class="biaot ym-rom">留学项目<a href="/liuxue.html">更多&gt;&gt;</a></div>
+           <div id="ymproject2">
+			<ul>
+                #foreach($item in $liuxueview $L10 $QSXNIb21lPSdUcnVlJw--)
+                <li>
+                    <div class="ym-tab">
+                        <a href="/liuxue/${item.Id}.html" target="_blank" title="${item.Title}"><img alt="${item.Title}" src=#if($item.Picture ="" )"img/ym.jpg"#else"/upload/liuxue/$item.Picture"#end/></a>
+                        <p><a href="/liuxue/${item.Id}.html" target="_blank" title="${item.Title}">${item.Title}</a></p>
+                        <p><i class="iconfont icon-dizhi"></i>${item.ParentName}</p>
+                        <p>#if($item.Tze>0)投资额：<b>￥${item.TouristPrice}</b>万元#end</p>
+                    </div>
+                </li>
+                #end
+							</ul>			
+		</div>
+        </div>
+        <!--country-->
+        <!--留言-->
+        <div class="study-order" style="margin-top:40px">
+            <b>留学咨询</b>
+            <div class="study-k">
+                <input type="text" id="mobile1" maxlength="13" placeholder=" 您的手机号码" class="mobile"><input type="text" maxlength="20" id="username1" placeholder=" 您的姓氏" class="xname">
+                <textarea class="contents" id="content1" maxlength="200" placeholder="成功申请美国高中留学你要准备什么"></textarea>
+            </div>
+            <div class="study-bt">
+                <button id="tj1" class="study-tj">提交</button>
+            </div>
+        </div>
+        <!--留言-->
+        <div class="clear"></div>
+       
+        <a href="OverseasList/list_t3.html"><div class="title10 mt40">房产投资</div></a>
+            <div class="lxad">
+                #foreach($item in $Advertise $D5)
+                <a href="$item.LinkUrl" target="_blank" title="$item.Description"> <img alt="$item.Description" src="/upload/ad/$item.AdPicture" height="$item.hHeight" width="$item.hWidth"></a>
+                #end              
+            </div>
+            <div class="invest">   
+                <div class="immigrant-tab mr20">
+                    <span class="imgss">
+                        <a href="OverseasList/list_t1018.html" title="更多">
+                            <img src="img/tz3.jpg">
+                            <p>荷兰</p>
+                        </a>
+                    </span>
+                    <ul>
+                        #foreach($item in $overseasmodel011 $L4 $P1018)
+                        <li><a href="/overseas/${item.Id}.html" title="$item.OverseasTitle">$item.OverseasTitle</a></li>
+                        #end
+                    </ul>
+                </div>            
+                <div class="immigrant-tab">
+                    <span class="imgss">
+                        <a href="OverseasList/list_t12.html" title="更多">
+                            <img src="img/tz1.jpg">
+                            <p>美国</p></a>
+</span>
+                    <ul>
+                        #foreach($item in $overseasmodel09 $L4 $P12)
+                        <li><a href="/overseas/${item.Id}.html" title="$item.OverseasTitle">$item.OverseasTitle</a></li>
+                        #end
+                    </ul>
+                </div>
+                <div class="immigrant-tab mr20">
+                    <span class="imgss">
+                        <a href="OverseasList/list_t13.html" title="更多">
+                            <img src="img/tz2.jpg">
+                            <p>英国</p></a>
+</span>
+                    <ul>
+                        #foreach($item in $overseasmodel10 $L4 $P13)
+                        <li><a href="/overseas/${item.Id}.html" title="$item.OverseasTitle">$item.OverseasTitle</a></li>
+                        #end
+                    </ul>
+                </div>
+               
+                <div class="immigrant-tab">
+                    <span class="imgss">
+                        <a href="OverseasList/list_t15.html" title="更多">
+                            <img src="img/tz4.jpg">
+                            <p>泰国</p></a>
+</span>
+                    <ul>
+                        #foreach($item in $overseasmodel12 $L4 $P15)
+                        <li><a href="/overseas/${item.Id}.html" title="$item.OverseasTitle">$item.OverseasTitle</a></li>
+                        #end
+                    </ul>
+                </div>
+                <div class="clear"></div>
+                <div class="country2">
+                    <ul class="clearfix">
+                        #foreach($item in $usersview02 $L7 $QSXN0ej0ndHJ1ZScgYW5kIElzUm9tPSd0cnVlJw--)
+                        <li>
+                            <a href="/agent/${item.Id}.html" target="_blank" title="$item.TrueName">
+                                <img alt="$item.TrueName" src=#if(${item.Picture}!="")"/upload/users/${item.Picture}"#else"img/c.jpg"#end>
+                                <p>$item.Diquname</p>                                
+                                <span>$item.TrueName</span>
+                            </a>
+                           
+                        </li>
+                        #end
+                       
+                    </ul>
+                </div>
+            </div>
+            <!--投资-->
+</div>
+    <!--main-->
+    #parse("Foot.html")
+    <script>
+        $(function () {
+            $("#tj1").click(function(){
+                var f=true;
+                var mobile1=$("#mobile1").val();
+                if(mobile1=="")
+                {
+                    f=false;
+                    layer.alert("请输入手机号码");
+                } else if (!/^(13[0-9]|14[0-9]|15[0-9]|18[0-9]|17[0-9])\d{8}$/i.test(mobile1)) {
+                    layer.alert('手机格式不对'); f = false;
+                }
+                var username1 = $("#username1").val();
+                if(username1=="")
+                {
+                    f=false;
+                    layer.alert("请输入姓名");
+                }
+                var content1 = document.getElementById("content1").value;
+                if (f) {
+                    var args = {};                    
+                    args["mobile"] = escape(mobile1);
+                    args["username"] = escape(username1);
+                    args["content"] = escape(content1);
+                    args["parentid"] = 9;
+                    jQuery.post("/Common/Member.Overseasform.ashx?r=" + Math.random(), args, function (data) {
+                        var d = eval(data);
+                        layer.msg(d[0].message);
+                        $("#mobile1").val("");
+                        $("#username1").val("");
+                        $("#content1").val("");
+                    }, "text");
+                }
+            });
+            $("#tj2").click(function () {
+                var f = true;
+                var mobile2 = $("#mobile2").val();
+                if (mobile2 == "") {
+                    f = false;
+                    layer.alert("请输入手机号码");
+                } else if (!/^(13[0-9]|14[0-9]|15[0-9]|18[0-9]|17[0-9])\d{8}$/i.test(mobile2)) {
+                    layer.alert('手机格式不对'); f = false;
+                }
+                var username2 = $("#username2").val();
+                if (username2 == "") {
+                    f = false;
+                    layer.alert("请输入姓名");
+                }
+                var content2 = document.getElementById("content2").value;
+                if (f) {
+                    var args = {};
+                    args["mobile"] = escape(mobile2);
+                    args["username"] = escape(username2);
+                    args["content"] = escape(content2);
+                    args["parentid"] = 8;
+                    jQuery.post("/Common/Member.Overseasform.ashx?r=" + Math.random(), args, function (data) {
+                        var d = eval(data);
+                        layer.msg(d[0].message);
+                        $("#mobile2").val("");
+                        $("#username2").val("");
+                        $("#content2").val("");
+                    }, "text");
+                }
+            });
+        });
+        //首页搜索js
+        $(".select-ky .other li").click(function (e) {
+            $(".kar span").html($(this).html());
+            $("#t").val($(this).attr("dir"));
+        });
+        //首页搜索js
+
+        function checksearch() {
+            if ($("#p").val() == "") {
+                layer.alert("请输入关键词!"); return false;
+            }
+
+            return true;
+        }
+    </script>
+    <script type="text/javascript" src="/js/public.js?v=20170728"></script>
+    <script>
+$(document).ready(function(e) {
+            $("#nav .menu li").eq(6).addClass("active")
+        });
+</script>
+</body>
+</html>

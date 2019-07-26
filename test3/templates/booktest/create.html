@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+<ul>
+    <li>图书：<input name="btitle"></li>
+    <li>时间：<input name="bpub_date"></li>
+    <li>图片：<input type="file" name="pic"></li>
+    <li><input type="hidden" name="action" value="add"> <input type="submit" value="提交"></li>
+</ul>
+</form>
+</body>
+</html>

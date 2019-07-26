@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>公司资质_$Global.WebName</title>
+    <link rel="stylesheet" href="css/style.v2.css" />
+    <link rel="stylesheet" href="css/head.v2.css" />
+    #parse("head.html")
+</head>
+
+<body>
+    <!--top-->
+    #parse("Top.html")
+    <div class="aboutus-bx">
+        <div class="aboutus-nav">
+            <ul>
+                <li><a href="aboutus.html">关于我们</a></li>
+                <li class="on"><a href="honor.html">公司资质</a></li>
+                <li><a href="vip.html" target="_blank">会员服务</a></li>
+                <li><a href="privacy.html">隐私政策</a></li>
+                <li><a href="contactus.html">联系我们</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="about-title"><span>公司资质</span></div>
+    <div class="about-content clearfix">
+        <div class="honor-tab">
+            <img src="img/waif-yyzz.jpg" />
+            <span>公司营业执照</span>
+
+        </div>
+    </div>
+
+    #parse("Foot.html")
+  
+    <script>
+		$(document).ready(function(e) {
+			var heightnum=$("#pingu").offset().top
+            $(".gotocp").click(function(e) {
+                $('html,body').stop().animate({ scrollTop: heightnum }, 600);
+            });
+        });
+    </script>
+
+</body>
+
+</html>

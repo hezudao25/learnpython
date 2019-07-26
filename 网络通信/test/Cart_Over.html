@@ -1,0 +1,98 @@
+﻿#if($Username=="")
+<script type="text/javascript">    alert("请先登录！再购买"); top.location.href = "/login.html?/Cart1.html";</script>#end<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+#foreach($item in $OrderCarInfo)
+#set($info=$item)
+
+#end
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>表单提交_$Global.WebName</title>
+<link href="/Css/base.css" rel="stylesheet" type="text/css" />
+<link href="/Css/inside.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/Js/common.js"></script>
+<script type="text/javascript" src="/Js/car.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/jquery.artDialog.js?skin=default"></script>
+<LINK rel="stylesheet" type="text/css" href="/Css/cartstesp1.css">
+</head><body>
+#parse("Top.html")<script type="text/javascript">                      setChoseNav(3);</script>
+<div class="main">
+	<div class="cart2_top">
+		<div class="cart2_top_left"><img src="/images/cartstep2_03.jpg" width="140" height="30"/></div>
+		<div class="cart2_top_left"><img src="/images/cartstep2_44.jpg" width="140" height="30"/></div>
+		<div class="cart2_top_left"><img src="/images/cart0_05.jpg" width="241" height="30"/></div>
+		<div class="cart2_top_left"><img src="/images/cart_06.jpg" width="143" height="30"/></div>
+		<div class="cart2_top_right"><img src="/images/cartstep2_08.jpg"/></div>
+	</div>
+	<div class="cart2_kuan2"></div>
+	<div class="cart2_kuan2_2"><div id="demoCode_lock">
+      <pre><script>
+               function ooo() {
+                   var dialog = art.dialog({
+                       lock: true,
+                       background: '#cccccc', // 背景色
+                       opacity: 0.87, // 透明度
+                       content: '请您在新打开的网上银行页面完成付款!<br>付款完成前请不要关闭此窗口<br>完成付款后请根据您的情况点击下列按纽',
+                       icon: 'succeed',
+                       button: [{
+                           name: '已完成付款',
+                           callback: function () {
+                               this
+            .button({
+                name: '付款遇到问题'
+            })
+
+                               location.href = "member/order_edit.html?id=${info.OrderId}";
+                               return false;
+                           },
+                           focus: true
+                       }]
+
+
+                   });
+                   dialog.button(
+    {
+        name: '付款遇到问题',
+        callback: function () {
+            location.href = "member/order_edit.html?id=${info.OrderId}";
+        }
+    }
+)
+
+               }</script></pre>    </div>  
+		<div class="cart2_kuan2_3"> 感谢您购买科尔顿的产品！<br />
+			您的订单号:${info.OrderId} <br />
+            #if($info.Leixing==1)
+            积分总额:${info.Integral}分<br/>
+            #else
+			订单总额:${info.TotalAmount}元<br/>
+            #end
+			<a href="/member/order_edit.html?id=${info.OrderId}"><font>点击此处查看订单详细>></font></a> <br />
+			<br />#if($info.PaymentId==0)
+            您参加的积分兑换.<br />
+            #else
+			您选择了${info.PayName}付款，请点击下面的按钮完成支付，谢谢。你的订单我们交会为您保留三天,请您尽快付款.<br />
+            #end
+			<br />
+		</div>
+		<div class="cart2_kuan4_3" #if($info.Leixing==1) style="display:none;"#end>
+			<ul>
+				<li>支付方式: <span id="txtPaymentArea">${info.PayDetail}</span> </li>
+				<li> <img alt="编辑" src="/images/cartstep2_17.jpg" onClick="SavaOrderPayment(this)" style="cursor:pointer;  display:none;" border="0" align="absmiddle"/> </li>
+			</ul>
+			<div class="clear"></div>
+		</div>
+		<div class="cart2_kuan4_3" #if($info.Leixing==1) style="display:none;"#end>
+			<ul>
+				<li><a onclick="ooo();" href="/PayTo/pay.aspx?paytype=${info.PaymentId}&price=${info.TotalAmount}&id=${info.OrderId}" id="paylink" target="_blank"><img src="/images/cartstep2_54.jpg" border="0"/></a></li>
+			</ul>
+			<div class="clear"></div>
+			&nbsp;&nbsp;&nbsp;&nbsp;我们的客服人员会尽快处理您的订单，您可以进入 我的帐户>订单管理 里查看订单状况。再次感谢您的惠顾！</div>
+		<div><img src="/images/cartstep2_24.jpg" width="860" height="12"/></div>
+	</div>
+</div>
+#parse("Foot.html")
+</body>
+</html>

@@ -1,0 +1,93 @@
+﻿<script type="text/javascript" src="/layer/layer.js"></script>
+<script type='text/javascript'>setTimeout(function(){{var s=document.createElement('script');s.type='text/javascript';s.charset='UTF-8';s.src=((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=ueOIGRSKkd965FeEGM5JtQ**&ctf=False&ui=true&settings=Manual&from=zh-CHS';var p=document.getElementsByTagName('head')[0]||document.documentElement;p.insertBefore(s,p.firstChild); }},0);</script>
+<!--top-->
+<div class="top">
+    <div class="w1200 clearfix">
+<meta property="qc:admins" content="27502663266711766375" />        
+<div class="wellcome"> <a href="http://www.waigf.com">www.waigf.com</a> 全球华人房产交易平台-外国房</div>
+        <div class="nav-right">
+            <a href="#"><i class="iconfont icon-weixin"></i>微信</a>
+            <a href="#"><i class="iconfont icon-shijieditu"></i>多语言版本<div id='MicrosoftTranslatorWidget' class='Dark' ></div></a>
+            #if($Username=="")<a href="javascript:;" onclick="openregedit()"><i class="iconfont icon-zhuce"></i>注册</a>
+            <a href="javascript:;" onclick="openlogin()"><i class="iconfont icon-denglu"></i>登录</a>#else<a href="/Member/">$Username</a> 你好！#end
+        </div>
+    </div>
+</div>
+<div id="logo">
+    <div class="w1200 clearfix">
+        <div class="logo"><a href="/">全球华人房产交易平台</a></div>
+        <div class="tel"></div>
+    </div>
+</div>
+<!--top-->
+<!--nav-->
+<div id="nav">
+    <ul class="menu">
+        <li><a href="/">首    页 </a></li>
+        <li><a href="/news.html">外房资讯</a></li>
+        <li><a href="/newhouse.html">环球新房</a></li>
+        <li><a href="/secondhouse.html">外国二手房</a></li>
+        <li><a href="/exhibtion.html">展会</a></li>
+        <li><a href="/agent.html">房产房管家/经纪人</a></li>
+        <li><a href="/overseas.html">移民/留学/投资</a></li>
+        <li class="last"></li>
+    </ul>
+</div>
+<!--nav-->
+<!--注册弹出-->
+		<script>
+			function openregedit() {
+
+				layer.open({
+					type: 1,
+					area: ['540px', '310px'],
+					skin: 'regedit',
+					title: false,
+					shadeClose: true, //点击遮罩关闭
+					content: '\<div class="regedit-input"><i class="iconfont icon-shouji"></i><input type="text" id="regusername"  placeholder="手机号码/账号"></div><div class="regedit-input"><i class="iconfont icon-mima"></i><input type="password" id="regpassword" placeholder="密码"></div><button class="regedit-tj" onclick="reg()">立即注册</button><div class="lead clearfix"><span class="lead-left">我已接受外房网的<a href="#">使用条款</a></span><span class="lead-right">已有外房网账号? <a href="#" onclick="layer.closeAll(); openlogin()">立即登录</a></span></div>'
+				});
+			}
+			
+			function openlogin()
+			{
+			    layer.open({
+			        type: 1,
+			        area: ['540px', '460px'],
+			        skin: 'regedit',
+			        title: false,
+			        shadeClose: true, //点击遮罩关闭
+			        content: '\<div class="regedit-input"><i class="iconfont icon-denglu"></i><input type="text" id="logusernaame" placeholder="手机号码"></div><div class="regedit-input"><i class="iconfont icon-mima"></i><input type="password" id="logpassword" placeholder="密码"></div><div class="regedit-input regedit-input2"><input type="checkbox" class="chek" id="cbxAutoLogin"> 记住密码</div><button class="regedit-tj" onclick="login()">立即登录</button><div class="wecat"><span>合作网站帐号登录</span><a href="/common/qqlogin.aspx"><img src="/img/qq.png"></a><a href="javascript:;" onclick="weixinlogin()"><img src="/img/wecat.png"></a></div>'
+			    });			
+			}
+			function weixinlogin() {
+			    location.href = "https://open.weixin.qq.com/connect/qrconnect?appid=wx224d4698b71d4f93&redirect_uri=http%3A%2F%2Fwww.waigf.com%2Fcommon%2Fweixincallback.aspx&response_type=code&scope=snsapi_login&state=waigfcom#wechat_redirect";
+			}
+			function Ropenlogin() {
+				layer.closeAll()
+				openlogin();
+			}
+			
+		</script>
+		<!--注册弹出-->
+<!--悬浮nav-->
+<div id="flaotnav">
+			<div class="w1200">
+				<div class="logo2"></div>
+				<div class="navs">
+					<ul>
+						<li><a href="/">首    页 </a></li><li>|</li>
+				<li><a href="/news.html">外房资讯</a></li><li>|</li>
+				<li><a href="/newhouse.html">环球新房</a></li><li>|</li>
+				<li><a href="/secondhouse.html">外国二手房</a></li><li>|</li>
+				<li><a href="/exhibtion.html">展会</a></li><li>|</li>
+				<li><a href="/agent.html">房产房管家/经纪人</a></li><li>|</li>
+				<li><a href="/overseas.html">移民/留学/投资</a></li>
+					</ul>
+				</div>
+				<div class="float-login">
+                    #if($Username=="")<a href="javascript:;" onclick="openregedit()"><i class="iconfont icon-zhuce"></i>注册</a>
+            <a href="javascript:;" onclick="openlogin()"><i class="iconfont icon-denglu"></i>登录</a>#else<a href="/Member/">$Username</a> 你好！#end
+				</div>
+			</div>
+		</div>
+<!--悬浮nav-->

@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html> 
+<head>  #foreach($item in $overseasType $Detail)
+  #set($info=$item)
+  #end
+    <meta charset="utf-8" />
+    <title>${info.Name}移民项目_$Global.WebName</title>
+    <meta name="keywords" content="${info.Name}移民项目" />
+    <meta name="description" content="外国买房网为您提供${info.Name}移民项目的详细资料" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <script type="text/javascript" src="/js/jquery-1.8.0.min.js"></script>
+    <link rel="stylesheet" href="/css/head.v2.css" />
+    <link rel="stylesheet" href="/css/style.v2.css" />
+    <link rel="stylesheet" href="/css/news_page.css?v=20161018" />
+    <script type="text/javascript" src="/js/scrollLoad.js"></script>
+    <script>
+        var menu = 5;
+    </script>
+</head>
+<body>
+    #parse("Top.html")
+    <!--banner-->
+    <div class="news_bg nybanner">
+        <div class="nytitle">
+            <b>${info.Name}移民项目</b>
+            <i></i>
+            <p>提供有关海外移民的相关资讯，包括海外移民政策、海外移民条件、海外移民费用等问题的解答</p>
+        </div>
+    </div>
+    <!--banner-->
+    <!--miaobao-->
+    <div class="mianbao">
+        <p class="clearfix">
+            <i class="iconfont">&#xe602;</i>
+            <a href="/">外国买房网</a> &gt; <a href="/immigrant.html">海外移民</a> &gt; <a href="/yimin.html">海外移民项目</a> &gt; <a href="/yiminlist/list_t${info.Id}.html">${info.Name}移民</a>
+
+        </p>
+    </div>
+    <!--miaonbao-->
+    <div id="main">
+        <!-- 投资-->
+      
+        <!--left-->
+        <div id="left2">
+            <div id="list-select"><span class="on">默认</span><span>投资额</span></div>
+            <!--touzilist-->
+            #foreach($item in $yiminview $T10 $Oordernumber-desc)
+            <div class="ymtz-tab clearfix">
+                <div class="ymtz-img">
+                    <a href="/yimin/${item.Id}.html" target="_blank"></a><img src="/images/loading.gif" class="selector" data-url=#if(${item.Picture}!="")"/upload/yimin/$!{item.Picture}"#else"/img/p.jpg"#end></a>
+                </div>
+                <div class="ymtz-name">
+                    <a href="/yimin/${item.Id}.html" class="yname" target="_blank">${item.Title}</a>
+                    <p class="address"><i class="iconfont icon-dizhi1"></i> ${item.ParentName}<span>#if($item.TouristPrice>0)投资额：<b>￥${item.TouristPrice}</b>万元#end</span></p>
+                    <p class="dess"></p>
+                    <div class="adv">
+                        ${item.WebDescription}
+                    </div>
+                </div>
+            </div>          
+            #end
+
+            <!--touzilist-->
+            <div class="more">
+                $yiminview-Info
+            </div>
+        </div>
+
+        <div id="right">
+            <div class="ny_title bg425">
+                <span></span><b>国家筛选</b>
+            </div>
+            <div class="news-type">
+                <ul class="clearfix">
+                    #foreach($item in $yimintype $P2 $OId-asc)
+                    <li style="width:50%;float: left;"#if($item.Id==$info.Id) class="active"#end>
+                        <a style="width:140px; padding: 10px 0px 10px 10px;" href="/yiminlist/list_t${item.Id}.html">${item.Name}</a>
+                    </li>
+                    #end
+                    <div class="clear"></div>
+                </ul>
+
+            </div>
+            <div class="ny_title bg425">
+                <span></span><b>移民信息</b>
+                <a href="/yimin.html" target="_blank"><i class="iconfont">&#xe608;</i></a>
+            </div>
+            <div id="hotnews">
+                <ul>
+                    #foreach($item in $immodel $P $L8)
+                    <li>
+                        <a href="/immigrant/${item.Id}.html" target="_blank">${item.OverseasTitle}</a>
+                    </li>
+                    #end
+                </ul>
+            </div>
+
+            <div class="ny_title bg425">
+                <span></span><b>热点资讯</b>
+                <a href="/hotnews.html" target="_blank"><i class="iconfont">&#xe608;</i></a>
+            </div>
+            <div id="hotnews">
+                <ul>
+                    #foreach($item in $newsmodel01 $L8 $QTmV3c1JvbT0ndHJ1ZSc-)
+                    <li>
+                        <a href="/news/${item.Id}.html" target="_blank">${item.NewsTitle}</a>
+                    </li>
+                    #end
+                </ul>
+            </div>
+        </div>       
+    </div>
+    <!--main-->
+    #parse("Foot.html")
+    <script>     
+        $(function () {
+            $(".selector").scrollLoading();
+            $("#parentid").val("0");
+            $("#lei").val("10");
+            $("#parentname").val("${info.Name}移民项目");
+            if (fGetQuery1("o") != null && fGetQuery1("o") != undefined) {
+                $("#list-select span").removeClass("on");
+                if (fGetQuery1("o") == "0") {
+                    $("#list-select span").eq(0).addClass("on");
+                } else {
+                    $("#list-select span").eq(parseInt(fGetQuery1("o")) - 1).addClass("on");
+                }
+            }
+            $("#list-select span").click(function () {
+                var oid = $(this).index();
+                var url = "/yiminlist/list_t" + fGetQuery1("t");
+                oid = parseInt(oid) + 1;
+                url += "_o" + oid;
+                url += ".html";
+                location.href = url;
+            });
+        });
+        function fGetQuery1(name) { //获取参数值
+            var sUrl = window.location.pathname;
+            sUrl = sUrl.replace(".html", "");
+            var o;
+            if (sUrl.indexOf("_") > 0) {
+                var q = sUrl.split("_");
+                if (name == "t" && q[1].substring(0, 1) == "t") {
+                    o = q[1].substring(1);
+
+                } else if (name == "o" && q.length > 2 && q[2].substring(0, 1) == "o") {
+                    o = q[2].substring(1);
+
+                } else {
+                    o = 0;
+                }
+                return (o == null ? null : unescape(o));
+            }
+        }
+	</script>
+</body>
+</html>

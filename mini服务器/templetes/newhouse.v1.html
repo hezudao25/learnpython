@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+<title>环球新房_$Global.WebName</title>
+<meta name="keywords" content="美国房产,泰国房产,休斯顿房产,迈阿密房产,奥兰多房产" />
+<meta name="description" content="真实实时的美国新房，泰国新房，英国新房，澳大利亚新房等信息" />
+    <link rel="stylesheet" href="/font/iconfont.css" />
+    <link rel="stylesheet" href="/css/style.css?v=2016" />
+    <script type="text/javascript" src="/js/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.jslides.js"></script>
+    <script type="text/javascript" src="/js/jquery.SuperSlide.js"></script>
+    <script type="text/javascript" src="/js/lanrenzhijia.js"></script>
+    <script type="text/javascript" src="/layer/layer.js"></script>
+    <script type="text/javascript" src="/js/newhouse.js"></script>      
+    <link rel="stylesheet" href="css/proutf0409.css?v=2016" type="text/css" />
+    <script type="text/javascript" src="/js/scrollLoad.js"></script>
+</head>
+
+<body>
+#parse("Top.html")
+    <!--inner-flash-->
+    <div class="inner-flash"></div>
+    <!--inner-flash-->
+    #parse("htmldiqutop.html")
+    <div id="main">
+        <!--left-->
+        <div id="left2">
+            <div id="list-select"><span class="on">默认</span><span>价格</span><span>面积</span><span>发布时间</span></div>
+            <!--houstlist-->
+            #foreach($item in $newhouse $T10 $OOrderNumber-DESC)
+            <div class="housetab">
+                <div class="pic"><a target="_blank" href="/newhouse/${item.Id}.html" title="${item.PdtTitle}" target="_blank"><img alt="${item.PdtTitle}" src="/images/loading.gif" class="selector" data-url=#if(${item.PdtPicture1}!="")"/upload/newhouse/${item.PdtPicture1}"#else"/img/proshow.jpg"#end alt="${item.PdtTitle}"/></a></div>
+                <div class="infos">
+                    <a target="_blank" href="/newhouse/${item.Id}.html" title="${item.PdtTitle}" class="name" target="_blank">${item.PdtTitle}</a>
+                    <p>房屋面积：${item.PdtCode} m<sup>2</sup> &nbsp;房型：${item.Fx}</p>
+                    <p class="address1"><i class="iconfont icon-dizhi1"></i>${item.Address}</p>
+                    <p class="tags2"><span>$!{item.PdtTags.Replace(",","</span><span>")}</span></p>
+                    <p class="metas"><span class="rmb">订金：<b>¥</b>${item.MemberPrice.ToString().Replace(".00","")}</span><span class="usd">房价：${item.TouristPrice.ToString().Replace(".00","")}万元</span><a target="_blank" href="javascript:addnewcollect(${item.Id});" class="book"><i class="iconfont icon-shoucang2"></i>收 藏</a> <span class="pkspan"><input type="checkbox" id="a$item.Id" class="pk" value="$item.PdtTitle" onclick="dblist($item.Id, event, '${item.PdtPicture1}');"/>加入对比</span></p>
+                </div>
+            </div>           
+            #end
+            <div class="more">$newhouse-Info</div>
+
+        </div>
+        <div id="right">
+            <div class="tit28"><span>热点资讯</span><i class="iconfont icon-new1"></i><a target="_blank" href="hotnews.html" >+More</a></div>
+            <div id="hotnews">
+                <ul>
+                    #foreach($item in $newsmodel01 $L10 $QTmV3c1JvbT0ndHJ1ZSc-)
+                    <li>
+                        <a target="_blank" href="/news/${item.Id}.html">${item.NewsTitle}</a>
+                    </li>
+                    #end
+                </ul>
+            </div>
+            <div class="tit28 mt25">
+                <span>最新房源</span>
+                <a target="_blank" href="hotnewhouse.html" >+More</a>
+            </div>
+            <div class="overwiew">
+                <ul>
+                    #foreach($item in $Products $L8 $QSXNIb21lPSd0cnVlJw-- $OOrdernumber-desc)
+                    <li>
+                        <div class="imgs">
+                            <a target="_blank" href="/newhouse/${item.Id}.html" title="$item.PdtTitle" ><img alt="$item.PdtTitle" src="/images/loading.gif" class="selector" data-url=#if($item.PdtPicture1="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end /></a>
+                        </div>
+                        <div class="wiew-info">
+                            <a target="_blank" href="/newhouse/${item.Id}.html" title="$item.PdtTitle" >$item.PdtTitle</a>
+                            <p>房价：${item.TouristPrice.ToString().Replace(".00","")}万元起</p>
+                        </div>
+                    </li>
+                    #end
+                </ul>
+            </div>
+            <!--经纪人-->
+            <div class="tit28 mt25">
+                <span>经纪人</span>
+                <a target="_blank" href="hotagent.html" >+More</a>
+            </div>
+            <div class="new-agent">
+                <Ul>
+                    #foreach($item in $usersview $L5 $QbGV2ZWxpZD0xNyBhbmQgSXNSb209J3RydWUn)
+                    <li>
+                        <a target="_blank" href="/agent/${item.Id}.html"  title="${item.TrueName}">
+                            <img src="/images/loading.gif" class="selector" data-url=#if(${item.Picture}!="")"/upload/users/${item.Picture}"#else"/img/tx.png"#end />
+                            <div class="news-agent-right">
+                                <b>${item.TrueName} ${item.EnName}</b>
+                                <p><i class="iconfont">&#xe62f;</i> $item.Diqu</p>
+                                <p>从业经验：$item.Jinyan年</p>
+                            </div>
+                            <div class="agent-bt-r">找TA买房</div>
+                        </a>
+                    </li>
+                    #end
+                </Ul>
+            </div>
+            <div class="tit28">
+                <span>常见问题</span>
+                <a target="_blank" href="baseinfo.html" >+More</a>
+            </div>
+            <div id="hotnews">
+                <ul>
+                    #foreach($item in $baseinfo $L10 $QSXNIb21lPSd0cnVlJw--)
+                    <li>
+                        <a target="_blank" href="/baseinfo/${item.Id}.html"  title="${item.NewsTitle}">${item.NewsTitle}</a>
+                    </li>
+                    #end
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--main-->
+
+
+
+
+
+#parse("Foot.html")
+   
+    <script type="text/javascript" src="/js/public.js?v=20170728"></script>
+    <script src="/js/pkq.js?v=2016816"></script>
+    <!-- 对比 begin -->
+    <div id="xsyc"></div>
+    <div id="bbv">
+        <div id="dbimg" onclick="dbhidd()">(5)</div>
+        
+    </div>
+   
+    <div id="dbnr">
+            <b><span>房源对比</span></b>
+            <div id="tishi">对不起，您还没有选择产品</div>
+            <ul></ul>
+            <div id="Contr-btn">
+			<a href="javascript:void()" onclick="dbhidd()" class="yinc">隐藏</a>
+			<a href="javascript:void()" onclick="return comparepro();" class="start-Contr">开始对比</a>
+			<a href="javascript:void()" onclick="clears()" class="clear-Contr">清空</a>
+		</div>
+          
+        </div>
+      
+    <script src="/js/compare.js?v=2016816" type="text/javascript" charset="utf-8"></script>
+    <script>
+$(document).ready(function(e) {
+    $("#nav .menu li").eq(2).addClass("active");
+    $(".selector").scrollLoading();
+        });
+</script>
+    <!-- 对比 end -->
+</html>

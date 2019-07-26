@@ -1,0 +1,168 @@
+﻿#if($Username=="")
+<script type="text/javascript">    alert("请先登录！再购买"); top.location.href = "/login.html?/Cart1.html";</script>#end<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>确认收货信息及支付方式_$Global.WebName</title>
+<link href="/Css/base.css" rel="stylesheet" type="text/css" />
+<link href="/Css/inside.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/Css/cartstesp1.css">
+<script type="text/javascript" src="/Js/common.js"></script>
+<script type="text/javascript" src="/Js/car.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+</head>
+<body onLoad="setChoseNav(3)">
+#parse("Top.html")
+<div class="main">
+	<div style="clear:both"></div>
+	<div class="cart2_top">
+		<div class="cart2_top_left"><img src="/images/cartstep2_03.jpg" width="140" height="30"/></div>
+		<div class="cart2_top_left"><img src="/images/cartstep2_44.jpg" width="140" height="30"/></div>
+		<div class="cart2_top_left"><img src="/images/cart_05.jpg" width="241" height="30"/></div>
+		<div class="cart2_top_left"><img src="/images/cart0_06.jpg" width="143" height="30"/></div>
+		<div class="cart2_top_right"><img src="/images/cartstep2_08.jpg"/></div>
+	</div>
+	<form action="/Handler/Member.Orderset.aspx" method="post" id="form2" name="form2" onSubmit="return CheckForm();">
+		<div class="cart2_kuan1"><span>确认收货地址</span></div>
+		<div class="cart2_kuan1_2">
+			<div class="cart2_kuan1_3">
+				<div id="userAddressArea"  style="padding-left:10px;"> #set ($rownum = 0) 
+					#foreach($item in $UserDeliver $U)
+					<ul>
+						<li>
+							<input type="radio" #if(${item.IsUsed}) checked #else #if($velocityCount==1) checked #end #end name="cid"  value="${item.ID}" />
+						</li>
+						<li><font> 姓名：$item.Consignee
+							电话：$item.Telephone 手机：$item.Mobile </font> （$item.Province $item.City $item.Region $item.Address）邮编：$item.Postcode</li>
+						<li><a href="member/add_addr.html?id=$item.ID" rel="gb_page_center[640, 580]"><img src="/images/cartstep2_17.jpg" style="cursor:pointer;" border="0"/></a></li>
+					</ul>
+					#set ($rownum = $rownum+1)
+					#end
+					#if($rownum == 0) 
+					#end </div>
+				<div class="clear"></div>
+			</div>
+			<div class="cart2_kuan1_4"> <a href="/member/add_addr.html" rel="gb_page_center[640, 580]"><img src="/images/cartstep2_21.jpg" border="0" /></a></div>
+			<div class="div"><img src="/images/cartstep2_24.jpg"/></div>
+		</div>
+		<div class="cart2_kuan2">
+			<ul>
+				<li><span>订单附言</span></li>
+				<li><img src="/images/cartstep2_17.jpg" border="0" style="margin-top:5px; display:none"/></li>
+			</ul>
+		</div>
+		<div class="cart2_kuan2_2">
+			<div class="cart2_kuan2_3">备注:&nbsp;&nbsp;
+				<textarea name="note" rows="3" cols="50" class="cart2_dkuan2_input" id="note"></textarea>
+				注：如需发票,收货时间或其它注意事项可在此写明。 </div>
+			<div><img src="/images/cartstep2_24.jpg" width="922" height="12"/></div>
+		</div>
+		<div class="cart2_kuan3"><span>确认支付方式</span> </div>
+		<div class="cart2_kuan2_2">
+			<div class="cart2_kuan4_3"  id="paymentarea"> #foreach($item in $Payment)
+				<ul>
+					<li>
+						<input alt="${item.PayName}" name="paymethod" type="radio" value="${item.Id}">
+					</li>
+					<li>
+						<label id="lp_${item.Id}" for="p_${item.Id}" >${item.Description}</label>
+					</li>
+				</ul>
+				#end
+				<div class="clear"></div>
+			</div>
+			<div><img src="/images/cartstep2_24.jpg" width="922" height="12"/></div>
+		</div>
+		<div class="cart2_kuan3"><span>确认配送方式</span></div>
+		<div class="cart2_kuan2_2">
+			<div class="cart2_kuan4_3"> #foreach($item in $Deliver)
+				<ul>
+					<li>
+						<input alt="${item.DeName}" name="deliver" type="radio" value="${item.Id}" onclick="deliv(${item.firstWeightPrice})">
+					</li>
+					<li>${item.DeName}</li>
+				</ul>
+				#end </div>
+			<div><img src="/images/cartstep2_24.jpg" width="922" height="12"/></div>
+		</div>
+		<div class="cart2_kuan5_1">
+			<ul style="padding-left:20px">
+				<li style="width:150px">商品编号</li>
+				<li style="width:220px">商品名称</li>
+				<li style="width:80px">品牌</li>
+				<li style="width:100px">商品积分</li>
+				<li style="width:100px">价格</li>
+				<li style="width:66px">数量</li>
+				<li style="width:100px">小计</li>
+			</ul>
+		</div>
+		<input type="text" id="TotalMoney" style="width:0px;border:0px;display:none;" value="0" class="underline" readonly="readonly"/>
+		<input type="text" id="TotalJifen" style="width:0px;border:0px;display:none;" value="0" class="underline" readonly="readonly"/>
+		<div class="cart2_kuan5_2">
+			<div class="cart2_kuan5_3">
+				<div class="cart2_kuan5_3_1"> 
+					<script type="text/javascript">      document.write(CarObj.Read2());</script>
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="cart2_kuan5_4" style=" border-style:none; float:left; width:400px;   text-align:left; margin-left:0px; padding-right:130px;">
+				<div class="cart2_kuan5_5" style=" width:300px; text-align:left;  padding-left:12px;"> 本次积分<script type="text/javascript">             document.write(document.getElementById("TotalJifen").value);</script>分 </div>
+				<div class="cart2_kuan5_6"></div>
+				<div class="clear"></div>
+			</div>
+			<div class="cart2_kuan5_7" style=" width:300px;">
+				<div>
+					<div class="cart2_kuan5_7_div1" style=" width:130px;">当前购物车总金额</div>
+					<div class="cart2_kuan5_7_div2">￥<span id="tempProductPrice"><script type="text/javascript">document.write(document.getElementById("TotalMoney").value);</script></span></div>
+					<div class="clear"></div>
+				</div>
+				<div>
+					<div class="cart2_kuan5_7_div1" style=" width:130px;">配送费用</div>
+					<div class="cart2_kuan5_7_div2">￥<span id="tempPrice">0.00</span></div>
+					<div class="clear"></div>
+				</div>
+				<div><img src="/images/cartstep2_35.jpg"/></div>
+				<div>
+					<div class="cart2_kuan5_7_div1" style=" width:130px;">订单总计</div>
+					<div class="cart2_kuan5_7_div2">￥<span id="TotalPrice"><script type="text/javascript">document.write(document.getElementById("TotalMoney").value);</script></span></div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div><img src="/images/cartstep2_38.jpg"/></div>
+			<div class="clear"></div>
+		</div>
+		<div style=" padding-top:10px;" align="center"><a style=" display:none;" href="javascript:history.go(-1);"><img src="/images/cartstep2_61.jpg" style="margin-right:20px;" border="0"/></a>
+			<input type="image" border="0" src="/images/cartstep2_41.jpg"  style="cursor:pointer"/>
+		</div>
+	</form>
+	<script type="text/javascript">
+	    function deliv(e) {
+	        document.getElementById("tempPrice").innerHTML = changeTwoDecimal_f(e);
+	        document.getElementById("TotalPrice").innerHTML = changeTwoDecimal_f(parseFloat(changeTwoDecimal_f(e)) + parseFloat(document.getElementById("TotalMoney").value));
+        }
+    function CheckForm() {
+		var addr=jQuery("input[name=cid]:checked").val();
+		var pmd=jQuery("input[name=paymethod]:checked").val();
+		var dlver=jQuery("input[name=deliver]:checked").val();
+        if (!addr) {
+            alert("收货地址不能为空")
+            return false;
+        }
+        if (!pmd) {
+            alert("请选择支付方式")
+            return false;
+        }
+        if (!dlver) {
+            alert("请选择配送方式")
+            return false;
+        }
+
+		return true;
+    }
+</script> 
+</div>
+#parse("Foot.html")
+</body>
+</html>

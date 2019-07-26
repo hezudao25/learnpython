@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html>
+  #foreach($item in $NewsType $Detail)
+  #set($info=$item)
+  #end
+  <head>
+    <meta charset="utf-8" />
+    <title>${info.Name}_$Global.WebName</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />	
+		<script type="text/javascript" src="/js/jquery-1.8.0.min.js"></script>
+	<link rel="stylesheet" href="/css/head.v2.css" />
+		<link rel="stylesheet" href="/css/style.v2.css" />
+		<link rel="stylesheet" href="/css/news_page.css?v=20161018" />
+      <script type="text/javascript" src="/js/scrollLoad.js"></script>
+      <script type="text/javascript" src="/layer/layer.js"></script>
+      <script>
+          var menu = 2;
+</script>
+  </head>
+  
+  <body> 
+    #parse("Top.html")
+    <!--banner-->
+		<div class="news_bg nybanner">
+			<div class="nytitle">
+				<b>${info.Name}</b>
+				<i></i>
+				<p>最精准最及时的海外房产政策、海外房价走势、海外买房攻略等海外房产资讯</p>
+			</div>
+		</div>
+		<!--banner-->
+		<!--miaobao-->
+		<div class="mianbao">
+			<p class="clearfix">
+				<i class="iconfont">&#xe602;</i>
+				<a href="/">外国买房网</a> &gt; <a href="/news.html">新闻中心</a> &gt; <a href="/news/list_${info.Id}.html">${info.Name}</a>
+			
+			</p>
+		</div>
+		<!--miaonbao-->
+    <div id="main" style="margin-top: 20px;">
+      <!--left-->
+      <div id="left">
+        
+        <div class="left-title">
+          房产资讯
+          <p>Real estate information</p>
+        </div>
+        <div class="news-type">
+          <ul>
+          	<!--<li class="active">
+              <a href="/news/list_6.html">冯仑风马牛</a>
+            </li>-->
+            #foreach($item in $NewsType01 $OId-asc)
+            <li id="c${item.Id}">
+              <a href="/news/list_${item.Id}.html">${item.Name}</a>
+            </li>
+            #end
+              <li>
+                  <a href="/news/originalnews.html">外房精选</a>
+              </li>
+          </ul>
+        </div>
+        <div class="new_pro_title">
+          最新新房
+        </div>
+        <div class="new_pro">
+          <ul>
+              #foreach($item in $Products $L11 $QSXNIb21lPSd0cnVlJw--)
+              <li>
+                  <div class="new_pro_tab">
+                      <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle" class="pro-img" target="_blank"><img src="/images/loading.gif" class="selector" data-url=#if($item.PdtPicture1="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end></a>
+                      <span class="name">
+                          <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle" target="_blank">$item.PdtTitle</a>
+                          <p class="p_rice">房价：<b>${item.TouristPrice.ToString().Replace(".00","")}</b>万元起</p>
+                      </span>
+                  </div>
+              </li>
+              #end
+          </ul>
+        </div>
+      </div>
+      <!--left-->
+      <div id="mid">
+     
+        <div id="newslist">
+          <ul>
+            #foreach($item in $NewsModel $T10 $OCreateDate-Desc)
+            <li #if($!{item.NewsPicture1}=="")class="nopic"#end>
+              <div class="imgs">
+                <a href="/news/${item.Id}.html" title="${item.NewsTitle}" target="_blank">
+                  <img src="/images/loading.gif" class="selector" data-url="#if($!{item.NewsPicture1}=="")/img/p.jpg#else/upload/news/$!{item.NewsPicture1}#end" alt="${item.NewsTitle}">
+                </a>
+              </div>
+              <div class="info">
+                <a href="/news/${item.Id}.html" title="${item.NewsTitle}" class="name" target="_blank">${item.NewsTitle}</a>
+                <p class="des">${item.Jianjie}</p>
+                <div class="source">外国买房网 发布日期：${item.CreateDate.ToString("yyyy-MM-dd")} </div>
+                  <div class="shares"><a href="javascript:;" onclick="dianzan('${item.Id}','1')"><i class="iconfont">&#xe63d;</i><e id="zan${item.Id}">${item.Zan}</e></a><a href="javascript:;" onclick="cai('${item.Id}','1')"><i class="iconfont">&#xe667;</i><e id="cai${item.Id}">${item.Cai}</e></a></div>
+              </div>
+            </li>
+            #end
+
+          </ul>
+        </div>
+        <div class="more">
+          $NewsModel-Info
+
+        </div>
+
+      </div>
+    
+    </div>
+    <!--main-->
+
+    #parse("Foot.html")<script type="text/javascript" src="/js/public.v2.js?v=20170728"></script><script type="text/javascript" src="/js/dianzan.js"></script>
+<script>
+    $(document).ready(function (e) {
+        $("#c${info.Id}").addClass("active");
+        $(".selector").scrollLoading();
+        $("#parentid").val("0");
+        $("#lei").val("13");
+        $("#parentname").val("${info.Name}");
+    });
+</script>
+  </body>
+</html>

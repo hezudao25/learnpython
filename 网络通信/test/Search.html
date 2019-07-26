@@ -1,0 +1,50 @@
+﻿<script src="/js/test.js" type="text/javascript"></script>
+<form method="get" name="frmsearch" action="/search">
+<div class="search">
+<div id="con">
+	<input name="p" id="txt1" onclick="pclick(this)" onblur="pblur(this)" type="text" value="全国第二大易客仪器购物平台，为您提供专业的行业仪器解决方案！" class="inputcss" />
+    </div> <div id="popup" >
+        <ul id="con_ul"></ul>
+     </div>
+	<button onclick="btnclick()"></button>
+	<p>热门搜索：#foreach($item in $Keywords15 $L10 $QSXNSb209J3RydWUn)<a href="$item.KwdUrl"><font color="$item.Color">$item.KwdName</font></a> #end</p>
+	<b>
+	<input name="t" id="st0" type="radio" class="radiocss" value="all" checked="checked" />
+	<label for="st0">全部范围</label>
+	<input name="t" id="st1" type="radio" value="model" class="radiocss" />
+	<label for="st1">制造商型号</label>
+	<input name="t" id="st2" type="radio" value="title" class="radiocss" />
+	<label for="st2">产品名称</label>
+	<input name="t" id="st3" type="radio" value="name" class="radiocss" />
+	<label for="st3">品牌</label>
+	<input name="t" id="st4" type="radio" value="code" class="radiocss" />
+	<label for="st4">订货号</label>
+	<input name="t" id="st5" type="radio" value="data" class="radiocss" />
+	<label for="st5">资料库 </label>
+    <input name="t" id="st6" type="radio" value="news" class="radiocss" />
+	<label for="st6">资讯</label>
+	</b>
+</div></form>
+<script type="text/javascript">
+function pclick(e){if(e.value=='全国第二大易客仪器购物平台，为您提供专业的行业仪器解决方案！'){e.value='';}}
+function pblur(e){if(e.value==''){e.value='全国第二大易客仪器购物平台，为您提供专业的行业仪器解决方案！';}}
+function btnclick() {
+    var f = document.forms["frmsearch"];
+    if (f["p"].value == '全国第二大易客仪器购物平台，为您提供专业的行业仪器解决方案！') {
+        alert("请输入要搜索的关键字！");
+        return;
+    }    
+    f.submit();
+}
+function setsearch(p) {
+    var t = fGetQuery("t");
+    var f = document.forms["frmsearch"];
+    for (var i = 0; i < f["t"].length; i++) {
+        if (f["t"][i].value == t) {
+            f["t"][i].checked = true;
+            break;
+        }
+    }
+    f["p"].value = p;
+}
+</script>

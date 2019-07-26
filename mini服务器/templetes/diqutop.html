@@ -1,0 +1,57 @@
+﻿<div class="select-all">
+    <div class="w1200">
+        <!--地区-->
+        <div class="w160 mr50" id="house-area">
+            <span class="select-bt" dir="0">地区</span>
+            <ul>
+                #foreach($item in $PdtDiqu04 $QaXNzaG93PSd0cnVlJw-- $P0 $OOrderNumber-asc)
+                <Li>
+                    <span class="area" dir="${item.Id}">${item.DiquName}</span>
+                    <ul class="area-leve">
+                        #foreach($items in $item.Child)
+                        <Li><span class="area" dir="${items.Id}">${items.DiquName}</span></Li>
+                        #end
+                    </ul>
+
+                </Li>
+                #end
+            </ul>
+        </div>
+        <!--地区-->
+        <!--类型-->
+        <div class="w160 mr50" id="house-type">
+            <span class="select-bt" dir="0">房屋类型</span>
+            <ul>
+                #foreach($item in $PdtType4 $P0 $OOrderNumber-asc)
+                <Li><span class="area" dir="${item.Id}">${item.Name}</span></Li>
+                #end
+            </ul>
+        </div>
+        <!--类型-->
+        <!--面积-->
+        <div class="w160 mr50" id="house-quare">
+            <span class="select-bt" dir="0">房产面积</span>
+            <ul>
+                <Li><span class="area" dir="1">100m<sup>2</sup>以下</span></Li>
+                <li><span class="area" dir="2">100-200m<sup>2</sup></span></li>
+                <li><span class="area" dir="3">200-300m<sup>2</sup></span></li>
+                <li><span class="area" dir="4">300m<sup>2</sup>以上</span></li>
+            </ul>
+        </div>
+        <!--面积-->
+        <!--面积-->
+        <div class="w160 mr50" id="house-price">
+            <span class="select-bt" dir="0">房产价格</span>
+            <ul>
+                <Li><span class="area" dir="1">100万元以下</span></Li>
+                <li><span class="area" dir="2">100-300万元</span></li>
+                <li><span class="area" dir="3">300-500万元</span></li>
+                <li><span class="area" dir="4">500万元以上</span></li>
+            </ul>
+        </div>
+        <!--面积-->
+        <div class="select-btns">
+            <button class="reset btn-default">重 置</button> <button class="submit btn-default">筛 选</button>
+        </div>
+    </div>
+</div>

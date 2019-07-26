@@ -1,0 +1,276 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  #foreach($item in $PdtDiqu $Detail)
+  #set($info=$item)
+  #end
+   #if($info) #if($!info.SeoTitle!="")<title>$!{info.SeoTitle}_$Global.WebName</title>#else<title>${info.DiquName}新房_$Global.WebName</title>#end #else <title>环球新房_$Global.WebName</title> #end
+    <meta name="keywords" content="#if($!info.Keyword!=" =")${info.Keyword}#else${info.DiquName}新房#end" />
+    <meta name="description" content="#if($!info.Description!=" =")${info.Description}#else${info.DiquName}新房#end" />
+		<link rel="stylesheet" href="/css/head.v2.css" />
+		<link rel="stylesheet" href="/css/style.v2.css" />
+         <link rel="stylesheet" href="/css/compare.v2.css" type="text/css" />
+        #parse("head.html")    
+        <script>
+			var menu = 3;
+		</script>
+</head>
+<body>
+#parse("Top.html")
+   <!--banner-->
+		<div class="news_nh_bg nybanner">
+			<div class="nytitle">
+				<b>#if($info)${info.DiquName}#else海外#end房产</b>
+				<i></i>
+                <p>提供海量、优质、真实的#if($info)${info.DiquName}#else海外#end房产信息，为您创造最佳新房购房体验</p>
+			</div>
+		</div>
+		<!--banner-->
+		<!--miaobao-->
+		<div class="mianbao">
+			<p class="clearfix">
+				<i class="iconfont">&#xe602;</i>
+				<a href="/" title="外国买房网">外国买房网首页</a>&gt;
+				<a href="/newhouse.html" title="环球新房">环球新房</a>#if($info)&gt;#set($load.Id=$info.Id)	$load.Load("newhouselist")#end
+			</p>
+		</div>
+		<!--miaonbao-->
+		<div class="bgf2f2f2 w100p">
+			<div class="new_house_select">
+				<div class="hotcountry country_a clearfix">
+					<span class="tit2">热门国家：</span>
+					<a href="/newhouselist_t0_a${aid}_m${mid}_j0_o${oid}.html" #if(${tid}!="0") style="color:#515151;float:left;"#else class="all"#end>全部</a>
+                    #foreach($item in $PdtDiqu05 $QaXNzaG93PSd0cnVlJw-- $P0 $OOrderNumber-asc)
+					<li><a href="javascript:;" onClick="gourl(${item.Id})" id="t${item.Id}">${item.DiquName}</a>
+						<div class="erji">
+							#foreach($items in $item.Child)
+							<a href="javascript:;" onClick="gourl(${items.Id})" id="tt${items.Id}" title="${items.DiquName}">${items.DiquName}</a>
+							#end
+						</div>
+					</li>
+					#end
+				</div>
+				<div class="hotcountry">
+					<span class="tit2">房屋总价：</span>
+					<a href="/newhouselist_t${tid}_a${aid}_m${mid}_j0_o${oid}.html"#if(${jid}=="0") class="all"#end>全部</a>
+					<a href="/newhouselist_t${tid}_a${aid}_m${mid}_j1_o${oid}.html" title=""#if(${jid}=="1") class="active"#end>100万以下</a>	
+					<a href="/newhouselist_t${tid}_a${aid}_m${mid}_j2_o${oid}.html" title=""#if(${jid}=="2") class="active"#end>100万-300万</a>
+					<a href="/newhouselist_t${tid}_a${aid}_m${mid}_j3_o${oid}.html" title=""#if(${jid}=="3") class="active"#end>300万-500万</a>
+					<a href="/newhouselist_t${tid}_a${aid}_m${mid}_j4_o${oid}.html" title=""#if(${jid}=="4") class="active"#end>500万-700万</a>					
+					<a href="/newhouselist_t${tid}_a${aid}_m${mid}_j5_o${oid}.html" title=""#if(${jid}=="5") class="active"#end>700万-900万</a>
+					<a href="/newhouselist_t${tid}_a${aid}_m${mid}_j6_o${oid}.html" title=""#if(${jid}=="6") class="active"#end>900万以上</a>
+				</div>
+				<div class="hotcountry">
+					<span class="tit2">房产面积：</span>
+					<a href="/newhouselist_t${tid}_a${aid}_m0_j${jid}_o${oid}.html"#if(${mid}=="0") class="all"#end>全部</a>
+					<a href="/newhouselist_t${tid}_a${aid}_m1_j${jid}_o${oid}.html" title=""#if(${mid}=="1") class="active"#end>100m<sup>2</sup>以下</a>
+					<a href="/newhouselist_t${tid}_a${aid}_m2_j${jid}_o${oid}.html" title=""#if(${mid}=="2") class="active"#end>100-200m<sup>2</sup></a>
+					<a href="/newhouselist_t${tid}_a${aid}_m3_j${jid}_o${oid}.html" title=""#if(${mid}=="3") class="active"#end>200-300m<sup>2</sup></a>
+					<a href="/newhouselist_t${tid}_a${aid}_m4_j${jid}_o${oid}.html" title=""#if(${mid}=="4") class="active"#end>300m<sup>2</sup>以上</a>                   
+
+				</div>
+				<div class="hotcountry">
+					<span class="tit2">物业类型：</span>
+					<a href="j/newhouselist_t${tid}_a0_m${mid}_j${jid}_o${oid}.html"#if(${aid}=="0") class="all"#end>全部</a>
+					<a href="/newhouselist_t${tid}_a1_m${mid}_j${jid}_o${oid}.html" title="独栋别墅"#if(${aid}=="1") class="active"#end>独栋别墅</a>
+					 					<a href="/newhouselist_t${tid}_a2_m${mid}_j${jid}_o${oid}.html" title="联排别墅"#if(${aid}=="2") class="active"#end>联排别墅</a>
+					 					<a href="/newhouselist_t${tid}_a3_m${mid}_j${jid}_o${oid}.html" title="公寓"#if(${aid}=="3") class="active"#end>公寓</a>
+					 					<a href="/newhouselist_t${tid}_a4_m${mid}_j${jid}_o${oid}.html" title="酒店"#if(${aid}=="4") class="active"#end>酒店</a>
+                    <a href="/newhouselist_t${tid}_a6_m${mid}_j${jid}_o${oid}.html" title="民宿" #if(${aid}=="6" ) class="active" #end>民宿</a>
+					 					<a href="/newhouselist_t${tid}_a5_m${mid}_j${jid}_o${oid}.html" title="其他"#if(${aid}=="5") class="all"#end>其他</a>
+				</div>
+
+				<a href="/newhouse.html" class="house_reset"><i class="iconfont">&#xe60b;</i>重置选项</a>
+
+				<div class="second_type tran3"></div>
+			</div>
+
+		</div>
+
+		<!--house_list-->
+		<div class="w1200 clearfix mt40">
+			<div class="w880">
+				<div id="list" class="px_tools clearfix">
+					<span class="active">默认排序</span><span>价格</span><span>面积</span><span>更新时间</span>
+				</div>
+				<!--list-->                
+				<div class="house_list mt20">
+                 #foreach($item in $newhouse $T10 $OOrderNumber-DESC_levelid-desc_id-desc)
+					<div class="h_l_tab tran3 clearfix">
+						<div class="img_tab">
+							<a target="_blank" href="/newhouse/${item.Id}.html"><img alt="${item.PdtTitle}" src="/images/loading.gif" class="selector" data-url=#if(${item.PdtPicture1}!="")"/upload/newhouse/${item.PdtPicture1}"#else"/img/proshow.jpg"#end /></a>
+							<p>
+								<a href="javascript:zixun(2,'${item.PdtTitle}',${item.Id})" title="">咨询</a>|
+								<a title="请点击复选框"><input type="checkbox" id="a$item.Id" onClick="dblist($item.Id, event, '${item.PdtPicture1}');" value="$item.PdtTitle" />加入对比</a>|
+								<a href="javascript:addnewcollect(${item.Id});" title="">添加收藏</a>|
+								<a target="_blank" href="/newhouse/${item.Id}.html" title="${item.PdtTitle}">查看详情</a>
+							</p>
+						</div>
+						<div class="house_info">
+							<a target="_blank" href="/newhouse/${item.Id}.html">${item.PdtTitle}</a>
+							<p class="hnumber">房屋编号：${item.Bianhao}</p>
+							<p class="haddress">
+								<i class="iconfont">&#xe61f;</i>${item.Address}</p>
+                            <div class="hprice clearfix">
+                                <i class="icon" data-id="$!{item.LevelId}">CNY</i><span>${item.TouristPrice.ToString().Replace(".00","")}<b>万元</b></span>
+                                #if($!item.LevelId>15) <p><a href="/agent/${item.UserId}.html" target="_blank"><img src="#if($!{item.Picture}==" ")img/tx.png#else/upload/users/${item.Picture}#end" />${item.TrueName} <em>$!{item.Mobile}</em></a></p>#end
+                            </div>
+							<p class="item clearfix">
+								 #if($item.PdtZhuangxiu!="")<span class="icon1">$item.PdtZhuangxiu </span>#end
+                                            #if($item.typename!="")<span class="icon2">$item.typename </span>#end
+                                            #if($item.PdtCode!="")<span class="icon3">面积：${item.PdtCode}m2</span>#end
+                                            #if($item.PdtChewei!="")<span class="icon4">$item.PdtChewei</span>#end
+							</p>
+                            #if($item.PdtHbl!="" && $item.PdtHbl!="未知")<i class="pk iconfont">预计回报率：${item.PdtHbl}%</i>#end
+						</div>
+					</div>
+					#end
+					
+
+					<div id="pagefy" class="clearfix">						
+				$newhouse-Info
+					</div>
+
+				</div>
+				<!--list-->
+			</div>
+
+			<div class="h_right">
+               #if(${info.Id}==3 || ${info.Id}==1016 || ${info.Id}==1017 || ${info.Id}==1018 || ${info.Id}==1019 || ${info.Id}==6088 || ${info.Id}==6086) <div class="findmap"> <a href="/mapshouse_${info.Id}.html" target="_blank" ><i class="iconfont">&#xe61f;</i>地图找房</a></div>#end
+				<div class="hot_comment">
+					<div class="ny_title bgf00"><span></span><b>热门评论</b>
+						
+					</div>
+					<div class="swiper-container" id="hot_comment">
+						<div class="swiper-wrapper">
+							#foreach($item in $vwnewscomment01 $L5 $QaXNyb209J3RydWUn)<div class="swiper-slide">
+								<a href="/news/${item.ParentID}.html" target="_blank" title="${item.newstitle}">${item.newstitle}</a>
+								<p><b>${item.Commentator}：</b>${item.CommentContext}</p>
+								<time>评论时间：${item.CreateDate.ToString("yyyy-MM-dd")}</time>
+							</div>
+							 #end
+						</div>
+
+						<!-- Add Arrows -->
+						<div class="commet_left commet_arrow"><img src="/img.v2/commet_left.png"></div>
+						<div class="commet_right commet_arrow"><img src="/img.v2/commet_right.png"></div>
+					</div>
+					<script>
+						var swiper = new Swiper('#hot_comment', {
+							loop: true,
+							autoplay: 3000,
+							nextButton: '.commet_right',
+							prevButton: '.commet_left',
+
+						});
+					</script>
+				</div>
+
+				<!--相关新闻-->
+				<div class="Related_news">
+					<div class="ny_title bg425"><span></span><b>相关新闻</b>
+						<a href="hotnews.html" target="_blank"><i class="iconfont">&#xe608;</i></a>
+					</div>
+					<div id="Related_news">
+						<ul>
+                        #foreach($item in $newsmodel01 $L10 $QTmV3c1JvbT0ndHJ1ZSc- $A)
+							<li#if($velocityCount==1) class="active"#end>
+								<i>$velocityCount</i>
+								<a target="_blank" href="/news/${item.Id}.html" class="r_news_img tran0"><img src=#if($item.NewsPicture1="")"/img.v2/ex.jpg"#else"/upload/news/$item.NewsPicture1"#end></a>
+								<a target="_blank" href="/news/${item.Id}.html" title="${item.NewsTitle}" class="r_news_title tran0">${item.NewsTitle}</a>
+								<time>${item.CreateDate.ToString("yyyy-MM-dd")}</time>
+							</li>
+							#end
+						</ul>
+					</div>
+				</div>
+				<!--相关新闻-->
+				<!--搜索-->
+				#foreach($item in $Advertise04 $D1006)
+            <a href="$item.LinkUrl" target="_blank" title="$item.Description" class="find_house"><img alt="$item.Description" data-url="/upload/ad/$item.AdPicture" src="/images/loading.gif" class="selector"></a>
+            #end
+				<!--搜索-->
+
+				<!--推荐房源-->
+				<div class="in_rom_house">
+					<div class="ny_title bgf29"><span></span><b>推荐房源</b>
+						<a href="hotnewhouse.html" target="_blank"><i class="iconfont">&#xe608;</i></a>
+					</div>
+					<div id="in_rom_house">
+                       #foreach($item in $Products $L8 $QSXNIb21lPSd0cnVlJw-- $A $OOrdernumber-desc)
+						<div class="in_rom_house_tab clearfix">
+							<a  target="_blank" href="/newhouse/${item.Id}.html" class="imgs"><img alt="$item.PdtTitle" src="/images/loading.gif" class="selector" data-url=#if($item.PdtPicture1="")"/img.v2/hh.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end/></a>
+							<p>
+								<a  target="_blank" href="/newhouse/${item.Id}.html" title="$item.PdtTitle">$item.PdtTitle</a>
+								<span class="price">房价：：${item.TouristPrice.ToString().Replace(".00","")}万元起</span>
+							</p>
+						</div>	
+                        #end					
+					</div>
+					
+				</div>
+				<!--推荐房源-->
+				
+					<!--常见问题-->
+				<div class="Related_news">
+					<div class="ny_title bg425"><span></span><b>常见问题</b>
+						<a href="baseinfo.html" target="_blank"><i class="iconfont">&#xe608;</i></a>
+					</div>
+					<div id="hotnews">
+						<ul>
+                        #foreach($item in $baseinfo $L10 $QSXNIb21lPSd0cnVlJw-- $A)
+							<li>															
+								<a target="_blank" href="/baseinfo/${item.Id}.html"  title="${item.NewsTitle}" class="r_news_title tran0">${item.NewsTitle}</a>							
+							</li>
+							#end
+						</ul>
+					</div>
+				</div>
+				<!--相关新闻-->
+			</div>
+
+		</div>
+		<!--house_list-->
+    #parse("Foot.html")          
+		
+
+   
+  
+    <script src="/js/pkq.js?v=2016816"></script>
+    <!-- 对比 begin -->
+    <div id="xsyc"></div>
+    <div id="bbv">
+        <div id="dbimg" onclick="dbhidd()">(5)</div>
+        
+    </div>
+   
+    <div id="dbnr">
+            <b><span>房源对比</span></b>
+            <div id="tishi">对不起，您还没有选择产品</div>
+            <ul></ul>
+            <div id="Contr-btn">
+			<a href="javascript:void()" onclick="dbhidd()" class="yinc">隐藏</a>
+			<a href="javascript:void()" onclick="return comparepro();" class="start-Contr">开始对比</a>
+			<a href="javascript:void()" onclick="clears()" class="clear-Contr">清空</a>
+		</div>
+          
+        </div>
+      
+    <script src="/js/compare.js?v=2016816" type="text/javascript" charset="utf-8"></script>
+    <script>
+        $(document).ready(function(e) { 
+            $(".selector").scrollLoading();
+            $("#parentid").val("0");
+            $("#lei").val("2");
+            $("#parentname").val("#if($info)${info.DiquName}#else海外#end新房");
+        });
+		var aid="${aid}";var mid="${mid}";var jid="${jid}";var oid="${oid}";var tid="${tid}";var pid="${pid}";
+		function gourl(e)
+		{			
+		    location.href="/newhouselist_t"+e+"_a"+aid+"_m"+mid+"_j"+jid+"_o"+oid+".html";
+		}
+</script>
+ <script type="text/javascript" src="/js/newhouse.v2.js?v=20170903"></script>
+    <!-- 对比 end --></body>
+</html>

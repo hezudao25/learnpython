@@ -1,0 +1,29 @@
+{% extends './base.html' %}
+{% load poll_extras %}
+{% block title %} 首页 {% endblock title %}
+
+{% block co1 %}
+{% if name != "" %}<h1>欢迎你！{{ name }} <a href="{% url 'login_out' %}">退出</a> </h1>{% endif %}
+<hr>
+{% if name != "" %}<h2><a href="{% url 'create' %}">添加</a></h2>{% endif %}
+    {% if page %}
+<div class="articlelist">
+    <ul>
+    {% for book in page %}
+        <li {% if forloop.counter|mod %}style="background-color: aqua"{% endif %}><img src="/static/media/{{ book.pic }}" width="100"> <a href="{% url 'detail' book.id%}">{{ book.btitle }}</a> &nbsp;&nbsp;&nbsp;<time>{{ book.bpub_date|date:'Y-m-d' }}</time>&nbsp;&nbsp;&nbsp;<a href="{% url 'bookdelete' book.id %}">删除</a></li>
+    {% endfor %}
+    </ul>
+
+        {% if page.has_previous %}<a href="{% url 'index' %}?page={{ page.previous_page_number }}">上一页</a>
+            {% endif %}
+        {% for pindex in page.paginator.page_range %}
+        <a href="{% url 'index' %}?page={{ pindex }}"> {{ pindex }}</a>
+        {% endfor %}
+        {% if page.has_next %}<a href="{% url 'index' %}?page={{ page.next_page_number }}">下一页</a>{% endif %}
+{% else %}
+    <p>No polls are available.</p>
+
+{% endif %}
+
+</div>
+{% endblock co1 %}

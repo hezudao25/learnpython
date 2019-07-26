@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>找房_外国买房网_外房</title>
+        <meta name="keywords" content="美国房产,泰国房产,休斯顿房产,迈阿密房产,奥兰多房产" />
+        <meta name="description" content="真实实时的美国新房，泰国新房，英国新房，澳大利亚新房等信息" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />	
+		<link rel="stylesheet" href="/css/head.v2.css" />
+		<link rel="stylesheet" href="/css/style.v2.css" />
+        #parse("head.html")
+        <script>
+			var menu = 3;
+        </script>
+	</head>
+
+	<body>
+        #parse("Top.html")
+			<!--banner-->
+		<div class="find_bg nybanner">
+			<div class="nytitle">
+				<b>找房团</b>
+				<i></i>
+				<p>为您找寻适合您的优秀房源</p>
+			</div>
+		</div>
+		<!--banner-->
+		<!--logo-->
+	<!--miaobao-->
+		<div class="mianbao">
+			<p class="clearfix">
+				<i class="iconfont">&#xe602;</i>
+				<a href="/" title="">外国买房网首页</a>&gt;
+				<a href="newhouse.html" title="">环球新房</a>
+			</p>
+		</div>
+		<!--miaonbao-->
+	<div class="findhouse_input">
+		<p>向往的国家</p>
+		<div class="ch_condition clearfix" id="gj">
+			<span>美国<i class="iconfont">&#xe670;</i></span>
+			<span>澳大利亚<i class="iconfont">&#xe670;</i></span>
+			<span>泰国<i class="iconfont">&#xe670;</i></span>
+			<span>英国<i class="iconfont">&#xe670;</i></span>
+			<span>希腊<i class="iconfont">&#xe670;</i></span>
+			<span>阿联酋<i class="iconfont">&#xe670;</i></span>
+			<span>加拿大<i class="iconfont">&#xe670;</i></span>
+			<span>迪拜<i class="iconfont">&#xe670;</i></span>
+            <span>日本<i class="iconfont">&#xe670;</i></span>
+            <span>马来西亚<i class="iconfont">&#xe670;</i></span>
+            <span>其他国家<i class="iconfont">&#xe670;</i></span>
+		</div>
+		<p>价格范围</p>
+		<div class="ch_condition clearfix" id="jg">
+			<span>50万以下<i class="iconfont">&#xe670;</i></span>
+			<span>50万 - 100万<i class="iconfont">&#xe670;</i></span>
+			<span>100万 - 200万<i class="iconfont">&#xe670;</i></span>
+			<span>200万 - 300万<i class="iconfont">&#xe670;</i></span>
+			<span>300万 - 400万<i class="iconfont">&#xe670;</i></span>
+			<span>400万 - 600万<i class="iconfont">&#xe670;</i></span>
+			<span>600万 - 800万<i class="iconfont">&#xe670;</i></span>
+			<span>800万以上<i class="iconfont">&#xe670;</i></span>
+		</div>
+		<p>购房目的</p>
+		<div class="ch_condition clearfix" id="md">
+			<span>投资房<i class="iconfont">&#xe670;</i></span>
+			<span>学区房<i class="iconfont">&#xe670;</i></span>
+			<span>移民房<i class="iconfont">&#xe670;</i></span>
+			
+		</div>
+		<p>物业类型</p>
+		<div class="ch_condition clearfix" id="wy">
+			<span>独栋别墅<i class="iconfont">&#xe670;</i></span>
+			<span>联排别墅<i class="iconfont">&#xe670;</i></span>
+			<span>公寓<i class="iconfont">&#xe670;</i></span>
+			<span>酒店<i class="iconfont">&#xe670;</i></span>
+			<span>其他<i class="iconfont">&#xe670;</i></span>
+		
+		</div>
+		<p>其他需求</p>
+		<input type="text" placeholder="请填写您的购房需求？" id="beizhu" name="beizhu" class="find_xq">
+		<p class="clearfix">填写个人信息<b>我们承诺！不会泄露您的个人信息！</b></p>
+		<div class="person_input clearfix">
+			<span>姓&nbsp;&nbsp;名</span><input type="text" id="username" name="username" class="person_input_name" placeholder="您的姓名"/>
+			<span>联系方式</span><input type="text" class="person_input_name" id="mobile" name="mobile"  placeholder="您的手机号码"/><input type="submit" value="提交我的购房需求" class="input_find_bt">
+		</div>
+		
+	</div>
+	
+	
+
+	
+		
+		<!--main-->
+
+		<!--foot-->
+        #parse("Foot.html")  
+		<script type="text/javascript" src="/js/public.v2.js"></script>
+		<script>
+            
+                $(".ch_condition span").click(function (e) {
+                    if ($(this).hasClass("active")) {
+                        $(this).removeClass("active")
+                    }
+                    else {
+                        $(this).addClass("active")
+                    }
+                })
+
+                $(".input_find_bt").click(function (e) {
+                    var gj = "";
+                    $("#gj span.active").each(function () {
+                        gj += $(this).html().substring(0, $(this).html().indexOf("<i"))+",";
+                    });
+                    if (gj != "") gj = "向往的国家:" + gj;
+                    var jg = "";
+                    $("#jg span.active").each(function () {
+                        jg += $(this).html().substring(0, $(this).html().indexOf("<i")) + ",";
+                    });
+                    if (jg != "") jg = "价格范围:" + jg;
+                    var md = "";
+                    $("#md span.active").each(function () {
+                        md += $(this).html().substring(0, $(this).html().indexOf("<i")) + ",";
+                    });
+                    if (md != "") md = "购房目的:" + md;
+                    var wy = "";
+                    $("#wy span.active").each(function () {
+                        wy += $(this).html().substring(0, $(this).html().indexOf("<i")) + ",";
+                    });
+                    if (wy != "") wy = "物业类型:" + wy;
+                    var fb = true;
+                    var fbmobile = $("#mobile").val();
+                    if (fbmobile == "") {
+                        fb = false;
+                        layer.alert("请输入手机号码");
+                    } else if (!/^(13[0-9]|14[0-9]|15[0-9]|18[0-9]|17[0-9])\d{8}$/i.test(fbmobile)) {
+                        layer.alert('手机格式不对'); fb = false;
+                    }
+                    var fbusername = $("#username").val();
+                    var fbuserid = 0;
+                    var beizhu = "";
+                    if ($("#beizhu").val() != "") beizhu = "其他需求:" + $("#beizhu").val();
+                    var fbcontent = gj + jg + md + wy + beizhu;
+                    if (fb) {
+                        var args = {};
+                        args["mobile"] = escape(fbmobile);
+                        args["username"] = escape(fbusername);
+                        args["content"] = escape(fbcontent);
+                        args["lei"] = 2;
+                        args["parentid"] = 0;
+                        args["parentname"] = "找房团";
+                        jQuery.post("/Common/Member.Feedback.aspx?r=" + Math.random(), args, function (data) {
+                            var d = eval(data);
+                            layer.alert(d[0].message, function () {
+                                location.href = "/findhouse.html";
+                            });
+                        }, "text");
+                    }
+                });
+          
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head> #foreach($item in $PdtDiqu $Detail)
+  #set($info=$item)
+  #end
+    <meta charset="utf-8" />
+<title>#if($info)${info.DiquName}房产经纪#else海外房产中介_海外房产经纪#end _$Global.WebName</title>
+<meta name="keywords" content="#if($info)${info.DiquName}海外房产中介,海外房产经纪#else海外房产中介,海外房产经纪,美国房产中介,澳洲房产中介,泰国房产中介,美国房产经纪人,澳洲房产经纪人,泰国房产经纪人,海外华人房地产经纪人#end" />
+<meta name="description" content="外国买房网拥有丰富的海外房产经纪人和房产中介信息，您可以自由选择适合的经纪人和中介为您提供海外买房、海外购房、海外房价等相关咨询和服务。" />
+    <link rel="stylesheet" href="/font/iconfont.css" />
+    <link rel="stylesheet" href="/css/style.css?version=20160728" />
+    <script type="text/javascript" src="/js/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.jslides.js"></script>
+    <script type="text/javascript" src="/js/jquery.SuperSlide.js"></script>
+    <script type="text/javascript" src="/js/lanrenzhijia.js"></script>
+    <script type="text/javascript" src="/layer/layer.js"></script>
+    <script type="text/javascript" src="/js/agent.js?v=20160728"></script>
+</head>
+
+<body>
+#parse("Top.html")
+    <!--inner-flash-->
+    <div class="inner-flash"></div>
+    <!--inner-flash-->
+    <div class="select-all">
+        <div class="w1200">
+            <!--地区-->
+            <div class="w160 mr50" id="house-area">
+                <span class="select-bt" dir="0">地区</span>
+                <ul>#foreach($item in $PdtDiqu04 $P0 $OOrderNumber-asc)
+                    <Li>
+                        <span class="area" dir="${item.Id}">${item.DiquName}</span>
+                        <ul>#foreach($items in $item.Child)
+                            <Li><span class="area" dir="${items.Id}">${items.DiquName}</span></Li>
+                           #end
+                        </ul>
+
+                    </Li>
+                   #end
+                </ul>
+            </div>
+            <!--地区-->
+            <!--语言-->
+            <div class="yuyan">
+                <span><input type="checkbox" name="yuyan" value="1" />中文 </span>
+                <span><input type="checkbox" name="yuyan" value="2" />英语 </span>
+                <span><input type="checkbox" name="yuyan" value="3" />粤语 </span>
+
+            </div>
+            <!--语言-->
+            <div class="select-btns">
+                <button class="reset btn-default">重 置</button> <button class="submit btn-default">筛 选</button>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <!--left-->
+        <div id="left2">
+            <div id="list-select"><span class="on">默认</span><span>评价</span><span>浏览次数</span></div>
+            <!--houstlist-->
+            #foreach($item in $userslist $T10 $OOrderNumber-DESC)           
+            <div class="agents-tab clearfix">
+                <a href="/agent/${item.Id}.html">
+                    <div class="agents-tx"><img src=#if(${item.Picture}!="")"/upload/users/${item.Picture}"#else"img/jjr.jpg"#end /><span><i class="iconfont icon-zoom"></i></span>
+                    <span class="king">金牌经纪人</span>
+                    </div>
+                    <div class="agents-info">
+                        <div class="name"><b>${item.TrueName} ${item.EnName}</b><span>${item.Yuyan.Replace(",","</span><span>").Replace("，","</span><span>")}</span></div>
+                        <div class="info1">${item.Diqu} |  执照号 ${item.Zhizh}  <span class="heart">
+                        <i class="iconfont icon-pingjia${item.Xingji}"></i>(${item.CommentNumber}条评论)
+                        <p>${item.AccessNumber}人看过</p>
+                    </span></div>
+                        <div style="display:none">${item.Jianjie}</div><p>
+                            $StringHelper.GetOmitString(${item.Jianjie},400,"1")
+                        </p>
+
+                    </div>
+                    
+                </a>
+            </div>   
+            #end
+            <div class="more">$userslist-Info</div>
+
+        </div>
+        <div id="right">
+            <div class="tit28"><span>热点资讯</span><i class="iconfont icon-new1"></i><a href="hotnews.html" target="_blank">+More</a></div>
+            <div id="hotnews">
+                <ul>
+                    #foreach($item in $newsmodel01 $L10 $QTmV3c1JvbT0ndHJ1ZSc- $A)
+                    <li>
+                        <a href="/news/${item.Id}.html">${item.NewsTitle}</a>
+                    </li>
+                    #end
+                </ul>
+            </div>
+            <div class="tit28 mt25">
+                <span>最新房源</span>
+                <a href="hotnewhouse.html" target="_blank">+More</a>
+            </div>
+            <div class="overwiew">
+                <ul>
+                    #foreach($item in $Products $L8 $QSXNIb21lPSd0cnVlJw-- $A $OOrdernumber-desc)
+                    <li>
+                        <div class="imgs">
+                            <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle" target="_blank"><img alt="$item.PdtTitle" src=#if($item.PdtPicture1 ="")"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end /></a>
+                        </div>
+                        <div class="wiew-info">
+                            <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle" target="_blank">$item.PdtTitle</a>
+                            <p>房价：${item.TouristPrice.ToString().Replace(".00","")}万元起</p>
+                        </div>
+                    </li>
+                    #end
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--main-->
+
+
+
+
+
+#parse("Foot.html")
+    <script type="text/javascript" src="/js/public.js?v=20170728"></script>
+ <script>
+$(document).ready(function(e) {
+            $("#nav .menu li").eq(7).addClass("active")
+        });
+</script>
+</body>
+</html>

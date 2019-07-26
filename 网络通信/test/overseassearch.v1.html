@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html> 
+<head>
+    <meta charset="utf-8" />
+    <title>信息搜索_$Global.WebName</title> 
+    <link rel="stylesheet" href="/font/iconfont.css" />
+    <link rel="stylesheet" href="/css/style.css?version=20160728" />
+    <script type="text/javascript" src="/js/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.jslides.js"></script>
+    <script type="text/javascript" src="/js/jquery.SuperSlide.js"></script>
+    <script type="text/javascript" src="/js/lanrenzhijia.js"></script>
+    <script type="text/javascript" src="/js/jquery.pack.js"></script>
+    <script type="text/javascript" src="/js/jQuery.blockUI.js"></script>
+    <script type="text/javascript" src="/js/jquery.SuperSlide.js"></script>
+</head>
+<body>
+    #parse("Top.html")
+    <!--nav-->
+    <div class="invest-flash"></div>
+    <div id="main" style="margin-top:0px">
+        <!-- 投资-->
+      
+        <div class="lxad">
+        <div class="left-title">移民/留学/投资<p>Immigration / study / investment</p></div>
+            <div class="news-type">
+                <ul>
+                    #foreach($item in $OverseasType01 $P0 $OId-asc)
+                    <li>
+                        <a href="/OverseasList/list_t${item.Id}.html" class="items">${item.Name}</a>
+                        <ul>
+                            #foreach($item2 in $item.Child)
+                            <li>
+                                <a href="/OverseasList/list_t${item2.Id}.html">${item2.Name}</a></li>
+                                #end
+<div class="clear"></div></ul>
+</li>
+                    #end
+                </ul>
+            </div>
+            <div class="effect">
+                <div id="slideBox" class="slideBox3">
+                    <div class="hd">
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="bd">
+                        <ul>
+                            <li><img src="/img/lxad.jpg" /></li>
+                            <li><img src="/img/lxad.jpg" /></li>
+                            <li><img src="/img/lxad.jpg" /></li>
+                        </ul>
+                    </div>
+                </div>
+                <script type="text/javascript">
+						jQuery(".slideBox3").slide({
+							mainCell: ".bd ul",
+							autoPlay: true
+						});
+                </script>
+            </div>
+            <!--相关信息-->
+            <div class="tit28 mt25"><span>最新产品</span></div>
+            <div class="overwiew">
+                <ul>
+                    #foreach($item in $Products $L3 $QSXNIb21lPSd0cnVlJw--)
+                    <li>
+                        <div class="new_pro_tab">
+                            <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle" class="pro-img"><img src=#if($item.PdtPicture1 ="" )"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end></a>
+                            <span class="name">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">$item.PdtTitle</a>
+                                <p></p>
+                            </span>
+                        </div>
+                    </li>
+                    #end
+                </ul>
+            </div>
+            <!--相关信息-->
+        </div>
+        <div class="invest">
+            <div class="tz-title">搜索</div>
+            <div class="touz-list">
+                <ul>
+                    #foreach($item in $overseasModel $T10 $OCreateDate-Desc)
+                     <li #if($!{item.OverseasPicture1}=="")class="nopic2"#end>
+                        <a href="/overseas/${item.Id}.html" class="pic"><img src="/upload/overseas/$!{item.OverseasPicture1}"></a>
+                        <span>
+                            <a href="/overseas/${item.Id}.html" class="tits">${item.OverseasTitle}</a><p>${item.Jianjie}</p>
+                            <p class="time">发布日期：${item.CreateDate.ToString("yyyy-MM-dd")}</p>
+                        </span>
+                    </li>
+                   #end
+                </ul>
+            </div>
+            <div class="more">
+                $overseasModel-Info
+
+            </div>
+            <div class="clear"></div>
+        </div>
+        <!--投资-->
+    </div>
+    <!--main-->
+    #parse("Foot.html")
+    <script>
+	$(".items").mouseover(function(e) {
+			if($(this).parent("li").hasClass("on")!=1)
+			{
+				$(".lxad .news-type ul ul").slideUp(300)
+            $(this).next("ul").slideDown(300)
+			$(".news-type li").removeClass("on")
+			 $(this).parent("li").addClass("on")
+				
+				}
+	});
+	//首页搜索js
+	$(".select-ky .other li").click(function (e) {
+	    $(".kar span").html($(this).html());
+	    $("#t").val($(this).attr("dir"));
+	});
+	//首页搜索js
+
+	function checksearch() {
+	    if ($("#p").val() == "") {
+	        layer.alert("请输入关键词!"); return false;
+	    }
+
+	    return true;
+	}
+	function fGetQuery1(name) {
+	    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+	    var r = window.location.search.substr(1).match(reg);
+	    if (r != null) {
+	        if (name == "p") {
+	            return r[2];
+	        } else {
+	            return unescape(r[2]);
+	        }
+	    }
+	    return null;
+	}
+	function setsearch(p) {
+	    var t = fGetQuery1("t");
+	    var f = document.forms["frmsearch"];
+	    $("#t").val(t);
+	    $(".select-ky .other li").each(function (e) {
+	        if ($(this).attr("dir") == t) {
+	            $(".kar span").html($(this).html());
+	        }
+	    });
+
+	    $("#p").val(p);
+	}
+	</script><script>          setsearch('$SRHP')</script>    <script>
+$(document).ready(function(e) {
+            $("#nav .menu li").eq(5).addClass("active")
+        });
+</script>
+</body>
+</html>

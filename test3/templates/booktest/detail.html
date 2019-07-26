@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>书名：{{ bookinfo.btitle }}</h1>
+<h2>英雄列表：<a href="{% url 'herocreate' bookinfo.id %}">添加</a></h2>
+{% if hero_list %}
+<ul>
+{% for h in hero_list %}
+<li>{{ h.hname }} -- {{ h.hcomment }}</li>
+{% endfor %}
+</ul>
+{% else %}
+    暂无英雄
+{% endif %}
+</body>
+</html>

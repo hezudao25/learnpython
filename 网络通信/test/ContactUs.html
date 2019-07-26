@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>联系我们_$Global.WebName</title>
+    <meta name="keywords" content="联系我们,外国买房网" />
+    <meta name="description" content="关于外国买房网" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <style type="text/css">      
+
+        #container {
+            width: 1200px;
+            height: 400px;
+            margin:0px auto;
+        }
+    </style>
+    <link rel="stylesheet" href="css/style.v2.css" />
+    <link rel="stylesheet" href="css/head.v2.css" />
+    #parse("head.html")
+</head>
+
+<body onload="loadScript()">
+    <!--top-->
+    #parse("Top.html")
+    <div class="aboutus-bx">
+        <div class="aboutus-nav">
+            <ul>
+                <li><a href="aboutus.html">关于我们</a></li>
+                <li><a href="honor.html">公司资质</a></li>
+                <li><a href="vip.html" target="_blank">会员服务</a></li>
+                <li><a href="privacy.html">隐私政策</a></li>
+                <li class="on"><a href="contactus.html">联系我们</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="about-title"><span>联系我们</span></div>
+    <div class="about-content clearfix text-2">       
+        <span class="dc">外国买房网</span>
+        <span class="d"><i class="iconfont">&#xe62e;</i>公司地址：浙江杭州西湖区文二路西湖国际科技大厦B3座10层。</span>
+        <span class="d"><i class="iconfont">&#xe63d;</i>电话：400-082-8015 </span>        
+        <span class="d">
+            项目合作QQ：
+            <a href="tencent://message/?uin=20698379&amp;Site=&amp;Menu=yes" target="_blank" rel="nofollow"><i class="iconfont">&#xe617;</i>20698379</a>
+        </span>
+        <span class="d">
+            房产咨询QQ：
+            <a href="tencent://message/?uin=20849308&amp;Site=&amp;Menu=yes" target="_blank" rel="nofollow"><i class="iconfont">&#xe617;</i>20849308</a>
+        </span>
+        <span class="d">
+            友情链接QQ：
+            <a href="tencent://message/?uin=504797229&amp;Site=&amp;Menu=yes" target="_blank" rel="nofollow"><i class="iconfont">&#xe617;</i>504797229</a>
+        </span>
+      </div>
+        <div id="container"></div>
+        <script>
+        function init() {
+            var myLatlng = new qq.maps.LatLng(30.2815589310, 120.1208378668);
+            var myOptions = {
+                zoom: 16,
+                center: myLatlng
+            };
+            var map = new qq.maps.Map(document.getElementById("container"), myOptions);
+            var infoWin = new qq.maps.InfoWindow({
+                map: map
+            });
+            infoWin.open();
+            //tips  自定义内容
+            infoWin.setContent('<div style="width:300px;padding-top:5px; font-size:12px; line-height:20px">' +
+                '外国买房网-全球华人房产交易平台<br>' +
+                '浙江杭州西湖区文二路西湖国际科技大厦B3座10层</div>');
+            infoWin.setPosition(myLatlng);
+        }
+ 
+        function loadScript() {
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.src = "http://map.qq.com/api/js?v=2.exp&callback=init";
+            document.body.appendChild(script);
+        }
+        </script>
+
+   
+
+    #parse("Foot.html")
+
+
+</body>
+
+</html>

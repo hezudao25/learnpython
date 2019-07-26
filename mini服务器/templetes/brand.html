@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>品牌专场_$Global.WebName</title>
+<meta name="keywords" content="品牌专场,$Global.Keywords" />
+<meta name="description" content="$Global.Description" />
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/images/favicon.ico"/>
+<link href="/Css/base.css" rel="stylesheet" type="text/css" />
+<link href="/Css/inside.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/Js/common.js"></script>
+</head>
+<body>
+#parse("Top.html")<script type="text/javascript">                      setChoseNav(5);</script>
+<div class="main">
+	<div class="mainleft">
+		<div class="lefttitle" style="margin:0;"><b class="lefttitlesub">品牌销量排行</b></div>
+		<div class="brandleftbox">
+			<ul class="brandtop">
+				#foreach($item in $vwSales #L4)
+				<li><a href="/Product/${item.Id}.html"><img src=#if($item.PdtPicture1=="")"/images/bglogo.jpg"#else"/FileUPLoad/ProductFile/$item.PdtPicture1"#end alt="$item.PdtTitle" /></a><span><a href="/Product/${item.Id}.html">$item.PdtTitle</a></span>
+					<p>品牌：${item.BrandName}</p>
+					<p>已销售：<em>${item.PdtSales}</em> </p>
+				</li>
+				#end
+			</ul>
+		</div>
+		<div class="leftbot"></div>
+		<div class="lefttitle"><b class="lefttitlesub">品牌推荐</b></div>
+		<div class="brandleftbox">
+			<ul class="recombrand">
+				#foreach($item in $PdtBrand03 $L4 $QSXNSb209J3RydWUn)
+				<li><a href="/Pbrandlist/B${item.Id}/list.html"><img src="${item.BrandIcon}" /></a><b><a href="/Pbrandlist/B${item.Id}/list.html">${item.BrandName}</a></b></li>
+				#end
+			</ul>
+			<ul class="recombrandlist">
+				#foreach($item in $PdtBrand04 $L6 $QSXNSb209J3RydWUn)
+				<li><a href="/Pbrandlist/B${item.Id}/list.html">${item.BrandName}</a><b>${item.Diqu}</b></li>
+				#end
+			</ul>
+		</div>
+		<div class="leftbot"></div>
+		<div class="lefttitle"><b class="lefttitlesub">浏览历史</b></div>
+		<div class="brandleftbox">
+			<ul class="history">
+				<script>gethistory();</script>
+			</ul>
+		</div>
+		<div class="leftbot"></div>
+	</div>
+	<div class="mainright">
+		#parse("Search.html")
+		<div class="newsflash">
+			<div class="slider">
+				<ul class="pic" id="homePushShow">
+					#foreach($item in $Advertise $P3)
+					<li style="display:#if($velocityCount==1) #else none;#end" id="homePushShow$velocityCount"> <a href="$item.LinkUrl" target="_blank"> <img alt="$item.Description" src="/FileUPLoad/Advertise/$item.AdPicture"  height="$item.hHeight" width="$item.hWidth"></a>
+						<p></p>
+						<strong>$item.name</strong> </li>
+					#end
+				</ul>
+				<ul class="num bg" id="homePushName">
+					#foreach($item in $Advertise14 $P3)<li id="homeAd$velocityCount">$velocityCount</li>#end
+				</ul>
+			</div>
+			<script type="text/javascript" src="/js/flashimg.js"></script> 
+		</div>
+		<div class="location"><a href="/">首页</a>><a href="/brand.html">品牌专场</a></div>
+		<dl class="choose" id="nav">
+			<dt>字母筛选：</dt>
+			<dd>
+				<p><a href="javascript:void(0);" onclick="go1url('');" id="">不限</a><a href="javascript:void(0);" onclick="gourl('A');" id="A">A</a><a href="javascript:void(0);" onclick="gourl('B');" id="B">B</a><a href="javascript:void(0);" onclick="gourl('C');" id="C">C</a><a href="javascript:void(0);" onclick="gourl('D');" id="D">D</a><a href="javascript:void(0);" onclick="gourl('E');" id="E">E</a><a href="javascript:void(0);" onclick="gourl('F');" id="F">F</a><a href="javascript:void(0);" onclick="gourl('G');" id="G">G</a><a href="javascript:void(0);" onclick="gourl('H');" id="H">H</a><a href="javascript:void(0);" onclick="gourl('I');" id="I">I</a><a href="javascript:void(0);" onclick="gourl('J');" id="J">J</a><a href="javascript:void(0);" onclick="gourl('K');" id="K">K</a><a href="javascript:void(0);" onclick="gourl('L');" id="L">L</a><a href="javascript:void(0);" onclick="gourl('M');" id="M">M</a><a href="javascript:void(0);" onclick="gourl('N');" id="N">N</a><a href="javascript:void(0);" onclick="gourl('O');" id="O">O</a><a href="javascript:void(0);" onclick="gourl('P');" id="P">P</a><a href="javascript:void(0);" onclick="gourl('Q');" id="Q">Q</a><a href="javascript:void(0);" onclick="gourl('R');" id="R">R</a><a href="javascript:void(0);" onclick="gourl('S');" id="S">S</a><a href="javascript:void(0);" onclick="gourl('T');" id="T">T</a><a href="javascript:void(0);" onclick="gourl('U');" id="U">U</a><a href="javascript:void(0);" onclick="gourl('V');" id="V">V</a><a href="javascript:void(0);" onclick="gourl('W');" id="W">W</a><a href="javascript:void(0);" onclick="gourl('X');" id="X">X</a><a href="javascript:void(0);" onclick="gourl('Y');" id="Y">Y</a><a href="javascript:void(0);" onclick="gourl('Z');" id="Z">Z</a></p>
+			</dd>
+		</dl>
+		<dl class="choose" id="nav1">
+			<dt>类别筛选：</dt>
+			<dd>
+				<ul>
+					#foreach($item in $vwPdtType $P0 $OOrderNumber-asc)
+					<li><a  href="javascript:void(0);" onclick="gourl1('${item.Id}');" id="${item.Id}">$item.Name</a></li>
+					#end
+				</ul>
+			</dd>
+		</dl>
+		<div class="newstitle">
+			<p>品牌专场</p>
+		</div>
+		<div class="newsbox">
+			<ul class="brandlogo">
+				#foreach($item in $PdtBrand $T24)
+				<li><a href="/Pbrandlist/B${item.Id}/list.html"><img src="${item.BrandIcon}" /></a><b><a href="/Pbrandlist/B${item.Id}/list.html">${item.BrandName}</a></b></li>
+				#end
+			</ul>
+            <div align="center">$PdtBrand-Info</div>
+		</div>
+		<div class="newsbot"></div>
+	</div>
+	<br class="clear" />
+</div>
+#parse("Foot.html")
+</body><script type="text/javascript">
+           gaoliang("nav", "2");
+           gaoliang("nav1", "1");
+           function gaoliang(e, f) {
+               var myNav = document.getElementById(e).getElementsByTagName("a");
+               for (var i = 0; i < myNav.length; i++) {
+                   var links = myNav[i].getAttribute("id");
+                   //		                 	alert(links) 
+                   //	alert(myNav[i]); 
+                   //		                 var myURL = document.location.href;
+
+                   //		                 if (myURL.indexOf(links) != -1) {
+                   if (links == fGetQuery1(f)) {
+                       myNav[i].className = "all";
+                   }
+               }
+           }
+           function go1url() {            
+               var url = "/brand";
+               if (fGetQuery1("1") != null && fGetQuery1("1") != "T" && fGetQuery1("1") != "") {
+                   url += "/T" + fGetQuery1("1") + "";
+                   url += "/List.html";
+               } else {url += ".html";}
+               location.href = url;
+           }
+           function gourl(mid) {
+               //		             var url = "/define.aspx?brand";
+               //		             if (mid != null) url += "&mid=" + mid;
+               //		             if (fGetQuery("tid") != null) url += "&tid=" + fGetQuery("tid");
+               var url = "/brand/";
+               var ss=".html";
+               if (fGetQuery1("1") != null && fGetQuery1("1") != "T" && fGetQuery1("1") != "") {
+                   url += "T" + fGetQuery1("1") + "-";
+                    ss = "/List.html";
+               }
+               if (mid != null && mid != "") url += "" + mid;
+               url += ss;
+               location.href = url;
+           }
+           function gourl1(tid) {
+               var url = "/brand/";
+               if (tid != null && tid != "") url += "T" + tid;
+               if (fGetQuery1("2") != null && fGetQuery1("2") != "") url += "-" + fGetQuery1("2");
+               url += "/List.html";
+               location.href = url;
+           }
+           function fGetQuery1(name) { //获取参数值
+               var sUrl = window.location.pathname;
+               var o;
+               var r = sUrl.split("/");
+               if (r.length > 2) {
+                   if (r[2].indexOf("-") > 0) {
+                       var q = r[2].split("-");
+
+                       if (name == "1") {
+                           o = q[0].substring(1);
+                       } else {
+                           o = q[1];
+                       }
+                   } else {
+                       if (r[2].indexOf("T") != -1) {
+                           if (name == "1") { o = r[2].substring(1); } else { o = null; }
+                       } else {
+                           if (name == "1") { o = null; } else { o = r[2].substring(0,r[2].length-5); }
+                       }
+                   }
+
+               } else {
+                   o = null;
+               }
+               return (o == null ? null : unescape(o));
+           }
+
+		        </script>
+</html>

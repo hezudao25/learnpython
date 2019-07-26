@@ -1,0 +1,42 @@
+﻿<div id="top">
+    <div class="w clearfix">
+        <div class="logo">
+            <a href="/"><img src="/im/img/logo1.png" /></a>
+        </div>
+        <div id="nav">
+            <ul class="clearfix">
+                <Li>
+                    <a href="/" target="_blank">首 页 </a>
+                </Li>
+                <Li>
+                    <a href="/news.html" target="_blank">外房资讯 </a>
+                </Li>
+                <Li>
+                    <a href="/newhouse.html" target="_blank">环球新房 </a>
+                </Li>
+                <Li>
+                    <a href="/secondhouse.html" target="_blank">海外二手房</a>
+                </Li>
+                <Li>
+                    <a href="/immigrant.html" target="_blank">海外移民 </a>
+                </Li>
+                <Li>
+                    <a href="/overseas.html" target="_blank">留学/投资</a>
+                </Li>
+                <Li>
+                    <a href="/exhibtion.html" target="_blank">展会 </a>
+                </Li>
+                <Li>
+                    <a href="/agent.html" target="_blank">经纪人</a>
+                </Li>
+                <Li>
+                    <a href="/fund.html" target="_blank">理财</a>
+                </Li>
+            </ul>
+        </div>
+        <div class="loign_btn">
+            #if($Username=="")<a href="javascript:;" onclick="openregedit()" class="login_btn_r"><i class="iconfont">&#xe603;</i>注册</a>
+            <a href="javascript:;" onclick="openlogin()" class="login_btn_l"><i class="iconfont">&#xe601;</i>登录</a>#else 你好！<a href="/Member/">$Username</a>#end
+        </div>
+    </div>
+</div>

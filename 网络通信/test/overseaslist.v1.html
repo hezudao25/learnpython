@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html>  #foreach($item in $overseasType $Detail)
+  #set($info=$item)
+  #end
+<head>
+    <meta charset="utf-8" />
+    <title>${info.Name}_$Global.WebName</title>
+    <meta name="keywords" content="$info.WebKeywords" />
+    <meta name="description" content="$info.WebDescription" />
+    <link rel="stylesheet" href="/font/iconfont.css" />
+    <link rel="stylesheet" href="/css/style.css?version=20160728" />
+    <script type="text/javascript" src="/js/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.jslides.js"></script>
+    <script type="text/javascript" src="/js/jquery.SuperSlide.js"></script>
+    <script type="text/javascript" src="/js/lanrenzhijia.js"></script>
+    <script type="text/javascript" src="/js/jquery.pack.js"></script>
+    <script type="text/javascript" src="/js/jQuery.blockUI.js"></script>
+    <script type="text/javascript" src="/js/jquery.SuperSlide.js"></script>
+</head>
+<body>
+    #parse("Top.html")
+    <!--nav-->
+    <div class="invest-flash"></div>
+    <div id="main" style="margin-top:0px">
+        <!-- 投资-->
+      
+        <div class="lxad">
+        <div class="left-title">留学/投资/旅游<p>study / investment / tourism </p></div>
+            <div class="news-type">
+                <ul>
+                    #foreach($item in $overseastypeno $P0 $OId-asc)
+                    <li>
+                        <a href="/OverseasList/list_t${item.Id}.html" class="items">${item.Name}</a>
+                        <ul>
+                            #foreach($item2 in $item.Child)
+                            <li>
+                                <a href="/OverseasList/list_t${item2.Id}.html">${item2.Name}</a></li>
+                                #end
+<div class="clear"></div></ul>
+</li>
+                    #end
+                </ul>
+            </div>
+            <div class="effect">
+                #foreach($item in $Advertise $D1)
+                <a href="$item.LinkUrl" target="_blank"> <img alt="$item.Description" src="/upload/ad/$item.AdPicture" height="$item.hHeight" width="$item.hWidth"></a>
+                #end
+            </div>
+            <!--相关信息-->
+            <div class="tit28 mt25"><span>最新移民项目</span></div>
+            <div class="overwiew">
+                <ul>
+                    #foreach($item in $yiminview $L3)
+                    <li>
+                        <div class="new_pro_tab">
+                            <a href="/yimin/${item.Id}.html" title="$item.Title" class="pro-img"><img src=#if($item.Picture="")"/img/proshow.jpg"#else"/upload/yimin/$item.Picture"#end></a>
+                            <span class="name">
+                                <a href="/yimin/${item.Id}.html" title="$item.Title">$item.Title</a>
+                                <p>$item.ParentName</p>
+                            </span>
+                        </div>
+                    </li>
+                    #end
+                </ul>
+            </div>
+            <!--相关信息-->
+        </div>
+        <div class="invest">
+            <div class="tz-title">${info.Name}</div>
+            <div class="touz-list">
+                <ul>
+                    #foreach($item in $overseasModel $T10 $OCreateDate-Desc)
+                     <li #if($!{item.OverseasPicture1}=="")class="nopic2"#end>
+                        <a href="/overseas/${item.Id}.html" class="pic"><img src="/upload/overseas/$!{item.OverseasPicture1}"></a>
+                        <span>
+                            <a href="/overseas/${item.Id}.html" class="tits">${item.OverseasTitle}</a><p>${item.Jianjie}</p>
+                            <p class="time">发布日期：${item.CreateDate.ToString("yyyy-MM-dd")}</p>
+                        </span>
+                    </li>
+                   #end
+                </ul>
+            </div>
+            <div class="more">
+                $overseasModel-Info
+
+            </div>
+            <div class="clear"></div>
+        </div>
+        <!--投资-->
+    </div>
+    <!--main-->
+    #parse("Foot.html")
+    <script>
+	$(".items").mouseover(function(e) {
+			if($(this).parent("li").hasClass("on")!=1)
+			{
+				$(".lxad .news-type ul ul").slideUp(300)
+            $(this).next("ul").slideDown(300)
+			$(".news-type li").removeClass("on")
+			 $(this).parent("li").addClass("on")
+				
+				}
+	});
+	//首页搜索js
+	$(".select-ky .other li").click(function (e) {
+	    $(".kar span").html($(this).html());
+	    $("#t").val($(this).attr("dir"));
+	});
+	//首页搜索js
+
+	function checksearch() {
+	    if ($("#p").val() == "") {
+	        layer.alert("请输入关键词!"); return false;
+	    }
+
+	    return true;
+	}
+	</script>    <script>
+$(document).ready(function(e) {
+            $("#nav .menu li").eq(5).addClass("active")
+        });
+</script>
+</body>
+</html>

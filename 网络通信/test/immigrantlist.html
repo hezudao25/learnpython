@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>  #foreach($item in $overseasType $Detail)
+  #set($info=$item)
+  #end
+<head>
+    <meta charset="utf-8" />
+    <title>${info.Name}移民_$Global.WebName</title>
+    <meta name="keywords" content="$info.WebKeywords" />
+    <meta name="description" content="$info.WebDescription" />
+    <script type="text/javascript" src="/js/jquery-1.8.0.min.js"></script>
+    <link rel="stylesheet" href="/css/head.v2.css" />
+    <link rel="stylesheet" href="/css/style.v2.css" />
+    <script type="text/javascript" src="/layer/layer.js"></script>
+    <link rel="stylesheet" href="/css/news_page.css?v=20161018" />
+    <script type="text/javascript" src="/js/scrollLoad.js"></script>
+    <script>
+        var menu = 5;
+    </script>
+</head>
+<body>
+    #parse("Top.html")
+    <!--nav-->
+    <!--banner-->
+    <div class="news_bg nybanner">
+        <div class="nytitle">
+            <b>${info.Name}移民资讯</b>
+            <i></i>
+            <p>提供有关海外移民的相关资讯，包括海外移民政策、海外移民条件、海外移民费用等问题的解答</p>
+        </div>
+    </div>
+    <!--banner-->
+    <!--miaobao-->
+    <div class="mianbao">
+        <p class="clearfix">
+            <i class="iconfont">&#xe602;</i>
+            <a href="/">外国买房网</a> &gt; <a href="/immigrant.html">海外移民</a> &gt; <a href="/immigrantlist/list_t${info.Id}.html">${info.Name}</a>
+
+        </p>
+    </div>
+    <div id="main" style="margin-top:0px">
+        <!-- 投资-->
+      
+        <div class="lxad">
+        <div class="left-title">海外移民<p>Immigration</p></div>
+            <div class="news-type">
+                <ul class="clearfix">
+                   
+                   
+                            #foreach($item in $OverseasType01 $P2 $OId-asc)
+                            <li style="width:50%;float: left;">
+                                <a style="width: 140px; padding: 10px 0px 10px 10px;" href="/immigrantlist/list_t${item.Id}.html">${item.Name}</a></li>
+                                #end
+<div class="clear"></div></ul>
+
+            </div>
+         
+            <!--相关信息-->
+            <div class="tit28 mt25"><span>最新移民项目</span></div>
+            <div class="overwiew">
+                <ul>
+                    #foreach($item in $yiminview $L3)
+                    <li>
+                        <div class="new_pro_tab">
+                            <a href="/yimin/${item.Id}.html" title="$item.Title" target="_blank" class="pro-img"><img src="#if($!{item.Picture}!="")/upload/yimin/${item.Picture}#else/img/p.jpg#end"></a>
+                            <span class="name">
+                                <a href="/yimin/${item.Id}.html" target="_blank" title="$item.Title">$item.Title</a>
+                                <p>$item.ParentName</p>
+                            </span>
+                        </div>
+                    </li>
+                    #end
+                </ul>
+            </div>
+            <!--相关信息-->
+        </div>
+        <div class="invest">
+            <div class="tz-title">${info.Name}</div>
+            <div class="touz-list">
+                <ul>
+                    #foreach($item in $overseasModel $T10 $OCreateDate-Desc)
+                     <li #if($!{item.OverseasPicture1}=="")class="nopic2"#end>
+                        <a href="/immigrant/${item.Id}.html" target="_blank" class="pic" title="${item.OverseasTitle}"><img src="/upload/overseas/$!{item.OverseasPicture1}"></a>
+                        <span>
+                            <a href="/immigrant/${item.Id}.html" target="_blank" class="tits" title="${item.OverseasTitle}">${item.OverseasTitle}</a><p>${item.Jianjie}</p>
+                            <p class="time">发布日期：${item.CreateDate.ToString("yyyy-MM-dd")}</p>
+                        </span>
+                    </li>
+                   #end
+                </ul>
+            </div>
+            <div class="more">
+                $overseasModel-Info
+
+            </div>
+            <div class="clear"></div>
+        </div>
+        <!--投资-->
+    </div>
+    <!--main-->
+    #parse("Foot.html")
+ <script>
+     $(document).ready(function (e) {
+         $(".selector").scrollLoading();
+         $("#parentid").val("0");
+         $("#lei").val("8");
+         $("#parentname").val("移民资讯");
+     });
+</script>
+</body>
+</html>

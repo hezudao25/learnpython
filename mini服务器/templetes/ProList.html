@@ -1,0 +1,364 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+#foreach($item in $PdtType01 $Detail)
+    #set($info=$item)
+#end
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />#if($info.Picture!="")
+<title>${info.Picture}_$Global.WebName</title>#else<title>${info.Name}_$Global.WebName</title>#end
+<meta name="keywords" content="$info.Keywords" />
+<meta name="description" content="$info.Description" />
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/images/favicon.ico"/>
+<link href="/Css/base.css" rel="stylesheet" type="text/css" />
+<link href="/Css/inside.css" rel="stylesheet" type="text/css" />
+<link href="/Css/home.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/Js/common.js"></script>
+</head>
+<body>
+#parse("Top.html")<script type="text/javascript">                      setChoseNav(3);</script>
+<div class="main">
+	<div class="mainleft">
+		<div class="commod"></div>
+		<ul class="productlist">
+			#foreach($item in $vwPdtType $P0 $OOrderNumber-asc)
+			<li onmouseover="Showdiv(this);" id="$item.Id" onmouseout="Hiddendiv(this);"><a class="type" href="/ProList/T${item.Id}/list.html">${item.Name}</a></li>
+			<div id="m_c_$item.Id" class="item">
+				<div class="first-box">
+					<h4><strong>选择分类</strong></h4>
+					#foreach($item2 in $item.Child) <strong><a target="_blank" href="/ProList/T${item2.Id}/list.html" target="_blank">$item2.Name</a></strong>
+					<div class="a-list" id="m_m_$item2.Id"> #foreach($item3 in $item2.Child) <a target="_blank" href="/ProList/T${item3.Id}/list.html">$item3.Name</a>&nbsp;&nbsp;|&nbsp;&nbsp;#end </div>
+					#end </div><div class="last-box">
+					<h4>热门品牌</h4>
+					#set($Brand.Id=$item.Id)
+					$Brand.GetBrand() </div>
+			</div>
+			#end
+            <li onmouseover="Showdiv(this);" id="266" onmouseout="Hiddendiv(this);"><a class="type" href="/ProductRedeem.html">积分兑换物品</a></li>
+			<div id="m_c_266" class="item">
+				<div class="first-box">
+					<h4><strong>选择分类</strong></h4>
+					#foreach($item2 in $PdtType001 $P266 $OOrderNumber-asc) <strong><a target="_blank" href="/ProductRedeem/T${item2.Id}/list.html" target="_blank">$item2.Name</a></strong>
+					<div class="a-list" id="m_m_$item2.Id"> #foreach($item3 in $item2.Child) <a target="_blank" href="/ProductRedeem/T${item3.Id}/list.html">$item3.Name</a>&nbsp;&nbsp;|&nbsp;&nbsp;#end </div>
+					#end </div><div class="last-box">
+					<h4>热门品牌</h4>
+					#set($Brand.Id=266)
+					$Brand.GetBrand() </div>
+			</div>
+		</ul>
+        <div class="commodbot"></div>
+		<div class="lefttitle"><b class="lefttitlesub">新品上市</b></div>
+		<div class="brandleftbox">
+			<ul class="brandtop">
+				#foreach($item in $vwProductsNew $L4)
+				<li><a href="/Product/${item.Id}.html"><img src=#if($item.PdtPicture1=="")"/images/bglogo.jpg"#else"/FileUPLoad/ProductFile/$item.PdtPicture1"#end alt="$item.PdtTitle" /></a><span><a href="/Product/${item.Id}.html">$item.PdtTitle</a></span>
+					<p>品牌：${item.BrandName}</p>
+					<p>商城价：&yen; <em class="shopp">$item.MemberPrice</em></p>
+				</li>
+				#end
+			</ul>
+		</div>
+         <div class="commodbot"></div>
+		<div class="lefttitle"><b class="lefttitlesub">特价促销</b></div>
+		<div class="brandleftbox">
+			<ul class="brandtop">
+				#foreach($item in $vwProductsSpe #L4)
+				<li><a href="/Product/${item.Id}.html"><img src=#if($item.PdtPicture1=="")"/images/bglogo.jpg"#else"/FileUPLoad/ProductFile/$item.PdtPicture1"#end alt="$item.PdtTitle" /></a><span><a href="/Product/${item.Id}.html">$item.PdtTitle</a></span>
+					<p>品牌：${item.BrandName}</p>
+					<p>商城价：&yen; <em class="shop">$item.MemberPrice</em></p>
+				</li>
+				#end
+			</ul>
+		</div>
+		<div class="commodbot"></div>
+		<div class="lefttitle"><b class="lefttitlesub">销量排行</b></div>
+		<div class="brandleftbox">
+			<ul class="brandtop">
+				#foreach($item in $vwSales $L4)
+				<li><a href="/Product/${item.Id}.html"><img src=#if($item.PdtPicture1=="")"/images/bglogo.jpg"#else"/FileUPLoad/ProductFile/$item.PdtPicture1"#end alt="$item.PdtTitle" /></a><span><a href="/Product/${item.Id}.html">$item.PdtTitle</a></span>
+					<p>品牌：${item.BrandName}</p>
+					<p>已销售：<em>${item.PdtSales}</em> 件</p>
+				</li>
+				#end
+			</ul>
+		</div>
+		<div class="leftbot"></div>
+		<div class="lefttitle"><b class="lefttitlesub">精彩活动</b></div>
+		<div class="wonderful"> #foreach($item in $News10 $L1 $P27 $QTmV3c1BpY3R1cmUxPD4nJw-- $OAccessNumber-desc) <a href="/News/${item.id}.html"><img src="/FileUpload/NewsFile/${item.NewsPicture1}" /></a><b><a href="/News/${item.id}.html">${item.newstitle}</a></b>
+			<p>${item.Description}</p>
+			#end
+			<ul>
+				#foreach($item in $News08 $L10 $P27 $OAccessNumber-desc)
+				<li><a href="/News/${item.id}.html" title="${item.newstitle}">${item.newstitle}</a></li>
+				#end
+			</ul>
+		</div>
+		<div class="leftbot"></div>
+		<div class="lefttitle"><b class="lefttitlesub">浏览历史</b></div>
+		<div class="brandleftbox">
+			<ul class="history">
+				<script>gethistory();</script>
+			</ul>
+		</div>
+		<div class="leftbot"></div>
+	</div>
+	<div class="mainright"> #parse("Search.html")
+		<div class="newsflash">
+			<div class="slider">
+				<ul class="pic" id="homePushShow">
+					#foreach($item in $Advertise $P3)
+					<li style="display:#if($velocityCount==1) #else none;#end" id="homePushShow$velocityCount"> <a href="$item.LinkUrl" target="_blank"> <img alt="$item.Description" src="/FileUPLoad/Advertise/$item.AdPicture"  height="$item.hHeight" width="$item.hWidth"></a>
+						<p></p>
+						<strong>$item.name</strong> </li>
+					#end
+				</ul>
+				<ul class="num bg" id="homePushName">
+					#foreach($item in $Advertise14 $P3)
+					<li id="homeAd$velocityCount">$velocityCount</li>
+					#end
+				</ul>
+			</div>
+			<script type="text/javascript" src="/js/flashimg.js"></script> 
+		</div>
+		<div class="location" id="curPath"><a href="/">首页</a>&nbsp;&gt;&nbsp;<a href="/Products.html">产品展示</a>&gt;#set($load.Id=$info.Id)	$load.Load("ProList")</div>
+		<dl class="choose" id="nav">
+			<dt>产品类别：</dt>
+			#if(${info.ParentId}!=0)
+			#set($oid=$info.ParentId)
+			#else
+			#set($oid=$info.Id)
+			#end
+			<dd>
+				<p><a href="/Prolist/T$oid/list.html"  id="t$oid" class="all">上类</a>#foreach($item in $ptype)<a href="javascript:;" onclick="gourl('${item.intID}');" id="t${item.intID}">$item.CategoryName</a>#end</p>
+			</dd>
+		</dl>  <!--属性开始  -->   
+        #if($soncount==0) <!--判断是否为末级分类-->
+		#foreach($item in $vwPdtKeyType $P0 $X $OOrderNum-DESC)
+		<dl class="choose" id="navk${item.Id}">
+			<dt>${item.Name}：</dt>
+			<dd>
+				<p><a href="javascript:;" onclick="gourl2('${item.Id}',${item.Id});" id="k${item.Id}">全部</a>#foreach($item2 in $item.Child)<a  href="javascript:void(0);" onclick="gourl2('${item2.Id}',${item.Id});" id="k${item2.Id}">${item2.Name}</a>#end</p>
+			</dd>
+		</dl>
+		#end
+        #end
+        <!--属性结束-->
+		<dl class="choose" id="nav1">       
+			<dt>品牌：</dt>
+			<dd>
+				<p><a  href="javascript:;" onclick="gourl1('0');" id="b0" class="all">全部</a>#foreach($item in $pbrand)<a  href="javascript:;" onclick="gourl1('${item.intID}');" id="b${item.intID}">$item.BrandName</a>#end</p>
+			</dd>
+		</dl>
+		<div class="plisttitle"><b>产品列表</b></div>
+		<div class="plisttitle" style="border:0;">
+			<div class="shopcar"><a href="javascript:void(0);" onclick="doAdd();"></a></div>
+			<div class="productcom"><a href="javascript:void(0);" onclick="doCompare();"></a></div>
+			<p>订购服务热线：<strong>400-0038-400、0731-88881164</strong></p>
+			<span><a ></a></span><span class="window"><a href="/ProTable/T${info.Id}/List.html"></a></span></div>
+		<div class="ptabletop">
+			<table cellspacing="0" cellpadding="0">
+				<tr>
+					<td width="40">&nbsp;</td>
+					<td width="102">订货号</td>
+					<td width="75">图片</td>
+					<td>名称</td>
+					<td width="96">品牌</td>
+					<td width="92">厂家型号</td>
+					<td width="134">价格<br />
+						<b>（含税、不含运费）</b></td>
+				</tr>
+			</table>
+		</div>
+		<div class="ptablebot">
+			<table cellspacing="0" cellpadding="0">
+				<form action="/Cart.html" method="post" name="myform" id ="myform" target="_blank" style="margin:0px;">
+					#foreach($item in $ProductsDetail02 $T20 $OOrderNumber-DESC) 
+					<tr>
+						<td width="40"><input name="onCheckBoxall" id="onCheckBoxall" type="checkbox" value="${item.Id}" />
+							<input type="hidden" id="PdtTitle" name="PdtTitle" value="${item.PdtTitle}" />   #set($UserPrice.Id=$item.Id)
+					                   
+							<input type="hidden" id="MemberPrice" name="MemberPrice" value="$UserPrice.GetPrice()" />                          
+							<input type="hidden" id="BrandName" name="BrandName" value="${item.BrandName}" />
+							<input type="hidden" id="PdtPicture1" name="PdtPicture1" value="${item.PdtPicture1}" />
+							<input type="hidden" id="PdtId" name="PdtId" value="${item.PdtId}" />
+							<input type="hidden" id="PdtIntegral" name="PdtIntegral" value="${item.PdtIntegral}" /></td>
+						<td width="102">$item.PdtId</td>
+						<td width="75" height="85"><a href="/Product/${item.Id}.html" title="$item.PdtTitle"><img src=#if($item.PdtPicture1=="")"/images/bglogo.jpg"#else"/FileUPLoad/ProductFile/$item.PdtPicture1"#end  height="80" width="80" alt="$item.PdtTitle" onload="DrawImage(this,80,80)" /></a></td>
+						<td><a href="/Product/${item.Id}.html" title="$item.PdtTitle">$item.PdtTitle</a></td>
+						<td width="96"><a href="/Pbrandlist/B${item.BrandId}/list.html">$item.BrandName</a></td>
+                        <td width="92">$item.PdtModel</td>
+						<td width="134">
+							<p>#if($item.TouristPrice!="0.00")市场价：&yen; <em>$item.TouristPrice</em> <br />
+								商城价：&yen; $item.MemberPrice $UserPrice.GetPriceName("L") #else <a href="http://wpa.qq.com/msgrd?V=1&Menu=yes&Uin=$Global.QQ" target="_blank"><font color=red>询价</font></a> #end </p>							
+							</td>
+					</tr>
+					#end
+				</form>
+			</table>
+		</div>
+		<div class="marginBottom productsTitle" align="center">$ProductsDetail02-Info</div>
+	</div>
+	<br class="clear" />
+</div>
+#parse("Foot.html")
+</body><script type="text/javascript">
+           gaoliang("nav", "t",0);
+           gaoliang("nav1", "b",0);
+            #if($soncount==0)
+           #foreach($item in $vwPdtKeyType01 $P0 $X $OOrderNum-DESC)
+            gaoliang("navk${item.Id}", "k",$velocityCount);
+            #end #end
+           function gaoliang(e, f,count) {
+               var myNav = document.getElementById(e).getElementsByTagName("a");
+               for (var i = 0; i < myNav.length; i++) {
+                   var links = myNav[i].getAttribute("id");               
+                   if(f=="t"){
+                  #if($soncount==0)  myNav[i].className = ""; #end
+                   }
+                    if(f=="b" && (fGetQuery1("b")!=null)){
+                  myNav[i].className = ""; 
+                   }
+                   if(f!="k")
+                   {
+                   if (links == f+fGetQuery1(f)) {
+                       myNav[i].className = "all";
+                       }
+                    }else{
+                      if ((f+fGetQuery1(f)+"k").indexOf(links+"k") != -1 ) {
+                       myNav[i].className = "all";
+                  
+                       }
+                       else
+                       {  if (fGetQuery1("k") != null && fGetQuery1("k") != "") 
+                        {
+                        if (fGetQuery1("k").indexOf("k") > 0) {
+                                   var  q = fGetQuery1("k").split("k");  
+                                   if(q[count-1]=="0" && "nav"+links==e)myNav[i].className = "all";
+                                    }}}
+                    }
+                 
+               }
+           }
+            document.write(fGetQuery1("k"));
+           function go1url(mid) {
+              var url = "/ProList/";
+               var  ss = "/List.html";           
+               if (mid != null && mid != "") url += "T" + mid;
+               if (fGetQuery1("2") != null && fGetQuery1("2") != "B" && fGetQuery1("2") != "") {
+                   url +=  "_"+"B" + fGetQuery1("2") ;
+                   }
+                    if (fGetQuery1("k") != null  && fGetQuery1("k") != "") {
+                   url +=  "_"+ fGetQuery1("k") ;
+                   }
+                   document.getElementById("t"+ mid).className = "all";
+               url += ss;
+               location.href = url;
+           }
+           ///分类参数
+           function gourl(tid) {
+               //		             var url = "/define.aspx?brand";
+               //		             if (mid != null) url += "&mid=" + mid;
+               //		             if (fGetQuery("tid") != null) url += "&tid=" + fGetQuery("tid");
+               var url = "/ProList/";
+               var  ss = "/List.html";           
+               if (tid != null && tid != "") url += "T" + tid;
+               if (fGetQuery1("b") != null && fGetQuery1("b") != "B" && fGetQuery1("b") != "") {
+                   url +=  "_"+"B" + fGetQuery1("b") ;
+                   }else{url +=  "_"+"B0";}
+                    if (fGetQuery1("k") != null  && fGetQuery1("k") != "") {
+                   url +=  "_"+ fGetQuery1("k") ;
+                   }
+                 
+               url += ss;
+               location.href = url;
+           }
+           ///品牌参数
+           function gourl1(bid) {
+               var url = "/ProList/";
+               if (fGetQuery1("t") != null && fGetQuery1("t") != "") url += "T" + fGetQuery1("t");
+               if (bid != null && bid != "") url += "_B" + bid; 
+               if (fGetQuery1("k") != null && fGetQuery1("k") != "") url += "_" + fGetQuery1("k");            
+               url += "/List.html";
+               location.href = url;
+           }///属性参数
+            function gourl2(kid,id) {
+            var url = "/ProList/";
+            if (fGetQuery1("t") != null && fGetQuery1("t") != "") url += "T" + fGetQuery1("t");
+            if (fGetQuery1("b") != null && fGetQuery1("b") != "B" && fGetQuery1("b") != "")
+             {
+             url += "_B" +  fGetQuery1("b");
+              }else{ url += "_B0";}
+            if (kid != null && kid != "")
+            { 
+            url += "_";
+            var kk="";
+            if (fGetQuery1("k") != null && fGetQuery1("k") != "") 
+            {
+            if (fGetQuery1("k").indexOf("k") > 0) {
+                var  q = fGetQuery1("k").split("k");            
+                var count;
+               if(kid==id) kid=0;
+                        #foreach($item in $vwPdtKeyType03 $P0 $X $OOrderNum-DESC)                            
+                            if($item.Id==id)
+                            {
+                        count=$velocityCount;
+                     
+                            }
+                        #end                                              
+                        q.splice(count-1,1,kid);                      
+                        kk="k"+q.join("k");                         
+                    }
+                    else
+                    {
+                    if(kid==id) kid=0;
+                    kk="k"+kid;
+                    }
+              
+            }else{
+            if(kid==id) kid=0;
+                #foreach($item in $vwPdtKeyType02 $P0 $X $OOrderNum-DESC)
+                    if($item.Id==id)
+                    {
+                    kk+="k"+kid;
+                    }else{
+                    kk+="k0";
+                    }
+                #end
+            }
+           
+            url +=  kk.substring(1);
+            }
+            url += "/List.html";
+            location.href = url;
+        }
+           function fGetQuery1(name) { //获取参数值
+               var sUrl = window.location.pathname;
+               var o;
+               var r = sUrl.split("/");
+               if (r.length > 2) {
+                   if (r[2].indexOf("_") > 0) {
+                       var q = r[2].split("_");
+
+                       if (name == "t") {
+                           o = q[0].substring(1);
+                       } else  if (name == "b") {
+                           o = q[1].substring(1);
+                       } else {
+                           o = q[2];
+                       }
+                   } else {
+                       if (r[2].indexOf("T") != -1) {
+                           if (name == "t") { o = r[2].substring(1); } else { o = null; }
+                       } else {
+                           if (name == "t") { o = null; } else { o = r[2].substring(0, r[2].length - 5); }
+                       }
+                   }
+
+               } else {
+                   o = null;
+               }
+               return (o == null ? null : unescape(o));
+           }
+
+		        </script>
+</html>

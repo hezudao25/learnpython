@@ -1,0 +1,243 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>海外房产经纪人_海外房产中介_$Global.WebName</title>
+        <meta name="keywords" content="海外房产中介,海外房产经纪人,美国房产中介,澳洲房产中介,泰国房产中介,美国房产经纪人,澳洲房产经纪人,泰国房产经纪人,海外华人房地产经纪人" />
+        <meta name="description" content="外国买房网拥有丰富的海外房产经纪人和房产中介信息，您可以自由选择适合的经纪人和中介为您提供海外买房、海外购房、海外房价等相关咨询和服务。" />
+        #parse("head.html")
+		<script type="text/javascript" src="/js/highcharts.js"></script>		
+		<link rel="stylesheet" href="/css/head.v2.css" />
+		<link rel="stylesheet" href="/css/style.v2.css" />
+		<script>
+			var menu = 8
+		</script>       
+	</head>
+	<body>
+		#parse("Top.html")
+		<!--banner-->
+		<div class="news_ag_bg nybanner">
+			<div class="nytitle">
+				<b>海外房产经纪人</b>
+				<i></i>
+				<p>集合了权威的海外房产专家、海外房产经纪人、房产中介信息，帮助买家找到最佳的经纪人合作伙伴</p>
+			</div>
+		</div>
+		<!--miaobao-->
+		<div class="mianbao">
+			<p class="clearfix">
+				<i class="iconfont">&#xe602;</i>
+				<a href="/" title="">外国买房网首页</a>&gt;
+				<a href="/agent.html" title="">海外房产经纪人</a>
+			</p>
+		</div>
+		<!--miaonbao-->
+        <div class="bgf2f2f2 w100p">
+            <div class="new_house_select">
+                <div class="hotcountry country_a clearfix">
+                    <span class="tit2">热门国家：</span>
+                    <a class="all">全部</a>
+                    #foreach($item in $agDiqu05 $P0 $OOrderNumber-asc)
+                    <li>
+                        <a href="/agentlist_t${item.Id}_y000_o1.html">${item.DiquName}</a>
+                        <div class="erji"></div>
+</li>
+                    #end
+                </div>
+                <div class="hotcountry">
+                    <span class="tit2">使用语言：</span>
+                    <a href="javascript:;" class="all">全部</a>
+                    <a href="/agentlist_t0_y100_o1.html" title="">中文</a>	
+                    <a href="/agentlist_t0_y020_o1.html" title="">英语</a>	
+                    <a href="/agentlist_t0_y003_o1.html" title="">粤语</a>	                   
+                </div>                
+                <a href="/agent.html" class="house_reset"><i class="iconfont">&#xe60b;</i>重置选项</a>              
+            </div>
+        </div>
+
+		<!--house_list-->
+		<div class="w1200 clearfix mt40">
+			<div class="w880">
+				<div class="px_tools clearfix">
+					<span class="active">默认排序</span><span>评价</span><span>浏览次数</span>
+				</div>
+				#foreach($item in $userslist $T10 $OOrderNumber-DESC_levelid-Desc_Id-desc)
+				<div class="agents-tab clearfix">
+					<a href="/agent/${item.Id}.html" target="_blank">
+						<div class="agents-tx"><img src="/images/loading.gif" class="selector tran3" data-url=#if(${item.Picture}!="")"/upload/users/${item.Picture}"#else "/img/jjr.jpg"#end />#if(${item.LevelId}>15)<img src="/img/vip-${item.LevelId}.png" class="vip-icon2">#end
+						</div>
+						<div class="agents-info">
+							<div class="name"><b>${item.TrueName} ${item.EnName}</b>#if(${item.Yuyan}!="")<span>${item.Yuyan.Replace(",","</span><span>").Replace("，","</span><span>")}</span>#end</div>
+							<div class="info1">${item.Diqu} #if(${item.Zhizh}!="")| 执照号 ${item.Zhizh}#end<span class="heart">
+                        <i class="iconfont icon-pingjia${item.Xingji}"></i>(${item.CommentNumber}条评论)
+                        <p>${item.AccessNumber}人看过</p>
+                    </span></div>
+							<div style="display:none">${item.Jianjie}</div>
+							<p>
+								$StringHelper.GetOmitString(${item.Jianjie},200,"1")
+							</p>
+
+						</div>
+
+					</a>
+				</div>
+				#end
+
+				<div id="pagefy" class="clearfix">
+					$userslist-Info
+				</div>
+
+			</div>
+			<!--list-->
+			<div class="h_right">
+				<div class="hot_comment">
+					<div class="ny_title bgf00"><span></span><b>热门评论</b>
+
+					</div>
+					<div class="swiper-container" id="hot_comment">
+						<div class="swiper-wrapper">
+							#foreach($item in $vwnewscomment01 $L5 $QaXNyb209J3RydWUn)
+							<div class="swiper-slide">
+								<a href="/news/${item.ParentID}.html" target="_blank" title="${item.newstitle}">${item.newstitle}</a>
+								<p><b>${item.Commentator}：</b>${item.CommentContext}</p>
+								<time>评论时间：${item.CreateDate.ToString("yyyy-MM-dd")}</time>
+							</div>
+							#end
+						</div>
+
+						<!-- Add Arrows -->
+						<div class="commet_left commet_arrow"><img src="/img.v2/commet_left.png"></div>
+						<div class="commet_right commet_arrow"><img src="/img.v2/commet_right.png"></div>
+					</div>
+					<script>
+						var swiper = new Swiper('#hot_comment', {
+							loop: true,
+							autoplay: 3000,
+							nextButton: '.commet_right',
+							prevButton: '.commet_left',
+
+						});
+					</script>
+				</div>
+
+				<!--相关新闻-->
+				<div class="Related_news">
+					<div class="ny_title bg425"><span></span><b>相关新闻</b>
+						<a href="hotnews.html" target="_blank"><i class="iconfont">&#xe608;</i></a>
+					</div>
+					<div id="Related_news">
+						<ul>
+							#foreach($item in $newsmodel01 $L10 $QTmV3c1JvbT0ndHJ1ZSc-)
+							<li#if($velocityCount==1) class="active" #end>
+								<i>$velocityCount</i>
+								<a target="_blank" href="/news/${item.Id}.html" class="r_news_img tran0"><img src=#if($item.NewsPicture1="")"/img.v2/ex.jpg"#else"/upload/news/$item.NewsPicture1"#end/></a>
+								<a target="_blank" href="/news/${item.Id}.html" title="${item.NewsTitle}" class="r_news_title tran0">${item.NewsTitle}</a>
+								<time>${item.CreateDate.ToString("yyyy-MM-dd")}</time>
+								</li>
+								#end
+						</ul>
+					</div>
+				</div>
+				<!--相关新闻-->
+				<!--搜索-->
+                #foreach($item in $Advertise04 $D1006)
+                <a href="$item.LinkUrl" target="_blank" title="$item.Description" class="find_house"><img alt="$item.Description" data-url="/upload/ad/$item.AdPicture" src="/images/loading.gif" class="selector"></a>
+                #end
+				<!--搜索-->
+
+				<!--推荐房源-->
+				<div class="in_rom_house">
+					<div class="ny_title bgf29"><span></span><b>推荐房源</b>
+						<a href="hotnewhouse.html" target="_blank"><i class="iconfont">&#xe608;</i></a>
+					</div>
+					<div id="in_rom_house">
+						#foreach($item in $Products $L8 $QSXNIb21lPSd0cnVlJw-- $OOrdernumber-desc)
+						<div class="in_rom_house_tab clearfix">
+							<a target="_blank" href="/newhouse/${item.Id}.html" title="$item.PdtTitle" class="imgs"><img alt="$item.PdtTitle" src="/images/loading.gif" class="selector" data-url=#if($item.PdtPicture1="" ) "/img.v2/hh.jpg"#else "/upload/newhouse/$item.PdtPicture1"#end/></a>
+							<p>
+								<a target="_blank" href="/newhouse/${item.Id}.html" title="$item.PdtTitle">$item.PdtTitle</a>
+								<span class="price">房价：：${item.TouristPrice.ToString().Replace(".00","")}万元起</span>
+							</p>
+						</div>
+						#end
+					</div>
+
+				</div>
+				<!--推荐房源-->
+
+				<!--数据统计-->
+				<div id="container_map"></div>
+				<!--数据统计-->
+			</div>
+
+		</div>
+		<!--house_list-->
+		<!--foot-->
+		#parse("Foot.html")		
+        <script src="/js/quxiandata.js"></script>  
+		<!--图标数据-->
+		<script>
+            $(function () {
+                $(".selector").scrollLoading();
+                $("#parentid").val("0");
+                $("#lei").val("14");
+                $("#parentname").val("海外房产经纪人");
+                $('#container_map').highcharts({
+                    chart: {
+                        type: 'column'
+                    },
+                    title: {
+                        text: '地区房价走势'
+                    },
+                    subtitle: {
+                        text: '数据来源: www.waigf.com'
+                    },
+                    xAxis: {
+                        categories: usacategories,
+                        crosshair: true
+                    },
+                    yAxis: {
+                        min: 0,
+                        title: {
+                            text: '成交价 (万元)'
+                        }
+                    },
+                    tooltip: {
+                        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+							'<td style="padding:0"><b>{point.y:.1f} 万元</b></td></tr>',
+                        footerFormat: '</table>',
+                        shared: true,
+                        useHTML: true
+                    },
+                    plotOptions: {
+                        column: {
+                            pointPadding: 0.2,
+                            borderWidth: 0
+                        }
+                    },
+                    series: usaseries
+                });
+
+                var tid = "0", yid = "000";
+                $(".px_tools span").click(function () {
+                    var oid = $(this).index();
+                    var url = "agentlist";
+
+                    url += "_t" + tid;
+
+                    url += "_y" + yid;
+                    oid = parseInt(oid) + 1;
+                    url += "_o" + oid;
+                    url += ".html";
+                    location.href = url;
+                });
+            });
+		</script>
+		<!--图标数据-->
+      
+	</body>
+
+</html>

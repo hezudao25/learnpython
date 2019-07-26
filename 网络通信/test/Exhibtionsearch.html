@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>搜索结果_$Global.WebName</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="stylesheet" href="/font/iconfont.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <script type="text/javascript" src="/js/jquery-1.8.0.min.js"></script>
+    <link rel="stylesheet" href="/css/head.v2.css" />
+    <link rel="stylesheet" href="/css/style.v2.css" />
+    <link rel="stylesheet" href="/css/news_page.css?v=20161018" />
+    <script type="text/javascript" src="/js/scrollLoad.js"></script>
+    <script type="text/javascript" src="/layer/layer.js"></script>
+    <script>function fGetQuery1(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) {
+        if (name == "p") {
+            return r[2];
+        } else {
+            return unescape(r[2]);
+        }
+    }
+    return null;
+}
+        function setsearch(p) {
+            var t = fGetQuery1("t");
+            var f = document.forms["frmsearch"];
+            $("#t").val(t);
+            $(".select-ky .other li").each(function (e) {
+                if ($(this).attr("dir") == t) {
+                    $(".kar span").html($(this).html());
+                }
+            });
+
+            $("#p").val(p);
+        }
+        var menu = 7;</script>
+</head>
+
+<body>
+    #parse("Top.html")
+    <!--banner-->
+    <div class="news_ex_bg nybanner">
+        <div class="nytitle">
+            <b>海外房产展会</b>
+            <i></i>
+            <p>最及时最全面的海外房产推介会等展会预告及报道</p>
+        </div>
+    </div>
+    <!--banner-->
+    <!--miaobao-->
+    <div class="mianbao">
+        <p class="clearfix">
+            <i class="iconfont">&#xe602;</i>
+            <a href="/">外国买房网</a> &gt; <a href="/exhibtion.html">展会</a> &gt; 展会搜索
+
+        </p>
+    </div>
+    <!--miaonbao-->
+    <div id="main" style="margin-top: 20px;">
+        <!--left-->
+        <div id="left">
+           
+            <div class="left-title">
+                展会
+                <p>Real estate information</p>
+            </div>
+            <div class="news-type">
+                <ul>
+                   
+                </ul>
+            </div>
+            <div class="new_pro_title">
+                最新产品
+            </div>
+            <div class="new_pro">
+                <ul>
+                    #foreach($item in $Products $L8 $QSXNIb21lPSd0cnVlJw--)
+                    <li>
+                        <div class="new_pro_tab">
+                            <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle" class="pro-img"><img src="/images/loading.gif" class="selector" data-url=#if($item.PdtPicture1 ="" )"/img/proshow.jpg"#else"/upload/newhouse/$item.PdtPicture1"#end></a>
+                            <span class="name">
+                                <a href="/newhouse/${item.Id}.html" title="$item.PdtTitle">$item.PdtTitle</a>
+                                <p></p>
+                            </span>
+                        </div>
+                    </li>
+                    #end
+                </ul>
+            </div>
+        </div>
+        <!--left-->
+        <div id="mid">
+            
+            <div id="newslist">
+                <ul>
+                    #foreach($item in $exhibtion01 $T10)
+                    <li #if($!{item.Pictrue1}=="" )class="nopic" #end>
+                        <div class="imgs">
+                            <a href="/exhibtion/${item.Id}.html">
+                                <img src="/images/loading.gif" class="selector" data-url="#if($!{item.Pictrue1}=="")/img/p.jpg#else/upload/exhibtion/$!{item.Pictrue1}#end">
+                            </a>
+                        </div>
+                        <div class="info">
+                            <a href="/exhibtion/${item.Id}.html" class="name">${item.Title}</a>
+                            <p class="des">地址：${item.Address} 时间：${item.Czsj.ToString("yyyy/MM/dd")} - ${item.Czsj1.ToString("yyyy/MM/dd")} 主办单位：${item.Zbdw}</p>
+                            <div class="source"> 展会日期：${item.Czsj.ToString("yyyy-MM-dd")} </div>
+                 
+                        </div>
+                    </li>
+                    #end
+
+                </ul>
+            </div>
+            <div class="more">
+                $exhibtion01-Info
+
+            </div>
+
+        </div>
+       
+    </div>
+    <!--main-->
+
+    #parse("Foot.html")<script>          setsearch('$SRHP')</script>    <script>
+$(document).ready(function(e) {
+    $(".selector").scrollLoading();
+});
+      
+</script>
+</body>
+</html>

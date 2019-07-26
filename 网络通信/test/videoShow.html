@@ -1,0 +1,104 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+#foreach($item in $VideoDetail $Detail)
+    #set($info=$item)
+#end
+<title>$!{info.VideoName}_$Global.WebName</title>
+<meta name="keywords" content="$!{info.Keywords}" />
+<meta name="description" content="$!{info.Description}" />
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script type="text/javascript" src="/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/Js/common.js"></script>
+<script src="/js/modal.js"></script>
+   <script type="text/javascript">       $(function () {
+           $("#nav ul li").removeClass("on");
+           $("#nav ul li").eq(3).addClass("on");
+       });</script>
+</head>
+<body>
+#parse("Top.html")
+
+<div class="w1200 clearfix mt20">
+<div id="bx"> <span class="glyphicon glyphicon-home"></span><a href="/">首页</a> > <a href="/video.html">路演视频</a> > $info.ParentName</div>
+
+	<div class="w900">
+    	<div class="detail">
+        	<div class="name">$info.VideoName</div>
+            <div class="des">$info.CreateDate   浏览数：${info.AccessNumber}人</div>
+            <div id="biaot2"><b >详细介绍</b></div>
+            <div class="contet">
+           #if($info.VideoUrl!="")
+					<div align="center"><embed menu="true" loop="true" play="true" allowFullScreen="true" type="application/x-shockwave-flash" height="420" width="500" src="$info.VideoUrl" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed></div>
+				<br />
+				#end
+				$info.VideoContent
+            </div>
+            <div class="bqian">标签：$info.VideoName
+            </div>
+            <div id="biaot2"><b>用户留言</b><span>您可以输入300个字</span></div>
+            <div id="order" class="clearfix">
+            	<form action="/Handler/Video_Comment.ashx" onsubmit="return Validate(this)" method="post" name="commentForm" id="commentForm">
+					<div class="liuyan"><input type="text "name="Commentator" id="Commentator" alt="用户名:无内容/怪字符" placeholder="请输入您手机号" class="mobile"> 如果您对此项目感兴趣，请留下您的联系方式</div>
+            	<textarea name="CommentContext" class="txtfile" placeholder="提示：严禁发布含有联系方式和广告性质的内容，违者一律删除！" alt="内容:无内容/怪字符" ></textarea>
+								<span id="ctl00_CommentContext"></span>
+								<input type="hidden" name="Status" value="1" />
+								<input type="hidden" name="parentid" value="${info.Id}" />
+                <input type="submit" class="tjbut" value="提交留言">
+				</form>
+            </div>
+            <div class="orderlist">
+            	<ul>          	
+				#foreach($item in $Video_Comment $T5 $C)
+				<li><b>用户名:<script>				               document.write("${item.Commentator}".substring(0, 3) + "****" + "${item.Commentator}".substring(8, 11));</script> </b>于<span>($item.CreateDate)</span> 留言说：
+					$item.CommentContext
+                    #if($!item.Recontent)<br /><p>回复：$item.Recontent</p>#end
+				</li>
+				#end
+			</ul>
+			<div align="center"> $Video_Comment-Info</div>
+            </div>
+        </div>
+     </div>
+     
+     <div id="right">
+     <div class="w280">
+    	<div id="pro">
+        	<div class="listname"><b>路演视频</b></div>
+            <ul id="typelist">
+            #foreach($item in $VideoType01 $P0 $OOrderNumber-asc)            	
+<li><a href="/Video/T${item.Id}/list.html">${item.TypeName}</a>
+	<Ul>#foreach($item2 in $item.Child)<Li><a href="/Video/T${item2.Id}/list.html" title="$item2.TypeName">$item2.TypeName</a></Li>
+   #end
+    </Ul>
+</li>
+#end
+
+            </ul>
+        </div>    
+     </div>
+     <div class="w280 mt20">
+    	 <div  id="Div1"><b>取财信息</b><a href="/news.html">+更多</a></div>
+         <div class="newsimg"><img src="/images/news.jpg"></div>
+        <div class="inews">
+        	<ul>
+            	#foreach($item in $News09 $L4 $OAccessNumber-desc)
+            	<li><a href="/News/${item.id}.html">${item.newstitle}</a></li>
+                #end
+            </ul>
+        </div>     
+     </div>
+     
+     
+     <br class="clear">
+</div>
+     
+     <br class="clear">
+</div>
+
+#parse("Foot.html")
+</body>
+</html>
